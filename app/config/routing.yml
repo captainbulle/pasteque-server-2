@@ -1,7 +1,10 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
+pasteque_server:
+    resource: "@PastequeServerBundle/Resources/config/routing.yml"
+    prefix:   /
 
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
+
+PastequeServeur:
+    resource: "@Pas"
