@@ -1,0 +1,4 @@
+services:
+#    pasteque_api.example:
+#        class: Pasteque\Bundle\APIBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

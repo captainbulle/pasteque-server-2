@@ -1,3 +1,7 @@
+pasteque_api:
+    resource: "@PastequeAPIBundle/Resources/config/routing.yml"
+    prefix:   /
+
 pasteque_server:
     resource: "@PastequeServerBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,6 +9,3 @@ pasteque_server:
 NelmioApiDocBundle:
     resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
     prefix:   /api/doc
-
-PastequeServeur:
-    resource: "@Pas"
