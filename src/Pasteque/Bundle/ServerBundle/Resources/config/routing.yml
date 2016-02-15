@@ -1,3 +1,74 @@
-pasteque_server_homepage:
-    path:     /
-    defaults: { _controller: PastequeServerBundle:Default:index }
+cashes_api_get:
+    path: /cashes/get/{id}/{CashRegisterId}
+    defaults: { _controller: PastequeAPIBundle:Cashes:get, id: -1, CashRegisterId: -1 }
+
+cashes_api_update:
+    path: /cashes/update/{id}
+    defaults: { _controller: PastequeAPIBundle:Cashes:update }
+
+cashes_api_search:
+    path: /cashes/search/{cashRegisterId}/{dateStart}/{dateStop}
+    defaults: { _controller: PastequeAPIBundle:Cashes:search, cashRegisterId: -1, dateStart: -1, dateStop: -1 }
+
+cashes_api_zticket:
+    path: /cashes/zticket/{id}
+    defaults: { _controller: PastequeAPIBundle:Cashes:zticket }
+
+cashMvts_api_move:
+    path: /cashMvts/move/{id}/{date}/{payment}/{note}
+    defaults: { _controller: PastequeAPIBundle:cashMvts:get, id: -1, CashRegisterId: -1 }
+
+ cashesRegisters_api_get:
+ 	path: /cashesRegisters/get/{id}/{label}
+ 	defaults: { _controller: PastequeAPIBundle:cashesRegisters, id: -1, label: -1 }
+
+ cashesRegisters_api_getAll:
+ 	path: /cashesRegisters/getAll/
+    defaults: { _controller: PastequeAPIBundle:cashesRegisters:getAll }
+
+ categories_api_get:
+ 	path: /categories/get/{id}
+ 	defaults: { _controller: PastequeAPIBundle:categories:get }
+
+ categories_api_getChildren:
+ 	path: /categories/getChildren/{parentId}
+ 	defaults: { _controller: PastequeAPIBundle:categories:getChildren }
+
+ categories_api_getAll:
+ 	path: /categories/getAll/
+    defaults: { _controller: PastequeAPIBundle:categories:getAll }
+
+composition_api_getAll:
+	path: /composition/getAll/
+	defaults: { _controller: PastequeAPIBundle:composition:getAll }
+
+currencies_api_get:
+	path: /currencies/get/{id}
+	defaults: { _controller: PastequeAPIBundle:currencies:get }
+
+currencies_api_getMain:
+	path: /currencies/getMain/
+	defaults: { _controller: PastequeAPIBundle:currencies:getMain }
+
+currencies_api_getAll:
+	path: /currencies/getAll/
+	defaults: { _controller: PastequeAPIBundle:currencies:getAll }
+
+customers_api_get:
+	path: /customers/get/{id}
+	defaults: { customers: PastequeAPIBundle:customers:get }
+
+customers_api_getAll:
+	path: /customers/getAll/
+	defaults: { customers: PastequeAPIBundle:customers:getAll }
+
+customers_api_getTop:
+	path: /customers/getTop/{limit}
+	defaults: { customers: PastequeAPIBundle:customers:getTop, limit: 10 }
+
+customers_api_addPrepaid:
+	path: /customers/addPrepaid/{id}/{amount}
+	defaults: { customers: PastequeAPIBundle:customers:addPrepaid }
+#customers_api_save:
+#	path: /customers/save/{}
+#a voir dans l'api de base 
