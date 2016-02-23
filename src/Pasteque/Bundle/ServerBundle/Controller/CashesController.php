@@ -35,9 +35,9 @@ cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
 
-class CashesController extends APIService {
-
-  public function getAction($id, $registerid)
+class CashesController {
+//action to update to correspond to new code structure
+  public function getAction($id)
   {
     if (isset($this->params['id'])) {
       $ret = $srv->get($this->params['id']);
@@ -50,103 +50,86 @@ class CashesController extends APIService {
     $this->succeed($ret);
   }
 
-    /** Run the service and set result. */
-    protected function proceed() {
-        $srv = new CashesService();
-        $db = DB::get();
-        switch ($this->action) {
-        case 'get':
-            if (isset($this->params['id'])) {
-                $ret = $srv->get($this->params['id']);
-            } else {
-                $ret = $srv->getCashRegister($this->params['cashRegisterId']);
-                if ($ret === null || $ret->isClosed()) {
-                    $ret = null;
-                }
-            }
-            $this->succeed($ret);
-            break;
-        case 'zticket':
-            $ret = $srv->getZTicket($this->params['id']);
-            $this->succeed($ret);
-            break;
-        case 'search':
-            $cashRegisterId = $this->getParam("cashRegisterId");
-            $dateStart = $this->getParam("dateStart");
-            $dateStop = $this->getParam("dateStop");
-            $conditions = array();
-            if ($cashRegisterId !== null) {
-                $conditions[] = array("cashRegisterId", "=", $cashRegisterId);
-            }
-            if ($dateStart !== null) {
-                $conditions[] = array("openDate", ">=",
-                        $db->dateVal($dateStart));
-            }
-            if ($dateStop !== null) {
-                $conditions[] = array("closeDate", "<=",
-                        $db->dateVal($dateStop));
-            }
-            $this->succeed($srv->search($conditions));
-            break;
-        case 'update':
-            $json = json_decode($this->params['cash']);
-            $open = null;
-            $id = null;
-            if (property_exists($json, 'id')) {
-                $id = $json->id;
-            }
-            if (property_exists($json, 'openDate')) {
-                $open = $json->openDate;
-            }
-            $close = null;
-            if (property_exists($json, 'closeDate')) {
-                $close = $json->closeDate;
-            }
-            $openCash = null;
-            if (property_exists($json, 'openCash')) {
-                $openCash = $json->openCash;
-            }
-            $closeCash = null;
-            if (property_exists($json, 'closeCash')) {
-                $closeCash = $json->closeCash;
-            }
-            $expectedCash = null;
-            if (property_exists($json, 'expectedCash')) {
-                $expectedCash = $json->expectedCash;
-            }
-            $cashRegisterId = $json->cashRegisterId;
-            $sequence = null;
-            if (property_exists($json, 'sequence')) {
-                $sequence = $json->sequence;
-            }
-            if ($id !== null) {
-                // Update an existing cash
-                $cash = Cash::__build($id, $cashRegisterId, $sequence, $open,
-                        $close, $openCash, $closeCash, $expectedCash);
-                if ($srv->update($cash)) {
-                    $this->succeed($cash);
-                } else {
-                    $this->fail(APIError::$ERR_GENERIC);
-                }
-            } else {
-                // Create a cash and update with given data
-                if ($srv->add($cashRegisterId)) {
-                    $cash = $srv->getCashRegister($cashRegisterId);
-                    $cash->openDate = $open;
-                    $cash->closeDate = $close;
-                    $cash->openCash = $openCash;
-                    $cash->closeCash = $closeCash;
-                    $cash->expectedCash = $expectedCash;
-                    if ($srv->update($cash)) {
-                        $this->succeed($cash);
-                    } else {
-                        $this->fail(APIError::$ERR_GENERIC);
-                    }
-                } else {
-                    $this->fail(APIError::$ERR_GENERIC);
-                }
-            }
-            break;
-        }
+  public function updateAction($id)
+  {
+    $json = json_decode($this->params['cash']);
+    $open = null;
+    $id = null;
+    if (property_exists($json, 'id')) {
+      $id = $json->id;
     }
+    if (property_exists($json, 'openDate')) {
+      $open = $json->openDate;
+    }
+    $close = null;
+    if (property_exists($json, 'closeDate')) {
+      $close = $json->closeDate;
+    }
+    $openCash = null;
+    if (property_exists($json, 'openCash')) {
+      $openCash = $json->openCash;
+    }
+    $closeCash = null;
+    if (property_exists($json, 'closeCash')) {
+      $closeCash = $json->closeCash;
+    }
+    $expectedCash = null;
+    if (property_exists($json, 'expectedCash')) {
+      $expectedCash = $json->expectedCash;
+    }
+    $cashRegisterId = $json->cashRegisterId;
+    $sequence = null;
+    if (property_exists($json, 'sequence')) {
+      $sequence = $json->sequence;
+    }
+    if ($id !== null) {
+      // Update an existing cash
+      $cash = Cash::__build($id, $cashRegisterId, $sequence, $open,
+        $close, $openCash, $closeCash, $expectedCash);
+      if ($srv->update($cash)) {
+        $this->succeed($cash);
+      } else {
+        $this->fail(APIError::$ERR_GENERIC);
+      }
+    } else {
+      // Create a cash and update with given data
+      if ($srv->add($cashRegisterId)) {
+        $cash = $srv->getCashRegister($cashRegisterId);
+        $cash->openDate = $open;
+        $cash->closeDate = $close;
+        $cash->openCash = $openCash;
+        $cash->closeCash = $closeCash;
+        $cash->expectedCash = $expectedCash;
+        if ($srv->update($cash)) {
+          $this->succeed($cash);
+        } else {
+          $this->fail(APIError::$ERR_GENERIC);
+        }
+      } else {
+        $this->fail(APIError::$ERR_GENERIC);
+      }
+    }
+  }
+
+  public function searchAction($cashRegisterId, $dateStart, $dateStop)
+  {
+    $conditions = array();
+    if ($cashRegisterId !== null) {
+      $conditions[] = array("cashRegisterId", "=", $cashRegisterId);
+    }
+    if ($dateStart !== null) {
+      $conditions[] = array("openDate", ">=",
+        $db->dateVal($dateStart));
+    }
+    if ($dateStop !== null) {
+      $conditions[] = array("closeDate", "<=",
+        $db->dateVal($dateStop));
+    }
+    $this->succeed($srv->search($conditions));
+  }
+  public function zticketAction($id)
+  {
+    $ret = $srv->getZTicket($this->params['id']);
+    $this->succeed($ret);
+  }
 }

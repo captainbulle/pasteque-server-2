@@ -72,7 +72,9 @@ customers_api_getTop:
 customers_api_addPrepaid:
 	path: /customers/addPrepaid/{id}/{amount}
 	defaults: { customers: PastequeAPIBundle:customers:addPrepaid }
-
+#
+#
+#
 #customers_api_save:
 #	path: /customers/save/{}
 #a voir dans l'api de base 
@@ -181,9 +183,14 @@ tickets_api_share:
 	path: /tickets/share/{ticket}
 	defaults: { tickets: PastequeAPIBundle:tickets:share }
 
+# Methode save à verifier car les arguments sont des objets defins eux meme par des arguments
+#
+#
+#
+#
 tickets_api_save:
 	path: /tickets/save/{cashId}/{ticket}/{tickets}
-	defaults: { tickets: PastequeAPIBundle:tickets:save } # Methode save à verifier car les arguments sont des objets defins eux meme par des arguments
+	defaults: { tickets: PastequeAPIBundle:tickets:save }
 
 tickets_api_getAll:
 	path: /tickets/getAll/
@@ -213,6 +220,10 @@ users_api_updPwd:
 	path: /users/updPwd/{id}/{oldPwd}/{newPwd}
 	defaults: { users: PastequeAPIBundle:users:updPwd }
 
+# api version à verifier
+#
+#
+#
 version_api_anyAction:
 	path: /version/anyAction/
-	defaults: { version: PastequeAPIBundle:version:anyAction } # api version à verifier
+	defaults: { version: PastequeAPIBundle:version:anyAction }
