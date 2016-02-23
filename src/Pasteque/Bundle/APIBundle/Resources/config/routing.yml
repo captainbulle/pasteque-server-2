@@ -1,3 +1,0 @@
-pasteque_api_homepage:
-    path:     /
-    defaults: { _controller: PastequeAPIBundle:Default:index }
