@@ -9,6 +9,9 @@ Pasteque\Bundle\ServerBundle\Entity\Cash\ClosedCash:
             generator:
                 strategy: AUTO
     fields:
+        money:
+            type: string
+            length: 255
         cashRegisterId:
             type: string
             length: 255

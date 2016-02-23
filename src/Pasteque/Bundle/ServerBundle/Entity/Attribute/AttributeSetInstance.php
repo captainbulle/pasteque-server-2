@@ -22,11 +22,6 @@ class AttributeSetInstance{
 
     private $attrInsts;
 
-    public static function __build($attrSetId, $value) {
-        $attrSetInst = new AttributeSetInstance($attrSetId, $value);
-        return $attrSetInst;
-    }
-
     public function __construct($attrSetId, $value) {
         $this->id = com_create_guid();
         $this->attrSetId = $attrSetId;

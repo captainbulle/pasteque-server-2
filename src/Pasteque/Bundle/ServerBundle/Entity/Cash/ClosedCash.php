@@ -55,11 +55,16 @@ class ClosedCash{
     /** Optionnal total */
     //private $total;
 
-    public static function __build($money, $cashRegisterId, $hostSequence, $openDate, $closeDate, $openCash, $closeCash, $expectedCash) {
-        $closedCash = new ClosedCash($money, $cashRegisterId, $hostSequence, $openDate, $closeDate, $openCash, $closeCash, $expectedCash);
-        return $closedCash;
-    }
-
+    /**
+     * @param string $money
+     * @param int $cashRegisterId
+     * @param int $hostSequence
+     * @param \DateTime $openDate
+     * @param \DateTime $closeDate
+     * @param float $openCash
+     * @param float $closeCash
+     * @param float $expectedCash
+     */
     public function __construct($money, $cashRegisterId, $hostSequence, $openDate, $closeDate, $openCash, $closeCash, $expectedCash) {
         $this->money = $money;
         $this->cashRegisterId = $cashRegisterId;

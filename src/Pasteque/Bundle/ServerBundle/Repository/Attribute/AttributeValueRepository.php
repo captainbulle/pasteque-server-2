@@ -1,6 +1,6 @@
 <?php
 
-namespace Pasteque\Bundle\ServerBundle\Repository;
+namespace Pasteque\Bundle\ServerBundle\Repository\Attribute;
 
 /**
  * AttributeValueRepository
