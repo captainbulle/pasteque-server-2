@@ -1878,7 +1878,7 @@
                 {
                     "name": "Symfony Community",
                     "homepage": "https://symfony.com/contributors"
-                }   
+                }
             ],
             "description": "Symfony polyfill backporting some PHP 7.0+ features to lower PHP versions",
             "homepage": "https://symfony.com",

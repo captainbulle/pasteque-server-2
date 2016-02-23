@@ -48,6 +48,8 @@ class AttributeController extends Controller {
 
     $response = new Response(json_encode($attributes));
     $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
   }
 
   public function getAction($id)
@@ -57,5 +59,7 @@ class AttributeController extends Controller {
 
     $response = new Response(json_encode($attributes));
     $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
   }
 }
