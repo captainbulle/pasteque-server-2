@@ -1,5 +1,12 @@
 # Routing qui permet de repondre aux requetes. routes ecrites sous la forme "nom_api_methode:" 
 # URL sous forme "path:/api/methode/{argument}
+attribute_api_get:
+    path: /attribute/get/{id}
+    defaults: { _controller: PastequeAPIBundle:Attribute:get }
+
+attribute_api_getAll:
+    path: /attribute/getAll
+    defaults: { _controller: PastequeAPIBundle:Attribute:getAll }
 
 cashes_api_get:
     path: /cashes/get/{id}/{CashRegisterId}
@@ -21,25 +28,25 @@ cashMvts_api_move:
     path: /cashMvts/move/{id}/{date}/{payment}/{note}
     defaults: { _controller: PastequeAPIBundle:cashMvts:get, id: -1, CashRegisterId: -1 }
 
- cashesRegisters_api_get:
- 	path: /cashesRegisters/get/{id}/{label}
- 	defaults: { _controller: PastequeAPIBundle:cashesRegisters, id: -1, label: -1 }
+cashesRegisters_api_get:
+  path: /cashesRegisters/get/{id}/{label}
+  defaults: { _controller: PastequeAPIBundle:cashesRegisters, id: -1, label: -1 }
 
- cashesRegisters_api_getAll:
- 	path: /cashesRegisters/getAll/
-    defaults: { _controller: PastequeAPIBundle:cashesRegisters:getAll }
+cashesRegisters_api_getAll:
+  path: /cashesRegisters/getAll/
+  defaults: { _controller: PastequeAPIBundle:cashesRegisters:getAll }
 
- categories_api_get:
- 	path: /categories/get/{id}
- 	defaults: { _controller: PastequeAPIBundle:categories:get }
+categories_api_get:
+  path: /categories/get/{id}
+  defaults: { _controller: PastequeAPIBundle:categories:get }
 
- categories_api_getChildren:
- 	path: /categories/getChildren/{parentId}
- 	defaults: { _controller: PastequeAPIBundle:categories:getChildren }
+categories_api_getChildren:
+  path: /categories/getChildren/{parentId}
+  defaults: { _controller: PastequeAPIBundle:categories:getChildren }
 
- categories_api_getAll:
- 	path: /categories/getAll/
-    defaults: { _controller: PastequeAPIBundle:categories:getAll }
+categories_api_getAll:
+  path: /categories/getAll/
+  defaults: { _controller: PastequeAPIBundle:categories:getAll }
 
 composition_api_getAll:
 	path: /composition/getAll/
