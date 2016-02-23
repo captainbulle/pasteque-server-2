@@ -25,11 +25,11 @@ class AttributeInstance{
      */
     private $value;
 
-    public static function __build($attrSetInstId, $attrId, $value) {
-        $attrInst = new AttributeInstance($attrSetInstId, $attrId, $value);
-        return $attrInst;
-    }
-
+    /**
+     * @param string $attrSetInstId
+     * @param string $attrId
+     * @param string $value
+     */
     public function __construct($attrSetInstId, $attrId, $value) {
         $this->id = com_create_guid();
         $this->attrSetInstId = $attrSetInstId;
@@ -39,7 +39,6 @@ class AttributeInstance{
 
     /**
      * Get id
-     *
      * @return string
      */
     public function getId(){
@@ -48,9 +47,7 @@ class AttributeInstance{
 
     /**
      * Set attrSetInstId
-     *
      * @param string $attrSetInstId
-     *
      * @return AttributeInstance
      */
     public function setAttrSetInstId($attrSetInstId){
@@ -60,7 +57,6 @@ class AttributeInstance{
 
     /**
      * Get attrSetInstId
-     *
      * @return string
      */
     public function getAttrSetInstId(){
@@ -69,9 +65,7 @@ class AttributeInstance{
 
     /**
      * Set attrId
-     *
      * @param string $attrId
-     *
      * @return AttributeInstance
      */
     public function setAttrId($attrId){
@@ -81,7 +75,6 @@ class AttributeInstance{
 
     /**
      * Get attrId
-     *
      * @return string
      */
     public function getAttrId(){
@@ -90,9 +83,7 @@ class AttributeInstance{
 
     /**
      * Set value
-     *
      * @param string $value
-     *
      * @return AttributeInstance
      */
     public function setValue($value){
@@ -102,7 +93,6 @@ class AttributeInstance{
 
     /**
      * Get value
-     *
      * @return string
      */
     public function getValue(){

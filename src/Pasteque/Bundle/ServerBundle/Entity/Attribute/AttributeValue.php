@@ -1,5 +1,5 @@
 <?php
-namespace Pasteque\Bundle\ServerBundle\Entity;
+namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 /**
  * AttributeValue
@@ -14,11 +14,6 @@ class AttributeValue{
      * @var string
      */
     private $value;
-
-    public static function __build($value){
-        $attr_val = new AttributeValue($value);
-        return $attr_val;
-    }
 
     public function __construct($value){
         $this->id = com_create_guid();

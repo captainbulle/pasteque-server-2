@@ -17,11 +17,6 @@ class AttributeSet{
 
     private $attributes;
 
-    public static function __build($name) {
-        $set = new AttributeSet($name);
-        return $set;
-    }
-
     public function __construct($name) {
         $this->id = com_create_guid();
         $this->name = $name;

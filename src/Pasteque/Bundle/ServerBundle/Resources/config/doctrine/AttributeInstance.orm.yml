@@ -1,7 +1,7 @@
-Pasteque\Bundle\ServerBundle\Entity\AttributeInstance:
+Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeInstance:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\AttributeInstanceRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Attribute\AttributeInstanceRepository
     id:
         id:
             type: string

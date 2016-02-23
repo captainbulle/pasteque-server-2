@@ -25,11 +25,6 @@ class AttributeUse{
      */
     private $lineNo;
 
-    public static function __build($attrSetId, $attrId, $lineNo) {
-        $attrUse = new AttributeUse($attrSetId, $attrId, $lineNo);
-        return $attrUse;
-    }
-
     public function __construct($attrSetId, $attrId, $lineNo) {
         $this->id = com_create_guid();
         $this->attrSetId = $attrSetId;
