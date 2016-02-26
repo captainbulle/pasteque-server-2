@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             // added bundles
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Pasteque\Bundle\ServerBundle\PastequeServerBundle(),
-            new Pasteque\Bundle\APIBundle\PastequeAPIBundle(),
+            //new Pasteque\Bundle\APIBundle\PastequeAPIBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
