@@ -1,0 +1,30 @@
+Pasteque\Bundle\ServerBundle\Entity\Cash\ClosedCash:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Cash\ClosedCashRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        money:
+            type: string
+            length: 255
+        cashRegisterId:
+            type: string
+            length: 255
+        hostSequence:
+            type: integer
+        openDate:
+            type: datetime
+        closeDate:
+            type: datetime
+        openCash:
+            type: float
+        closeCash:
+            type: float
+        expectedCash:
+            type: float
+    lifecycleCallbacks: {  }

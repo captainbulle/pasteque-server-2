@@ -1,0 +1,13 @@
+Pasteque\Bundle\ServerBundle\Entity\Attribute\Attribute:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Attribute\AttributeRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        name:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

@@ -1,0 +1,18 @@
+Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeUse:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Attribute\AttributeUseRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        attrSetId:
+            type: string
+            length: 255
+        attrId:
+            type: string
+            length: 255
+        lineNo:
+            type: integer
+    lifecycleCallbacks: {  }

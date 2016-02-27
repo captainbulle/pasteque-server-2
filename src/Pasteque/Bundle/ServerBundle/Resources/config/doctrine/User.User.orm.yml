@@ -1,0 +1,38 @@
+Pasteque\Bundle\ServerBundle\Entity\User\User:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\User\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        password:
+            type: string
+            length: 255
+        roleId:
+            type: string
+            length: 255
+        card:
+            type: string
+            length: 255
+        image:
+            type: blob
+        active:
+            type: tinyint
+        addedDate:
+            type: datetime
+        addedBy:
+            type: string
+            length: 255
+        updatedDate:
+            type: datetime
+        updatedBy:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
