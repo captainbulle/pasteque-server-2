@@ -26,6 +26,7 @@ class Attribute{
     private $dispOrder;
 
     /**
+     * Attribute constructor.
      * @param string $name
      * @param string $dispOrder
      */
