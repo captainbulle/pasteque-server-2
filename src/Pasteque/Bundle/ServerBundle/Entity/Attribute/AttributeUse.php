@@ -27,9 +27,9 @@ class AttributeUse{
 
     /**
      * AttributeUse constructor.
-     * @param $attrSetId
-     * @param $attrId
-     * @param $lineNo
+     * @param string $attrSetId
+     * @param string $attrId
+     * @param int $lineNo
      */
     public function __construct($attrSetId, $attrId, $lineNo) {
         $this->id = com_create_guid();

@@ -1,6 +1,6 @@
 Pasteque\Bundle\ServerBundle\Entity\User\User:
     type: entity
-    table: null
+    table: fos_user
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\User\UserRepository
     id:
         id:
@@ -9,22 +9,18 @@ Pasteque\Bundle\ServerBundle\Entity\User\User:
             generator:
                 strategy: AUTO
     fields:
-        name:
-            type: string
-            length: 255
-        password:
-            type: string
-            length: 255
         roleId:
             type: string
             length: 255
         card:
             type: string
             length: 255
+            nullable: true
         image:
             type: blob
-        active:
-            type: tinyint
+            nullable: true
+        visible:
+            type: boolean
         addedDate:
             type: datetime
         addedBy:
@@ -32,7 +28,9 @@ Pasteque\Bundle\ServerBundle\Entity\User\User:
             length: 255
         updatedDate:
             type: datetime
+            nullable: true
         updatedBy:
             type: string
             length: 255
+            nullable: true
     lifecycleCallbacks: {  }

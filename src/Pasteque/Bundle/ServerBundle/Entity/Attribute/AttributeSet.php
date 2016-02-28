@@ -22,7 +22,7 @@ class AttributeSet{
 
     /**
      * AttributeSet constructor.
-     * @param $name
+     * @param string $name
      */
     public function __construct($name) {
         $this->id = com_create_guid();
@@ -32,7 +32,7 @@ class AttributeSet{
 
     /**
      * Add an attribute to the array attributes
-     * @param $attribute
+     * @param Attribute $attribute
      */
     public function addAttribute($attribute) {
         array_push($this->attributes, $attribute);

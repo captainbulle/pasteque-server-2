@@ -17,7 +17,7 @@ class AttributeValue{
 
     /**
      * AttributeValue constructor.
-     * @param $value
+     * @param string $value
      */
     public function __construct($value){
         $this->id = com_create_guid();

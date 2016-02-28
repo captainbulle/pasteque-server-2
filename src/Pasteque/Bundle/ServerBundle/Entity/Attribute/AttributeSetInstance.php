@@ -20,17 +20,20 @@ class AttributeSetInstance{
      */
     private $description;
 
+    /**
+     * @var array
+     */
     private $attrInsts;
 
     /**
      * AttributeSetInstance constructor.
-     * @param $attrSetId
-     * @param $value
+     * @param string $attrSetId
+     * @param string $description
      */
-    public function __construct($attrSetId, $value) {
+    public function __construct($attrSetId, $description) {
         $this->id = com_create_guid();
         $this->attrSetId = $attrSetId;
-        $this->value = $value;
+        $this->description = $description;
         $this->attrInsts = array();
     }
 

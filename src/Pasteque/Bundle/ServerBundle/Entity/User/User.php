@@ -2,24 +2,16 @@
 
 namespace Pasteque\Bundle\ServerBundle\Entity\User;
 
+use FOS\UserBundle\Model\User as BaseUser;
+
 /**
  * User
  */
-class User{
+class User extends BaseUser{
     /**
      * @var int
      */
-    private $id;
-
-    /**
-     * @var string
-     */
-    private $name;
-
-    /**
-     * @var string
-     */
-    private $password;
+    protected $id;
 
     /**
      * @var string
@@ -37,9 +29,9 @@ class User{
     private $image;
 
     /**
-     * @var int
+     * @var bool
      */
-    private $active;
+    private $visible;
 
     /**
      * @var \DateTime
@@ -63,18 +55,25 @@ class User{
 
     /**
      * User constructor.
-     * @param $name
-     * @param $password
-     * @param $card
-     * @param $image
-     * @param $roleId
+     * @param string $username
+     * @param string $password
+     * @param string $card
+     * @param string $image
+     * @param string $roleId
+     * @param User $user
      */
-    public function __construct($name, $password, $card, $image, $roleId){
-        $this->name = $name;
+    public function __construct($username, $password, $card, $image, $roleId, $user){
+        parent::__construct();
+        $this->username = $username;
         $this->password = $password;
         $this->card = $card;
         $this->image = $image;
         $this->roleId = $roleId;
+        $this->visible = true;
+        $this->addedDate = new \DateTime();
+        $this->addedBy = $user->getUsername();
+        $this->updatedDate = null;
+        $this->updatedBy = null;
     }
 
     /**
@@ -83,42 +82,6 @@ class User{
      */
     public function getId(){
         return $this->id;
-    }
-
-    /**
-     * Set name
-     * @param string $name
-     * @return User
-     */
-    public function setName($name){
-        $this->name = $name;
-        return $this;
-    }
-
-    /**
-     * Get name
-     * @return string
-     */
-    public function getName(){
-        return $this->name;
-    }
-
-    /**
-     * Set password
-     * @param string $password
-     * @return User
-     */
-    public function setPassword($password){
-        $this->password = $password;
-        return $this;
-    }
-
-    /**
-     * Get password
-     * @return string
-     */
-    public function getPassword(){
-        return $this->password;
     }
 
     /**
@@ -176,21 +139,21 @@ class User{
     }
 
     /**
-     * Set active
-     * @param int $active
+     * Set visible
+     * @param boolean $visible
      * @return User
      */
-    public function setActive($active){
-        $this->active = $active;
+    public function setVisible($visible){
+        $this->visible = $visible;
         return $this;
     }
 
     /**
-     * Get active
-     * @return int
+     * Get visible
+     * @return bool
      */
-    public function getActive(){
-        return $this->active;
+    public function getVisible(){
+        return $this->visible;
     }
 
     /**

@@ -1,0 +1,20 @@
+Pasteque\Bundle\ServerBundle\Entity\Place:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\PlaceRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        name:
+            type: string
+            length: 255
+        'x':
+            type: integer
+        'y':
+            type: integer
+        floorId:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }
