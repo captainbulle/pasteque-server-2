@@ -2,9 +2,9 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Cash;
 
 /**
- * ClosedCash
+ * Cash
  */
-class ClosedCash{
+class Cash{
     /**
      * @var int
      */
@@ -102,7 +102,7 @@ class ClosedCash{
     /**
      * Set money
      * @param string $money
-     * @return ClosedCash
+     * @return Cash
      */
     public function setMoney($money){
         $this->money = $money;
@@ -120,7 +120,7 @@ class ClosedCash{
     /**
      * Set cashRegisterId
      * @param int $cashRegisterId
-     * @return ClosedCash
+     * @return Cash
      */
     public function setCashRegisterId($cashRegisterId){
         $this->cashRegisterId = $cashRegisterId;
@@ -138,7 +138,7 @@ class ClosedCash{
     /**
      * Set hostSequence
      * @param integer $hostSequence
-     * @return ClosedCash
+     * @return Cash
      */
     public function setHostSequence($hostSequence){
         $this->hostSequence = $hostSequence;
@@ -156,7 +156,7 @@ class ClosedCash{
     /**
      * Set openDate
      * @param \DateTime $openDate
-     * @return ClosedCash
+     * @return Cash
      */
     public function setOpenDate($openDate){
         $this->openDate = $openDate;
@@ -174,7 +174,7 @@ class ClosedCash{
     /**
      * Set closeDate
      * @param \DateTime $closeDate
-     * @return ClosedCash
+     * @return Cash
      */
     public function setCloseDate($closeDate){
         $this->closeDate = $closeDate;
@@ -192,7 +192,7 @@ class ClosedCash{
     /**
      * Set openCash
      * @param float $openCash
-     * @return ClosedCash
+     * @return Cash
      */
     public function setOpenCash($openCash){
         $this->openCash = $openCash;
@@ -210,7 +210,7 @@ class ClosedCash{
     /**
      * Set closeCash
      * @param float $closeCash
-     * @return ClosedCash
+     * @return Cash
      */
     public function setCloseCash($closeCash){
         $this->closeCash = $closeCash;
@@ -228,7 +228,7 @@ class ClosedCash{
     /**
      * Set expectedCash
      * @param float $expectedCash
-     * @return ClosedCash
+     * @return Cash
      */
     public function setExpectedCash($expectedCash){
         $this->expectedCash = $expectedCash;

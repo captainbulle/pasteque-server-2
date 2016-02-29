@@ -1,0 +1,36 @@
+Pasteque\Bundle\ServerBundle\Entity\Currency:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\CurrencyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        symbol:
+            type: string
+            length: '10'
+            nullable: true
+        decimalSeparator:
+            type: string
+            length: '1'
+            nullable: true
+        thousandsSeparator:
+            type: string
+            length: '1'
+            nullable: true
+        format:
+            type: string
+            length: '20'
+        rate:
+            type: float
+        isMain:
+            type: boolean
+        isActive:
+            type: boolean
+    lifecycleCallbacks: {  }

@@ -1,7 +1,7 @@
-Pasteque\Bundle\ServerBundle\Entity\Cash\ClosedCash:
+Pasteque\Bundle\ServerBundle\Entity\Cash\Cash:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Cash\ClosedCashRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository
     id:
         id:
             type: integer

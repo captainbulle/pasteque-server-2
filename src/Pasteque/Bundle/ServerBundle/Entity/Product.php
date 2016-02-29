@@ -154,6 +154,32 @@ class Product
     }
 
     /**
+     * Get the price with tax
+     * @return float
+     */
+    function getTotalPrice() {
+        $taxCat = TaxesService::get($this->taxCatId);
+        $currentTax = $taxCat->getCurrentTax();
+        if ($currentTax != null) {
+            return $this->priceSell * (1 + $currentTax->rate);
+        } else {
+            return $this->priceSell;
+        }
+    }
+
+    /**
+     * Get the difference between the sell price and the buy price
+     * @return float|null
+     */
+    function getMargin() {
+        if ($this->priceBuy !== null) {
+            return $this->priceSell / $this->priceBuy;
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * Get id
      * @return string
      */
