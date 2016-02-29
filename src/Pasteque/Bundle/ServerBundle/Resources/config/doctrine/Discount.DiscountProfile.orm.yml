@@ -1,0 +1,20 @@
+Pasteque\Bundle\ServerBundle\Entity\Discount\DiscountProfile:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Discount\DiscountProfileRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        rate:
+            type: float
+        dispOrder:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

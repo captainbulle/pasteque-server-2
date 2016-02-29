@@ -26,6 +26,7 @@ class AttributeInstance{
     private $value;
 
     /**
+     * AttributeInstance constructor.
      * @param string $attrSetInstId
      * @param string $attrId
      * @param string $value

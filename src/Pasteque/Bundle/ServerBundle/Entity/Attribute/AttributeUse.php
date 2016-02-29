@@ -26,6 +26,7 @@ class AttributeUse{
     private $lineNo;
 
     /**
+     * AttributeUse constructor.
      * @param string $attrSetId
      * @param string $attrId
      * @param int $lineNo

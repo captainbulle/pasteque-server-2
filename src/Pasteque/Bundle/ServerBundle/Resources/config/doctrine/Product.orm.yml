@@ -1,0 +1,64 @@
+Pasteque\Bundle\ServerBundle\Entity\Product:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\ProductRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        reference:
+            type: string
+            length: 255
+        barcode:
+            type: string
+            length: 255
+            nullable: true
+        barcodeType:
+            type: string
+            length: 255
+            nullable: true
+        name:
+            type: string
+            length: 255
+        priceBuy:
+            type: float
+            nullable: true
+        priceSell:
+            type: float
+        categoryId:
+            type: string
+            length: 255
+        providerId:
+            type: string
+            length: 255
+            nullable: true
+        taxCatId:
+            type: string
+            length: 255
+        attributeSetId:
+            type: string
+            length: 255
+        stockCost:
+            type: float
+            nullable: true
+        stockVolume:
+            type: float
+            nullable: true
+        image:
+            type: blob
+            nullable: true
+        isCom:
+            type: boolean
+        isScale:
+            type: boolean
+        attributes:
+            type: blob
+            nullable: true
+        discountEnabled:
+            type: boolean
+        discountRate:
+            type: float
+        visible:
+            type: boolean
+    lifecycleCallbacks: {  }

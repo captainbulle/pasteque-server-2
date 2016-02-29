@@ -1,0 +1,31 @@
+Pasteque\Bundle\ServerBundle\Entity\Discount\Discount:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Discount\DiscountRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        startDate:
+            type: datetime
+        endDate:
+            type: datetime
+        rate:
+            type: float
+            nullable: true
+        barcode:
+            type: string
+            length: '21'
+            nullable: true
+        barcodeType:
+            type: integer
+        dispOrder:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

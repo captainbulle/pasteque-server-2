@@ -26,6 +26,10 @@ class AttributeSetInstance{
     private $attrInsts;
 
     /**
+<<<<<<< HEAD
+=======
+     * AttributeSetInstance constructor.
+>>>>>>> 94e39f255e63d2b8404cb589ffbb21152ea3237e
      * @param string $attrSetId
      * @param string $description
      */
@@ -37,7 +41,8 @@ class AttributeSetInstance{
     }
 
     /**
-     * @param string $attrInst
+     * Add an instance of attribute in the array attrInsts
+     * @param $attrInst
      */
     public function addAttrInst($attrInst) {
         array_push($this->attrInsts, $attrInst);

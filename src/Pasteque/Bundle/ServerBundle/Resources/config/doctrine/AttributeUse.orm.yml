@@ -15,4 +15,5 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeUse:
             length: 255
         lineNo:
             type: integer
+            nullable: true
     lifecycleCallbacks: {  }

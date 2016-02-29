@@ -21,6 +21,7 @@ class AttributeSet{
     private $attributes;
 
     /**
+     * AttributeSet constructor.
      * @param string $name
      */
     public function __construct($name) {
@@ -30,7 +31,8 @@ class AttributeSet{
     }
 
     /**
-     * @param string $attribute
+     * Add an attribute to the array attributes
+     * @param Attribute $attribute
      */
     public function addAttribute($attribute) {
         array_push($this->attributes, $attribute);

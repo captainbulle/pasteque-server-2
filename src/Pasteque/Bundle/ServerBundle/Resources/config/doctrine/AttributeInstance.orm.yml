@@ -16,4 +16,5 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeInstance:
         value:
             type: string
             length: 255
+            nullable: true
     lifecycleCallbacks: {  }

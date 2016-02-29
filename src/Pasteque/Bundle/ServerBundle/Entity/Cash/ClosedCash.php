@@ -56,6 +56,7 @@ class ClosedCash{
     //private $total;
 
     /**
+     * ClosedCash constructor.
      * @param string $money
      * @param int $cashRegisterId
      * @param int $hostSequence
@@ -76,17 +77,22 @@ class ClosedCash{
         $this->expectedCash = $expectedCash;
     }
 
+    /**
+     * @return bool
+     */
     function isClosed() {
         return $this->closeDate != null;
     }
 
+    /**
+     * @return bool
+     */
     function isOpened() {
         return $this->openDate != null;
     }
 
     /**
      * Get id
-     *
      * @return int
      */
     public function getId(){
@@ -95,9 +101,7 @@ class ClosedCash{
 
     /**
      * Set money
-     *
      * @param string $money
-     *
      * @return ClosedCash
      */
     public function setMoney($money){
@@ -107,7 +111,6 @@ class ClosedCash{
 
     /**
      * Get money
-     *
      * @return string
      */
     public function getMoney(){
@@ -116,9 +119,7 @@ class ClosedCash{
 
     /**
      * Set cashRegisterId
-     *
      * @param int $cashRegisterId
-     *
      * @return ClosedCash
      */
     public function setCashRegisterId($cashRegisterId){
@@ -128,7 +129,6 @@ class ClosedCash{
 
     /**
      * Get cashRegisterId
-     *
      * @return int
      */
     public function getCashRegisterId(){
@@ -137,9 +137,7 @@ class ClosedCash{
 
     /**
      * Set hostSequence
-     *
      * @param integer $hostSequence
-     *
      * @return ClosedCash
      */
     public function setHostSequence($hostSequence){
@@ -149,7 +147,6 @@ class ClosedCash{
 
     /**
      * Get hostSequence
-     *
      * @return int
      */
     public function getHostSequence(){
@@ -158,9 +155,7 @@ class ClosedCash{
 
     /**
      * Set openDate
-     *
      * @param \DateTime $openDate
-     *
      * @return ClosedCash
      */
     public function setOpenDate($openDate){
@@ -170,7 +165,6 @@ class ClosedCash{
 
     /**
      * Get openDate
-     *
      * @return \DateTime
      */
     public function getOpenDate(){
@@ -179,9 +173,7 @@ class ClosedCash{
 
     /**
      * Set closeDate
-     *
      * @param \DateTime $closeDate
-     *
      * @return ClosedCash
      */
     public function setCloseDate($closeDate){
@@ -191,7 +183,6 @@ class ClosedCash{
 
     /**
      * Get closeDate
-     *
      * @return \DateTime
      */
     public function getCloseDate(){
@@ -200,9 +191,7 @@ class ClosedCash{
 
     /**
      * Set openCash
-     *
      * @param float $openCash
-     *
      * @return ClosedCash
      */
     public function setOpenCash($openCash){
@@ -212,7 +201,6 @@ class ClosedCash{
 
     /**
      * Get openCash
-     *
      * @return float
      */
     public function getOpenCash(){
@@ -221,9 +209,7 @@ class ClosedCash{
 
     /**
      * Set closeCash
-     *
      * @param float $closeCash
-     *
      * @return ClosedCash
      */
     public function setCloseCash($closeCash){
@@ -233,7 +219,6 @@ class ClosedCash{
 
     /**
      * Get closeCash
-     *
      * @return float
      */
     public function getCloseCash(){
@@ -242,9 +227,7 @@ class ClosedCash{
 
     /**
      * Set expectedCash
-     *
      * @param float $expectedCash
-     *
      * @return ClosedCash
      */
     public function setExpectedCash($expectedCash){
@@ -254,7 +237,6 @@ class ClosedCash{
 
     /**
      * Get expectedCash
-     *
      * @return float
      */
     public function getExpectedCash(){

@@ -16,6 +16,7 @@ class AttributeValue{
     private $value;
 
     /**
+     * AttributeValue constructor.
      * @param string $value
      */
     public function __construct($value){

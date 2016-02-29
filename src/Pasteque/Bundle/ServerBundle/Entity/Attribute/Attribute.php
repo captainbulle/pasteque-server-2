@@ -52,6 +52,7 @@ class Attribute{
     private $dispOrder;
 
     /**
+     * Attribute constructor.
      * @param string $name
      * @param string $dispOrder
      * @param \Pasteque\Bundle\ServerBundle\Entity\User\User $user
