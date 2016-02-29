@@ -1,0 +1,76 @@
+Pasteque\Bundle\ServerBundle\Entity\Provider:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\ProviderRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        name:
+            type: string
+            length: 255
+        image:
+            type: blob
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+        address2:
+            type: string
+            length: 255
+            nullable: true
+        postal:
+            type: string
+            length: 255
+            nullable: true
+        city:
+            type: string
+            length: 255
+            nullable: true
+        region:
+            type: string
+            length: 255
+            nullable: true
+        country:
+            type: string
+            length: 255
+            nullable: true
+        firstname:
+            type: string
+            length: 255
+            nullable: true
+        lastname:
+            type: string
+            length: 255
+            nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        phone:
+            type: string
+            length: 255
+            nullable: true
+        phone2:
+            type: string
+            length: 255
+            nullable: true
+        website:
+            type: string
+            length: 255
+            nullable: true
+        fax:
+            type: string
+            length: 255
+            nullable: true
+        notes:
+            type: text
+            nullable: true
+        dispOrder:
+            type: integer
+            nullable: true
+        visible:
+            type: boolean
+    lifecycleCallbacks: {  }

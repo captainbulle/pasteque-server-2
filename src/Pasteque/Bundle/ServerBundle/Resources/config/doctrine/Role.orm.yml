@@ -1,0 +1,16 @@
+Pasteque\Bundle\ServerBundle\Entity\Role:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\RoleRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        name:
+            type: string
+            length: 255
+        permissions:
+            type: blob
+            nullable: true
+    lifecycleCallbacks: {  }
