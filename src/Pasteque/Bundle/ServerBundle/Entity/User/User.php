@@ -38,7 +38,7 @@ class User
     private $image;
 
     /**
-     * @var tinyint
+     * @var string
      */
     private $active;
 

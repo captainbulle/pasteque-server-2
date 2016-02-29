@@ -15,6 +15,9 @@ class AttributeValue{
      */
     private $value;
 
+    /**
+     * @param string $value
+     */
     public function __construct($value){
         $this->id = com_create_guid();
         $this->value = $value;
@@ -22,7 +25,6 @@ class AttributeValue{
 
     /**
      * Get id
-     *
      * @return string
      */
     public function getId(){
@@ -31,9 +33,7 @@ class AttributeValue{
 
     /**
      * Set value
-     *
      * @param string $value
-     *
      * @return AttributeValue
      */
     public function setValue($value){
@@ -43,7 +43,6 @@ class AttributeValue{
 
     /**
      * Get value
-     *
      * @return string
      */
     public function getValue(){

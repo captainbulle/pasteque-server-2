@@ -15,21 +15,29 @@ class AttributeSet{
      */
     private $name;
 
+    /**
+     * @var array
+     */
     private $attributes;
 
+    /**
+     * @param string $name
+     */
     public function __construct($name) {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->attributes = array();
     }
 
+    /**
+     * @param string $attribute
+     */
     public function addAttribute($attribute) {
         array_push($this->attributes, $attribute);
     }
 
     /**
      * Get id
-     *
      * @return string
      */
     public function getId(){
@@ -38,9 +46,7 @@ class AttributeSet{
 
     /**
      * Set name
-     *
      * @param string $name
-     *
      * @return AttributeSet
      */
     public function setName($name){
@@ -50,13 +56,16 @@ class AttributeSet{
 
     /**
      * Get name
-     *
      * @return string
      */
     public function getName(){
         return $this->name;
     }
 
+    /**
+     * Get attributes
+     * @return array
+     */
     public function getAttributes(){
         return $this->attributes;
     }

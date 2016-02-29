@@ -25,6 +25,11 @@ class AttributeUse{
      */
     private $lineNo;
 
+    /**
+     * @param string $attrSetId
+     * @param string $attrId
+     * @param int $lineNo
+     */
     public function __construct($attrSetId, $attrId, $lineNo) {
         $this->id = com_create_guid();
         $this->attrSetId = $attrSetId;
@@ -34,7 +39,6 @@ class AttributeUse{
 
     /**
      * Get id
-     *
      * @return int
      */
     public function getId(){
@@ -43,9 +47,7 @@ class AttributeUse{
 
     /**
      * Set attrSetId
-     *
      * @param string $attrSetId
-     *
      * @return AttributeUse
      */
     public function setAttrSetId($attrSetId){
@@ -55,7 +57,6 @@ class AttributeUse{
 
     /**
      * Get attrSetId
-     *
      * @return string
      */
     public function getAttrSetId(){
@@ -64,9 +65,7 @@ class AttributeUse{
 
     /**
      * Set attrId
-     *
      * @param string $attrId
-     *
      * @return AttributeUse
      */
     public function setAttrId($attrId){
@@ -76,7 +75,6 @@ class AttributeUse{
 
     /**
      * Get attrId
-     *
      * @return string
      */
     public function getAttrId(){
@@ -85,9 +83,7 @@ class AttributeUse{
 
     /**
      * Set lineNo
-     *
      * @param integer $lineNo
-     *
      * @return AttributeUse
      */
     public function setLineNo($lineNo){
@@ -97,7 +93,6 @@ class AttributeUse{
 
     /**
      * Get lineNo
-     *
      * @return int
      */
     public function getLineNo(){

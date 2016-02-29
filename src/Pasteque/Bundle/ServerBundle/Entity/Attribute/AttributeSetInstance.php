@@ -20,22 +20,31 @@ class AttributeSetInstance{
      */
     private $description;
 
+    /**
+     * @var array
+     */
     private $attrInsts;
 
-    public function __construct($attrSetId, $value) {
+    /**
+     * @param string $attrSetId
+     * @param string $description
+     */
+    public function __construct($attrSetId, $description) {
         $this->id = com_create_guid();
         $this->attrSetId = $attrSetId;
-        $this->value = $value;
+        $this->description = $description;
         $this->attrInsts = array();
     }
 
+    /**
+     * @param string $attrInst
+     */
     public function addAttrInst($attrInst) {
         array_push($this->attrInsts, $attrInst);
     }
 
     /**
      * Get id
-     *
      * @return string
      */
     public function getId(){
@@ -44,9 +53,7 @@ class AttributeSetInstance{
 
     /**
      * Set attrSetId
-     *
      * @param string $attrSetId
-     *
      * @return AttributeSetInstance
      */
     public function setAttrSetId($attrSetId){
@@ -56,7 +63,6 @@ class AttributeSetInstance{
 
     /**
      * Get attrSetId
-     *
      * @return string
      */
     public function getAttrSetId(){
@@ -65,9 +71,7 @@ class AttributeSetInstance{
 
     /**
      * Set description
-     *
      * @param string $description
-     *
      * @return AttributeSetInstance
      */
     public function setDescription($description){
@@ -77,13 +81,16 @@ class AttributeSetInstance{
 
     /**
      * Get value
-     *
      * @return string
      */
     public function getDescription(){
         return $this->description;
     }
 
+    /**
+     * Get attrInsts
+     * @return array
+     */
     public function getAttrInsts(){
         return $this->attrInsts;
     }
