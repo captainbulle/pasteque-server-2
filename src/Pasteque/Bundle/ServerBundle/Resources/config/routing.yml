@@ -11,7 +11,7 @@ attribute_api_getAll:
 cashes_api_get:
     path: /cashes/get/{type}/{id}
     defaults: { _controller: PastequeServerBundle:Cashes:get }
-  requirements:
+    requirements:
       type:  cash|cashRegister
 
 cashes_api_update:
@@ -136,15 +136,25 @@ places_api_getAll:
     defaults: { places: PastequeServerBundle:places:getAll }
 
 products_api_get:
-    path: /products/get/{id}
+    path: /products/get/{type}/{id}
     defaults: { products: PastequeServerBundle:products:get }
+    requirements:
+      type:  product|ref|code
+
+provider_api_get:
+    path: /ressources/get/{id}
+    defaults: { ressources: PastequeServerBundle:provider:get }
+
+provider_api_get:
+    path: /ressources/getAll
+    defaults: { ressources: PastequeServerBundle:provider:getAll }
 
 products_api_getAll:
     path: /products/getAll/{all}
     defaults: { products: PastequeServerBundle:products:getAll }
 
 products_api_getCategory:
-    path: /products/getCategory/{id}
+    path: /products/getCategory/{categoryId}
     defaults: { products: PastequeServerBundle:products:getCategory }
 
 ressources_api_get:

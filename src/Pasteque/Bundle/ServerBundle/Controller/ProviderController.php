@@ -23,36 +23,25 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class CurrencyController extends Controller {
+class ProviderController extends Controller {
 
   public function getAction($id)
   {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Currency');
-    $currency = $repo->find($id);
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Provider');
+    $provider = $repo->find($id);
 
-    $response = new Response(json_encode($currency));
+    $response = new Response(json_encode($provider));
     $response->headers->set('Content-Type', 'application/json');
 
     return $response;
   }
 
-  public function getMainAction()
+  public function getAllAction($id)
   {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $currency = $repo->findBy('main', true);
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Provider');
+    $providers = $repo->findAll();
 
-    $response = new Response(json_encode($currency));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
-
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $currencies = $repo->findAll();
-
-    $response = new Response(json_encode($currencies));
+    $response = new Response(json_encode($providers));
     $response->headers->set('Content-Type', 'application/json');
 
     return $response;

@@ -18,22 +18,8 @@
 //    You should have received a copy of the GNU General Public License
 //    along with POS-Tech.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace Pasteque\Bundle\ServerBundle\Services;
+namespace Pasteque\Bundle\ServerBundle\Controller;
 
-/* Cash API specification
-
-GET(cashRegisterId)
-When client request a new cash, the server check for an active cash for
-requested cash register. If found return it. Otherwise return NULL.
-
-GET(id)
-Get cash by id, no matter it's state.
-
-UPDATE(cash)
-When client sends a cash, it may have an id or not. If the id is present the
-cash is updated. If not a new cash is created. In all cases return the cash.
-
-*/
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 

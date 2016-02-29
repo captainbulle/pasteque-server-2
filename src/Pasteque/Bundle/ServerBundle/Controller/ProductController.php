@@ -23,25 +23,22 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class CurrencyController extends Controller {
+class ProductController extends Controller {
 
-  public function getAction($id)
+  public function getAction($id, $type)
   {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Currency');
-    $currency = $repo->find($id);
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
+    $product = null;
 
-    $response = new Response(json_encode($currency));
-    $response->headers->set('Content-Type', 'application/json');
+    if ($type == 'product') {
+        $product = $repo->find($id);
+    } elseif ($type == 'ref') {
+        $product = $repo->findBy('reference', $id);
+    } elseif ($type == 'code') {
+        $product = $repo->findBy('code', $id);
+    }
 
-    return $response;
-  }
-
-  public function getMainAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $currency = $repo->findBy('main', true);
-
-    $response = new Response(json_encode($currency));
+    $response = new Response(json_encode($product));
     $response->headers->set('Content-Type', 'application/json');
 
     return $response;
@@ -49,10 +46,21 @@ class CurrencyController extends Controller {
 
   public function getAllAction()
   {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $currencies = $repo->findAll();
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
+    $products = $repo->findAll();
 
-    $response = new Response(json_encode($currencies));
+    $response = new Response(json_encode($products));
+    $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
+  }
+
+  public function getCategoryAction($categoryId)
+  {
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
+    $products = $repo->findBy('category', $categoryId);
+
+    $response = new Response(json_encode($products));
     $response->headers->set('Content-Type', 'application/json');
 
     return $response;
