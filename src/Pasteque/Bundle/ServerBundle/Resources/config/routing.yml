@@ -9,8 +9,10 @@ attribute_api_getAll:
     defaults: { _controller: PastequeServerBundle:Attribute:getAll }
 
 cashes_api_get:
-    path: /cashes/get/{id}/{CashRegisterId}
-    defaults: { _controller: PastequeServerBundle:Cashes:get, id: -1, CashRegisterId: -1 }
+    path: /cashes/get/{type}/{id}
+    defaults: { _controller: PastequeServerBundle:Cashes:get }
+  requirements:
+      type:  cash|cashRegister
 
 cashes_api_update:
     path: /cashes/update/{id}
@@ -79,7 +81,6 @@ customers_api_getTop:
 customers_api_addPrepaid:
     path: /customers/addPrepaid/{id}/{amount}
     defaults: { customers: PastequeServerBundle:customers:addPrepaid }
-#
 #
 #
 #customers_api_save:
