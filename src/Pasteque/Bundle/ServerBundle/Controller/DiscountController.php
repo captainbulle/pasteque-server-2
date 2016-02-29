@@ -20,29 +20,42 @@
 
 namespace Pasteque\Bundle\ServerBundle\Services;
 
+/* Cash API specification
 
+GET(cashRegisterId)
+When client request a new cash, the server check for an active cash for
+requested cash register. If found return it. Otherwise return NULL.
+
+GET(id)
+Get cash by id, no matter it's state.
+
+UPDATE(cash)
+When client sends a cash, it may have an id or not. If the id is present the
+cash is updated. If not a new cash is created. In all cases return the cash.
+
+*/
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class AttributeController extends Controller {
+class DiscountController extends Controller {
 
-  public function getAllAction()
+  public function getAction($id)
   {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Attribute');
-    $attributes = $repo->findAll();
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Discount');
+    $discount = $repo->find($id);
 
-    $response = new Response(json_encode($attributes));
+    $response = new Response(json_encode($discount));
     $response->headers->set('Content-Type', 'application/json');
 
     return $response;
   }
 
-  public function getAction($id)
+  public function getAllAction()
   {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Attribute');
-    $attributes = $repo->find($id);
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Discount');
+    $discount = $repo->findAll();
 
-    $response = new Response(json_encode($attributes));
+    $response = new Response(json_encode($discount));
     $response->headers->set('Content-Type', 'application/json');
 
     return $response;

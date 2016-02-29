@@ -34,24 +34,32 @@ When client sends a cash, it may have an id or not. If the id is present the
 cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
+use Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository;
 
-class CashesController {
-//action to update to correspond to new code structure
-  public function getAction($id)
+class CashController extends Controller {
+
+  public function getAction($type, $id)
   {
-    if (isset($this->params['id'])) {
-      $ret = $srv->get($this->params['id']);
-    } else {
-      $ret = $srv->getCashRegister($this->params['cashRegisterId']);
-      if ($ret === null || $ret->isClosed()) {
-        $ret = null;
-      }
+    $cashes = null;
+    if ($type == 'cash') {
+      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
+      $cashes = $repo->find($id);
+    } elseif ($type == 'cashRegister') {
+      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
+      $cashes = $repo->findBy('cashRegisterId', $id);
     }
-    $this->succeed($ret);
+
+    $response = new Response(json_encode($cashes));
+    $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
   }
 
   public function updateAction($id)
   {
+    /**
     $json = json_decode($this->params['cash']);
     $open = null;
     $id = null;
@@ -109,27 +117,42 @@ class CashesController {
         $this->fail(APIError::$ERR_GENERIC);
       }
     }
+     **/
   }
 
   public function searchAction($cashRegisterId, $dateStart, $dateStop)
   {
-    $conditions = array();
-    if ($cashRegisterId !== null) {
-      $conditions[] = array("cashRegisterId", "=", $cashRegisterId);
+    /**
+     * @var $repo CashRepository
+     */
+    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
+    $queryBuilder = $repo->createQueryBuilder('c');
+
+    if ($cashRegisterId !== -1) {
+      $queryBuilder->where('c.id = :id')
+        ->setParameter('id', $cashRegisterId);
     }
-    if ($dateStart !== null) {
-      $conditions[] = array("openDate", ">=",
-        $db->dateVal($dateStart));
+    if ($dateStart !== -1) {
+      $queryBuilder->where('c.openDate >= :dateStart')
+        ->setParameter('dateStart', $dateStart);
     }
-    if ($dateStop !== null) {
-      $conditions[] = array("closeDate", "<=",
-        $db->dateVal($dateStop));
+    if ($dateStop !== -1) {
+      $queryBuilder->where('c.openDate <= :dateStop')
+        ->setParameter('dateStop', $dateStop);
     }
-    $this->succeed($srv->search($conditions));
+    $cashes = $queryBuilder->getQuery()->getResult();
+
+    $response = new Response(json_encode($cashes));
+    $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
   }
+
   public function zticketAction($id)
   {
+    /**
     $ret = $srv->getZTicket($this->params['id']);
     $this->succeed($ret);
+     **/
   }
 }
