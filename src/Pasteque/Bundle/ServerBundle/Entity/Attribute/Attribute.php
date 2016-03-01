@@ -1,5 +1,6 @@
 <?php
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
+
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
@@ -47,25 +48,25 @@ class Attribute{
     private $values;
 
     /**
-     * @var string
+     * @var int
      */
-    private $dispOrder;
+    private $displayOrder;
 
     /**
      * Attribute constructor.
      * @param string $name
-     * @param string $dispOrder
+     * @param int $displayOrder
      * @param \Pasteque\Bundle\ServerBundle\Entity\User\User $user
      */
-    private function __construct($name, $dispOrder, $user){
+    private function __construct($name, $displayOrder, $user){
         $this->id = com_create_guid();
         $this->name = $name;
-        $this->dispOrder = $dispOrder;
+        $this->displayOrder = $displayOrder;
         $this->active = 'A';
         $this->addedDate = new DateTime();
-        $this->addedBy = $user->getName();
+        $this->addedBy = $user->getUserName();
         $this->updatedDate = new DateTime();
-        $this->updatedBy = $user->getName();
+        $this->updatedBy = $user->getUserName();
         $this->values = array();
     }
 
@@ -111,21 +112,21 @@ class Attribute{
     }
 
     /**
-     * Set dispOrder
-     * @param string $dispOrder
+     * Set displayOrder
+     * @param integer $displayOrder
      * @return Attribute
      */
-    public function setDispOrder($dispOrder){
-        $this->dispOrder = $dispOrder;
+    public function setDisplayOrder($displayOrder){
+        $this->displayOrder = $displayOrder;
         return $this;
     }
 
     /**
-     * Get dispOrder
-     * @return string
+     * Get displayOrder
+     * @return int
      */
-    public function getDispOrder(){
-        return $this->dispOrder;
+    public function getDisplayOrder(){
+        return $this->displayOrder;
     }
 
     /**

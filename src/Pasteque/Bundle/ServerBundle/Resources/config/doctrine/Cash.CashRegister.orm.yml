@@ -1,7 +1,7 @@
-Pasteque\Bundle\ServerBundle\Entity\Discount\DiscountProfile:
+Pasteque\Bundle\ServerBundle\Entity\Cash\CashRegister:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Discount\DiscountProfileRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Cash\CashRegisterRepository
     id:
         id:
             type: integer
@@ -12,9 +12,9 @@ Pasteque\Bundle\ServerBundle\Entity\Discount\DiscountProfile:
         name:
             type: string
             length: 255
-        rate:
-            type: float
-        displayOrder:
+        locationId:
+            type: string
+            length: 255
+        nextTicketId:
             type: integer
-            nullable: true
     lifecycleCallbacks: {  }

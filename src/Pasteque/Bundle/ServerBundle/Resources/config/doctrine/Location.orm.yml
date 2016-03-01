@@ -1,7 +1,7 @@
-Pasteque\Bundle\ServerBundle\Entity\Role:
+Pasteque\Bundle\ServerBundle\Entity\Location:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\RoleRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\LocationRepository
     id:
         id:
             type: string
@@ -11,7 +11,8 @@ Pasteque\Bundle\ServerBundle\Entity\Role:
             type: string
             length: 255
             unique: true
-        permissions:
-            type: blob
+        address:
+            type: string
+            length: 255
             nullable: true
     lifecycleCallbacks: {  }

@@ -1,0 +1,34 @@
+Pasteque\Bundle\ServerBundle\Entity\Tax\Tax:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Tax\TaxRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        name:
+            type: string
+            length: 255
+        startDate:
+            type: datetime
+        taxCategoryId:
+            type: string
+            length: 255
+        taxCustomerCategoryId:
+            type: string
+            length: 255
+            nullable: true
+        parentId:
+            type: string
+            length: 255
+            nullable: true
+        rate:
+            type: float
+        rateCascade:
+            type: boolean
+            nullable: true
+        rateOrder:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

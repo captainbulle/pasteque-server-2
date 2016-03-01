@@ -10,6 +10,7 @@ Pasteque\Bundle\ServerBundle\Entity\Product:
         reference:
             type: string
             length: 255
+            unique: true
         barcode:
             type: string
             length: 255

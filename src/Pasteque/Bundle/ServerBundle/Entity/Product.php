@@ -122,15 +122,15 @@ class Product
      * @param float $stockCost
      * @param float $stockVolume
      * @param string $image
+     * @param string $attributes
      * @param bool $isCom
      * @param bool $isScale
-     * @param string $attributes
      * @param bool $discountEnabled
      * @param float $discountRate
      */
     public function __construct($reference, $barcode, $barcodeType, $name, $priceBuy, $priceSell,
                                 $categoryId, $providerId, $taxCatId, $attributeSetId, $stockCost,
-                                $stockVolume, $image, $isCom=false, $isScale=false, $attributes, $discountEnabled=false,
+                                $stockVolume, $image, $attributes, $isCom=false, $isScale=false, $discountEnabled=false,
                                 $discountRate=0.0){
         $this->id = com_create_guid();
         $this->reference = $reference;
@@ -145,9 +145,9 @@ class Product
         $this->attributeSetId = $attributeSetId;
         $this->stockVolume = $stockVolume;
         $this->image = $image;
+        $this->attributes = $attributes;
         $this->isCom = $isCom;
         $this->isScale = $isScale;
-        $this->attributes = $attributes;
         $this->discountEnabled = $discountEnabled;
         $this->discountRate = $discountRate;
         $this->visible = true;

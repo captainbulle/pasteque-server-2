@@ -25,7 +25,7 @@ Pasteque\Bundle\ServerBundle\Entity\Discount\Discount:
             nullable: true
         barcodeType:
             type: integer
-        dispOrder:
+        displayOrder:
             type: integer
             nullable: true
     lifecycleCallbacks: {  }

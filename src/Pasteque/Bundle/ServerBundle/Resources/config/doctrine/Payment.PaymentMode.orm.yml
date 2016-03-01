@@ -1,0 +1,32 @@
+Pasteque\Bundle\ServerBundle\Entity\Payment\PaymentMode:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Payment\PaymentModeRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        code:
+            type: string
+            length: 255
+        backName:
+            type: string
+            length: 255
+        flags:
+            type: integer
+        image:
+            type: blob
+            nullable: true
+        displayOrder:
+            type: integer
+        active:
+            type: boolean
+        system:
+            type: boolean
+    lifecycleCallbacks: {  }

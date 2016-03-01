@@ -1,41 +1,45 @@
-Pasteque\Bundle\ServerBundle\Entity\Provider:
+Pasteque\Bundle\ServerBundle\Entity\Customer:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\ProviderRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\CustomerRepository
     id:
         id:
             type: string
             length: 255
     fields:
-        name:
+        displayName:
             type: string
             length: 255
-        image:
-            type: blob
-            nullable: true
-        address:
+        searchKey:
             type: string
             length: 255
             nullable: true
-        address2:
+        number:
+            type: integer
+            nullable: true
+        customerTaxCategoryId:
             type: string
             length: 255
             nullable: true
-        postal:
+        discountProfileId:
+            type: integer
+            nullable: true
+        tariffAreaId:
+            type: integer
+            nullable: true
+        card:
             type: string
             length: 255
             nullable: true
-        city:
-            type: string
-            length: 255
+        maxDebt:
+            type: float
+        prepaid:
+            type: float
+        currentDebt:
+            type: float
             nullable: true
-        region:
-            type: string
-            length: 255
-            nullable: true
-        country:
-            type: string
-            length: 255
+        debtDate:
+            type: datetime
             nullable: true
         firstname:
             type: string
@@ -57,19 +61,35 @@ Pasteque\Bundle\ServerBundle\Entity\Provider:
             type: string
             length: 255
             nullable: true
-        website:
-            type: string
-            length: 255
-            nullable: true
         fax:
             type: string
             length: 255
             nullable: true
-        notes:
-            type: text
+        address:
+            type: string
+            length: 255
             nullable: true
-        displayOrder:
-            type: integer
+        address2:
+            type: string
+            length: 255
+            nullable: true
+        postal:
+            type: string
+            length: 255
+            nullable: true
+        region:
+            type: string
+            length: 255
+            nullable: true
+        country:
+            type: string
+            length: 255
+            nullable: true
+        expireDate:
+            type: datetime
+            nullable: true
+        note:
+            type: text
             nullable: true
         visible:
             type: boolean

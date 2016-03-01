@@ -10,6 +10,8 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\Attribute:
         name:
             type: string
             length: 255
+        displayOrder:
+            type: integer
         active:
             type: tinyint
         addedDate:

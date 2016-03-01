@@ -25,18 +25,18 @@ class DiscountProfile
     /**
      * @var int
      */
-    private $dispOrder;
+    private $displayOrder;
 
     /**
      * DiscountProfile constructor.
      * @param string $name
      * @param float $rate
-     * @param int $dispOrder
+     * @param int $displayOrder
      */
-    public function __construct($name, $rate, $dispOrder){
+    public function __construct($name, $rate, $displayOrder){
         $this->name = $name;
         $this->rate = $rate;
-        $this->dispOrder = $dispOrder;
+        $this->displayOrder = $displayOrder;
     }
 
     /**
@@ -84,21 +84,21 @@ class DiscountProfile
     }
 
     /**
-     * Set dispOrder
-     * @param integer $dispOrder
+     * Set displayOrder
+     * @param integer $displayOrder
      * @return DiscountProfile
      */
-    public function setDispOrder($dispOrder){
-        $this->dispOrder = $dispOrder;
+    public function setDisplayOrder($displayOrder){
+        $this->displayOrder = $displayOrder;
         return $this;
     }
 
     /**
-     * Get dispOrder
+     * Get displayOrder
      * @return int
      */
-    public function getDispOrder(){
-        return $this->dispOrder;
+    public function getDisplayOrder(){
+        return $this->displayOrder;
     }
 }
 

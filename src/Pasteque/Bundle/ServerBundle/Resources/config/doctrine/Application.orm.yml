@@ -1,7 +1,7 @@
-Pasteque\Bundle\ServerBundle\Entity\Place:
+Pasteque\Bundle\ServerBundle\Entity\Application:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\PlaceRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\ApplicationRepository
     id:
         id:
             type: string
@@ -10,12 +10,7 @@ Pasteque\Bundle\ServerBundle\Entity\Place:
         name:
             type: string
             length: 255
-            unique: true
-        'x':
-            type: integer
-        'y':
-            type: integer
-        floorId:
+        version:
             type: string
             length: 255
     lifecycleCallbacks: {  }

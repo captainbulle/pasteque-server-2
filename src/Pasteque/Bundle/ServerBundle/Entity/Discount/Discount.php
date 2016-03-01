@@ -45,7 +45,7 @@ class Discount
     /**
      * @var int
      */
-    private $dispOrder;
+    private $displayOrder;
 
     /**
      * Discount constructor.
@@ -55,16 +55,16 @@ class Discount
      * @param float $rate
      * @param string $barcode
      * @param int $barcodeType
-     * @param int $dispOrder
+     * @param int $displayOrder
      */
-    public function __construct($name, $startDate, $endDate, $rate, $barcode, $barcodeType, $dispOrder){
+    public function __construct($name, \DateTime $startDate, \DateTime $endDate, $rate, $barcode, $barcodeType, $displayOrder){
         $this->name = $name;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
         $this->rate = $rate;
         $this->barcode = $barcode;
         $this->barcodeType = $barcodeType;
-        $this->dispOrder = $dispOrder;
+        $this->displayOrder = $displayOrder;
     }
 
     /**
@@ -184,21 +184,21 @@ class Discount
     }
 
     /**
-     * Set dispOrder
-     * @param integer $dispOrder
+     * Set displayOrder
+     * @param integer $displayOrder
      * @return Discount
      */
-    public function setDispOrder($dispOrder){
-        $this->dispOrder = $dispOrder;
+    public function setDisplayOrder($displayOrder){
+        $this->displayOrder = $displayOrder;
         return $this;
     }
 
     /**
-     * Get dispOrder
+     * Get displayOrder
      * @return int
      */
-    public function getDispOrder(){
-        return $this->dispOrder;
+    public function getDisplayOrder(){
+        return $this->displayOrder;
     }
 }
 

@@ -1,7 +1,7 @@
-Pasteque\Bundle\ServerBundle\Entity\Discount\DiscountProfile:
+Pasteque\Bundle\ServerBundle\Entity\Payment\PaymentModeValue:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Discount\DiscountProfileRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Payment\PaymentModeValueRepository
     id:
         id:
             type: integer
@@ -9,12 +9,14 @@ Pasteque\Bundle\ServerBundle\Entity\Discount\DiscountProfile:
             generator:
                 strategy: AUTO
     fields:
-        name:
+        paymentModeId:
+            type: integer
+        value:
+            type: float
+        resource:
             type: string
             length: 255
-        rate:
-            type: float
+            nullable: true
         displayOrder:
             type: integer
-            nullable: true
     lifecycleCallbacks: {  }

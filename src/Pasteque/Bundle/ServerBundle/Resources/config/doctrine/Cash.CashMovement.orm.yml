@@ -1,0 +1,31 @@
+Pasteque\Bundle\ServerBundle\Entity\Cash\CashMovement:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Cash\CashMovementRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+        amount:
+            type: float
+        currencyId:
+            type: integer
+        currencyAmount:
+            type: float
+        cashId:
+            type: integer
+        receiptId:
+            type: string
+            length: 255
+        date:
+            type: datetime
+        note:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }

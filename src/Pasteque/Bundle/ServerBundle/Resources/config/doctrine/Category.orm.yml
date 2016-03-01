@@ -1,0 +1,28 @@
+Pasteque\Bundle\ServerBundle\Entity\Category:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\CategoryRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        reference:
+            type: string
+            length: 255
+            nullable: true
+        parentId:
+            type: string
+            length: 255
+            nullable: true
+        image:
+            type: blob
+            nullable: true
+        displayOrder:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

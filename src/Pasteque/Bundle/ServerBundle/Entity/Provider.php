@@ -95,7 +95,7 @@ class Provider
     /**
      * @var int
      */
-    private $dispOrder;
+    private $displayOrder;
 
     /**
      * @var bool
@@ -119,10 +119,10 @@ class Provider
      * @param string $website
      * @param string $fax
      * @param string $notes
-     * @param int $dispOrder
+     * @param int $displayOrder
      */
     public function __construct($name, $image, $address, $address2, $postal, $city, $region, $country, $firstname, $lastname,
-                                $email, $phone, $phone2, $website, $fax, $notes, $dispOrder=null){
+                                $email, $phone, $phone2, $website, $fax, $notes, $displayOrder=null){
         $this->id = com_create_guid();
         $this->name = $name;
         $this->image = $image;
@@ -140,7 +140,7 @@ class Provider
         $this->website = $website;
         $this->fax = $fax;
         $this->notes = $notes;
-        $this->dispOrder = $dispOrder;
+        $this->displayOrder = $displayOrder;
         $this->visible = true;
     }
 
@@ -441,21 +441,21 @@ class Provider
     }
 
     /**
-     * Set dispOrder
-     * @param integer $dispOrder
+     * Set displayOrder
+     * @param integer $displayOrder
      * @return Provider
      */
-    public function setDispOrder($dispOrder){
-        $this->dispOrder = $dispOrder;
+    public function setDisplayOrder($displayOrder){
+        $this->displayOrder = $displayOrder;
         return $this;
     }
 
     /**
-     * Get dispOrder
+     * Get displayOrder
      * @return int
      */
-    public function getDispOrder(){
-        return $this->dispOrder;
+    public function getDisplayOrder(){
+        return $this->displayOrder;
     }
 
     /**

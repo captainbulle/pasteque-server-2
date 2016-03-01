@@ -1,0 +1,36 @@
+Pasteque\Bundle\ServerBundle\Entity\Payment\Payment:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Payment\PaymentRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        type:
+            type: string
+            length: 255
+        amount:
+            type: float
+        currencyId:
+            type: integer
+        currencyAmount:
+            type: float
+        backType:
+            type: string
+            length: 255
+            nullable: true
+        backAmount:
+            type: float
+            nullable: true
+        returnMessage:
+            type: blob
+            nullable: true
+        pairedWith:
+            type: string
+            length: 255
+            nullable: true
+        note:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }
