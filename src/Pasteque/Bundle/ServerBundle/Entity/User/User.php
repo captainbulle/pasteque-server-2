@@ -62,7 +62,7 @@ class User extends BaseUser{
      * @param string $roleId
      * @param User $user
      */
-    public function __construct($username, $password, $card, $image, $roleId, $user){
+    public function __construct($username, $password, $card, $image, $roleId, User $user){
         parent::__construct();
         $this->username = $username;
         $this->password = $password;
@@ -161,7 +161,7 @@ class User extends BaseUser{
      * @param \DateTime $addedDate
      * @return User
      */
-    public function setAddedDate($addedDate){
+    public function setAddedDate(\DateTime $addedDate){
         $this->addedDate = $addedDate;
         return $this;
     }
@@ -197,7 +197,7 @@ class User extends BaseUser{
      * @param \DateTime $updatedDate
      * @return User
      */
-    public function setUpdatedDate($updatedDate){
+    public function setUpdatedDate(\DateTime $updatedDate){
         $this->updatedDate = $updatedDate;
         return $this;
     }

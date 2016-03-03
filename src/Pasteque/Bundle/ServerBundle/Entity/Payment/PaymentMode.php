@@ -62,7 +62,7 @@ class PaymentMode
 
     /**
      * Rules define how exceedent must be treated. It's an array of PaymentModeRule ordered by minVal ASC.
-     * @var array
+     * @var Rule[]
      */
     private $rules;
 

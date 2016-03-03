@@ -2,6 +2,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 use Symfony\Component\Validator\Constraints\DateTime;
+use Pasteque\Bundle\ServerBundle\Entity\User\User as User;
 
 /**
  * Attribute
@@ -56,9 +57,9 @@ class Attribute{
      * Attribute constructor.
      * @param string $name
      * @param int $displayOrder
-     * @param \Pasteque\Bundle\ServerBundle\Entity\User\User $user
+     * @param User $user
      */
-    private function __construct($name, $displayOrder, $user){
+    private function __construct($name, $displayOrder, User $user){
         $this->id = com_create_guid();
         $this->name = $name;
         $this->displayOrder = $displayOrder;
@@ -152,7 +153,7 @@ class Attribute{
      * @param \DateTime $addedDate
      * @return Attribute
      */
-    public function setAddedDate($addedDate){
+    public function setAddedDate(\DateTime $addedDate){
         $this->addedDate = $addedDate;
         return $this;
     }
@@ -188,7 +189,7 @@ class Attribute{
      * @param \DateTime $updatedDate
      * @return Attribute
      */
-    public function setUpdatedDate($updatedDate){
+    public function setUpdatedDate(\DateTime $updatedDate){
         $this->updatedDate = $updatedDate;
         return $this;
     }

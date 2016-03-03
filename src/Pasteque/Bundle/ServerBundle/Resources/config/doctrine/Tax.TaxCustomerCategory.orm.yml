@@ -1,0 +1,18 @@
+Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCustomerCategory:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Tax\TaxCustomerCategoryRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        taxCategoryId:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }

@@ -78,20 +78,16 @@ class Currency
      */
     public function format($amount) {
         $realFormat = str_replace('$', '¤', $this->format);
-        $numFormatter = new \NumberFormatter(null,
-            \NumberFormatter::PATTERN_DECIMAL, $realFormat);
-        $numFormatter->setSymbol(\NumberFormatter::CURRENCY_SYMBOL,
-            $this->symbol);
-        $numFormatter->setSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL,
-            $this->decimalSeparator);
-        $numFormatter->setSymbol(\NumberFormatter::MONETARY_SEPARATOR_SYMBOL,
-            $this->decimalSeparator);
-        $numFormatter->setSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL,
-            $this->thousandsSeparator);
+        $numFormatter = new \NumberFormatter(null, \NumberFormatter::PATTERN_DECIMAL, $realFormat);
+        $numFormatter->setSymbol(\NumberFormatter::CURRENCY_SYMBOL,$this->symbol);
+        $numFormatter->setSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL, $this->decimalSeparator);
+        $numFormatter->setSymbol(\NumberFormatter::MONETARY_SEPARATOR_SYMBOL, $this->decimalSeparator);
+        $numFormatter->setSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL, $this->thousandsSeparator);
         $numFormatter->setSymbol(\NumberFormatter::MONETARY_GROUPING_SEPARATOR_SYMBOL, $this->thousandsSeparator);
+
         // PHP fix: number of decimal digits is forced without pattern analysis
         // when in currency mode (with currency symbol in format)
-        if (strpos($realFormat, '¤') !== FALSE) {
+        if (strpos($realFormat, '¤') !== false) {
             // Count number of 0 after decimal separator
             $parts = explode('.', $realFormat);
             $decimals = 0;

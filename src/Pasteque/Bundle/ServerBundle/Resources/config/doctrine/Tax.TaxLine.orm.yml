@@ -1,0 +1,20 @@
+Pasteque\Bundle\ServerBundle\Entity\Tax\TaxLine:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Tax\TaxLineRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        receiptId:
+            type: string
+            length: 255
+        taxId:
+            type: string
+            length: 255
+        base:
+            type: float
+        amount:
+            type: float
+    lifecycleCallbacks: {  }

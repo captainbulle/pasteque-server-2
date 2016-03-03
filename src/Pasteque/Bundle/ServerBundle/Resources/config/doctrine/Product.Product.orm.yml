@@ -1,7 +1,7 @@
-Pasteque\Bundle\ServerBundle\Entity\Product:
+Pasteque\Bundle\ServerBundle\Entity\Product\Product:
     type: entity
     table: null
-    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\ProductRepository
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Product\ProductRepository
     id:
         id:
             type: string

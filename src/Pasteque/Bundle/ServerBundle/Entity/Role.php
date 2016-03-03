@@ -36,7 +36,7 @@ class Role
      * @param string $permission
      * @return bool
      */
-    function hasPermission($permission) {
+    public function hasPermission($permission) {
         return (strstr($this->permissions, $permission) !== false);
     }
 
