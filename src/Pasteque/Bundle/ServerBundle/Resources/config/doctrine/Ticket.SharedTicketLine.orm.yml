@@ -1,0 +1,33 @@
+Pasteque\Bundle\ServerBundle\Entity\Ticket\SharedTicketLine:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Ticket\SharedTicketLineRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        sharedTicketId:
+            type: string
+            length: 255
+        displayOrder:
+            type: integer
+        productId:
+            type: string
+            length: 255
+            nullable: true
+        taxId:
+            type: string
+            length: 255
+        quantity:
+            type: float
+        discountRate:
+            type: float
+            nullable: true
+        price:
+            type: float
+            nullable: true
+        attributes:
+            type: blob
+            nullable: true
+    lifecycleCallbacks: {  }

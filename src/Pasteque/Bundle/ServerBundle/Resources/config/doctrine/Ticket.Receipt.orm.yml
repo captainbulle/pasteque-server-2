@@ -1,0 +1,17 @@
+Pasteque\Bundle\ServerBundle\Entity\Ticket\Receipt:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Ticket\ReceiptRepository
+    id:
+        id:
+            type: string
+            lenght: 255
+    fields:
+        cashId:
+            type: integer
+        date:
+            type: datetime
+        attributes:
+            type: blob
+            nullable: true
+    lifecycleCallbacks: {  }
