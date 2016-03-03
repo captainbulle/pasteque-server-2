@@ -65,6 +65,7 @@ class SharedTicketLine
      */
     public function __construct($sharedTicketId, $displayOrder, $productId, $taxId, $quantity, $price, $discountRate=0.0, $attributes=null)
     {
+        $this->id = com_create_guid();
         $this->sharedTicketId = $sharedTicketId;
         $this->displayOrder = $displayOrder;
         $this->productId = $productId;

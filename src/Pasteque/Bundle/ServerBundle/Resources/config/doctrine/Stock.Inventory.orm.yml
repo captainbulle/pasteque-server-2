@@ -1,0 +1,17 @@
+Pasteque\Bundle\ServerBundle\Entity\Stock\Inventory:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Stock\InventoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+        locationId:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

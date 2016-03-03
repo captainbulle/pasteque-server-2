@@ -1,0 +1,33 @@
+Pasteque\Bundle\ServerBundle\Entity\Ticket\ZTicket:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Ticket\ZTicketRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cashId:
+            type: integer
+        openCash:
+            type: float
+            nullable: true
+        closeCash:
+            type: float
+            nullable: true
+        ticketCount:
+            type: integer
+            nullable: true
+        customerCount:
+            type: integer
+            nullable: true
+        paymentCount:
+            type: integer
+            nullable: true
+        cs:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }

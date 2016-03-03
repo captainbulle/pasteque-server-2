@@ -1,0 +1,31 @@
+Pasteque\Bundle\ServerBundle\Entity\Stock\InventoryItem:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Stock\InventoryItemRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        inventoryId:
+            type: integer
+        productId:
+            type: string
+            length: 255
+        attributeSetInstanceId:
+            type: string
+            length: 255
+            nullable: true
+        quantity:
+            type: float
+        lostQuantity:
+            type: float
+        defectQuantity:
+            type: float
+        missingQuantity:
+            type: float
+        unitValue:
+            type: float
+    lifecycleCallbacks: {  }

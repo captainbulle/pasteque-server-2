@@ -1,0 +1,28 @@
+Pasteque\Bundle\ServerBundle\Entity\Stock\StockLevel:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Stock\StockLevelRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        productId:
+            type: string
+            length: 255
+        locationId:
+            type: string
+            length: 255
+        attributeSetInstanceId:
+            type: string
+            length: 255
+        security:
+            type: float
+            nullable: true
+        max:
+            type: float
+            nullable: true
+        quantity:
+            type: float
+            nullable: true
+    lifecycleCallbacks: {  }
