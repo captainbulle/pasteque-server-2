@@ -23,7 +23,7 @@ class Floor
     private $image;
 
     /**
-     * @var array
+     * @var Place[]
      */
     private $places;
 
@@ -39,10 +39,10 @@ class Floor
     }
 
     /**
-     * @param $place
+     * @param Place $place
      */
-    function addPlace($place) {
-        $this->places[] = $place;
+    public function addPlace(Place $place) {
+        array_push($this->places, $place);
     }
 
     /**

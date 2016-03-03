@@ -81,7 +81,7 @@ class Tax
      * @param \DateTime $date (optional)
      * @return bool
      */
-    function isValid($date = null) {
+    public function isValid(\DateTime $date = null) {
         return (\DateTime::createFromFormat('m/d/Y', $date) !== false);
     }
 

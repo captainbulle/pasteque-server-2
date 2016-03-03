@@ -66,10 +66,10 @@ class Cash{
      * @param float $closeCash
      * @param float $expectedCash
      */
-    public function __construct($money, $cashRegisterId, $hostSequence, $openDate, $closeDate, $openCash, $closeCash, $expectedCash) {
+    public function __construct($money, $cashRegisterId, $hostSequence, \DateTime $openDate, \DateTime $closeDate, $openCash, $closeCash, $expectedCash) {
         $this->money = $money;
         $this->cashRegisterId = $cashRegisterId;
-        $this->hostSequence = (int) $hostSequence;
+        $this->hostSequence = $hostSequence;
         $this->openDate = $openDate;
         $this->closeDate = $closeDate;
         $this->openCash = $openCash;

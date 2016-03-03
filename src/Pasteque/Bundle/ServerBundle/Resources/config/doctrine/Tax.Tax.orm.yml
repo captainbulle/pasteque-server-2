@@ -10,6 +10,7 @@ Pasteque\Bundle\ServerBundle\Entity\Tax\Tax:
         name:
             type: string
             length: 255
+            unique: true
         startDate:
             type: datetime
         taxCategoryId:

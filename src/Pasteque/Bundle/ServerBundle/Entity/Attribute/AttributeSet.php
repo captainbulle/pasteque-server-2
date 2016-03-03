@@ -16,7 +16,7 @@ class AttributeSet{
     private $name;
 
     /**
-     * @var array
+     * @var Attribute[]
      */
     private $attributes;
 

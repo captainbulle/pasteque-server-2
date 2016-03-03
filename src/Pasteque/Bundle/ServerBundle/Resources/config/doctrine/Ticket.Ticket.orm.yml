@@ -1,0 +1,39 @@
+Pasteque\Bundle\ServerBundle\Entity\Ticket\Ticket:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Ticket\TicketRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: integer
+        date:
+            type: datetime
+            nullable: true
+        receiptId:
+            type: string
+            length: 255
+        userId:
+            type: integer
+        customerId:
+            type: string
+            length: 255
+            nullable: true
+        tariffAreaId:
+            type: integer
+            nullable: true
+        status:
+            type: integer
+        customerCount:
+            type: integer
+            nullable: true
+        discountRate:
+            type: float
+        discountProfileId:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

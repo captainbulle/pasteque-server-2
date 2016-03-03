@@ -21,7 +21,7 @@ class AttributeSetInstance{
     private $description;
 
     /**
-     * @var array
+     * @var AttributeInstance[]
      */
     private $attrInsts;
 

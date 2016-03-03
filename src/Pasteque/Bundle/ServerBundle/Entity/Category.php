@@ -47,6 +47,7 @@ class Category
      */
     public function __construct($name, $reference, $parentId, $image, $displayOrder=null)
     {
+        $this->id = com_create_guid();
         $this->name = $name;
         $this->reference = $reference;
         $this->parentId = $parentId;

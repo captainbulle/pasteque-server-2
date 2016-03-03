@@ -1,6 +1,8 @@
 <?php
 
-namespace Pasteque\Bundle\ServerBundle\Entity;
+namespace Pasteque\Bundle\ServerBundle\Entity\Product;
+
+use Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCategory as TaxCategory;
 
 /**
  * Product
@@ -155,13 +157,13 @@ class Product
 
     /**
      * Get the price with tax
+     * @param TaxCategory $taxCat
      * @return float
      */
-    function getTotalPrice() {
-        $taxCat = TaxesService::get($this->taxCatId);
+    public function getTotalPrice(TaxCategory $taxCat) {
         $currentTax = $taxCat->getCurrentTax();
         if ($currentTax != null) {
-            return $this->priceSell * (1 + $currentTax->rate);
+            return $this->priceSell * (1 + $currentTax->getRate());
         } else {
             return $this->priceSell;
         }
@@ -171,7 +173,7 @@ class Product
      * Get the difference between the sell price and the buy price
      * @return float|null
      */
-    function getMargin() {
+    public function getMargin() {
         if ($this->priceBuy !== null) {
             return $this->priceSell / $this->priceBuy;
         } else {

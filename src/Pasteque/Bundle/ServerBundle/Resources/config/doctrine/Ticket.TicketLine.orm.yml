@@ -1,0 +1,41 @@
+Pasteque\Bundle\ServerBundle\Entity\Ticket\TicketLine:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Ticket\TicketLineRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        ticketId:
+            type: string
+            length: 255
+        displayOrder:
+            type: integer
+        productId:
+            type: string
+            length: 255
+            nullable: true
+        attributeSetInstanceId:
+            type: string
+            length: 255
+            nullable: true
+        quantity:
+            type: float
+        price:
+            type: float
+        taxId:
+            type: string
+            length: 255
+        discountRate:
+            type: float
+        attributes:
+            type: blob
+            nullable: true
+        productLabel:
+            type: string
+            length: 255
+            nullable: true
+    lifecycleCallbacks: {  }
