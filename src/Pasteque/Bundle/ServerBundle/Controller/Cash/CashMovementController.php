@@ -34,11 +34,11 @@ When client sends a cash, it may have an id or not. If the id is present the
 cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Pasteque\Bundle\ServerBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository;
 
-class CashMovementController extends Controller {
+class CashMovementController extends AbstractController {
 
   public function moveAction($id, $date, $payment, $note)
   {

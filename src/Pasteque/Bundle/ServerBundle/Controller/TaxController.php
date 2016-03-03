@@ -20,10 +20,9 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class TaxController extends Controller {
+class TaxController extends AbstractController {
 
   public function getAction($id)
   {

@@ -21,10 +21,9 @@
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class AttributeController extends Controller {
+class AttributeController extends AbstractController {
 
   public function getAllAction()
   {
