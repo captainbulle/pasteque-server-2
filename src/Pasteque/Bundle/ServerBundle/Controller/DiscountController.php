@@ -34,10 +34,9 @@ When client sends a cash, it may have an id or not. If the id is present the
 cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class DiscountController extends Controller {
+class DiscountController extends AbstractController {
 
   public function getAction($id)
   {

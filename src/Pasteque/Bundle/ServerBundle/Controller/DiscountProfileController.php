@@ -20,10 +20,9 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class DiscountProfileController extends Controller {
+class DiscountProfileController extends AbstractController {
 
   public function getAllAction()
   {

@@ -20,11 +20,10 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Pasteque\Bundle\ServerBundle\Entity\Customer;
 
-class CustomerController extends Controller {
+class CustomerController extends AbstractController {
 
   public function getAction($id)
   {
