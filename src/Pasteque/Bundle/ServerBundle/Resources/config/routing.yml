@@ -28,11 +28,13 @@ cashes_api_zticket:
 
 cashMvts_api_move:
     path: /cashMvts/move/{id}/{date}/{payment}/{note}
-    defaults: { _controller: PastequeServerBundle:cashMvts:get, id: -1, CashRegisterId: -1 }
+    defaults: { _controller: PastequeServerBundle:cashMovement:get }
 
 cashesRegisters_api_get:
-    path: /cashesRegisters/get/{id}/{label}
-    defaults: { _controller: PastequeServerBundle:cashesRegisters, id: -1, label: -1 }
+    path: /cashesRegisters/get/{type}/{id}
+    defaults: { _controller: PastequeServerBundle:cashesRegisters }
+    requirements:
+      type:  type|id
 
 cashesRegisters_api_getAll:
     path: /cashesRegisters/getAll/
