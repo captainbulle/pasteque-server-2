@@ -7,7 +7,7 @@ use Pasteque\Bundle\ServerBundle\Entity\Tax\Tax as Tax;
 use Pasteque\Bundle\ServerBundle\Entity\Category as Category;
 
 /**
- * ZTicket
+ * ZTicket.
  */
 class ZTicket
 {
@@ -68,16 +68,17 @@ class ZTicket
 
     /**
      * ZTicket constructor.
-     * @param int $cashId
-     * @param float $openCash
-     * @param float $closeCash
-     * @param int $ticketCount
-     * @param int $customerCount
-     * @param int $paymentCount
-     * @param string $cs
+     *
+     * @param int                                                    $cashId
+     * @param float                                                  $openCash
+     * @param float                                                  $closeCash
+     * @param int                                                    $ticketCount
+     * @param int                                                    $customerCount
+     * @param int                                                    $paymentCount
+     * @param string                                                 $cs
      * @param \Pasteque\Bundle\ServerBundle\Entity\Payment\Payment[] $payments
-     * @param \Pasteque\Bundle\ServerBundle\Entity\Tax\Tax[] $taxes
-     * @param \Pasteque\Bundle\ServerBundle\Entity\Category[] $categoriesSales
+     * @param \Pasteque\Bundle\ServerBundle\Entity\Tax\Tax[]         $taxes
+     * @param \Pasteque\Bundle\ServerBundle\Entity\Category[]        $categoriesSales
      */
     public function __construct($cashId, $openCash, $closeCash, $ticketCount, $customerCount, $paymentCount, $cs, array $payments, array $taxes, array $categoriesSales)
     {
@@ -94,7 +95,7 @@ class ZTicket
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -104,9 +105,9 @@ class ZTicket
     }
 
     /**
-     * Set cashId
+     * Set cashId.
      *
-     * @param integer $cashId
+     * @param int $cashId
      *
      * @return ZTicket
      */
@@ -118,7 +119,7 @@ class ZTicket
     }
 
     /**
-     * Get cashId
+     * Get cashId.
      *
      * @return int
      */
@@ -128,7 +129,7 @@ class ZTicket
     }
 
     /**
-     * Set openCash
+     * Set openCash.
      *
      * @param float $openCash
      *
@@ -142,7 +143,7 @@ class ZTicket
     }
 
     /**
-     * Get openCash
+     * Get openCash.
      *
      * @return float
      */
@@ -152,7 +153,7 @@ class ZTicket
     }
 
     /**
-     * Set closeCash
+     * Set closeCash.
      *
      * @param float $closeCash
      *
@@ -166,7 +167,7 @@ class ZTicket
     }
 
     /**
-     * Get closeCash
+     * Get closeCash.
      *
      * @return float
      */
@@ -176,9 +177,9 @@ class ZTicket
     }
 
     /**
-     * Set ticketCount
+     * Set ticketCount.
      *
-     * @param integer $ticketCount
+     * @param int $ticketCount
      *
      * @return ZTicket
      */
@@ -190,7 +191,7 @@ class ZTicket
     }
 
     /**
-     * Get ticketCount
+     * Get ticketCount.
      *
      * @return int
      */
@@ -200,9 +201,9 @@ class ZTicket
     }
 
     /**
-     * Set customerCount
+     * Set customerCount.
      *
-     * @param integer $customerCount
+     * @param int $customerCount
      *
      * @return ZTicket
      */
@@ -214,7 +215,7 @@ class ZTicket
     }
 
     /**
-     * Get customerCount
+     * Get customerCount.
      *
      * @return int
      */
@@ -224,9 +225,9 @@ class ZTicket
     }
 
     /**
-     * Set paymentCount
+     * Set paymentCount.
      *
-     * @param integer $paymentCount
+     * @param int $paymentCount
      *
      * @return ZTicket
      */
@@ -238,7 +239,7 @@ class ZTicket
     }
 
     /**
-     * Get paymentCount
+     * Get paymentCount.
      *
      * @return int
      */
@@ -248,7 +249,7 @@ class ZTicket
     }
 
     /**
-     * Set cs
+     * Set cs.
      *
      * @param string $cs
      *
@@ -262,7 +263,7 @@ class ZTicket
     }
 
     /**
-     * Get cs
+     * Get cs.
      *
      * @return string
      */
@@ -271,4 +272,3 @@ class ZTicket
         return $this->cs;
     }
 }
-

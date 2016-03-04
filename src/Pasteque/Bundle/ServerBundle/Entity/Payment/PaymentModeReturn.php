@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Payment;
 
 /**
- * PaymentModeReturn
+ * PaymentModeReturn.
  */
 class PaymentModeReturn
 {
@@ -17,6 +17,7 @@ class PaymentModeReturn
     /**
      * In which PaymentMode the exceedent is given back. May be null. When creating a new PaymentMode,
      * use the special value PARENT_ID to reference the not currently set PaymentMode id.
+     *
      * @var int
      */
     private $paymentModeId;
@@ -33,11 +34,12 @@ class PaymentModeReturn
 
     /**
      * PaymentModeReturn constructor.
-     * @param int $paymentModeId
+     *
+     * @param int   $paymentModeId
      * @param float $min
-     * @param int $returnModeId
+     * @param int   $returnModeId
      */
-    public function __construct($paymentModeId, $min, $returnModeId=null)
+    public function __construct($paymentModeId, $min, $returnModeId = null)
     {
         $this->paymentModeId = $paymentModeId;
         $this->min = $min;
@@ -45,7 +47,7 @@ class PaymentModeReturn
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -55,9 +57,9 @@ class PaymentModeReturn
     }
 
     /**
-     * Set paymentModeId
+     * Set paymentModeId.
      *
-     * @param integer $paymentModeId
+     * @param int $paymentModeId
      *
      * @return PaymentModeReturn
      */
@@ -69,7 +71,7 @@ class PaymentModeReturn
     }
 
     /**
-     * Get paymentModeId
+     * Get paymentModeId.
      *
      * @return int
      */
@@ -79,9 +81,9 @@ class PaymentModeReturn
     }
 
     /**
-     * Set returnModeId
+     * Set returnModeId.
      *
-     * @param integer $returnModeId
+     * @param int $returnModeId
      *
      * @return PaymentModeReturn
      */
@@ -93,7 +95,7 @@ class PaymentModeReturn
     }
 
     /**
-     * Get returnModeId
+     * Get returnModeId.
      *
      * @return int
      */
@@ -103,7 +105,7 @@ class PaymentModeReturn
     }
 
     /**
-     * Set min
+     * Set min.
      *
      * @param float $min
      *
@@ -117,7 +119,7 @@ class PaymentModeReturn
     }
 
     /**
-     * Get min
+     * Get min.
      *
      * @return float
      */
@@ -126,4 +128,3 @@ class PaymentModeReturn
         return $this->min;
     }
 }
-

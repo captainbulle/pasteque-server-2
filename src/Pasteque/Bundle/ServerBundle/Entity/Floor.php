@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Floor
+ * Floor.
  */
 class Floor
 {
@@ -31,7 +31,8 @@ class Floor
      * @param string $name
      * @param string $image
      */
-    public function __construct($name, $image=null){
+    public function __construct($name, $image = null)
+    {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->image = $image;
@@ -41,70 +42,90 @@ class Floor
     /**
      * @param Place $place
      */
-    public function addPlace(Place $place) {
+    public function addPlace(Place $place)
+    {
         array_push($this->places, $place);
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Floor
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set image
+     * Set image.
+     *
      * @param string $image
+     *
      * @return Floor
      */
-    public function setImage($image){
+    public function setImage($image)
+    {
         $this->image = $image;
+
         return $this;
     }
 
     /**
-     * Get image
+     * Get image.
+     *
      * @return string
      */
-    public function getImage(){
+    public function getImage()
+    {
         return $this->image;
     }
 
     /**
-     * Get places
+     * Get places.
+     *
      * @return array
      */
-    public function getPlaces(){
+    public function getPlaces()
+    {
         return $this->places;
     }
 
     /**
-     * Set places
+     * Set places.
+     *
      * @param array $places
+     *
      * @return Floor
      */
-    public function setPlaces($places){
+    public function setPlaces($places)
+    {
         $this->places = $places;
+
         return $this;
     }
 }
-

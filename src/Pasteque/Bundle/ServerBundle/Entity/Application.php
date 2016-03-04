@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Application
+ * Application.
  */
 class Application
 {
@@ -24,56 +24,71 @@ class Application
 
     /**
      * Application constructor.
+     *
      * @param string $version
      * @param string $name
      */
-    public function __construct($name, $version){
+    public function __construct($name, $version)
+    {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->version = $version;
     }
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Application
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set version
+     * Set version.
+     *
      * @param string $version
+     *
      * @return Application
      */
-    public function setVersion($version){
+    public function setVersion($version)
+    {
         $this->version = $version;
+
         return $this;
     }
 
     /**
-     * Get version
+     * Get version.
+     *
      * @return string
      */
-    public function getVersion(){
+    public function getVersion()
+    {
         return $this->version;
     }
 }
-

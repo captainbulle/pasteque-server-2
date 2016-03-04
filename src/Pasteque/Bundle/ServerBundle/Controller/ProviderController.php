@@ -22,27 +22,27 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class ProviderController extends AbstractController {
+class ProviderController extends AbstractController
+{
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Provider');
+        $provider = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Provider');
-    $provider = $repo->find($id);
+        $response = new Response(json_encode($provider));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($provider));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAllAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Provider');
+        $providers = $repo->findAll();
 
-  public function getAllAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Provider');
-    $providers = $repo->findAll();
+        $response = new Response(json_encode($providers));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($providers));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Discount;
 
 /**
- * Discount
+ * Discount.
  */
 class Discount
 {
@@ -49,15 +49,17 @@ class Discount
 
     /**
      * Discount constructor.
-     * @param string $name
+     *
+     * @param string    $name
      * @param \DateTime $startDate
      * @param \DateTime $endDate
-     * @param float $rate
-     * @param string $barcode
-     * @param int $barcodeType
-     * @param int $displayOrder
+     * @param float     $rate
+     * @param string    $barcode
+     * @param int       $barcodeType
+     * @param int       $displayOrder
      */
-    public function __construct($name, \DateTime $startDate, \DateTime $endDate, $rate, $barcode, $barcodeType, $displayOrder){
+    public function __construct($name, \DateTime $startDate, \DateTime $endDate, $rate, $barcode, $barcodeType, $displayOrder)
+    {
         $this->name = $name;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
@@ -68,137 +70,180 @@ class Discount
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return int
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Discount
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set startDate
+     * Set startDate.
+     *
      * @param \DateTime $startDate
+     *
      * @return Discount
      */
-    public function setStartDate($startDate){
+    public function setStartDate($startDate)
+    {
         $this->startDate = $startDate;
+
         return $this;
     }
 
     /**
-     * Get startDate
+     * Get startDate.
+     *
      * @return \DateTime
      */
-    public function getStartDate(){
+    public function getStartDate()
+    {
         return $this->startDate;
     }
 
     /**
-     * Set endDate
+     * Set endDate.
+     *
      * @param \DateTime $endDate
+     *
      * @return Discount
      */
-    public function setEndDate($endDate){
+    public function setEndDate($endDate)
+    {
         $this->endDate = $endDate;
+
         return $this;
     }
 
     /**
-     * Get endDate
+     * Get endDate.
+     *
      * @return \DateTime
      */
-    public function getEndDate(){
+    public function getEndDate()
+    {
         return $this->endDate;
     }
 
     /**
-     * Set rate
+     * Set rate.
+     *
      * @param float $rate
+     *
      * @return Discount
      */
-    public function setRate($rate){
+    public function setRate($rate)
+    {
         $this->rate = $rate;
+
         return $this;
     }
 
     /**
-     * Get rate
+     * Get rate.
+     *
      * @return float
      */
-    public function getRate(){
+    public function getRate()
+    {
         return $this->rate;
     }
 
     /**
-     * Set barcode
+     * Set barcode.
+     *
      * @param string $barcode
+     *
      * @return Discount
      */
-    public function setBarcode($barcode){
+    public function setBarcode($barcode)
+    {
         $this->barcode = $barcode;
+
         return $this;
     }
 
     /**
-     * Get barcode
+     * Get barcode.
+     *
      * @return string
      */
-    public function getBarcode(){
+    public function getBarcode()
+    {
         return $this->barcode;
     }
 
     /**
-     * Set barcodeType
-     * @param integer $barcodeType
+     * Set barcodeType.
+     *
+     * @param int $barcodeType
+     *
      * @return Discount
      */
-    public function setBarcodeType($barcodeType){
+    public function setBarcodeType($barcodeType)
+    {
         $this->barcodeType = $barcodeType;
+
         return $this;
     }
 
     /**
-     * Get barcodeType
+     * Get barcodeType.
+     *
      * @return int
      */
-    public function getBarcodeType(){
+    public function getBarcodeType()
+    {
         return $this->barcodeType;
     }
 
     /**
-     * Set displayOrder
-     * @param integer $displayOrder
+     * Set displayOrder.
+     *
+     * @param int $displayOrder
+     *
      * @return Discount
      */
-    public function setDisplayOrder($displayOrder){
+    public function setDisplayOrder($displayOrder)
+    {
         $this->displayOrder = $displayOrder;
+
         return $this;
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
+     *
      * @return int
      */
-    public function getDisplayOrder(){
+    public function getDisplayOrder()
+    {
         return $this->displayOrder;
     }
 }
-

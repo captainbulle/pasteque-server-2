@@ -22,27 +22,27 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class RoleController extends AbstractController {
+class RoleController extends AbstractController
+{
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
+        $role = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
-    $role = $repo->find($id);
+        $response = new Response(json_encode($role));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($role));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
+        $roles = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
-    $roles = $repo->findAll();
+        $response = new Response(json_encode($roles));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($roles));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

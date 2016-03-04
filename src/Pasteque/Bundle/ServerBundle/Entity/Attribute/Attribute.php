@@ -1,13 +1,15 @@
 <?php
+
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 use Symfony\Component\Validator\Constraints\DateTime;
 use Pasteque\Bundle\ServerBundle\Entity\User\User as User;
 
 /**
- * Attribute
+ * Attribute.
  */
-class Attribute{
+class Attribute
+{
     /**
      * @var string
      */
@@ -55,11 +57,13 @@ class Attribute{
 
     /**
      * Attribute constructor.
+     *
      * @param string $name
-     * @param int $displayOrder
-     * @param User $user
+     * @param int    $displayOrder
+     * @param User   $user
      */
-    private function __construct($name, $displayOrder, User $user){
+    private function __construct($name, $displayOrder, User $user)
+    {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->displayOrder = $displayOrder;
@@ -74,150 +78,196 @@ class Attribute{
     /**
      * @param string $value
      */
-    public function addValue($value){
+    public function addValue($value)
+    {
         array_push($this->values, $value);
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return int
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Attribute
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Get Values
+     * Get Values.
+     *
      * @return array
      */
-    public function getValues(){
+    public function getValues()
+    {
         return $this->values;
     }
 
     /**
-     * Set displayOrder
-     * @param integer $displayOrder
+     * Set displayOrder.
+     *
+     * @param int $displayOrder
+     *
      * @return Attribute
      */
-    public function setDisplayOrder($displayOrder){
+    public function setDisplayOrder($displayOrder)
+    {
         $this->displayOrder = $displayOrder;
+
         return $this;
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
+     *
      * @return int
      */
-    public function getDisplayOrder(){
+    public function getDisplayOrder()
+    {
         return $this->displayOrder;
     }
 
     /**
-     * Set active
+     * Set active.
+     *
      * @param string $active
+     *
      * @return Attribute
      */
-    public function setActive($active){
+    public function setActive($active)
+    {
         $this->active = $active;
+
         return $this;
     }
 
     /**
-     * Get active
+     * Get active.
+     *
      * @return string
      */
-    public function getActive(){
+    public function getActive()
+    {
         return $this->active;
     }
 
     /**
-     * Set addedDate
+     * Set addedDate.
+     *
      * @param \DateTime $addedDate
+     *
      * @return Attribute
      */
-    public function setAddedDate(\DateTime $addedDate){
+    public function setAddedDate(\DateTime $addedDate)
+    {
         $this->addedDate = $addedDate;
+
         return $this;
     }
 
     /**
-     * Get addedDate
+     * Get addedDate.
+     *
      * @return \DateTime
      */
-    public function getAddedDate(){
+    public function getAddedDate()
+    {
         return $this->addedDate;
     }
 
     /**
-     * Set addedBy
+     * Set addedBy.
+     *
      * @param string $addedBy
+     *
      * @return Attribute
      */
-    public function setAddedBy($addedBy){
+    public function setAddedBy($addedBy)
+    {
         $this->addedBy = $addedBy;
+
         return $this;
     }
 
     /**
-     * Get addedBy
+     * Get addedBy.
+     *
      * @return string
      */
-    public function getAddedBy(){
+    public function getAddedBy()
+    {
         return $this->addedBy;
     }
 
     /**
-     * Set updatedDate
+     * Set updatedDate.
+     *
      * @param \DateTime $updatedDate
+     *
      * @return Attribute
      */
-    public function setUpdatedDate(\DateTime $updatedDate){
+    public function setUpdatedDate(\DateTime $updatedDate)
+    {
         $this->updatedDate = $updatedDate;
+
         return $this;
     }
 
     /**
-     * Get updatedDate
+     * Get updatedDate.
+     *
      * @return \DateTime
      */
-    public function getUpdatedDate(){
+    public function getUpdatedDate()
+    {
         return $this->updatedDate;
     }
 
     /**
-     * Set updatedBy
+     * Set updatedBy.
+     *
      * @param string $updatedBy
+     *
      * @return Attribute
      */
-    public function setUpdatedBy($updatedBy){
+    public function setUpdatedBy($updatedBy)
+    {
         $this->updatedBy = $updatedBy;
+
         return $this;
     }
 
     /**
-     * Get updatedBy
+     * Get updatedBy.
+     *
      * @return string
      */
-    public function getUpdatedBy(){
+    public function getUpdatedBy()
+    {
         return $this->updatedBy;
     }
 }
-

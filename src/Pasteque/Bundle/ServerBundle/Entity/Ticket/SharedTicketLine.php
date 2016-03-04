@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Ticket;
 
 /**
- * SharedTicketLine
+ * SharedTicketLine.
  */
 class SharedTicketLine
 {
@@ -54,16 +54,17 @@ class SharedTicketLine
 
     /**
      * SharedTicketLine constructor.
+     *
      * @param string $sharedTicketId
-     * @param int $displayOrder
+     * @param int    $displayOrder
      * @param string $productId
      * @param string $taxId
-     * @param float $quantity
-     * @param float $price
-     * @param float $discountRate
+     * @param float  $quantity
+     * @param float  $price
+     * @param float  $discountRate
      * @param string $attributes
      */
-    public function __construct($sharedTicketId, $displayOrder, $productId, $taxId, $quantity, $price, $discountRate=0.0, $attributes=null)
+    public function __construct($sharedTicketId, $displayOrder, $productId, $taxId, $quantity, $price, $discountRate = 0.0, $attributes = null)
     {
         $this->id = com_create_guid();
         $this->sharedTicketId = $sharedTicketId;
@@ -77,7 +78,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -87,7 +88,7 @@ class SharedTicketLine
     }
 
     /**
-     * Set sharedTicketId
+     * Set sharedTicketId.
      *
      * @param string $sharedTicketId
      *
@@ -101,7 +102,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get sharedTicketId
+     * Get sharedTicketId.
      *
      * @return string
      */
@@ -111,9 +112,9 @@ class SharedTicketLine
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return SharedTicketLine
      */
@@ -125,7 +126,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -135,7 +136,7 @@ class SharedTicketLine
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param string $productId
      *
@@ -149,7 +150,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return string
      */
@@ -159,7 +160,7 @@ class SharedTicketLine
     }
 
     /**
-     * Set taxId
+     * Set taxId.
      *
      * @param string $taxId
      *
@@ -173,7 +174,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get taxId
+     * Get taxId.
      *
      * @return string
      */
@@ -183,7 +184,7 @@ class SharedTicketLine
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -197,7 +198,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -207,7 +208,7 @@ class SharedTicketLine
     }
 
     /**
-     * Set discountRate
+     * Set discountRate.
      *
      * @param float $discountRate
      *
@@ -221,7 +222,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get discountRate
+     * Get discountRate.
      *
      * @return float
      */
@@ -231,7 +232,7 @@ class SharedTicketLine
     }
 
     /**
-     * Set price
+     * Set price.
      *
      * @param float $price
      *
@@ -245,7 +246,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get price
+     * Get price.
      *
      * @return float
      */
@@ -255,7 +256,7 @@ class SharedTicketLine
     }
 
     /**
-     * Set attributes
+     * Set attributes.
      *
      * @param string $attributes
      *
@@ -269,7 +270,7 @@ class SharedTicketLine
     }
 
     /**
-     * Get attributes
+     * Get attributes.
      *
      * @return string
      */
@@ -278,4 +279,3 @@ class SharedTicketLine
         return $this->attributes;
     }
 }
-

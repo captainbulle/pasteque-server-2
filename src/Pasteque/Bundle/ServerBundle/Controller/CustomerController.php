@@ -23,68 +23,68 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Pasteque\Bundle\ServerBundle\Entity\Customer;
 
-class CustomerController extends AbstractController {
+class CustomerController extends AbstractController
+{
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
+        $customer = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
-    $customer = $repo->find($id);
+        $response = new Response(json_encode($customer));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($customer));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
+        $customers = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
-    $customers = $repo->findAll();
+        $response = new Response(json_encode($customers));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($customers));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
-
-  public function addPrepaidAction($id, $amount)
-  {
-    $em = $this->getDoctrine()->getManager();
-    $repo = $em->getDoctrine()->getRepository('PastequeServerBundle:Customer');
+    public function addPrepaidAction($id, $amount)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $repo = $em->getDoctrine()->getRepository('PastequeServerBundle:Customer');
 
     /**
-     * @var Customer $customer
+     * @var Customer
      */
     $customer = $repo->find($id);
-    $prepaid = $customer->getPrepaid();
-    $customer->setPrepaid($prepaid+$amount);
-    $em->flush();
+        $prepaid = $customer->getPrepaid();
+        $customer->setPrepaid($prepaid + $amount);
+        $em->flush();
 
-    $response = new Response(json_encode($customer));
-    $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($customer));
+        $response->headers->set('Content-Type', 'application/json');
 
-    return $response;
-  }
+        return $response;
+    }
 
-  public function getTopAction($limit)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
-    $customers = $repo->findAll();
+    public function getTopAction($limit)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
+        $customers = $repo->findAll();
 
-    $response = new Response(json_encode($customers));
-    $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($customers));
+        $response->headers->set('Content-Type', 'application/json');
 
-    return $response;
-  }
+        return $response;
+    }
 
-  public function saveAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
-    $customers = $repo->findAll();
+    public function saveAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
+        $customers = $repo->findAll();
 
-    $response = new Response(json_encode($customers));
-    $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($customers));
+        $response->headers->set('Content-Type', 'application/json');
 
-    return $response;
-  }
+        return $response;
+    }
 }

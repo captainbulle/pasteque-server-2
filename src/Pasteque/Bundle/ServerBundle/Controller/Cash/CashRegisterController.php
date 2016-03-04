@@ -37,33 +37,33 @@ cash is updated. If not a new cash is created. In all cases return the cash.
 use Pasteque\Bundle\ServerBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class CashRegisterController extends AbstractController {
+class CashRegisterController extends AbstractController
+{
+    public function getAction($type, $id)
+    {
+        $cashRegister = null;
+        if ($type == 'id') {
+            $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:CashRegister');
+            $cashRegister = $repo->find($id);
+        } elseif ($type == 'name') {
+            $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:CashRegister');
+            $cashRegister = $repo->findBy('name', $id);
+        }
 
-  public function getAction($type, $id)
-  {
-    $cashRegister = null;
-    if ($type == 'id') {
-      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:CashRegister');
-      $cashRegister = $repo->find($id);
-    } elseif ($type == 'name') {
-      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:CashRegister');
-      $cashRegister = $repo->findBy('name', $id);
+        $response = new Response(json_encode($cashRegister));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 
-    $response = new Response(json_encode($cashRegister));
-    $response->headers->set('Content-Type', 'application/json');
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:CashRegister');
+        $cashRegisters = $repo->findAll();
 
-    return $response;
-  }
+        $response = new Response(json_encode($cashRegisters));
+        $response->headers->set('Content-Type', 'application/json');
 
-  public function getAllAction()
-  {
-      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:CashRegister');
-      $cashRegisters = $repo->findAll();
-
-      $response = new Response(json_encode($cashRegisters));
-      $response->headers->set('Content-Type', 'application/json');
-
-      return $response;
-  }
+        return $response;
+    }
 }

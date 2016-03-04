@@ -1,10 +1,12 @@
 <?php
+
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 /**
- * AttributeSet
+ * AttributeSet.
  */
-class AttributeSet{
+class AttributeSet
+{
     /**
      * @var string
      */
@@ -22,54 +24,67 @@ class AttributeSet{
 
     /**
      * AttributeSet constructor.
+     *
      * @param string $name
      */
-    public function __construct($name) {
+    public function __construct($name)
+    {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->attributes = array();
     }
 
     /**
-     * Add an attribute to the array attributes
+     * Add an attribute to the array attributes.
+     *
      * @param Attribute $attribute
      */
-    public function addAttribute($attribute) {
+    public function addAttribute($attribute)
+    {
         array_push($this->attributes, $attribute);
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return AttributeSet
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Get attributes
+     * Get attributes.
+     *
      * @return array
      */
-    public function getAttributes(){
+    public function getAttributes()
+    {
         return $this->attributes;
     }
 }
-

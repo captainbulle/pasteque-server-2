@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Stock;
 
 /**
- * StockMove
+ * StockMove.
  */
 class StockMove
 {
@@ -13,7 +13,7 @@ class StockMove
     const REASON_OUT_SELL = -1;
     const REASON_OUT_REFUND = -2;
     const REASON_OUT_BACK = -3;
-    const REASON_OUT_MOVEMENT  = -4;
+    const REASON_OUT_MOVEMENT = -4;
     const REASON_TRANSFERT = 1000;
     const REASON_RESET = 0;
 
@@ -59,13 +59,14 @@ class StockMove
 
     /**
      * StockMove constructor.
+     *
      * @param \DateTime $date
-     * @param int $reason
-     * @param string $locationId
-     * @param string $productId
-     * @param string $attributeSetInstanceId
-     * @param float $quantity
-     * @param float $price
+     * @param int       $reason
+     * @param string    $locationId
+     * @param string    $productId
+     * @param string    $attributeSetInstanceId
+     * @param float     $quantity
+     * @param float     $price
      */
     public function __construct(\DateTime $date, $reason, $locationId, $productId, $attributeSetInstanceId, $quantity, $price)
     {
@@ -81,15 +82,18 @@ class StockMove
 
     /**
      * Check if the move is in or out.
+     *
      * @param int $reason
+     *
      * @return bool
      */
-    public function isIn($reason) {
+    public function isIn($reason)
+    {
         return $reason >= 0;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -99,7 +103,7 @@ class StockMove
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -113,7 +117,7 @@ class StockMove
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -123,9 +127,9 @@ class StockMove
     }
 
     /**
-     * Set reason
+     * Set reason.
      *
-     * @param integer $reason
+     * @param int $reason
      *
      * @return StockMove
      */
@@ -137,7 +141,7 @@ class StockMove
     }
 
     /**
-     * Get reason
+     * Get reason.
      *
      * @return int
      */
@@ -147,7 +151,7 @@ class StockMove
     }
 
     /**
-     * Set locationId
+     * Set locationId.
      *
      * @param string $locationId
      *
@@ -161,7 +165,7 @@ class StockMove
     }
 
     /**
-     * Get locationId
+     * Get locationId.
      *
      * @return string
      */
@@ -171,7 +175,7 @@ class StockMove
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param string $productId
      *
@@ -185,7 +189,7 @@ class StockMove
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return string
      */
@@ -195,7 +199,7 @@ class StockMove
     }
 
     /**
-     * Set attributeSetInstanceId
+     * Set attributeSetInstanceId.
      *
      * @param string $attributeSetInstanceId
      *
@@ -209,7 +213,7 @@ class StockMove
     }
 
     /**
-     * Get attributeSetInstanceId
+     * Get attributeSetInstanceId.
      *
      * @return string
      */
@@ -219,7 +223,7 @@ class StockMove
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -233,7 +237,7 @@ class StockMove
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -243,7 +247,7 @@ class StockMove
     }
 
     /**
-     * Set price
+     * Set price.
      *
      * @param float $price
      *
@@ -257,7 +261,7 @@ class StockMove
     }
 
     /**
-     * Get price
+     * Get price.
      *
      * @return float
      */
@@ -266,4 +270,3 @@ class StockMove
         return $this->price;
     }
 }
-

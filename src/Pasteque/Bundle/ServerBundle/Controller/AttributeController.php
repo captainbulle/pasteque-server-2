@@ -20,30 +20,29 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
-
 use Symfony\Component\HttpFoundation\Response;
 
-class AttributeController extends AbstractController {
+class AttributeController extends AbstractController
+{
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Attribute');
+        $attributes = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Attribute');
-    $attributes = $repo->findAll();
+        $response = new Response(json_encode($attributes));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($attributes));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Attribute');
+        $attributes = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Attribute');
-    $attributes = $repo->find($id);
+        $response = new Response(json_encode($attributes));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($attributes));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

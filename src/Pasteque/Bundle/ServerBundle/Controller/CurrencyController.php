@@ -22,38 +22,38 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class CurrencyController extends AbstractController {
+class CurrencyController extends AbstractController
+{
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Currency');
+        $currency = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Currency');
-    $currency = $repo->find($id);
+        $response = new Response(json_encode($currency));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($currency));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getMainAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
+        $currency = $repo->findBy('main', true);
 
-  public function getMainAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $currency = $repo->findBy('main', true);
+        $response = new Response(json_encode($currency));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($currency));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
+        $currencies = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $currencies = $repo->findAll();
+        $response = new Response(json_encode($currencies));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($currencies));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

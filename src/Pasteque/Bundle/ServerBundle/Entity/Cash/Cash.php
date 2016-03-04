@@ -1,10 +1,12 @@
 <?php
+
 namespace Pasteque\Bundle\ServerBundle\Entity\Cash;
 
 /**
- * Cash
+ * Cash.
  */
-class Cash{
+class Cash
+{
     /**
      * @var int
      */
@@ -57,16 +59,18 @@ class Cash{
 
     /**
      * ClosedCash constructor.
-     * @param string $money
-     * @param int $cashRegisterId
-     * @param int $hostSequence
+     *
+     * @param string    $money
+     * @param int       $cashRegisterId
+     * @param int       $hostSequence
      * @param \DateTime $openDate
      * @param \DateTime $closeDate
-     * @param float $openCash
-     * @param float $closeCash
-     * @param float $expectedCash
+     * @param float     $openCash
+     * @param float     $closeCash
+     * @param float     $expectedCash
      */
-    public function __construct($money, $cashRegisterId, $hostSequence, \DateTime $openDate, \DateTime $closeDate, $openCash, $closeCash, $expectedCash) {
+    public function __construct($money, $cashRegisterId, $hostSequence, \DateTime $openDate, \DateTime $closeDate, $openCash, $closeCash, $expectedCash)
+    {
         $this->money = $money;
         $this->cashRegisterId = $cashRegisterId;
         $this->hostSequence = $hostSequence;
@@ -80,167 +84,218 @@ class Cash{
     /**
      * @return bool
      */
-    function isClosed() {
+    public function isClosed()
+    {
         return $this->closeDate != null;
     }
 
     /**
      * @return bool
      */
-    function isOpened() {
+    public function isOpened()
+    {
         return $this->openDate != null;
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return int
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set money
+     * Set money.
+     *
      * @param string $money
+     *
      * @return Cash
      */
-    public function setMoney($money){
+    public function setMoney($money)
+    {
         $this->money = $money;
+
         return $this;
     }
 
     /**
-     * Get money
+     * Get money.
+     *
      * @return string
      */
-    public function getMoney(){
+    public function getMoney()
+    {
         return $this->money;
     }
 
     /**
-     * Set cashRegisterId
+     * Set cashRegisterId.
+     *
      * @param int $cashRegisterId
+     *
      * @return Cash
      */
-    public function setCashRegisterId($cashRegisterId){
+    public function setCashRegisterId($cashRegisterId)
+    {
         $this->cashRegisterId = $cashRegisterId;
+
         return $this;
     }
 
     /**
-     * Get cashRegisterId
+     * Get cashRegisterId.
+     *
      * @return int
      */
-    public function getCashRegisterId(){
+    public function getCashRegisterId()
+    {
         return $this->cashRegisterId;
     }
 
     /**
-     * Set hostSequence
-     * @param integer $hostSequence
+     * Set hostSequence.
+     *
+     * @param int $hostSequence
+     *
      * @return Cash
      */
-    public function setHostSequence($hostSequence){
+    public function setHostSequence($hostSequence)
+    {
         $this->hostSequence = $hostSequence;
+
         return $this;
     }
 
     /**
-     * Get hostSequence
+     * Get hostSequence.
+     *
      * @return int
      */
-    public function getHostSequence(){
+    public function getHostSequence()
+    {
         return $this->hostSequence;
     }
 
     /**
-     * Set openDate
+     * Set openDate.
+     *
      * @param \DateTime $openDate
+     *
      * @return Cash
      */
-    public function setOpenDate($openDate){
+    public function setOpenDate($openDate)
+    {
         $this->openDate = $openDate;
+
         return $this;
     }
 
     /**
-     * Get openDate
+     * Get openDate.
+     *
      * @return \DateTime
      */
-    public function getOpenDate(){
+    public function getOpenDate()
+    {
         return $this->openDate;
     }
 
     /**
-     * Set closeDate
+     * Set closeDate.
+     *
      * @param \DateTime $closeDate
+     *
      * @return Cash
      */
-    public function setCloseDate($closeDate){
+    public function setCloseDate($closeDate)
+    {
         $this->closeDate = $closeDate;
+
         return $this;
     }
 
     /**
-     * Get closeDate
+     * Get closeDate.
+     *
      * @return \DateTime
      */
-    public function getCloseDate(){
+    public function getCloseDate()
+    {
         return $this->closeDate;
     }
 
     /**
-     * Set openCash
+     * Set openCash.
+     *
      * @param float $openCash
+     *
      * @return Cash
      */
-    public function setOpenCash($openCash){
+    public function setOpenCash($openCash)
+    {
         $this->openCash = $openCash;
+
         return $this;
     }
 
     /**
-     * Get openCash
+     * Get openCash.
+     *
      * @return float
      */
-    public function getOpenCash(){
+    public function getOpenCash()
+    {
         return $this->openCash;
     }
 
     /**
-     * Set closeCash
+     * Set closeCash.
+     *
      * @param float $closeCash
+     *
      * @return Cash
      */
-    public function setCloseCash($closeCash){
+    public function setCloseCash($closeCash)
+    {
         $this->closeCash = $closeCash;
+
         return $this;
     }
 
     /**
-     * Get closeCash
+     * Get closeCash.
+     *
      * @return float
      */
-    public function getCloseCash(){
+    public function getCloseCash()
+    {
         return $this->closeCash;
     }
 
     /**
-     * Set expectedCash
+     * Set expectedCash.
+     *
      * @param float $expectedCash
+     *
      * @return Cash
      */
-    public function setExpectedCash($expectedCash){
+    public function setExpectedCash($expectedCash)
+    {
         $this->expectedCash = $expectedCash;
+
         return $this;
     }
 
     /**
-     * Get expectedCash
+     * Get expectedCash.
+     *
      * @return float
      */
-    public function getExpectedCash(){
+    public function getExpectedCash()
+    {
         return $this->expectedCash;
     }
 }
-

@@ -22,27 +22,27 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class LocationController extends AbstractController {
+class LocationController extends AbstractController
+{
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Location');
+        $location = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Location');
-    $location = $repo->find($id);
+        $response = new Response(json_encode($location));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($location));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Location');
+        $locations = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Location');
-    $locations = $repo->findAll();
+        $response = new Response(json_encode($locations));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($locations));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

@@ -20,14 +20,13 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 
-abstract class AbstractController extends Controller {
-
-  /** Insert a new model in database. */
-  public function create($model) {/**
+abstract class AbstractController extends Controller
+{
+    /** Insert a new model in database. */
+  public function create($model)
+  {/*
     $dbData = static::unbuild($model);
     $pdo = PDOBuilder::getPDO();
     // Get all fields except id field
@@ -72,8 +71,9 @@ abstract class AbstractController extends Controller {
   }
 
   /** Update a model. Returns true if success, false otherwise. */
-  public function update($model) {
-    /**$dbData = static::unbuild($model);
+  public function update($model)
+  {
+      /**$dbData = static::unbuild($model);
     $pdo = PDOBuilder::getPDO();
     // Get all fields except id field
     $dbFields = array_keys(static::$fieldMapping); // Copy

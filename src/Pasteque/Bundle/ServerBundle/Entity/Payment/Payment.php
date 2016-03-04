@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Payment;
 
 /**
- * Payment
+ * Payment.
  */
 class Payment
 {
@@ -59,17 +59,18 @@ class Payment
 
     /**
      * Payment constructor.
+     *
      * @param string $type
-     * @param float $amount
-     * @param int $currencyId
-     * @param float $currencyAmount
+     * @param float  $amount
+     * @param int    $currencyId
+     * @param float  $currencyAmount
      * @param string $returnMessage
      * @param string $pairedWith
      * @param string $note
      * @param string $backType
-     * @param float $backAmount
+     * @param float  $backAmount
      */
-    public function __construct($type, $amount, $currencyId, $currencyAmount, $returnMessage, $pairedWith, $note, $backType=null, $backAmount=null)
+    public function __construct($type, $amount, $currencyId, $currencyAmount, $returnMessage, $pairedWith, $note, $backType = null, $backAmount = null)
     {
         $this->id = com_create_guid();
         $this->type = $type;
@@ -84,7 +85,7 @@ class Payment
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -94,7 +95,7 @@ class Payment
     }
 
     /**
-     * Set type
+     * Set type.
      *
      * @param string $type
      *
@@ -108,7 +109,7 @@ class Payment
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return string
      */
@@ -118,7 +119,7 @@ class Payment
     }
 
     /**
-     * Set amount
+     * Set amount.
      *
      * @param float $amount
      *
@@ -132,7 +133,7 @@ class Payment
     }
 
     /**
-     * Get amount
+     * Get amount.
      *
      * @return float
      */
@@ -142,9 +143,9 @@ class Payment
     }
 
     /**
-     * Set currencyId
+     * Set currencyId.
      *
-     * @param integer $currencyId
+     * @param int $currencyId
      *
      * @return Payment
      */
@@ -156,7 +157,7 @@ class Payment
     }
 
     /**
-     * Get currencyId
+     * Get currencyId.
      *
      * @return int
      */
@@ -166,7 +167,7 @@ class Payment
     }
 
     /**
-     * Set currencyAmount
+     * Set currencyAmount.
      *
      * @param float $currencyAmount
      *
@@ -180,7 +181,7 @@ class Payment
     }
 
     /**
-     * Get currencyAmount
+     * Get currencyAmount.
      *
      * @return float
      */
@@ -190,7 +191,7 @@ class Payment
     }
 
     /**
-     * Set backType
+     * Set backType.
      *
      * @param string $backType
      *
@@ -204,7 +205,7 @@ class Payment
     }
 
     /**
-     * Get backType
+     * Get backType.
      *
      * @return string
      */
@@ -214,7 +215,7 @@ class Payment
     }
 
     /**
-     * Set backAmount
+     * Set backAmount.
      *
      * @param float $backAmount
      *
@@ -228,7 +229,7 @@ class Payment
     }
 
     /**
-     * Get backAmount
+     * Get backAmount.
      *
      * @return float
      */
@@ -238,7 +239,7 @@ class Payment
     }
 
     /**
-     * Set returnMessage
+     * Set returnMessage.
      *
      * @param string $returnMessage
      *
@@ -252,7 +253,7 @@ class Payment
     }
 
     /**
-     * Get returnMessage
+     * Get returnMessage.
      *
      * @return string
      */
@@ -262,7 +263,7 @@ class Payment
     }
 
     /**
-     * Set pairedWith
+     * Set pairedWith.
      *
      * @param string $pairedWith
      *
@@ -276,7 +277,7 @@ class Payment
     }
 
     /**
-     * Get pairedWith
+     * Get pairedWith.
      *
      * @return string
      */
@@ -286,7 +287,7 @@ class Payment
     }
 
     /**
-     * Set note
+     * Set note.
      *
      * @param string $note
      *
@@ -300,7 +301,7 @@ class Payment
     }
 
     /**
-     * Get note
+     * Get note.
      *
      * @return string
      */
@@ -309,4 +310,3 @@ class Payment
         return $this->note;
     }
 }
-

@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Ticket;
 
 /**
- * Receipt
+ * Receipt.
  */
 class Receipt
 {
@@ -29,11 +29,12 @@ class Receipt
 
     /**
      * Receipt constructor.
-     * @param int $cashId
+     *
+     * @param int       $cashId
      * @param \DateTime $date
-     * @param string $attributes
+     * @param string    $attributes
      */
-    public function __construct($cashId, \DateTime $date, $attributes=null)
+    public function __construct($cashId, \DateTime $date, $attributes = null)
     {
         $this->id = com_create_guid();
         $this->cashId = $cashId;
@@ -41,9 +42,8 @@ class Receipt
         $this->attributes = $attributes;
     }
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -53,7 +53,7 @@ class Receipt
     }
 
     /**
-     * Set cashId
+     * Set cashId.
      *
      * @param int $cashId
      *
@@ -67,7 +67,7 @@ class Receipt
     }
 
     /**
-     * Get cashId
+     * Get cashId.
      *
      * @return int
      */
@@ -77,7 +77,7 @@ class Receipt
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -91,7 +91,7 @@ class Receipt
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -101,7 +101,7 @@ class Receipt
     }
 
     /**
-     * Set attributes
+     * Set attributes.
      *
      * @param string $attributes
      *
@@ -115,7 +115,7 @@ class Receipt
     }
 
     /**
-     * Get attributes
+     * Get attributes.
      *
      * @return string
      */
@@ -124,4 +124,3 @@ class Receipt
         return $this->attributes;
     }
 }
-

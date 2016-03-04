@@ -22,16 +22,16 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class ResourceController extends AbstractController {
+class ResourceController extends AbstractController
+{
+    public function getAction($label)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Resource');
+        $resource = $repo->findBy('label', $label);
 
-  public function getAction($label)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Resource');
-    $resource = $repo->findBy('label', $label);
+        $response = new Response(json_encode($resource));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($resource));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

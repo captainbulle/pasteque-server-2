@@ -38,28 +38,28 @@ use Pasteque\Bundle\ServerBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository;
 
-class CashMovementController extends AbstractController {
+class CashMovementController extends AbstractController
+{
+    public function moveAction($id, $date, $payment, $note)
+    {
+        $cashes = null;
+        if ($type == 'cash') {
+            $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
+            $cashes = $repo->find($id);
+        } elseif ($type == 'cashRegister') {
+            $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
+            $cashes = $repo->findBy('cashRegisterId', $id);
+        }
 
-  public function moveAction($id, $date, $payment, $note)
-  {
-    $cashes = null;
-    if ($type == 'cash') {
-      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
-      $cashes = $repo->find($id);
-    } elseif ($type == 'cashRegister') {
-      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
-      $cashes = $repo->findBy('cashRegisterId', $id);
+        $response = new Response(json_encode($cashes));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 
-    $response = new Response(json_encode($cashes));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
-
-  public function updateAction($id)
-  {
-    /**
+    public function updateAction($id)
+    {
+        /*
     $json = json_decode($this->params['cash']);
     $open = null;
     $id = null;
@@ -118,41 +118,41 @@ class CashMovementController extends AbstractController {
       }
     }
      **/
-  }
+    }
 
-  public function searchAction($cashRegisterId, $dateStart, $dateStop)
-  {
-    /**
-     * @var $repo CashRepository
+    public function searchAction($cashRegisterId, $dateStart, $dateStop)
+    {
+        /**
+     * @var CashRepository
      */
     $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
-    $queryBuilder = $repo->createQueryBuilder('c');
+        $queryBuilder = $repo->createQueryBuilder('c');
 
-    if ($cashRegisterId !== -1) {
-      $queryBuilder->where('c.id = :id')
+        if ($cashRegisterId !== -1) {
+            $queryBuilder->where('c.id = :id')
         ->setParameter('id', $cashRegisterId);
-    }
-    if ($dateStart !== -1) {
-      $queryBuilder->where('c.openDate >= :dateStart')
+        }
+        if ($dateStart !== -1) {
+            $queryBuilder->where('c.openDate >= :dateStart')
         ->setParameter('dateStart', $dateStart);
-    }
-    if ($dateStop !== -1) {
-      $queryBuilder->where('c.openDate <= :dateStop')
+        }
+        if ($dateStop !== -1) {
+            $queryBuilder->where('c.openDate <= :dateStop')
         ->setParameter('dateStop', $dateStop);
+        }
+        $cashes = $queryBuilder->getQuery()->getResult();
+
+        $response = new Response(json_encode($cashes));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
-    $cashes = $queryBuilder->getQuery()->getResult();
 
-    $response = new Response(json_encode($cashes));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
-
-  public function zticketAction($id)
-  {
-    /**
+    public function zticketAction($id)
+    {
+        /*
     $ret = $srv->getZTicket($this->params['id']);
     $this->succeed($ret);
      **/
-  }
+    }
 }
