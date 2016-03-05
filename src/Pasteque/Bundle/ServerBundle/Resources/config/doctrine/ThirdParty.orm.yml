@@ -1,0 +1,57 @@
+Pasteque\Bundle\ServerBundle\Entity\ThirdParty:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\ThirdPartyRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        cif:
+            type: string
+            length: 255
+            unique: true
+        name:
+            type: string
+            length: 255
+            unique: true
+        address:
+            type: string
+            length: 255
+            nullable: true
+        contactComm:
+            type: string
+            length: 255
+            nullable: true
+        contactFact:
+            type: string
+            length: 255
+            nullable: true
+        payRule:
+            type: string
+            length: 255
+            nullable: true
+        faxNumber:
+            type: string
+            length: 255
+            nullable: true
+        phoneNumber:
+            type: string
+            length: 255
+            nullable: true
+        mobileNumber:
+            type: string
+            length: 255
+            nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        webPage:
+            type: string
+            length: 255
+            nullable: true
+        note:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }

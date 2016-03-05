@@ -1,0 +1,24 @@
+Pasteque\Bundle\ServerBundle\Entity\Stock\StockCurrent:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Stock\StockCurrentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        locationId:
+            type: string
+            length: 255
+        productId:
+            type: string
+            length: 255
+        attributeSetInstanceId:
+            type: string
+            length: 255
+            nullable: true
+        quantity:
+            type: float
+    lifecycleCallbacks: {  }

@@ -1,0 +1,32 @@
+Pasteque\Bundle\ServerBundle\Entity\Order\OrderLine:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Order\OrderLineRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        orderId:
+            type: string
+            length: 255
+        line:
+            type: integer
+            nullable: true
+        productId:
+            type: string
+            length: 255
+            nullable: true
+        attributeInstanceId:
+            type: string
+            length: 255
+            nullable: true
+        quantity:
+            type: float
+            nullable: true
+        attributes:
+            type: blob
+            nullable: true
+    lifecycleCallbacks: {  }

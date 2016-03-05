@@ -1,0 +1,25 @@
+Pasteque\Bundle\ServerBundle\Entity\Order\Order:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Order\OrderRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        type:
+            type: integer
+        userId:
+            type: integer
+        customerId:
+            type: string
+            length: 255
+            nullable: true
+        status:
+            type: integer
+        note:
+            type: text
+            nullable: true
+        date:
+            type: datetime
+    lifecycleCallbacks: {  }

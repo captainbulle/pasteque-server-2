@@ -1,0 +1,25 @@
+Pasteque\Bundle\ServerBundle\Entity\Reservation\Reservation:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Reservation\ReservationRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        addedDate:
+            type: datetime
+        updatedDate:
+            type: datetime
+            nullable: true
+        name:
+            type: string
+            length: 255
+        chairs:
+            type: integer
+        isDone:
+            type: boolean
+        description:
+            type: text
+            nullable: true
+    lifecycleCallbacks: {  }

@@ -1,0 +1,406 @@
+<?php
+
+namespace Pasteque\Bundle\ServerBundle\Entity;
+
+/**
+ * ThirdParty
+ */
+class ThirdParty
+{
+    /**
+     * @var string
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $cif;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $address;
+
+    /**
+     * @var string
+     */
+    private $contactComm;
+
+    /**
+     * @var string
+     */
+    private $contactFact;
+
+    /**
+     * @var string
+     */
+    private $payRule;
+
+    /**
+     * @var string
+     */
+    private $faxNumber;
+
+    /**
+     * @var string
+     */
+    private $phoneNumber;
+
+    /**
+     * @var string
+     */
+    private $mobileNumber;
+
+    /**
+     * @var string
+     */
+    private $email;
+
+    /**
+     * @var string
+     */
+    private $webPage;
+
+    /**
+     * @var string
+     */
+    private $note;
+
+    /**
+     * ThirdParty constructor.
+     * @param string $cif
+     * @param string $name
+     * @param string $address
+     * @param string $contactComm
+     * @param string $contactFact
+     * @param string $payRule
+     * @param string $faxNumber
+     * @param string $phoneNumber
+     * @param string $mobileNumber
+     * @param string $email
+     * @param string $webPage
+     * @param string $note
+     */
+    public function __construct($cif, $name, $address, $contactComm, $contactFact, $payRule, $faxNumber, $phoneNumber,
+                                $mobileNumber, $email, $webPage, $note)
+    {
+        $this->id = com_create_guid();
+        $this->cif = $cif;
+        $this->name = $name;
+        $this->address = $address;
+        $this->contactComm = $contactComm;
+        $this->contactFact = $contactFact;
+        $this->payRule = $payRule;
+        $this->faxNumber = $faxNumber;
+        $this->phoneNumber = $phoneNumber;
+        $this->mobileNumber = $mobileNumber;
+        $this->email = $email;
+        $this->webPage = $webPage;
+        $this->note = $note;
+    }
+
+    /**
+     * Get id
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set cif
+     *
+     * @param string $cif
+     *
+     * @return ThirdParty
+     */
+    public function setCif($cif)
+    {
+        $this->cif = $cif;
+
+        return $this;
+    }
+
+    /**
+     * Get cif
+     *
+     * @return string
+     */
+    public function getCif()
+    {
+        return $this->cif;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return ThirdParty
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     *
+     * @return ThirdParty
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * Set contactComm
+     *
+     * @param string $contactComm
+     *
+     * @return ThirdParty
+     */
+    public function setContactComm($contactComm)
+    {
+        $this->contactComm = $contactComm;
+
+        return $this;
+    }
+
+    /**
+     * Get contactComm
+     *
+     * @return string
+     */
+    public function getContactComm()
+    {
+        return $this->contactComm;
+    }
+
+    /**
+     * Set contactFact
+     *
+     * @param string $contactFact
+     *
+     * @return ThirdParty
+     */
+    public function setContactFact($contactFact)
+    {
+        $this->contactFact = $contactFact;
+
+        return $this;
+    }
+
+    /**
+     * Get contactFact
+     *
+     * @return string
+     */
+    public function getContactFact()
+    {
+        return $this->contactFact;
+    }
+
+    /**
+     * Set payRule
+     *
+     * @param string $payRule
+     *
+     * @return ThirdParty
+     */
+    public function setPayRule($payRule)
+    {
+        $this->payRule = $payRule;
+
+        return $this;
+    }
+
+    /**
+     * Get payRule
+     *
+     * @return string
+     */
+    public function getPayRule()
+    {
+        return $this->payRule;
+    }
+
+    /**
+     * Set faxNumber
+     *
+     * @param string $faxNumber
+     *
+     * @return ThirdParty
+     */
+    public function setFaxNumber($faxNumber)
+    {
+        $this->faxNumber = $faxNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get faxNumber
+     *
+     * @return string
+     */
+    public function getFaxNumber()
+    {
+        return $this->faxNumber;
+    }
+
+    /**
+     * Set phoneNumber
+     *
+     * @param string $phoneNumber
+     *
+     * @return ThirdParty
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phoneNumber
+     *
+     * @return string
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phoneNumber;
+    }
+
+    /**
+     * Set mobileNumber
+     *
+     * @param string $mobileNumber
+     *
+     * @return ThirdParty
+     */
+    public function setMobileNumber($mobileNumber)
+    {
+        $this->mobileNumber = $mobileNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get mobileNumber
+     *
+     * @return string
+     */
+    public function getMobileNumber()
+    {
+        return $this->mobileNumber;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     *
+     * @return ThirdParty
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set webPage
+     *
+     * @param string $webPage
+     *
+     * @return ThirdParty
+     */
+    public function setWebPage($webPage)
+    {
+        $this->webPage = $webPage;
+
+        return $this;
+    }
+
+    /**
+     * Get webPage
+     *
+     * @return string
+     */
+    public function getWebPage()
+    {
+        return $this->webPage;
+    }
+
+    /**
+     * Set note
+     *
+     * @param string $note
+     *
+     * @return ThirdParty
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return string
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+}
+

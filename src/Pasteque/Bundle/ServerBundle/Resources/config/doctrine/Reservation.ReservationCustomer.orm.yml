@@ -1,0 +1,13 @@
+Pasteque\Bundle\ServerBundle\Entity\Reservation\ReservationCustomer:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Reservation\ReservationCustomerRepository
+    id:
+        id:
+            type: string
+            length: 255
+    fields:
+        customerId:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

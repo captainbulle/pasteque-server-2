@@ -1,0 +1,18 @@
+Pasteque\Bundle\ServerBundle\Entity\Product\ProductCategory:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Product\ProductCategoryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        productId:
+            type: string
+            length: 255
+        categoryOrder:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }
