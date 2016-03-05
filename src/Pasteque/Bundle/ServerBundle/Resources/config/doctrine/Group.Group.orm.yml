@@ -1,0 +1,55 @@
+Pasteque\Bundle\ServerBundle\Entity\Group\Group:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Group\GroupRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        reference:
+            type: string
+            length: 255
+        name:
+            type: string
+            length: 255
+        priceSell:
+            type: float
+        categoryId:
+            type: string
+            length: 255
+        providerId:
+            type: string
+            length: 255
+        taxCategoryId:
+            type: string
+            length: 255
+            nullable: true
+        displayOrder:
+            type: integer
+            nullable: true
+        visible:
+            type: boolean
+        isScale:
+            type: boolean
+        priceBuy:
+            type: float
+            nullable: true
+        attributeSetId:
+            type: string
+            length: 255
+            nullable: true
+        barcode:
+            type: string
+            length: 255
+            nullable: true
+        image:
+            type: blob
+            nullable: true
+        discountEnabled:
+            type: boolean
+        discountRate:
+            type: float
+    lifecycleCallbacks: {  }

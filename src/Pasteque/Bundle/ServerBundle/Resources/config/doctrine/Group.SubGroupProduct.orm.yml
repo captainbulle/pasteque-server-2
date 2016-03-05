@@ -1,0 +1,20 @@
+Pasteque\Bundle\ServerBundle\Entity\Group\SubGroupProduct:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Group\SubGroupProductRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        subGroupId:
+            type: integer
+        productId:
+            type: string
+            length: 255
+        displayOrder:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

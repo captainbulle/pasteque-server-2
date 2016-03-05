@@ -1,0 +1,25 @@
+Pasteque\Bundle\ServerBundle\Entity\Group\SubGroup:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Group\SubGroupRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        compositionId:
+            type: integer
+        name:
+            type: string
+            length: 255
+        required:
+            type: boolean
+        image:
+            type: blob
+            nullable: true
+        displayOrder:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

@@ -1,0 +1,17 @@
+Pasteque\Bundle\ServerBundle\Entity\TariffArea\TariffAreaPrice:
+    type: entity
+    table: null
+    repositoryClass: Pasteque\Bundle\ServerBundle\Repository\TariffArea\TariffAreaPriceRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        productId:
+            type: string
+            length: 255
+        priceSell:
+            type: float
+    lifecycleCallbacks: {  }
