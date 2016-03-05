@@ -20,30 +20,29 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class CategoryController extends AbstractController {
+class CategoryController extends AbstractController
+{
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Category');
+        $category = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Category');
-    $category = $repo->find($id);
+        $response = new Response(json_encode($category));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($category));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Category');
+        $categories = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Category');
-    $categories = $repo->findAll();
+        $response = new Response(json_encode($categories));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($categories));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

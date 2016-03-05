@@ -22,46 +22,46 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class ProductController extends AbstractController {
+class ProductController extends AbstractController
+{
+    public function getAction($id, $type)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
+        $product = null;
 
-  public function getAction($id, $type)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
-    $product = null;
+        if ($type == 'product') {
+            $product = $repo->find($id);
+        } elseif ($type == 'ref') {
+            $product = $repo->findBy('reference', $id);
+        } elseif ($type == 'code') {
+            $product = $repo->findBy('code', $id);
+        }
 
-    if ($type == 'product') {
-        $product = $repo->find($id);
-    } elseif ($type == 'ref') {
-        $product = $repo->findBy('reference', $id);
-    } elseif ($type == 'code') {
-        $product = $repo->findBy('code', $id);
+        $response = new Response(json_encode($product));
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
     }
 
-    $response = new Response(json_encode($product));
-    $response->headers->set('Content-Type', 'application/json');
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
+        $products = $repo->findAll();
 
-    return $response;
-  }
+        $response = new Response(json_encode($products));
+        $response->headers->set('Content-Type', 'application/json');
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
-    $products = $repo->findAll();
+        return $response;
+    }
 
-    $response = new Response(json_encode($products));
-    $response->headers->set('Content-Type', 'application/json');
+    public function getCategoryAction($categoryId)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
+        $products = $repo->findBy('category', $categoryId);
 
-    return $response;
-  }
+        $response = new Response(json_encode($products));
+        $response->headers->set('Content-Type', 'application/json');
 
-  public function getCategoryAction($categoryId)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');
-    $products = $repo->findBy('category', $categoryId);
-
-    $response = new Response(json_encode($products));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

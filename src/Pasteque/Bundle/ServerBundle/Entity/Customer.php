@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Customer
+ * Customer.
  */
 class Customer
 {
@@ -144,35 +144,36 @@ class Customer
 
     /**
      * Customer constructor.
-     * @param string $displayName
-     * @param string $searchKey
-     * @param int $number
-     * @param string $customerTaxCategoryId
-     * @param int $discountProfileId
-     * @param int $tariffAreaId
-     * @param string $card
-     * @param float $maxDebt
-     * @param float $prepaid
-     * @param float $currentDebt
+     *
+     * @param string    $displayName
+     * @param string    $searchKey
+     * @param int       $number
+     * @param string    $customerTaxCategoryId
+     * @param int       $discountProfileId
+     * @param int       $tariffAreaId
+     * @param string    $card
+     * @param float     $maxDebt
+     * @param float     $prepaid
+     * @param float     $currentDebt
      * @param \DateTime $debtDate
-     * @param string $firstname
-     * @param string $lastname
-     * @param string $email
-     * @param string $phone
-     * @param string $phone2
-     * @param string $fax
-     * @param string $address
-     * @param string $address2
-     * @param string $postal
-     * @param string $region
-     * @param string $country
+     * @param string    $firstname
+     * @param string    $lastname
+     * @param string    $email
+     * @param string    $phone
+     * @param string    $phone2
+     * @param string    $fax
+     * @param string    $address
+     * @param string    $address2
+     * @param string    $postal
+     * @param string    $region
+     * @param string    $country
      * @param \DateTime $expireDate
-     * @param string $note
+     * @param string    $note
      */
     public function __construct($displayName, $searchKey, $number, $customerTaxCategoryId, $discountProfileId,
                                 $tariffAreaId, $card, $maxDebt, $prepaid, $currentDebt, \DateTime $debtDate,
                                 $firstname, $lastname, $email, $phone, $phone2, $fax, $address, $address2, $postal,
-                                $region, $country, \DateTime $expireDate, $note=null)
+                                $region, $country, \DateTime $expireDate, $note = null)
     {
         $this->displayName = $displayName;
         $this->searchKey = $searchKey;
@@ -202,7 +203,7 @@ class Customer
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -212,7 +213,7 @@ class Customer
     }
 
     /**
-     * Set displayName
+     * Set displayName.
      *
      * @param string $displayName
      *
@@ -226,7 +227,7 @@ class Customer
     }
 
     /**
-     * Get displayName
+     * Get displayName.
      *
      * @return string
      */
@@ -236,7 +237,7 @@ class Customer
     }
 
     /**
-     * Set searchKey
+     * Set searchKey.
      *
      * @param string $searchKey
      *
@@ -250,7 +251,7 @@ class Customer
     }
 
     /**
-     * Get searchKey
+     * Get searchKey.
      *
      * @return string
      */
@@ -260,9 +261,9 @@ class Customer
     }
 
     /**
-     * Set number
+     * Set number.
      *
-     * @param integer $number
+     * @param int $number
      *
      * @return Customer
      */
@@ -274,7 +275,7 @@ class Customer
     }
 
     /**
-     * Get number
+     * Get number.
      *
      * @return int
      */
@@ -284,7 +285,7 @@ class Customer
     }
 
     /**
-     * Set customerTaxCategoryId
+     * Set customerTaxCategoryId.
      *
      * @param string $customerTaxCategoryId
      *
@@ -298,7 +299,7 @@ class Customer
     }
 
     /**
-     * Get customerTaxCategoryId
+     * Get customerTaxCategoryId.
      *
      * @return string
      */
@@ -308,9 +309,9 @@ class Customer
     }
 
     /**
-     * Set discountProfileId
+     * Set discountProfileId.
      *
-     * @param integer $discountProfileId
+     * @param int $discountProfileId
      *
      * @return Customer
      */
@@ -322,7 +323,7 @@ class Customer
     }
 
     /**
-     * Get discountProfileId
+     * Get discountProfileId.
      *
      * @return int
      */
@@ -332,9 +333,9 @@ class Customer
     }
 
     /**
-     * Set tariffAreaId
+     * Set tariffAreaId.
      *
-     * @param integer $tariffAreaId
+     * @param int $tariffAreaId
      *
      * @return Customer
      */
@@ -346,7 +347,7 @@ class Customer
     }
 
     /**
-     * Get tariffAreaId
+     * Get tariffAreaId.
      *
      * @return int
      */
@@ -356,7 +357,7 @@ class Customer
     }
 
     /**
-     * Set card
+     * Set card.
      *
      * @param string $card
      *
@@ -370,7 +371,7 @@ class Customer
     }
 
     /**
-     * Get card
+     * Get card.
      *
      * @return string
      */
@@ -380,7 +381,7 @@ class Customer
     }
 
     /**
-     * Set maxDebt
+     * Set maxDebt.
      *
      * @param float $maxDebt
      *
@@ -394,7 +395,7 @@ class Customer
     }
 
     /**
-     * Get maxDebt
+     * Get maxDebt.
      *
      * @return float
      */
@@ -404,7 +405,7 @@ class Customer
     }
 
     /**
-     * Set prepaid
+     * Set prepaid.
      *
      * @param float $prepaid
      *
@@ -418,7 +419,7 @@ class Customer
     }
 
     /**
-     * Get prepaid
+     * Get prepaid.
      *
      * @return float
      */
@@ -428,7 +429,7 @@ class Customer
     }
 
     /**
-     * Set currentDebt
+     * Set currentDebt.
      *
      * @param float $currentDebt
      *
@@ -442,7 +443,7 @@ class Customer
     }
 
     /**
-     * Get currentDebt
+     * Get currentDebt.
      *
      * @return float
      */
@@ -452,7 +453,7 @@ class Customer
     }
 
     /**
-     * Set debtDate
+     * Set debtDate.
      *
      * @param \DateTime $debtDate
      *
@@ -466,7 +467,7 @@ class Customer
     }
 
     /**
-     * Get debtDate
+     * Get debtDate.
      *
      * @return \DateTime
      */
@@ -476,7 +477,7 @@ class Customer
     }
 
     /**
-     * Set firstname
+     * Set firstname.
      *
      * @param string $firstname
      *
@@ -490,7 +491,7 @@ class Customer
     }
 
     /**
-     * Get firstname
+     * Get firstname.
      *
      * @return string
      */
@@ -500,7 +501,7 @@ class Customer
     }
 
     /**
-     * Set lastname
+     * Set lastname.
      *
      * @param string $lastname
      *
@@ -514,7 +515,7 @@ class Customer
     }
 
     /**
-     * Get lastname
+     * Get lastname.
      *
      * @return string
      */
@@ -524,7 +525,7 @@ class Customer
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
      *
@@ -538,7 +539,7 @@ class Customer
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
@@ -548,7 +549,7 @@ class Customer
     }
 
     /**
-     * Set phone
+     * Set phone.
      *
      * @param string $phone
      *
@@ -562,7 +563,7 @@ class Customer
     }
 
     /**
-     * Get phone
+     * Get phone.
      *
      * @return string
      */
@@ -572,7 +573,7 @@ class Customer
     }
 
     /**
-     * Set phone2
+     * Set phone2.
      *
      * @param string $phone2
      *
@@ -586,7 +587,7 @@ class Customer
     }
 
     /**
-     * Get phone2
+     * Get phone2.
      *
      * @return string
      */
@@ -596,7 +597,7 @@ class Customer
     }
 
     /**
-     * Set fax
+     * Set fax.
      *
      * @param string $fax
      *
@@ -610,7 +611,7 @@ class Customer
     }
 
     /**
-     * Get fax
+     * Get fax.
      *
      * @return string
      */
@@ -620,7 +621,7 @@ class Customer
     }
 
     /**
-     * Set address
+     * Set address.
      *
      * @param string $address
      *
@@ -634,7 +635,7 @@ class Customer
     }
 
     /**
-     * Get address
+     * Get address.
      *
      * @return string
      */
@@ -644,7 +645,7 @@ class Customer
     }
 
     /**
-     * Set address2
+     * Set address2.
      *
      * @param string $address2
      *
@@ -658,7 +659,7 @@ class Customer
     }
 
     /**
-     * Get address2
+     * Get address2.
      *
      * @return string
      */
@@ -668,7 +669,7 @@ class Customer
     }
 
     /**
-     * Set postal
+     * Set postal.
      *
      * @param string $postal
      *
@@ -682,7 +683,7 @@ class Customer
     }
 
     /**
-     * Get postal
+     * Get postal.
      *
      * @return string
      */
@@ -692,7 +693,7 @@ class Customer
     }
 
     /**
-     * Set region
+     * Set region.
      *
      * @param string $region
      *
@@ -706,7 +707,7 @@ class Customer
     }
 
     /**
-     * Get region
+     * Get region.
      *
      * @return string
      */
@@ -716,7 +717,7 @@ class Customer
     }
 
     /**
-     * Set country
+     * Set country.
      *
      * @param string $country
      *
@@ -730,7 +731,7 @@ class Customer
     }
 
     /**
-     * Get country
+     * Get country.
      *
      * @return string
      */
@@ -740,7 +741,7 @@ class Customer
     }
 
     /**
-     * Set expireDate
+     * Set expireDate.
      *
      * @param \DateTime $expireDate
      *
@@ -754,7 +755,7 @@ class Customer
     }
 
     /**
-     * Get expireDate
+     * Get expireDate.
      *
      * @return \DateTime
      */
@@ -764,7 +765,7 @@ class Customer
     }
 
     /**
-     * Set note
+     * Set note.
      *
      * @param string $note
      *
@@ -778,7 +779,7 @@ class Customer
     }
 
     /**
-     * Get note
+     * Get note.
      *
      * @return string
      */
@@ -788,9 +789,9 @@ class Customer
     }
 
     /**
-     * Set visible
+     * Set visible.
      *
-     * @param boolean $visible
+     * @param bool $visible
      *
      * @return Customer
      */
@@ -802,7 +803,7 @@ class Customer
     }
 
     /**
-     * Get visible
+     * Get visible.
      *
      * @return bool
      */
@@ -811,4 +812,3 @@ class Customer
         return $this->visible;
     }
 }
-

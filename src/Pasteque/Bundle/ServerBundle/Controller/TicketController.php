@@ -22,9 +22,9 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class TicketController extends AbstractController {
-
-  /**case 'getShared':
+class TicketController extends AbstractController
+{
+    /**case 'getShared':
   return isset($this->params['id']);
   case 'getAllShared':
   return true;
@@ -52,7 +52,7 @@ class TicketController extends AbstractController {
   }**/
 
   public function getShared($id)
-  { /**
+  { /*
     $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Ticket');
     $tax = $repo->find($id);
 

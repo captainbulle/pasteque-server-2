@@ -4,7 +4,7 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Payment;
 
 /**
  * PaymentModeValue
- * Predefined values to pick for PaymentModes
+ * Predefined values to pick for PaymentModes.
  */
 class PaymentModeValue
 {
@@ -35,12 +35,13 @@ class PaymentModeValue
 
     /**
      * PaymentModeValue constructor.
-     * @param int $paymentModeId
-     * @param float $value
+     *
+     * @param int    $paymentModeId
+     * @param float  $value
      * @param string $resource
-     * @param int $displayOrder
+     * @param int    $displayOrder
      */
-    public function __construct($paymentModeId, $value, $resource=null, $displayOrder=0)
+    public function __construct($paymentModeId, $value, $resource = null, $displayOrder = 0)
     {
         $this->paymentModeId = $paymentModeId;
         $this->value = $value;
@@ -49,7 +50,7 @@ class PaymentModeValue
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -59,9 +60,9 @@ class PaymentModeValue
     }
 
     /**
-     * Set paymentModeId
+     * Set paymentModeId.
      *
-     * @param integer $paymentModeId
+     * @param int $paymentModeId
      *
      * @return PaymentModeValue
      */
@@ -73,7 +74,7 @@ class PaymentModeValue
     }
 
     /**
-     * Get paymentModeId
+     * Get paymentModeId.
      *
      * @return int
      */
@@ -83,7 +84,7 @@ class PaymentModeValue
     }
 
     /**
-     * Set value
+     * Set value.
      *
      * @param float $value
      *
@@ -97,7 +98,7 @@ class PaymentModeValue
     }
 
     /**
-     * Get value
+     * Get value.
      *
      * @return float
      */
@@ -107,7 +108,7 @@ class PaymentModeValue
     }
 
     /**
-     * Set resource
+     * Set resource.
      *
      * @param string $resource
      *
@@ -121,7 +122,7 @@ class PaymentModeValue
     }
 
     /**
-     * Get resource
+     * Get resource.
      *
      * @return string
      */
@@ -131,9 +132,9 @@ class PaymentModeValue
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return PaymentModeValue
      */
@@ -145,7 +146,7 @@ class PaymentModeValue
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -154,4 +155,3 @@ class PaymentModeValue
         return $this->displayOrder;
     }
 }
-

@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Cash;
 
 /**
- * CashMovement
+ * CashMovement.
  */
 class CashMovement
 {
@@ -57,14 +57,15 @@ class CashMovement
 
     /**
      * CashMovement constructor.
-     * @param string $type
-     * @param float $amount
-     * @param int $currencyId
-     * @param float $currencyAmount
-     * @param int $cashId
-     * @param string $receiptId
+     *
+     * @param string    $type
+     * @param float     $amount
+     * @param int       $currencyId
+     * @param float     $currencyAmount
+     * @param int       $cashId
+     * @param string    $receiptId
      * @param \DateTime $date
-     * @param string $note
+     * @param string    $note
      */
     public function __construct($type, $amount, $currencyId, $currencyAmount, $cashId, $receiptId, \DateTime $date, $note)
     {
@@ -79,7 +80,7 @@ class CashMovement
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -89,7 +90,7 @@ class CashMovement
     }
 
     /**
-     * Set type
+     * Set type.
      *
      * @param string $type
      *
@@ -103,7 +104,7 @@ class CashMovement
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return string
      */
@@ -113,7 +114,7 @@ class CashMovement
     }
 
     /**
-     * Set amount
+     * Set amount.
      *
      * @param float $amount
      *
@@ -127,7 +128,7 @@ class CashMovement
     }
 
     /**
-     * Get amount
+     * Get amount.
      *
      * @return float
      */
@@ -137,9 +138,9 @@ class CashMovement
     }
 
     /**
-     * Set currencyId
+     * Set currencyId.
      *
-     * @param integer $currencyId
+     * @param int $currencyId
      *
      * @return CashMovement
      */
@@ -151,7 +152,7 @@ class CashMovement
     }
 
     /**
-     * Get currencyId
+     * Get currencyId.
      *
      * @return int
      */
@@ -161,7 +162,7 @@ class CashMovement
     }
 
     /**
-     * Set currencyAmount
+     * Set currencyAmount.
      *
      * @param float $currencyAmount
      *
@@ -175,7 +176,7 @@ class CashMovement
     }
 
     /**
-     * Get currencyAmount
+     * Get currencyAmount.
      *
      * @return float
      */
@@ -185,9 +186,9 @@ class CashMovement
     }
 
     /**
-     * Set cashId
+     * Set cashId.
      *
-     * @param integer $cashId
+     * @param int $cashId
      *
      * @return CashMovement
      */
@@ -199,7 +200,7 @@ class CashMovement
     }
 
     /**
-     * Get cashId
+     * Get cashId.
      *
      * @return int
      */
@@ -209,7 +210,7 @@ class CashMovement
     }
 
     /**
-     * Set receiptId
+     * Set receiptId.
      *
      * @param string $receiptId
      *
@@ -223,7 +224,7 @@ class CashMovement
     }
 
     /**
-     * Get receiptId
+     * Get receiptId.
      *
      * @return string
      */
@@ -233,7 +234,7 @@ class CashMovement
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -247,7 +248,7 @@ class CashMovement
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -257,7 +258,7 @@ class CashMovement
     }
 
     /**
-     * Set note
+     * Set note.
      *
      * @param string $note
      *
@@ -271,7 +272,7 @@ class CashMovement
     }
 
     /**
-     * Get note
+     * Get note.
      *
      * @return string
      */
@@ -280,4 +281,3 @@ class CashMovement
         return $this->note;
     }
 }
-

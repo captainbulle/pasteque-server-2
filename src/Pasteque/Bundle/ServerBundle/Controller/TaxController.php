@@ -22,27 +22,27 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class TaxController extends AbstractController {
+class TaxController extends AbstractController
+{
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Tax');
+        $tax = $repo->find($id);
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Tax');
-    $tax = $repo->find($id);
+        $response = new Response(json_encode($tax));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($tax));
-    $response->headers->set('Content-Type', 'application/json');
+        return $response;
+    }
 
-    return $response;
-  }
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Tax');
+        $taxes = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Tax');
-    $taxes = $repo->findAll();
+        $response = new Response(json_encode($taxes));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($taxes));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

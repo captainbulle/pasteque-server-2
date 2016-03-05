@@ -5,9 +5,10 @@ namespace Pasteque\Bundle\ServerBundle\Entity\User;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
- * User
+ * User.
  */
-class User extends BaseUser{
+class User extends BaseUser
+{
     /**
      * @var int
      */
@@ -55,14 +56,16 @@ class User extends BaseUser{
 
     /**
      * User constructor.
+     *
      * @param string $username
      * @param string $password
      * @param string $card
      * @param string $image
      * @param string $roleId
-     * @param User $user
+     * @param User   $user
      */
-    public function __construct($username, $password, $card, $image, $roleId, User $user){
+    public function __construct($username, $password, $card, $image, $roleId, User $user)
+    {
         parent::__construct();
         $this->username = $username;
         $this->password = $password;
@@ -77,155 +80,204 @@ class User extends BaseUser{
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return int
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set roleId
+     * Set roleId.
+     *
      * @param string $roleId
+     *
      * @return User
      */
-    public function setRoleId($roleId){
+    public function setRoleId($roleId)
+    {
         $this->roleId = $roleId;
+
         return $this;
     }
 
     /**
-     * Get roleId
+     * Get roleId.
+     *
      * @return string
      */
-    public function getRoleId(){
+    public function getRoleId()
+    {
         return $this->roleId;
     }
 
     /**
-     * Set card
+     * Set card.
+     *
      * @param string $card
+     *
      * @return User
      */
-    public function setCard($card){
+    public function setCard($card)
+    {
         $this->card = $card;
+
         return $this;
     }
 
     /**
-     * Get card
+     * Get card.
+     *
      * @return string
      */
-    public function getCard(){
+    public function getCard()
+    {
         return $this->card;
     }
 
     /**
-     * Set image
+     * Set image.
+     *
      * @param string $image
+     *
      * @return User
      */
-    public function setImage($image){
+    public function setImage($image)
+    {
         $this->image = $image;
+
         return $this;
     }
 
     /**
-     * Get image
+     * Get image.
+     *
      * @return string
      */
-    public function getImage(){
+    public function getImage()
+    {
         return $this->image;
     }
 
     /**
-     * Set visible
-     * @param boolean $visible
+     * Set visible.
+     *
+     * @param bool $visible
+     *
      * @return User
      */
-    public function setVisible($visible){
+    public function setVisible($visible)
+    {
         $this->visible = $visible;
+
         return $this;
     }
 
     /**
-     * Get visible
+     * Get visible.
+     *
      * @return bool
      */
-    public function getVisible(){
+    public function getVisible()
+    {
         return $this->visible;
     }
 
     /**
-     * Set addedDate
+     * Set addedDate.
+     *
      * @param \DateTime $addedDate
+     *
      * @return User
      */
-    public function setAddedDate(\DateTime $addedDate){
+    public function setAddedDate(\DateTime $addedDate)
+    {
         $this->addedDate = $addedDate;
+
         return $this;
     }
 
     /**
-     * Get addedDate
+     * Get addedDate.
+     *
      * @return \DateTime
      */
-    public function getAddedDate(){
+    public function getAddedDate()
+    {
         return $this->addedDate;
     }
 
     /**
-     * Set addedBy
+     * Set addedBy.
+     *
      * @param string $addedBy
+     *
      * @return User
      */
-    public function setAddedBy($addedBy){
+    public function setAddedBy($addedBy)
+    {
         $this->addedBy = $addedBy;
+
         return $this;
     }
 
     /**
-     * Get addedBy
+     * Get addedBy.
+     *
      * @return string
      */
-    public function getAddedBy(){
+    public function getAddedBy()
+    {
         return $this->addedBy;
     }
 
     /**
-     * Set updatedDate
+     * Set updatedDate.
+     *
      * @param \DateTime $updatedDate
+     *
      * @return User
      */
-    public function setUpdatedDate(\DateTime $updatedDate){
+    public function setUpdatedDate(\DateTime $updatedDate)
+    {
         $this->updatedDate = $updatedDate;
+
         return $this;
     }
 
     /**
-     * Get updatedDate
+     * Get updatedDate.
+     *
      * @return \DateTime
      */
-    public function getUpdatedDate(){
+    public function getUpdatedDate()
+    {
         return $this->updatedDate;
     }
 
     /**
-     * Set updatedBy
+     * Set updatedBy.
+     *
      * @param string $updatedBy
+     *
      * @return User
      */
-    public function setUpdatedBy($updatedBy){
+    public function setUpdatedBy($updatedBy)
+    {
         $this->updatedBy = $updatedBy;
+
         return $this;
     }
 
     /**
-     * Get updatedBy
+     * Get updatedBy.
+     *
      * @return string
      */
-    public function getUpdatedBy(){
+    public function getUpdatedBy()
+    {
         return $this->updatedBy;
     }
 }
-

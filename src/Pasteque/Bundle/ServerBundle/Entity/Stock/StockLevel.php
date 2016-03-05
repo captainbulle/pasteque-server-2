@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Stock;
 
 /**
- * StockLevel
+ * StockLevel.
  */
 class StockLevel
 {
@@ -46,14 +46,15 @@ class StockLevel
      * StockLevel constructor.
      * As quantities are set through stock moves leave $quantity to null to create security and max levels.
      * In that case also set $attributeSetInstanceId to null as it is ignored.
+     *
      * @param string $productId
      * @param string $locationId
      * @param string $attributeSetInstanceId
-     * @param float $security
-     * @param float $max
-     * @param float $quantity
+     * @param float  $security
+     * @param float  $max
+     * @param float  $quantity
      */
-    public function __construct($productId, $locationId, $attributeSetInstanceId, $security, $max, $quantity=null)
+    public function __construct($productId, $locationId, $attributeSetInstanceId, $security, $max, $quantity = null)
     {
         $this->productId = $productId;
         $this->locationId = $locationId;
@@ -64,7 +65,7 @@ class StockLevel
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -74,7 +75,7 @@ class StockLevel
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param string $productId
      *
@@ -88,7 +89,7 @@ class StockLevel
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return string
      */
@@ -98,7 +99,7 @@ class StockLevel
     }
 
     /**
-     * Set locationId
+     * Set locationId.
      *
      * @param string $locationId
      *
@@ -112,7 +113,7 @@ class StockLevel
     }
 
     /**
-     * Get locationId
+     * Get locationId.
      *
      * @return string
      */
@@ -122,7 +123,7 @@ class StockLevel
     }
 
     /**
-     * Set attributeSetInstanceId
+     * Set attributeSetInstanceId.
      *
      * @param string $attributeSetInstanceId
      *
@@ -136,7 +137,7 @@ class StockLevel
     }
 
     /**
-     * Get attributeSetInstanceId
+     * Get attributeSetInstanceId.
      *
      * @return string
      */
@@ -146,7 +147,7 @@ class StockLevel
     }
 
     /**
-     * Set security
+     * Set security.
      *
      * @param float $security
      *
@@ -160,7 +161,7 @@ class StockLevel
     }
 
     /**
-     * Get security
+     * Get security.
      *
      * @return float
      */
@@ -170,7 +171,7 @@ class StockLevel
     }
 
     /**
-     * Set max
+     * Set max.
      *
      * @param float $max
      *
@@ -184,7 +185,7 @@ class StockLevel
     }
 
     /**
-     * Get max
+     * Get max.
      *
      * @return float
      */
@@ -194,7 +195,7 @@ class StockLevel
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -208,7 +209,7 @@ class StockLevel
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -217,4 +218,3 @@ class StockLevel
         return $this->quantity;
     }
 }
-

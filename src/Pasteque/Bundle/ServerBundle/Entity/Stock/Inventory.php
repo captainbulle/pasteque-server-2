@@ -6,7 +6,7 @@ use Pasteque\Bundle\ServerBundle\Entity\Product\Product as Product;
 
 /**
  * Inventory
- * Snapshot of a stock at a given date
+ * Snapshot of a stock at a given date.
  */
 class Inventory
 {
@@ -33,15 +33,18 @@ class Inventory
     /**
      * @param InventoryItem $inventoryItem
      */
-    public function addInventoryItem($inventoryItem){
+    public function addInventoryItem($inventoryItem)
+    {
         array_push($inventoryItems, $inventoryItem);
     }
 
     /**
-     * Add 0 quantities to all on sales and missing products in inventory
+     * Add 0 quantities to all on sales and missing products in inventory.
+     *
      * @param Product[] $products
      */
-    public function fillZero($products) {
+    public function fillZero($products)
+    {
         foreach ($this->inventoryItems as $inventoryItem) {
             foreach ($products as $i => $product) {
                 if ($product->getId() == $inventoryItem->getProductId()) {
@@ -57,7 +60,7 @@ class Inventory
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -67,7 +70,7 @@ class Inventory
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -81,7 +84,7 @@ class Inventory
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -91,7 +94,7 @@ class Inventory
     }
 
     /**
-     * Set locationId
+     * Set locationId.
      *
      * @param string $locationId
      *
@@ -105,7 +108,7 @@ class Inventory
     }
 
     /**
-     * Get locationId
+     * Get locationId.
      *
      * @return string
      */
@@ -114,4 +117,3 @@ class Inventory
         return $this->locationId;
     }
 }
-

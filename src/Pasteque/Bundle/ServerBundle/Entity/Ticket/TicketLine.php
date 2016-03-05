@@ -6,7 +6,7 @@ use Pasteque\Bundle\ServerBundle\Entity\Tax\Tax as Tax;
 use Pasteque\Bundle\ServerBundle\Entity\Product\Product as Product;
 
 /**
- * TicketLine
+ * TicketLine.
  */
 class TicketLine
 {
@@ -41,7 +41,8 @@ class TicketLine
     private $quantity;
 
     /**
-     * Price without tax and before applying discount
+     * Price without tax and before applying discount.
+     *
      * @var float
      */
     private $price;
@@ -57,7 +58,8 @@ class TicketLine
     private $discountRate;
 
     /**
-     * XML attribute field
+     * XML attribute field.
+     *
      * @var string
      */
     private $attributes;
@@ -70,17 +72,18 @@ class TicketLine
     /**
      * TicketLine constructor.
      * Constructor must take full product and tax objects to build xml attributes. Only the id is then kept.
-     * @param string $ticketId
-     * @param int $displayOrder
+     *
+     * @param string  $ticketId
+     * @param int     $displayOrder
      * @param Product $product
-     * @param string $attributeSetInstanceId
-     * @param float $quantity
-     * @param float $price
-     * @param Tax $tax
-     * @param float $discountRate
-     * @param string $productLabel
+     * @param string  $attributeSetInstanceId
+     * @param float   $quantity
+     * @param float   $price
+     * @param Tax     $tax
+     * @param float   $discountRate
+     * @param string  $productLabel
      */
-    public function __construct($ticketId, $displayOrder, $product, $attributeSetInstanceId, $quantity, $price, $tax, $discountRate=0.0, $productLabel=null)
+    public function __construct($ticketId, $displayOrder, $product, $attributeSetInstanceId, $quantity, $price, $tax, $discountRate = 0.0, $productLabel = null)
     {
         $this->ticketId = $ticketId;
         $this->displayOrder = $displayOrder;
@@ -96,65 +99,69 @@ class TicketLine
         $this->productLabel = $productLabel;
     }
 
-
     /**
      * @param $extDiscountRate
+     *
      * @return float
      */
-    public function getSubtotal($extDiscountRate) {
+    public function getSubtotal($extDiscountRate)
+    {
         $fullDiscount = $this->discountRate + $extDiscountRate;
+
         return $this->price * (1.0 - $fullDiscount) * $this->quantity;
     }
 
     /**
      * Build xml attributes from line data. See TicketLineInfo constructors.
+     *
      * @param Product $product
-     * @param Tax $tax
+     * @param Tax     $tax
      */
-    private function createAttributes($product, $tax) {
+    private function createAttributes($product, $tax)
+    {
         // Set xml
         $domimpl = new \DOMImplementation();
         $doctype = $domimpl->createDocumentType('properties', null,
-            "http://java.sun.com/dtd/properties.dtd");
+            'http://java.sun.com/dtd/properties.dtd');
         $attrs = $domimpl->createDocument(null, null, $doctype);
-        $attrs->xmlEncoding = "UTF-8";
-        $attrs->xmlVersion = "1.0";
+        $attrs->xmlEncoding = 'UTF-8';
+        $attrs->xmlVersion = '1.0';
         $attrs->xmlStandalone = false;
         // Add root properties element
-        $properties = $attrs->createElement("properties");
+        $properties = $attrs->createElement('properties');
         $attrs->appendChild($properties);
         // Add comment element
-        $comment = $attrs->createElement("comment");
-        $comment->appendChild($attrs->createTextNode("POS-Tech")); // This is actually the application name
+        $comment = $attrs->createElement('comment');
+        $comment->appendChild($attrs->createTextNode('POS-Tech')); // This is actually the application name
         $properties->appendChild($comment);
         // Add some product keys
-        $entry = $attrs->createElement("entry");
-        $key = $attrs->createAttribute("key");
-        $key->appendChild($attrs->createTextNode("product.taxcategoryid"));
+        $entry = $attrs->createElement('entry');
+        $key = $attrs->createAttribute('key');
+        $key->appendChild($attrs->createTextNode('product.taxcategoryid'));
         $entry->appendChild($key);
         $entry->appendChild($attrs->createTextNode($tax->getTaxCategoryId()));
         $properties->appendChild($entry);
-        $entry = $attrs->createElement("entry");
-        $key = $attrs->createAttribute("key");
-        $key->appendChild($attrs->createTextNode("product.com"));
+        $entry = $attrs->createElement('entry');
+        $key = $attrs->createAttribute('key');
+        $key->appendChild($attrs->createTextNode('product.com'));
         $entry->appendChild($key);
-        $entry->appendChild($attrs->createTextNode("false")); // TODO add iscom field
+        $entry->appendChild($attrs->createTextNode('false')); // TODO add iscom field
         $properties->appendChild($entry);
-        $entry = $attrs->createElement("entry");
-        $key = $attrs->createAttribute("key");
-        $key->appendChild($attrs->createTextNode("product.categoryid"));
+        $entry = $attrs->createElement('entry');
+        $key = $attrs->createAttribute('key');
+        $key->appendChild($attrs->createTextNode('product.categoryid'));
         $entry->appendChild($key);
         $entry->appendChild($attrs->createTextNode($product->getCategoryId()));
         $properties->appendChild($entry);
-        $entry = $attrs->createElement("entry");
-        $key = $attrs->createAttribute("key");
-        $key->appendChild($attrs->createTextNode("product.scale"));
+        $entry = $attrs->createElement('entry');
+        $key = $attrs->createAttribute('key');
+        $key->appendChild($attrs->createTextNode('product.scale'));
         $entry->appendChild($key);
-        $entry->appendChild($attrs->createTextNode(strval($product->getIsScale())?"true":"false"));
+        $entry->appendChild($attrs->createTextNode(strval($product->getIsScale()) ? 'true' : 'false'));
         $properties->appendChild($entry);
-        $entry = $attrs->createElement("entry");
-        $key = $attrs->createAttribute("key");
-        $key->appendChild($attrs->createTextNode("product.name"));
+        $entry = $attrs->createElement('entry');
+        $key = $attrs->createAttribute('key');
+        $key->appendChild($attrs->createTextNode('product.name'));
         $entry->appendChild($key);
         $entry->appendChild($attrs->createTextNode($product->getName()));
         $properties->appendChild($entry);
@@ -163,7 +170,7 @@ class TicketLine
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -173,7 +180,7 @@ class TicketLine
     }
 
     /**
-     * Set ticketId
+     * Set ticketId.
      *
      * @param string $ticketId
      *
@@ -187,7 +194,7 @@ class TicketLine
     }
 
     /**
-     * Get ticketId
+     * Get ticketId.
      *
      * @return string
      */
@@ -197,9 +204,9 @@ class TicketLine
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return TicketLine
      */
@@ -211,7 +218,7 @@ class TicketLine
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -221,7 +228,7 @@ class TicketLine
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param string $productId
      *
@@ -235,7 +242,7 @@ class TicketLine
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return string
      */
@@ -245,7 +252,7 @@ class TicketLine
     }
 
     /**
-     * Set attributeSetInstanceId
+     * Set attributeSetInstanceId.
      *
      * @param string $attributeSetInstanceId
      *
@@ -259,7 +266,7 @@ class TicketLine
     }
 
     /**
-     * Get attributeSetInstanceId
+     * Get attributeSetInstanceId.
      *
      * @return string
      */
@@ -269,7 +276,7 @@ class TicketLine
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -283,7 +290,7 @@ class TicketLine
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -293,7 +300,7 @@ class TicketLine
     }
 
     /**
-     * Set price
+     * Set price.
      *
      * @param float $price
      *
@@ -307,7 +314,7 @@ class TicketLine
     }
 
     /**
-     * Get price
+     * Get price.
      *
      * @return float
      */
@@ -317,7 +324,7 @@ class TicketLine
     }
 
     /**
-     * Set taxId
+     * Set taxId.
      *
      * @param string $taxId
      *
@@ -331,7 +338,7 @@ class TicketLine
     }
 
     /**
-     * Get taxId
+     * Get taxId.
      *
      * @return string
      */
@@ -341,7 +348,7 @@ class TicketLine
     }
 
     /**
-     * Set discountRate
+     * Set discountRate.
      *
      * @param float $discountRate
      *
@@ -355,7 +362,7 @@ class TicketLine
     }
 
     /**
-     * Get discountRate
+     * Get discountRate.
      *
      * @return float
      */
@@ -365,7 +372,7 @@ class TicketLine
     }
 
     /**
-     * Set attributes
+     * Set attributes.
      *
      * @param string $attributes
      *
@@ -379,7 +386,7 @@ class TicketLine
     }
 
     /**
-     * Get attributes
+     * Get attributes.
      *
      * @return string
      */
@@ -389,7 +396,7 @@ class TicketLine
     }
 
     /**
-     * Set productLabel
+     * Set productLabel.
      *
      * @param string $productLabel
      *
@@ -403,7 +410,7 @@ class TicketLine
     }
 
     /**
-     * Get productLabel
+     * Get productLabel.
      *
      * @return string
      */
@@ -412,4 +419,3 @@ class TicketLine
         return $this->productLabel;
     }
 }
-

@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Location
+ * Location.
  */
 class Location
 {
@@ -24,10 +24,11 @@ class Location
 
     /**
      * Location constructor.
+     *
      * @param string $name
      * @param string $address
      */
-    public function __construct($name, $address=null)
+    public function __construct($name, $address = null)
     {
         $this->id = com_create_guid();
         $this->name = $name;
@@ -35,7 +36,7 @@ class Location
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -45,7 +46,7 @@ class Location
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -59,7 +60,7 @@ class Location
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -69,7 +70,7 @@ class Location
     }
 
     /**
-     * Set address
+     * Set address.
      *
      * @param string $address
      *
@@ -83,7 +84,7 @@ class Location
     }
 
     /**
-     * Get address
+     * Get address.
      *
      * @return string
      */
@@ -92,4 +93,3 @@ class Location
         return $this->address;
     }
 }
-

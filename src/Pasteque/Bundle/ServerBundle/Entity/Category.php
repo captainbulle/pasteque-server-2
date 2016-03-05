@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Category
+ * Category.
  */
 class Category
 {
@@ -39,13 +39,14 @@ class Category
 
     /**
      * Category constructor.
+     *
      * @param string $reference
      * @param string $name
      * @param string $parentId
      * @param string $image
-     * @param int $displayOrder
+     * @param int    $displayOrder
      */
-    public function __construct($name, $reference, $parentId, $image, $displayOrder=null)
+    public function __construct($name, $reference, $parentId, $image, $displayOrder = null)
     {
         $this->id = com_create_guid();
         $this->name = $name;
@@ -56,7 +57,7 @@ class Category
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -66,7 +67,7 @@ class Category
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -80,7 +81,7 @@ class Category
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -90,7 +91,7 @@ class Category
     }
 
     /**
-     * Set reference
+     * Set reference.
      *
      * @param string $reference
      *
@@ -104,7 +105,7 @@ class Category
     }
 
     /**
-     * Get reference
+     * Get reference.
      *
      * @return string
      */
@@ -114,7 +115,7 @@ class Category
     }
 
     /**
-     * Set parentId
+     * Set parentId.
      *
      * @param string $parentId
      *
@@ -128,7 +129,7 @@ class Category
     }
 
     /**
-     * Get parentId
+     * Get parentId.
      *
      * @return string
      */
@@ -138,7 +139,7 @@ class Category
     }
 
     /**
-     * Set image
+     * Set image.
      *
      * @param string $image
      *
@@ -152,7 +153,7 @@ class Category
     }
 
     /**
-     * Get image
+     * Get image.
      *
      * @return string
      */
@@ -162,9 +163,9 @@ class Category
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return Category
      */
@@ -176,7 +177,7 @@ class Category
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -185,4 +186,3 @@ class Category
         return $this->displayOrder;
     }
 }
-

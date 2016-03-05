@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Tax;
 
 /**
- * TaxCustomerCategory
+ * TaxCustomerCategory.
  */
 class TaxCustomerCategory
 {
@@ -29,10 +29,11 @@ class TaxCustomerCategory
 
     /**
      * TaxCustomerCategory constructor.
+     *
      * @param string $name
      * @param string $taxCategoryId
      */
-    public function __construct($name, $taxCategoryId=null)
+    public function __construct($name, $taxCategoryId = null)
     {
         $this->id = com_create_guid();
         $this->name = $name;
@@ -43,12 +44,13 @@ class TaxCustomerCategory
     /**
      * @param Tax $tax
      */
-    public function addTax(Tax $tax) {
+    public function addTax(Tax $tax)
+    {
         array_push($this->taxes, $tax);
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -58,7 +60,7 @@ class TaxCustomerCategory
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -72,7 +74,7 @@ class TaxCustomerCategory
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -82,7 +84,7 @@ class TaxCustomerCategory
     }
 
     /**
-     * Set taxCategoryId
+     * Set taxCategoryId.
      *
      * @param string $taxCategoryId
      *
@@ -96,7 +98,7 @@ class TaxCustomerCategory
     }
 
     /**
-     * Get taxCategoryId
+     * Get taxCategoryId.
      *
      * @return string
      */
@@ -105,4 +107,3 @@ class TaxCustomerCategory
         return $this->taxCategoryId;
     }
 }
-

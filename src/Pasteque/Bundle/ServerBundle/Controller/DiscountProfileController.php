@@ -22,16 +22,16 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class DiscountProfileController extends AbstractController {
+class DiscountProfileController extends AbstractController
+{
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
+        $discountProfiles = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $discountProfiles = $repo->findAll();
+        $response = new Response(json_encode($discountProfiles));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($discountProfiles));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

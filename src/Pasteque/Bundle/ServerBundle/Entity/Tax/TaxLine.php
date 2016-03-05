@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Tax;
 
 /**
- * TaxLine
+ * TaxLine.
  */
 class TaxLine
 {
@@ -34,9 +34,10 @@ class TaxLine
 
     /**
      * TaxLine constructor.
+     *
      * @param string $receiptId
      * @param string $taxId
-     * @param float $base
+     * @param float  $base
      */
     public function __construct($receiptId, $taxId, $base)
     {
@@ -48,7 +49,7 @@ class TaxLine
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -58,7 +59,7 @@ class TaxLine
     }
 
     /**
-     * Set receiptId
+     * Set receiptId.
      *
      * @param string $receiptId
      *
@@ -72,7 +73,7 @@ class TaxLine
     }
 
     /**
-     * Get receiptId
+     * Get receiptId.
      *
      * @return string
      */
@@ -82,7 +83,7 @@ class TaxLine
     }
 
     /**
-     * Set taxId
+     * Set taxId.
      *
      * @param string $taxId
      *
@@ -96,7 +97,7 @@ class TaxLine
     }
 
     /**
-     * Get taxId
+     * Get taxId.
      *
      * @return string
      */
@@ -106,7 +107,7 @@ class TaxLine
     }
 
     /**
-     * Set base
+     * Set base.
      *
      * @param float $base
      *
@@ -120,7 +121,7 @@ class TaxLine
     }
 
     /**
-     * Get base
+     * Get base.
      *
      * @return float
      */
@@ -130,7 +131,7 @@ class TaxLine
     }
 
     /**
-     * Set amount
+     * Set amount.
      *
      * @param Tax $tax
      *
@@ -144,7 +145,7 @@ class TaxLine
     }
 
     /**
-     * Get amount
+     * Get amount.
      *
      * @return float
      */
@@ -153,4 +154,3 @@ class TaxLine
         return $this->amount;
     }
 }
-

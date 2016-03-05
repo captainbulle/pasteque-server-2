@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Ticket;
 
 /**
- * SharedTicket
+ * SharedTicket.
  */
 class SharedTicket
 {
@@ -49,14 +49,15 @@ class SharedTicket
 
     /**
      * SharedTicket constructor.
+     *
      * @param string $name
      * @param string $customerId
-     * @param int $customerCount
-     * @param int $tariffAreaId
-     * @param int $discountProfileId
-     * @param float $discountRate
+     * @param int    $customerCount
+     * @param int    $tariffAreaId
+     * @param int    $discountProfileId
+     * @param float  $discountRate
      */
-    public function __construct($name, $customerId, $customerCount, $tariffAreaId, $discountProfileId, $discountRate=0.0)
+    public function __construct($name, $customerId, $customerCount, $tariffAreaId, $discountProfileId, $discountRate = 0.0)
     {
         $this->id = com_create_guid();
         $this->name = $name;
@@ -68,16 +69,16 @@ class SharedTicket
         $this->sharedTicketLines = array();
     }
 
-
     /**
      * @param SharedTicketLine $sharedTicketLine
      */
-    public function addSharedTicketLine($sharedTicketLine) {
+    public function addSharedTicketLine($sharedTicketLine)
+    {
         array_push($this->sharedTicketLines, $sharedTicketLine);
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -87,7 +88,7 @@ class SharedTicket
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -101,7 +102,7 @@ class SharedTicket
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -111,7 +112,7 @@ class SharedTicket
     }
 
     /**
-     * Set customerId
+     * Set customerId.
      *
      * @param string $customerId
      *
@@ -125,7 +126,7 @@ class SharedTicket
     }
 
     /**
-     * Get customerId
+     * Get customerId.
      *
      * @return string
      */
@@ -135,9 +136,9 @@ class SharedTicket
     }
 
     /**
-     * Set customerCount
+     * Set customerCount.
      *
-     * @param integer $customerCount
+     * @param int $customerCount
      *
      * @return SharedTicket
      */
@@ -149,7 +150,7 @@ class SharedTicket
     }
 
     /**
-     * Get customerCount
+     * Get customerCount.
      *
      * @return int
      */
@@ -159,9 +160,9 @@ class SharedTicket
     }
 
     /**
-     * Set tariffAreaId
+     * Set tariffAreaId.
      *
-     * @param integer $tariffAreaId
+     * @param int $tariffAreaId
      *
      * @return SharedTicket
      */
@@ -173,7 +174,7 @@ class SharedTicket
     }
 
     /**
-     * Get tariffAreaId
+     * Get tariffAreaId.
      *
      * @return int
      */
@@ -183,9 +184,9 @@ class SharedTicket
     }
 
     /**
-     * Set discountProfileId
+     * Set discountProfileId.
      *
-     * @param integer $discountProfileId
+     * @param int $discountProfileId
      *
      * @return SharedTicket
      */
@@ -197,7 +198,7 @@ class SharedTicket
     }
 
     /**
-     * Get discountProfileId
+     * Get discountProfileId.
      *
      * @return int
      */
@@ -207,7 +208,7 @@ class SharedTicket
     }
 
     /**
-     * Set discountRate
+     * Set discountRate.
      *
      * @param float $discountRate
      *
@@ -221,7 +222,7 @@ class SharedTicket
     }
 
     /**
-     * Get discountRate
+     * Get discountRate.
      *
      * @return float
      */
@@ -230,4 +231,3 @@ class SharedTicket
         return $this->discountRate;
     }
 }
-

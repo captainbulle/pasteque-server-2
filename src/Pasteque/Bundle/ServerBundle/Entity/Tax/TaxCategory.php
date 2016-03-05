@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Tax;
 
 /**
- * TaxCategory
+ * TaxCategory.
  */
 class TaxCategory
 {
@@ -24,6 +24,7 @@ class TaxCategory
 
     /**
      * TaxCategory constructor.
+     *
      * @param string $name
      */
     public function __construct($name)
@@ -36,17 +37,20 @@ class TaxCategory
     /**
      * @param Tax $tax
      */
-    public function addTax(Tax $tax) {
+    public function addTax(Tax $tax)
+    {
         array_push($this->taxes, $tax);
     }
 
     /**
      * @param null $timestamp
+     *
      * @return Tax|null
      */
-    public function getCurrentTax($timestamp = null) {
+    public function getCurrentTax($timestamp = null)
+    {
         /**
-         * @var Tax $current
+         * @var Tax
          */
         $current = null;
         if ($timestamp === null) {
@@ -57,11 +61,12 @@ class TaxCategory
                 $current = $tax;
             }
         }
+
         return $current;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -71,7 +76,7 @@ class TaxCategory
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -85,7 +90,7 @@ class TaxCategory
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -94,4 +99,3 @@ class TaxCategory
         return $this->name;
     }
 }
-

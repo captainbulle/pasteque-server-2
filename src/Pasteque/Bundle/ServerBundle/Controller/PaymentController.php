@@ -22,16 +22,16 @@ namespace Pasteque\Bundle\ServerBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 
-class PaymentController extends AbstractController {
+class PaymentController extends AbstractController
+{
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Payment');
+        $payments = $repo->findAll();
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Payment');
-    $payments = $repo->findAll();
+        $response = new Response(json_encode($payments));
+        $response->headers->set('Content-Type', 'application/json');
 
-    $response = new Response(json_encode($payments));
-    $response->headers->set('Content-Type', 'application/json');
-
-    return $response;
-  }
+        return $response;
+    }
 }

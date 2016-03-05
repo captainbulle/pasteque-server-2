@@ -1,10 +1,12 @@
 <?php
+
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 /**
- * AttributeUse
+ * AttributeUse.
  */
-class AttributeUse{
+class AttributeUse
+{
     /**
      * @var string
      */
@@ -27,11 +29,13 @@ class AttributeUse{
 
     /**
      * AttributeUse constructor.
+     *
      * @param string $attrSetId
      * @param string $attrId
-     * @param int $lineNo
+     * @param int    $lineNo
      */
-    public function __construct($attrSetId, $attrId, $lineNo) {
+    public function __construct($attrSetId, $attrId, $lineNo)
+    {
         $this->id = com_create_guid();
         $this->attrSetId = $attrSetId;
         $this->attrId = $attrId;
@@ -39,65 +43,84 @@ class AttributeUse{
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return int
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set attrSetId
+     * Set attrSetId.
+     *
      * @param string $attrSetId
+     *
      * @return AttributeUse
      */
-    public function setAttrSetId($attrSetId){
+    public function setAttrSetId($attrSetId)
+    {
         $this->attrSetId = $attrSetId;
+
         return $this;
     }
 
     /**
-     * Get attrSetId
+     * Get attrSetId.
+     *
      * @return string
      */
-    public function getAttrSetId(){
+    public function getAttrSetId()
+    {
         return $this->attrSetId;
     }
 
     /**
-     * Set attrId
+     * Set attrId.
+     *
      * @param string $attrId
+     *
      * @return AttributeUse
      */
-    public function setAttrId($attrId){
+    public function setAttrId($attrId)
+    {
         $this->attrId = $attrId;
+
         return $this;
     }
 
     /**
-     * Get attrId
+     * Get attrId.
+     *
      * @return string
      */
-    public function getAttrId(){
+    public function getAttrId()
+    {
         return $this->attrId;
     }
 
     /**
-     * Set lineNo
-     * @param integer $lineNo
+     * Set lineNo.
+     *
+     * @param int $lineNo
+     *
      * @return AttributeUse
      */
-    public function setLineNo($lineNo){
+    public function setLineNo($lineNo)
+    {
         $this->lineNo = $lineNo;
+
         return $this;
     }
 
     /**
-     * Get lineNo
+     * Get lineNo.
+     *
      * @return int
      */
-    public function getLineNo(){
+    public function getLineNo()
+    {
         return $this->lineNo;
     }
 }
-

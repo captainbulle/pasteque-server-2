@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Provider
+ * Provider.
  */
 class Provider
 {
@@ -119,10 +119,11 @@ class Provider
      * @param string $website
      * @param string $fax
      * @param string $notes
-     * @param int $displayOrder
+     * @param int    $displayOrder
      */
     public function __construct($name, $image, $address, $address2, $postal, $city, $region, $country, $firstname, $lastname,
-                                $email, $phone, $phone2, $website, $fax, $notes, $displayOrder=null){
+                                $email, $phone, $phone2, $website, $fax, $notes, $displayOrder = null)
+    {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->image = $image;
@@ -145,335 +146,444 @@ class Provider
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Provider
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set image
+     * Set image.
+     *
      * @param string $image
+     *
      * @return Provider
      */
-    public function setImage($image){
+    public function setImage($image)
+    {
         $this->image = $image;
+
         return $this;
     }
 
     /**
-     * Get image
+     * Get image.
+     *
      * @return string
      */
-    public function getImage(){
+    public function getImage()
+    {
         return $this->image;
     }
 
     /**
-     * Set address
+     * Set address.
+     *
      * @param string $address
+     *
      * @return Provider
      */
-    public function setAddress($address){
+    public function setAddress($address)
+    {
         $this->address = $address;
+
         return $this;
     }
 
     /**
-     * Get address
+     * Get address.
+     *
      * @return string
      */
-    public function getAddress(){
+    public function getAddress()
+    {
         return $this->address;
     }
 
     /**
-     * Set address2
+     * Set address2.
+     *
      * @param string $address2
+     *
      * @return Provider
      */
-    public function setAddress2($address2){
+    public function setAddress2($address2)
+    {
         $this->address2 = $address2;
+
         return $this;
     }
 
     /**
-     * Get address2
+     * Get address2.
+     *
      * @return string
      */
-    public function getAddress2(){
+    public function getAddress2()
+    {
         return $this->address2;
     }
 
     /**
-     * Set postal
+     * Set postal.
+     *
      * @param string $postal
+     *
      * @return Provider
      */
-    public function setPostal($postal){
+    public function setPostal($postal)
+    {
         $this->postal = $postal;
+
         return $this;
     }
 
     /**
-     * Get postal
+     * Get postal.
+     *
      * @return string
      */
-    public function getPostal(){
+    public function getPostal()
+    {
         return $this->postal;
     }
 
     /**
-     * Set city
+     * Set city.
+     *
      * @param string $city
+     *
      * @return Provider
      */
-    public function setCity($city){
+    public function setCity($city)
+    {
         $this->city = $city;
+
         return $this;
     }
 
     /**
-     * Get city
+     * Get city.
+     *
      * @return string
      */
-    public function getCity(){
+    public function getCity()
+    {
         return $this->city;
     }
 
     /**
-     * Set region
+     * Set region.
+     *
      * @param string $region
+     *
      * @return Provider
      */
-    public function setRegion($region){
+    public function setRegion($region)
+    {
         $this->region = $region;
+
         return $this;
     }
 
     /**
-     * Get region
+     * Get region.
+     *
      * @return string
      */
-    public function getRegion(){
+    public function getRegion()
+    {
         return $this->region;
     }
 
     /**
-     * Set country
+     * Set country.
+     *
      * @param string $country
+     *
      * @return Provider
      */
-    public function setCountry($country){
+    public function setCountry($country)
+    {
         $this->country = $country;
+
         return $this;
     }
 
     /**
-     * Get country
+     * Get country.
+     *
      * @return string
      */
-    public function getCountry(){
+    public function getCountry()
+    {
         return $this->country;
     }
 
     /**
-     * Set firstname
+     * Set firstname.
+     *
      * @param string $firstname
+     *
      * @return Provider
      */
-    public function setFirstname($firstname){
+    public function setFirstname($firstname)
+    {
         $this->firstname = $firstname;
+
         return $this;
     }
 
     /**
-     * Get firstname
+     * Get firstname.
+     *
      * @return string
      */
-    public function getFirstname(){
+    public function getFirstname()
+    {
         return $this->firstname;
     }
 
     /**
-     * Set lastname
+     * Set lastname.
+     *
      * @param string $lastname
+     *
      * @return Provider
      */
-    public function setLastname($lastname){
+    public function setLastname($lastname)
+    {
         $this->lastname = $lastname;
+
         return $this;
     }
 
     /**
-     * Get lastname
+     * Get lastname.
+     *
      * @return string
      */
-    public function getLastname(){
+    public function getLastname()
+    {
         return $this->lastname;
     }
 
     /**
-     * Set email
+     * Set email.
+     *
      * @param string $email
+     *
      * @return Provider
      */
-    public function setEmail($email){
+    public function setEmail($email)
+    {
         $this->email = $email;
+
         return $this;
     }
 
     /**
-     * Get email
+     * Get email.
+     *
      * @return string
      */
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->email;
     }
 
     /**
-     * Set phone
+     * Set phone.
+     *
      * @param string $phone
+     *
      * @return Provider
      */
-    public function setPhone($phone){
+    public function setPhone($phone)
+    {
         $this->phone = $phone;
+
         return $this;
     }
 
     /**
-     * Get phone
+     * Get phone.
+     *
      * @return string
      */
-    public function getPhone(){
+    public function getPhone()
+    {
         return $this->phone;
     }
 
     /**
-     * Set phone2
+     * Set phone2.
+     *
      * @param string $phone2
+     *
      * @return Provider
      */
-    public function setPhone2($phone2){
+    public function setPhone2($phone2)
+    {
         $this->phone2 = $phone2;
+
         return $this;
     }
 
     /**
-     * Get phone2
+     * Get phone2.
+     *
      * @return string
      */
-    public function getPhone2(){
+    public function getPhone2()
+    {
         return $this->phone2;
     }
 
     /**
-     * Set website
+     * Set website.
+     *
      * @param string $website
+     *
      * @return Provider
      */
-    public function setWebsite($website){
+    public function setWebsite($website)
+    {
         $this->website = $website;
+
         return $this;
     }
 
     /**
-     * Get website
+     * Get website.
+     *
      * @return string
      */
-    public function getWebsite(){
+    public function getWebsite()
+    {
         return $this->website;
     }
 
     /**
-     * Set fax
+     * Set fax.
+     *
      * @param string $fax
+     *
      * @return Provider
      */
-    public function setFax($fax){
+    public function setFax($fax)
+    {
         $this->fax = $fax;
+
         return $this;
     }
 
     /**
-     * Get fax
+     * Get fax.
+     *
      * @return string
      */
-    public function getFax(){
+    public function getFax()
+    {
         return $this->fax;
     }
 
     /**
-     * Set notes
+     * Set notes.
+     *
      * @param string $notes
+     *
      * @return Provider
      */
-    public function setNotes($notes){
+    public function setNotes($notes)
+    {
         $this->notes = $notes;
+
         return $this;
     }
 
     /**
-     * Get notes
+     * Get notes.
+     *
      * @return string
      */
-    public function getNotes(){
+    public function getNotes()
+    {
         return $this->notes;
     }
 
     /**
-     * Set displayOrder
-     * @param integer $displayOrder
+     * Set displayOrder.
+     *
+     * @param int $displayOrder
+     *
      * @return Provider
      */
-    public function setDisplayOrder($displayOrder){
+    public function setDisplayOrder($displayOrder)
+    {
         $this->displayOrder = $displayOrder;
+
         return $this;
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
+     *
      * @return int
      */
-    public function getDisplayOrder(){
+    public function getDisplayOrder()
+    {
         return $this->displayOrder;
     }
 
     /**
-     * Set visible
-     * @param boolean $visible
+     * Set visible.
+     *
+     * @param bool $visible
+     *
      * @return Provider
      */
-    public function setVisible($visible){
+    public function setVisible($visible)
+    {
         $this->visible = $visible;
+
         return $this;
     }
 
     /**
-     * Get visible
+     * Get visible.
+     *
      * @return bool
      */
-    public function getVisible(){
+    public function getVisible()
+    {
         return $this->visible;
     }
 }
-

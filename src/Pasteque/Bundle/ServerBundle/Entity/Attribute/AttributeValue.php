@@ -1,10 +1,12 @@
 <?php
+
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 /**
- * AttributeValue
+ * AttributeValue.
  */
-class AttributeValue{
+class AttributeValue
+{
     /**
      * @var string
      */
@@ -17,37 +19,46 @@ class AttributeValue{
 
     /**
      * AttributeValue constructor.
+     *
      * @param string $value
      */
-    public function __construct($value){
+    public function __construct($value)
+    {
         $this->id = com_create_guid();
         $this->value = $value;
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set value
+     * Set value.
+     *
      * @param string $value
+     *
      * @return AttributeValue
      */
-    public function setValue($value){
+    public function setValue($value)
+    {
         $this->value = $value;
+
         return $this;
     }
 
     /**
-     * Get value
+     * Get value.
+     *
      * @return string
      */
-    public function getValue(){
+    public function getValue()
+    {
         return $this->value;
     }
 }
-

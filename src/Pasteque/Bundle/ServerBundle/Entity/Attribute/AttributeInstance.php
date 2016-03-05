@@ -1,10 +1,12 @@
 <?php
+
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 /**
- * AttributeInstance
+ * AttributeInstance.
  */
-class AttributeInstance{
+class AttributeInstance
+{
     /**
      * @var string
      */
@@ -27,11 +29,13 @@ class AttributeInstance{
 
     /**
      * AttributeInstance constructor.
+     *
      * @param string $attrSetInstId
      * @param string $attrId
      * @param string $value
      */
-    public function __construct($attrSetInstId, $attrId, $value) {
+    public function __construct($attrSetInstId, $attrId, $value)
+    {
         $this->id = com_create_guid();
         $this->attrSetInstId = $attrSetInstId;
         $this->attrId = $attrId;
@@ -39,65 +43,84 @@ class AttributeInstance{
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set attrSetInstId
+     * Set attrSetInstId.
+     *
      * @param string $attrSetInstId
+     *
      * @return AttributeInstance
      */
-    public function setAttrSetInstId($attrSetInstId){
+    public function setAttrSetInstId($attrSetInstId)
+    {
         $this->attrSetInstId = $attrSetInstId;
+
         return $this;
     }
 
     /**
-     * Get attrSetInstId
+     * Get attrSetInstId.
+     *
      * @return string
      */
-    public function getAttrSetInstId(){
+    public function getAttrSetInstId()
+    {
         return $this->attrSetInstId;
     }
 
     /**
-     * Set attrId
+     * Set attrId.
+     *
      * @param string $attrId
+     *
      * @return AttributeInstance
      */
-    public function setAttrId($attrId){
+    public function setAttrId($attrId)
+    {
         $this->attrId = $attrId;
+
         return $this;
     }
 
     /**
-     * Get attrId
+     * Get attrId.
+     *
      * @return string
      */
-    public function getAttrId(){
+    public function getAttrId()
+    {
         return $this->attrId;
     }
 
     /**
-     * Set value
+     * Set value.
+     *
      * @param string $value
+     *
      * @return AttributeInstance
      */
-    public function setValue($value){
+    public function setValue($value)
+    {
         $this->value = $value;
+
         return $this;
     }
 
     /**
-     * Get value
+     * Get value.
+     *
      * @return string
      */
-    public function getValue(){
+    public function getValue()
+    {
         return $this->value;
     }
 }
-

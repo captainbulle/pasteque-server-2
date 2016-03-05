@@ -1,10 +1,12 @@
 <?php
+
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 /**
- * AttributeSetInstance
+ * AttributeSetInstance.
  */
-class AttributeSetInstance{
+class AttributeSetInstance
+{
     /**
      * @var string
      */
@@ -27,10 +29,12 @@ class AttributeSetInstance{
 
     /**
      * AttributeSetInstance constructor.
+     *
      * @param string $attrSetId
      * @param string $description
      */
-    public function __construct($attrSetId, $description) {
+    public function __construct($attrSetId, $description)
+    {
         $this->id = com_create_guid();
         $this->attrSetId = $attrSetId;
         $this->description = $description;
@@ -38,63 +42,80 @@ class AttributeSetInstance{
     }
 
     /**
-     * Add an instance of attribute in the array attrInsts
+     * Add an instance of attribute in the array attrInsts.
+     *
      * @param $attrInst
      */
-    public function addAttrInst($attrInst) {
+    public function addAttrInst($attrInst)
+    {
         array_push($this->attrInsts, $attrInst);
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set attrSetId
+     * Set attrSetId.
+     *
      * @param string $attrSetId
+     *
      * @return AttributeSetInstance
      */
-    public function setAttrSetId($attrSetId){
+    public function setAttrSetId($attrSetId)
+    {
         $this->attrSetId = $attrSetId;
+
         return $this;
     }
 
     /**
-     * Get attrSetId
+     * Get attrSetId.
+     *
      * @return string
      */
-    public function getAttrSetId(){
+    public function getAttrSetId()
+    {
         return $this->attrSetId;
     }
 
     /**
-     * Set description
+     * Set description.
+     *
      * @param string $description
+     *
      * @return AttributeSetInstance
      */
-    public function setDescription($description){
+    public function setDescription($description)
+    {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * Get value
+     * Get value.
+     *
      * @return string
      */
-    public function getDescription(){
+    public function getDescription()
+    {
         return $this->description;
     }
 
     /**
-     * Get attrInsts
+     * Get attrInsts.
+     *
      * @return array
      */
-    public function getAttrInsts(){
+    public function getAttrInsts()
+    {
         return $this->attrInsts;
     }
 }
-

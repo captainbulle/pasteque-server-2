@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Payment;
 
 /**
- * PaymentMode
+ * PaymentMode.
  */
 class PaymentMode
 {
@@ -55,36 +55,40 @@ class PaymentMode
     private $active;
 
     /**
-     * If system, it cannot be deleted
+     * If system, it cannot be deleted.
+     *
      * @var bool
      */
     private $system;
 
     /**
      * Rules define how exceedent must be treated. It's an array of PaymentModeRule ordered by minVal ASC.
+     *
      * @var Rule[]
      */
     private $rules;
 
     /**
-     * Optional pre-defined values to pick
+     * Optional pre-defined values to pick.
+     *
      * @var array
      */
     private $values;
 
     /**
      * PaymentMode constructor.
+     *
      * @param string $name
      * @param string $code
      * @param string $backName
-     * @param int $flags
+     * @param int    $flags
      * @param string $image
-     * @param array $rules
-     * @param array $values
-     * @param int $displayOrder
-     * @param bool $system
+     * @param array  $rules
+     * @param array  $values
+     * @param int    $displayOrder
+     * @param bool   $system
      */
-    public function __construct($name, $code, $backName, $flags, $image, array $rules, array $values, $displayOrder=0, $system=false)
+    public function __construct($name, $code, $backName, $flags, $image, array $rules, array $values, $displayOrder = 0, $system = false)
     {
         $this->name = $name;
         $this->code = $code;
@@ -101,19 +105,21 @@ class PaymentMode
     /**
      * @param $value
      */
-    public function addValue($value){
+    public function addValue($value)
+    {
         array_push($this->values, $value);
     }
 
     /**
      * @param $rule
      */
-    public function addRule($rule){
+    public function addRule($rule)
+    {
         array_push($this->rules, $rule);
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -123,7 +129,7 @@ class PaymentMode
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -137,7 +143,7 @@ class PaymentMode
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -147,7 +153,7 @@ class PaymentMode
     }
 
     /**
-     * Set code
+     * Set code.
      *
      * @param string $code
      *
@@ -161,7 +167,7 @@ class PaymentMode
     }
 
     /**
-     * Get code
+     * Get code.
      *
      * @return string
      */
@@ -171,7 +177,7 @@ class PaymentMode
     }
 
     /**
-     * Set backName
+     * Set backName.
      *
      * @param string $backName
      *
@@ -185,7 +191,7 @@ class PaymentMode
     }
 
     /**
-     * Get backName
+     * Get backName.
      *
      * @return string
      */
@@ -195,9 +201,9 @@ class PaymentMode
     }
 
     /**
-     * Set flags
+     * Set flags.
      *
-     * @param integer $flags
+     * @param int $flags
      *
      * @return PaymentMode
      */
@@ -209,7 +215,7 @@ class PaymentMode
     }
 
     /**
-     * Get flags
+     * Get flags.
      *
      * @return int
      */
@@ -219,7 +225,7 @@ class PaymentMode
     }
 
     /**
-     * Set image
+     * Set image.
      *
      * @param string $image
      *
@@ -233,7 +239,7 @@ class PaymentMode
     }
 
     /**
-     * Get image
+     * Get image.
      *
      * @return string
      */
@@ -243,9 +249,9 @@ class PaymentMode
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return PaymentMode
      */
@@ -257,7 +263,7 @@ class PaymentMode
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -267,9 +273,9 @@ class PaymentMode
     }
 
     /**
-     * Set active
+     * Set active.
      *
-     * @param boolean $active
+     * @param bool $active
      *
      * @return PaymentMode
      */
@@ -281,7 +287,7 @@ class PaymentMode
     }
 
     /**
-     * Get active
+     * Get active.
      *
      * @return bool
      */
@@ -291,9 +297,9 @@ class PaymentMode
     }
 
     /**
-     * Set system
+     * Set system.
      *
-     * @param boolean $system
+     * @param bool $system
      *
      * @return PaymentMode
      */
@@ -305,7 +311,7 @@ class PaymentMode
     }
 
     /**
-     * Get system
+     * Get system.
      *
      * @return bool
      */
@@ -314,4 +320,3 @@ class PaymentMode
         return $this->system;
     }
 }
-

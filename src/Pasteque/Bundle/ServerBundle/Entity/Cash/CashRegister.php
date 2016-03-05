@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Cash;
 
 /**
- * CashRegister
+ * CashRegister.
  */
 class CashRegister
 {
@@ -29,11 +29,12 @@ class CashRegister
 
     /**
      * CashRegister constructor.
+     *
      * @param string $name
      * @param string $locationId
-     * @param int $nextTicketId
+     * @param int    $nextTicketId
      */
-    public function __construct($name, $locationId, $nextTicketId=1)
+    public function __construct($name, $locationId, $nextTicketId = 1)
     {
         $this->name = $name;
         $this->locationId = $locationId;
@@ -41,7 +42,7 @@ class CashRegister
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -51,7 +52,7 @@ class CashRegister
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -65,7 +66,7 @@ class CashRegister
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -75,7 +76,7 @@ class CashRegister
     }
 
     /**
-     * Set locationId
+     * Set locationId.
      *
      * @param string $locationId
      *
@@ -89,7 +90,7 @@ class CashRegister
     }
 
     /**
-     * Get locationId
+     * Get locationId.
      *
      * @return string
      */
@@ -99,9 +100,9 @@ class CashRegister
     }
 
     /**
-     * Set nextTicketId
+     * Set nextTicketId.
      *
-     * @param integer $nextTicketId
+     * @param int $nextTicketId
      *
      * @return CashRegister
      */
@@ -113,7 +114,7 @@ class CashRegister
     }
 
     /**
-     * Get nextTicketId
+     * Get nextTicketId.
      *
      * @return int
      */
@@ -122,4 +123,3 @@ class CashRegister
         return $this->nextTicketId;
     }
 }
-

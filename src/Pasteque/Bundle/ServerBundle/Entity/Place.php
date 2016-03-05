@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Place
+ * Place.
  */
 class Place
 {
@@ -34,12 +34,14 @@ class Place
 
     /**
      * Place constructor.
+     *
      * @param string $name
-     * @param integer $x
-     * @param integer $y
+     * @param int    $x
+     * @param int    $y
      * @param string $floorId
      */
-    public function __construct($name, $x, $y, $floorId){
+    public function __construct($name, $x, $y, $floorId)
+    {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->x = $x;
@@ -48,83 +50,108 @@ class Place
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Place
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set x
-     * @param integer $x
+     * Set x.
+     *
+     * @param int $x
+     *
      * @return Place
      */
-    public function setX($x){
+    public function setX($x)
+    {
         $this->x = $x;
+
         return $this;
     }
 
     /**
-     * Get x
+     * Get x.
+     *
      * @return int
      */
-    public function getX(){
+    public function getX()
+    {
         return $this->x;
     }
 
     /**
-     * Set y
-     * @param integer $y
+     * Set y.
+     *
+     * @param int $y
+     *
      * @return Place
      */
-    public function setY($y){
+    public function setY($y)
+    {
         $this->y = $y;
+
         return $this;
     }
 
     /**
-     * Get y
+     * Get y.
+     *
      * @return int
      */
-    public function getY(){
+    public function getY()
+    {
         return $this->y;
     }
 
     /**
-     * Set floorId
+     * Set floorId.
+     *
      * @param string $floorId
+     *
      * @return Place
      */
-    public function setFloorId($floorId){
+    public function setFloorId($floorId)
+    {
         $this->floorId = $floorId;
+
         return $this;
     }
 
     /**
-     * Get floorId
+     * Get floorId.
+     *
      * @return string
      */
-    public function getFloorId(){
+    public function getFloorId()
+    {
         return $this->floorId;
     }
 }
-

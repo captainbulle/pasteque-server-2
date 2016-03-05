@@ -5,7 +5,7 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Ticket;
 use Pasteque\Bundle\ServerBundle\Entity\Tax\TaxLine as TaxLine;
 
 /**
- * Ticket
+ * Ticket.
  */
 class Ticket
 {
@@ -78,18 +78,19 @@ class Ticket
 
     /**
      * Ticket constructor.
-     * @param int $type
+     *
+     * @param int       $type
      * @param \DateTime $date
-     * @param int $status
-     * @param string $receiptId
-     * @param int $userId
-     * @param string $customerId
-     * @param int $tariffAreaId
-     * @param int $customerCount
-     * @param float $discountRate
-     * @param int $discountProfileId
+     * @param int       $status
+     * @param string    $receiptId
+     * @param int       $userId
+     * @param string    $customerId
+     * @param int       $tariffAreaId
+     * @param int       $customerCount
+     * @param float     $discountRate
+     * @param int       $discountProfileId
      */
-    public function __construct($type, \DateTime $date, $status, $receiptId, $userId, $customerId=null, $tariffAreaId=null, $customerCount=null, $discountRate=0.0, $discountProfileId=null)
+    public function __construct($type, \DateTime $date, $status, $receiptId, $userId, $customerId = null, $tariffAreaId = null, $customerCount = null, $discountRate = 0.0, $discountProfileId = null)
     {
         $this->type = $type;
         $this->date = $date;
@@ -107,7 +108,8 @@ class Ticket
     /**
      * @return TaxLine[]
      */
-    public function getTaxLines() {
+    public function getTaxLines()
+    {
         $amounts = array();
         foreach ($this->ticketLines as $ticketLine) {
             if (isset($amounts[$ticketLine->getTaxId()])) {
@@ -116,18 +118,19 @@ class Ticket
                 $amounts[$ticketLine->getTaxId()] = $ticketLine->getSubtotal($this->discountRate);
             }
         }
-        /**
+        /*
          * @var TaxLine[]
          */
         $taxLines = array();
         foreach ($amounts as $taxId => $base) {
             array_push($taxLines, new TaxLine($this->receiptId, $taxId, $base));
         }
+
         return $taxLines;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -137,9 +140,9 @@ class Ticket
     }
 
     /**
-     * Set type
+     * Set type.
      *
-     * @param integer $type
+     * @param int $type
      *
      * @return Ticket
      */
@@ -151,7 +154,7 @@ class Ticket
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return int
      */
@@ -161,7 +164,7 @@ class Ticket
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -175,7 +178,7 @@ class Ticket
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -185,7 +188,7 @@ class Ticket
     }
 
     /**
-     * Set receiptId
+     * Set receiptId.
      *
      * @param string $receiptId
      *
@@ -199,7 +202,7 @@ class Ticket
     }
 
     /**
-     * Get receiptId
+     * Get receiptId.
      *
      * @return string
      */
@@ -209,9 +212,9 @@ class Ticket
     }
 
     /**
-     * Set userId
+     * Set userId.
      *
-     * @param integer $userId
+     * @param int $userId
      *
      * @return Ticket
      */
@@ -223,7 +226,7 @@ class Ticket
     }
 
     /**
-     * Get userId
+     * Get userId.
      *
      * @return int
      */
@@ -233,7 +236,7 @@ class Ticket
     }
 
     /**
-     * Set customerId
+     * Set customerId.
      *
      * @param string $customerId
      *
@@ -247,7 +250,7 @@ class Ticket
     }
 
     /**
-     * Get customerId
+     * Get customerId.
      *
      * @return string
      */
@@ -257,9 +260,9 @@ class Ticket
     }
 
     /**
-     * Set tariffAreaId
+     * Set tariffAreaId.
      *
-     * @param integer $tariffAreaId
+     * @param int $tariffAreaId
      *
      * @return Ticket
      */
@@ -271,7 +274,7 @@ class Ticket
     }
 
     /**
-     * Get tariffAreaId
+     * Get tariffAreaId.
      *
      * @return int
      */
@@ -281,9 +284,9 @@ class Ticket
     }
 
     /**
-     * Set status
+     * Set status.
      *
-     * @param integer $status
+     * @param int $status
      *
      * @return Ticket
      */
@@ -295,7 +298,7 @@ class Ticket
     }
 
     /**
-     * Get status
+     * Get status.
      *
      * @return int
      */
@@ -305,9 +308,9 @@ class Ticket
     }
 
     /**
-     * Set customerCount
+     * Set customerCount.
      *
-     * @param integer $customerCount
+     * @param int $customerCount
      *
      * @return Ticket
      */
@@ -319,7 +322,7 @@ class Ticket
     }
 
     /**
-     * Get customerCount
+     * Get customerCount.
      *
      * @return int
      */
@@ -329,7 +332,7 @@ class Ticket
     }
 
     /**
-     * Set discountRate
+     * Set discountRate.
      *
      * @param float $discountRate
      *
@@ -343,7 +346,7 @@ class Ticket
     }
 
     /**
-     * Get discountRate
+     * Get discountRate.
      *
      * @return float
      */
@@ -353,9 +356,9 @@ class Ticket
     }
 
     /**
-     * Set discountProfileId
+     * Set discountProfileId.
      *
-     * @param integer $discountProfileId
+     * @param int $discountProfileId
      *
      * @return Ticket
      */
@@ -367,7 +370,7 @@ class Ticket
     }
 
     /**
-     * Get discountProfileId
+     * Get discountProfileId.
      *
      * @return int
      */
@@ -376,4 +379,3 @@ class Ticket
         return $this->discountProfileId;
     }
 }
-

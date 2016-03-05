@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Stock;
 
 /**
- * InventoryItem
+ * InventoryItem.
  */
 class InventoryItem
 {
@@ -28,13 +28,15 @@ class InventoryItem
     private $attributeSetInstanceId;
 
     /**
-     * Useable quantity
+     * Useable quantity.
+     *
      * @var float
      */
     private $quantity;
 
     /**
-     * Quantity that cannot be sold and is lost
+     * Quantity that cannot be sold and is lost.
+     *
      * @var float
      */
     private $lostQuantity;
@@ -50,21 +52,23 @@ class InventoryItem
     private $missingQuantity;
 
     /**
-     * Value of an unit in the inventory, average of full value by quantity
+     * Value of an unit in the inventory, average of full value by quantity.
+     *
      * @var float
      */
     private $unitValue;
 
     /**
      * InventoryItem constructor.
-     * @param int $inventoryId
+     *
+     * @param int    $inventoryId
      * @param string $productId
      * @param string $attributeSetInstanceId
-     * @param float $quantity
-     * @param float $lostQuantity
-     * @param float $defectQuantity
-     * @param float $missingQuantity
-     * @param float $unitValue
+     * @param float  $quantity
+     * @param float  $lostQuantity
+     * @param float  $defectQuantity
+     * @param float  $missingQuantity
+     * @param float  $unitValue
      */
     public function __construct($inventoryId, $productId, $attributeSetInstanceId, $quantity, $lostQuantity, $defectQuantity, $missingQuantity, $unitValue)
     {
@@ -78,16 +82,16 @@ class InventoryItem
         $this->unitValue = $unitValue;
     }
 
-
     /**
      * @return float
      */
-    public function getTotalQty() {
+    public function getTotalQty()
+    {
         return $this->quantity + $this->lostQuantity + $this->defectQuantity + $this->missingQuantity;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -97,9 +101,9 @@ class InventoryItem
     }
 
     /**
-     * Set inventoryId
+     * Set inventoryId.
      *
-     * @param integer $inventoryId
+     * @param int $inventoryId
      *
      * @return InventoryItem
      */
@@ -111,7 +115,7 @@ class InventoryItem
     }
 
     /**
-     * Get inventoryId
+     * Get inventoryId.
      *
      * @return int
      */
@@ -121,7 +125,7 @@ class InventoryItem
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param string $productId
      *
@@ -135,7 +139,7 @@ class InventoryItem
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return string
      */
@@ -145,7 +149,7 @@ class InventoryItem
     }
 
     /**
-     * Set attributeSetInstanceId
+     * Set attributeSetInstanceId.
      *
      * @param string $attributeSetInstanceId
      *
@@ -159,7 +163,7 @@ class InventoryItem
     }
 
     /**
-     * Get attributeSetInstanceId
+     * Get attributeSetInstanceId.
      *
      * @return string
      */
@@ -169,7 +173,7 @@ class InventoryItem
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -183,7 +187,7 @@ class InventoryItem
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -193,7 +197,7 @@ class InventoryItem
     }
 
     /**
-     * Set lostQuantity
+     * Set lostQuantity.
      *
      * @param float $lostQuantity
      *
@@ -207,7 +211,7 @@ class InventoryItem
     }
 
     /**
-     * Get lostQuantity
+     * Get lostQuantity.
      *
      * @return float
      */
@@ -217,7 +221,7 @@ class InventoryItem
     }
 
     /**
-     * Set defectQuantity
+     * Set defectQuantity.
      *
      * @param float $defectQuantity
      *
@@ -231,7 +235,7 @@ class InventoryItem
     }
 
     /**
-     * Get defectQuantity
+     * Get defectQuantity.
      *
      * @return float
      */
@@ -241,7 +245,7 @@ class InventoryItem
     }
 
     /**
-     * Set missingQuantity
+     * Set missingQuantity.
      *
      * @param float $missingQuantity
      *
@@ -255,7 +259,7 @@ class InventoryItem
     }
 
     /**
-     * Get missingQuantity
+     * Get missingQuantity.
      *
      * @return float
      */
@@ -265,7 +269,7 @@ class InventoryItem
     }
 
     /**
-     * Set unitValue
+     * Set unitValue.
      *
      * @param float $unitValue
      *
@@ -279,7 +283,7 @@ class InventoryItem
     }
 
     /**
-     * Get unitValue
+     * Get unitValue.
      *
      * @return float
      */
@@ -288,4 +292,3 @@ class InventoryItem
         return $this->unitValue;
     }
 }
-

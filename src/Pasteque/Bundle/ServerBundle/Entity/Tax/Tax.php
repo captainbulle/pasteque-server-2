@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Tax;
 
 /**
- * Tax
+ * Tax.
  */
 class Tax
 {
@@ -54,16 +54,17 @@ class Tax
 
     /**
      * Tax constructor.
-     * @param string $name
+     *
+     * @param string    $name
      * @param \DateTime $startDate
-     * @param string $taxCategoryId
-     * @param string $taxCustomerCategoryId
-     * @param string $parentId
-     * @param float $rate
-     * @param int $rateOrder
-     * @param bool $rateCascade
+     * @param string    $taxCategoryId
+     * @param string    $taxCustomerCategoryId
+     * @param string    $parentId
+     * @param float     $rate
+     * @param int       $rateOrder
+     * @param bool      $rateCascade
      */
-    public function __construct($name, \DateTime $startDate, $taxCategoryId, $taxCustomerCategoryId, $parentId, $rate, $rateOrder, $rateCascade=false)
+    public function __construct($name, \DateTime $startDate, $taxCategoryId, $taxCustomerCategoryId, $parentId, $rate, $rateOrder, $rateCascade = false)
     {
         $this->id = com_create_guid();
         $this->name = $name;
@@ -78,15 +79,18 @@ class Tax
 
     /**
      * Check if this tax is valid at a given date.
+     *
      * @param \DateTime $date (optional)
+     *
      * @return bool
      */
-    public function isValid(\DateTime $date = null) {
-        return (\DateTime::createFromFormat('m/d/Y', $date) !== false);
+    public function isValid(\DateTime $date = null)
+    {
+        return \DateTime::createFromFormat('m/d/Y', $date) !== false;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -96,7 +100,7 @@ class Tax
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -110,7 +114,7 @@ class Tax
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -120,7 +124,7 @@ class Tax
     }
 
     /**
-     * Set startDate
+     * Set startDate.
      *
      * @param \DateTime $startDate
      *
@@ -134,7 +138,7 @@ class Tax
     }
 
     /**
-     * Get startDate
+     * Get startDate.
      *
      * @return \DateTime
      */
@@ -144,7 +148,7 @@ class Tax
     }
 
     /**
-     * Set taxCategoryId
+     * Set taxCategoryId.
      *
      * @param string $taxCategoryId
      *
@@ -158,7 +162,7 @@ class Tax
     }
 
     /**
-     * Get taxCategoryId
+     * Get taxCategoryId.
      *
      * @return string
      */
@@ -168,7 +172,7 @@ class Tax
     }
 
     /**
-     * Set taxCustomerCategoryId
+     * Set taxCustomerCategoryId.
      *
      * @param string $taxCustomerCategoryId
      *
@@ -182,7 +186,7 @@ class Tax
     }
 
     /**
-     * Get taxCustomerCategoryId
+     * Get taxCustomerCategoryId.
      *
      * @return string
      */
@@ -192,7 +196,7 @@ class Tax
     }
 
     /**
-     * Set parentId
+     * Set parentId.
      *
      * @param string $parentId
      *
@@ -206,7 +210,7 @@ class Tax
     }
 
     /**
-     * Get parentId
+     * Get parentId.
      *
      * @return string
      */
@@ -216,7 +220,7 @@ class Tax
     }
 
     /**
-     * Set rate
+     * Set rate.
      *
      * @param float $rate
      *
@@ -230,7 +234,7 @@ class Tax
     }
 
     /**
-     * Get rate
+     * Get rate.
      *
      * @return float
      */
@@ -240,9 +244,9 @@ class Tax
     }
 
     /**
-     * Set rateCascade
+     * Set rateCascade.
      *
-     * @param boolean $rateCascade
+     * @param bool $rateCascade
      *
      * @return Tax
      */
@@ -254,7 +258,7 @@ class Tax
     }
 
     /**
-     * Get rateCascade
+     * Get rateCascade.
      *
      * @return bool
      */
@@ -264,9 +268,9 @@ class Tax
     }
 
     /**
-     * Set rateOrder
+     * Set rateOrder.
      *
-     * @param integer $rateOrder
+     * @param int $rateOrder
      *
      * @return Tax
      */
@@ -278,7 +282,7 @@ class Tax
     }
 
     /**
-     * Get rateOrder
+     * Get rateOrder.
      *
      * @return int
      */
@@ -287,4 +291,3 @@ class Tax
         return $this->rateOrder;
     }
 }
-

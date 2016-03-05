@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Role
+ * Role.
  */
 class Role
 {
@@ -26,7 +26,8 @@ class Role
      * @param string $name
      * @param string $permissions
      */
-    public function __construct($name, $permissions){
+    public function __construct($name, $permissions)
+    {
         $this->id = com_create_guid();
         $this->name = $name;
         $this->permissions = $permissions;
@@ -34,54 +35,69 @@ class Role
 
     /**
      * @param string $permission
+     *
      * @return bool
      */
-    public function hasPermission($permission) {
-        return (strstr($this->permissions, $permission) !== false);
+    public function hasPermission($permission)
+    {
+        return strstr($this->permissions, $permission) !== false;
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Role
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set permissions
+     * Set permissions.
+     *
      * @param string $permissions
+     *
      * @return Role
      */
-    public function setPermissions($permissions){
+    public function setPermissions($permissions)
+    {
         $this->permissions = $permissions;
+
         return $this;
     }
 
     /**
-     * Get permissions
+     * Get permissions.
+     *
      * @return string
      */
-    public function getPermissions(){
+    public function getPermissions()
+    {
         return $this->permissions;
     }
 }
-

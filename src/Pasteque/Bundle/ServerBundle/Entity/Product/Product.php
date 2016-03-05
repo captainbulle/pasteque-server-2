@@ -5,7 +5,7 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Product;
 use Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCategory as TaxCategory;
 
 /**
- * Product
+ * Product.
  */
 class Product
 {
@@ -111,29 +111,31 @@ class Product
 
     /**
      * Product constructor.
+     *
      * @param string $reference
      * @param string $barcode
      * @param string $barcodeType
      * @param string $name
-     * @param float $priceBuy
-     * @param float $priceSell
+     * @param float  $priceBuy
+     * @param float  $priceSell
      * @param string $categoryId
      * @param string $providerId
      * @param string $taxCatId
      * @param string $attributeSetId
-     * @param float $stockCost
-     * @param float $stockVolume
+     * @param float  $stockCost
+     * @param float  $stockVolume
      * @param string $image
      * @param string $attributes
-     * @param bool $isCom
-     * @param bool $isScale
-     * @param bool $discountEnabled
-     * @param float $discountRate
+     * @param bool   $isCom
+     * @param bool   $isScale
+     * @param bool   $discountEnabled
+     * @param float  $discountRate
      */
     public function __construct($reference, $barcode, $barcodeType, $name, $priceBuy, $priceSell,
                                 $categoryId, $providerId, $taxCatId, $attributeSetId, $stockCost,
-                                $stockVolume, $image, $attributes, $isCom=false, $isScale=false, $discountEnabled=false,
-                                $discountRate=0.0){
+                                $stockVolume, $image, $attributes, $isCom = false, $isScale = false, $discountEnabled = false,
+                                $discountRate = 0.0)
+    {
         $this->id = com_create_guid();
         $this->reference = $reference;
         $this->barcode = $barcode;
@@ -156,11 +158,14 @@ class Product
     }
 
     /**
-     * Get the price with tax
+     * Get the price with tax.
+     *
      * @param TaxCategory $taxCat
+     *
      * @return float
      */
-    public function getTotalPrice(TaxCategory $taxCat) {
+    public function getTotalPrice(TaxCategory $taxCat)
+    {
         $currentTax = $taxCat->getCurrentTax();
         if ($currentTax != null) {
             return $this->priceSell * (1 + $currentTax->getRate());
@@ -170,365 +175,482 @@ class Product
     }
 
     /**
-     * Get the difference between the sell price and the buy price
+     * Get the difference between the sell price and the buy price.
+     *
      * @return float|null
      */
-    public function getMargin() {
+    public function getMargin()
+    {
         if ($this->priceBuy !== null) {
             return $this->priceSell / $this->priceBuy;
         } else {
-            return null;
+            return;
         }
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return string
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set reference
+     * Set reference.
+     *
      * @param string $reference
+     *
      * @return Product
      */
-    public function setReference($reference){
+    public function setReference($reference)
+    {
         $this->reference = $reference;
+
         return $this;
     }
 
     /**
-     * Get reference
+     * Get reference.
+     *
      * @return string
      */
-    public function getReference(){
+    public function getReference()
+    {
         return $this->reference;
     }
 
     /**
-     * Set barcode
+     * Set barcode.
+     *
      * @param string $barcode
+     *
      * @return Product
      */
-    public function setBarcode($barcode){
+    public function setBarcode($barcode)
+    {
         $this->barcode = $barcode;
+
         return $this;
     }
 
     /**
-     * Get barcode
+     * Get barcode.
+     *
      * @return string
      */
-    public function getBarcode(){
+    public function getBarcode()
+    {
         return $this->barcode;
     }
 
     /**
-     * Set barcodeType
+     * Set barcodeType.
+     *
      * @param string $barcodeType
+     *
      * @return Product
      */
-    public function setBarcodeType($barcodeType){
+    public function setBarcodeType($barcodeType)
+    {
         $this->barcodeType = $barcodeType;
+
         return $this;
     }
 
     /**
-     * Get barcodeType
+     * Get barcodeType.
+     *
      * @return string
      */
-    public function getBarcodeType(){
+    public function getBarcodeType()
+    {
         return $this->barcodeType;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Product
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set priceBuy
+     * Set priceBuy.
+     *
      * @param float $priceBuy
+     *
      * @return Product
      */
-    public function setPriceBuy($priceBuy){
+    public function setPriceBuy($priceBuy)
+    {
         $this->priceBuy = $priceBuy;
+
         return $this;
     }
 
     /**
-     * Get priceBuy
+     * Get priceBuy.
+     *
      * @return float
      */
-    public function getPriceBuy(){
+    public function getPriceBuy()
+    {
         return $this->priceBuy;
     }
 
     /**
-     * Set priceSell
+     * Set priceSell.
+     *
      * @param float $priceSell
+     *
      * @return Product
      */
-    public function setPriceSell($priceSell){
+    public function setPriceSell($priceSell)
+    {
         $this->priceSell = $priceSell;
+
         return $this;
     }
 
     /**
-     * Get priceSell
+     * Get priceSell.
+     *
      * @return float
      */
-    public function getPriceSell(){
+    public function getPriceSell()
+    {
         return $this->priceSell;
     }
 
     /**
-     * Set categoryId
+     * Set categoryId.
+     *
      * @param string $categoryId
+     *
      * @return Product
      */
-    public function setCategoryId($categoryId){
+    public function setCategoryId($categoryId)
+    {
         $this->categoryId = $categoryId;
+
         return $this;
     }
 
     /**
-     * Get categoryId
+     * Get categoryId.
+     *
      * @return string
      */
-    public function getCategoryId(){
+    public function getCategoryId()
+    {
         return $this->categoryId;
     }
 
     /**
-     * Set providerId
+     * Set providerId.
+     *
      * @param string $providerId
+     *
      * @return Product
      */
-    public function setProviderId($providerId){
+    public function setProviderId($providerId)
+    {
         $this->providerId = $providerId;
+
         return $this;
     }
 
     /**
-     * Get providerId
+     * Get providerId.
+     *
      * @return string
      */
-    public function getProviderId(){
+    public function getProviderId()
+    {
         return $this->providerId;
     }
 
     /**
-     * Set taxCatId
+     * Set taxCatId.
+     *
      * @param string $taxCatId
+     *
      * @return Product
      */
-    public function setTaxCatId($taxCatId){
+    public function setTaxCatId($taxCatId)
+    {
         $this->taxCatId = $taxCatId;
+
         return $this;
     }
 
     /**
-     * Get taxCatId
+     * Get taxCatId.
+     *
      * @return string
      */
-    public function getTaxCatId(){
+    public function getTaxCatId()
+    {
         return $this->taxCatId;
     }
 
     /**
-     * Set attributeSetId
+     * Set attributeSetId.
+     *
      * @param string $attributeSetId
+     *
      * @return Product
      */
-    public function setAttributeSetId($attributeSetId){
+    public function setAttributeSetId($attributeSetId)
+    {
         $this->attributeSetId = $attributeSetId;
+
         return $this;
     }
 
     /**
-     * Get attributeSetId
+     * Get attributeSetId.
+     *
      * @return string
      */
-    public function getAttributeSetId(){
+    public function getAttributeSetId()
+    {
         return $this->attributeSetId;
     }
 
     /**
-     * Set stockCost
+     * Set stockCost.
+     *
      * @param float $stockCost
+     *
      * @return Product
      */
-    public function setStockCost($stockCost){
+    public function setStockCost($stockCost)
+    {
         $this->stockCost = $stockCost;
+
         return $this;
     }
 
     /**
-     * Get stockCost
+     * Get stockCost.
+     *
      * @return float
      */
-    public function getStockCost(){
+    public function getStockCost()
+    {
         return $this->stockCost;
     }
 
     /**
-     * Set stockVolume
+     * Set stockVolume.
+     *
      * @param float $stockVolume
+     *
      * @return Product
      */
-    public function setStockVolume($stockVolume){
+    public function setStockVolume($stockVolume)
+    {
         $this->stockVolume = $stockVolume;
+
         return $this;
     }
 
     /**
-     * Get stockVolume
+     * Get stockVolume.
+     *
      * @return float
      */
-    public function getStockVolume(){
+    public function getStockVolume()
+    {
         return $this->stockVolume;
     }
 
     /**
-     * Set image
+     * Set image.
+     *
      * @param string $image
+     *
      * @return Product
      */
-    public function setImage($image){
+    public function setImage($image)
+    {
         $this->image = $image;
+
         return $this;
     }
 
     /**
-     * Get image
+     * Get image.
+     *
      * @return string
      */
-    public function getImage(){
+    public function getImage()
+    {
         return $this->image;
     }
 
     /**
-     * Set isCom
-     * @param boolean $isCom
+     * Set isCom.
+     *
+     * @param bool $isCom
+     *
      * @return Product
      */
-    public function setIsCom($isCom){
+    public function setIsCom($isCom)
+    {
         $this->isCom = $isCom;
+
         return $this;
     }
 
     /**
-     * Get isCom
+     * Get isCom.
+     *
      * @return bool
      */
-    public function getIsCom(){
+    public function getIsCom()
+    {
         return $this->isCom;
     }
 
     /**
-     * Set isScale
-     * @param boolean $isScale
+     * Set isScale.
+     *
+     * @param bool $isScale
+     *
      * @return Product
      */
-    public function setIsScale($isScale){
+    public function setIsScale($isScale)
+    {
         $this->isScale = $isScale;
+
         return $this;
     }
 
     /**
-     * Get isScale
+     * Get isScale.
+     *
      * @return bool
      */
-    public function getIsScale(){
+    public function getIsScale()
+    {
         return $this->isScale;
     }
 
     /**
-     * Set attributes
+     * Set attributes.
+     *
      * @param string $attributes
+     *
      * @return Product
      */
-    public function setAttributes($attributes){
+    public function setAttributes($attributes)
+    {
         $this->attributes = $attributes;
+
         return $this;
     }
 
     /**
-     * Get attributes
+     * Get attributes.
+     *
      * @return string
      */
-    public function getAttributes(){
+    public function getAttributes()
+    {
         return $this->attributes;
     }
 
     /**
-     * Set discountEnabled
-     * @param boolean $discountEnabled
+     * Set discountEnabled.
+     *
+     * @param bool $discountEnabled
+     *
      * @return Product
      */
-    public function setDiscountEnabled($discountEnabled){
+    public function setDiscountEnabled($discountEnabled)
+    {
         $this->discountEnabled = $discountEnabled;
+
         return $this;
     }
 
     /**
-     * Get discountEnabled
+     * Get discountEnabled.
+     *
      * @return bool
      */
-    public function getDiscountEnabled(){
+    public function getDiscountEnabled()
+    {
         return $this->discountEnabled;
     }
 
     /**
-     * Set discountRate
+     * Set discountRate.
+     *
      * @param float $discountRate
+     *
      * @return Product
      */
-    public function setDiscountRate($discountRate){
+    public function setDiscountRate($discountRate)
+    {
         $this->discountRate = $discountRate;
+
         return $this;
     }
 
     /**
-     * Get discountRate
+     * Get discountRate.
+     *
      * @return float
      */
-    public function getDiscountRate(){
+    public function getDiscountRate()
+    {
         return $this->discountRate;
     }
 
     /**
-     * Set visible
-     * @param boolean $visible
+     * Set visible.
+     *
+     * @param bool $visible
+     *
      * @return Product
      */
-    public function setVisible($visible){
+    public function setVisible($visible)
+    {
         $this->visible = $visible;
+
         return $this;
     }
 
     /**
-     * Get visible
+     * Get visible.
+     *
      * @return bool
      */
-    public function getVisible(){
+    public function getVisible()
+    {
         return $this->visible;
     }
 }
-

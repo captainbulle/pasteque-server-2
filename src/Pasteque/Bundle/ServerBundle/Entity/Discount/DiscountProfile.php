@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Discount;
 
 /**
- * DiscountProfile
+ * DiscountProfile.
  */
 class DiscountProfile
 {
@@ -29,76 +29,97 @@ class DiscountProfile
 
     /**
      * DiscountProfile constructor.
+     *
      * @param string $name
-     * @param float $rate
-     * @param int $displayOrder
+     * @param float  $rate
+     * @param int    $displayOrder
      */
-    public function __construct($name, $rate, $displayOrder){
+    public function __construct($name, $rate, $displayOrder)
+    {
         $this->name = $name;
         $this->rate = $rate;
         $this->displayOrder = $displayOrder;
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return int
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return DiscountProfile
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set rate
+     * Set rate.
+     *
      * @param float $rate
+     *
      * @return DiscountProfile
      */
-    public function setRate($rate){
+    public function setRate($rate)
+    {
         $this->rate = $rate;
+
         return $this;
     }
 
     /**
-     * Get rate
+     * Get rate.
+     *
      * @return float
      */
-    public function getRate(){
+    public function getRate()
+    {
         return $this->rate;
     }
 
     /**
-     * Set displayOrder
-     * @param integer $displayOrder
+     * Set displayOrder.
+     *
+     * @param int $displayOrder
+     *
      * @return DiscountProfile
      */
-    public function setDisplayOrder($displayOrder){
+    public function setDisplayOrder($displayOrder)
+    {
         $this->displayOrder = $displayOrder;
+
         return $this;
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
+     *
      * @return int
      */
-    public function getDisplayOrder(){
+    public function getDisplayOrder()
+    {
         return $this->displayOrder;
     }
 }
-

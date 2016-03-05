@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Resource
+ * Resource.
  */
 class Resource
 {
@@ -33,8 +33,9 @@ class Resource
 
     /**
      * Resource constructor.
+     *
      * @param string $name
-     * @param int $type
+     * @param int    $type
      * @param string $content
      */
     public function __construct($name, $type, $content)
@@ -45,7 +46,7 @@ class Resource
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return string
      */
@@ -55,11 +56,11 @@ class Resource
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
-     * @return Resource
+     * @return resource
      */
     public function setName($name)
     {
@@ -69,7 +70,7 @@ class Resource
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -79,11 +80,11 @@ class Resource
     }
 
     /**
-     * Set type
+     * Set type.
      *
-     * @param integer $type
+     * @param int $type
      *
-     * @return Resource
+     * @return resource
      */
     public function setType($type)
     {
@@ -93,7 +94,7 @@ class Resource
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return int
      */
@@ -103,11 +104,11 @@ class Resource
     }
 
     /**
-     * Set content
+     * Set content.
      *
      * @param string $content
      *
-     * @return Resource
+     * @return resource
      */
     public function setContent($content)
     {
@@ -117,7 +118,7 @@ class Resource
     }
 
     /**
-     * Get content
+     * Get content.
      *
      * @return string
      */
@@ -126,4 +127,3 @@ class Resource
         return $this->content;
     }
 }
-

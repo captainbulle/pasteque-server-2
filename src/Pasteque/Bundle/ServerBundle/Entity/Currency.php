@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * Currency
+ * Currency.
  */
 class Currency
 {
@@ -58,10 +58,11 @@ class Currency
      * @param string $decimalSeparator
      * @param string $thousandsSeparator
      * @param string $format
-     * @param float $rate
-     * @param bool $isMain
+     * @param float  $rate
+     * @param bool   $isMain
      */
-    public function __construct($name, $symbol, $decimalSeparator='.', $thousandsSeparator=',', $format='#.##0.00¤', $rate=0.55, $isMain=false){
+    public function __construct($name, $symbol, $decimalSeparator = '.', $thousandsSeparator = ',', $format = '#.##0.00¤', $rate = 0.55, $isMain = false)
+    {
         $this->name = $name;
         $this->symbol = $symbol;
         $this->decimalSeparator = $decimalSeparator;
@@ -74,12 +75,14 @@ class Currency
 
     /**
      * @param $amount
+     *
      * @return bool|string
      */
-    public function format($amount) {
+    public function format($amount)
+    {
         $realFormat = str_replace('$', '¤', $this->format);
         $numFormatter = new \NumberFormatter(null, \NumberFormatter::PATTERN_DECIMAL, $realFormat);
-        $numFormatter->setSymbol(\NumberFormatter::CURRENCY_SYMBOL,$this->symbol);
+        $numFormatter->setSymbol(\NumberFormatter::CURRENCY_SYMBOL, $this->symbol);
         $numFormatter->setSymbol(\NumberFormatter::DECIMAL_SEPARATOR_SYMBOL, $this->decimalSeparator);
         $numFormatter->setSymbol(\NumberFormatter::MONETARY_SEPARATOR_SYMBOL, $this->decimalSeparator);
         $numFormatter->setSymbol(\NumberFormatter::GROUPING_SEPARATOR_SYMBOL, $this->thousandsSeparator);
@@ -97,159 +100,209 @@ class Currency
             }
             $numFormatter->setAttribute(\NumberFormatter::MIN_FRACTION_DIGITS, $decimals);
         }
+
         return $numFormatter->format($amount);
     }
 
     /**
-     * Get id
+     * Get id.
+     *
      * @return int
      */
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
+     *
      * @return Currency
      */
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
 
     /**
-     * Get name
+     * Get name.
+     *
      * @return string
      */
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
     /**
-     * Set symbol
+     * Set symbol.
+     *
      * @param string $symbol
+     *
      * @return Currency
      */
-    public function setSymbol($symbol){
+    public function setSymbol($symbol)
+    {
         $this->symbol = $symbol;
+
         return $this;
     }
 
     /**
-     * Get symbol
+     * Get symbol.
+     *
      * @return string
      */
-    public function getSymbol(){
+    public function getSymbol()
+    {
         return $this->symbol;
     }
 
     /**
-     * Set decimalSeparator
+     * Set decimalSeparator.
+     *
      * @param string $decimalSeparator
+     *
      * @return Currency
      */
-    public function setDecimalSeparator($decimalSeparator){
+    public function setDecimalSeparator($decimalSeparator)
+    {
         $this->decimalSeparator = $decimalSeparator;
+
         return $this;
     }
 
     /**
-     * Get decimalSeparator
+     * Get decimalSeparator.
+     *
      * @return string
      */
-    public function getDecimalSeparator(){
+    public function getDecimalSeparator()
+    {
         return $this->decimalSeparator;
     }
 
     /**
-     * Set thousandsSeparator
+     * Set thousandsSeparator.
+     *
      * @param string $thousandsSeparator
+     *
      * @return Currency
      */
-    public function setThousandsSeparator($thousandsSeparator){
+    public function setThousandsSeparator($thousandsSeparator)
+    {
         $this->thousandsSeparator = $thousandsSeparator;
+
         return $this;
     }
 
     /**
-     * Get thousandsSeparator
+     * Get thousandsSeparator.
+     *
      * @return string
      */
-    public function getThousandsSeparator(){
+    public function getThousandsSeparator()
+    {
         return $this->thousandsSeparator;
     }
 
     /**
-     * Set format
+     * Set format.
+     *
      * @param string $format
+     *
      * @return Currency
      */
-    public function setFormat($format){
+    public function setFormat($format)
+    {
         $this->format = $format;
+
         return $this;
     }
 
     /**
-     * Get format
+     * Get format.
+     *
      * @return string
      */
-    public function getFormat(){
+    public function getFormat()
+    {
         return $this->format;
     }
 
     /**
-     * Set rate
+     * Set rate.
+     *
      * @param float $rate
+     *
      * @return Currency
      */
-    public function setRate($rate){
+    public function setRate($rate)
+    {
         $this->rate = $rate;
+
         return $this;
     }
 
     /**
-     * Get rate
+     * Get rate.
+     *
      * @return float
      */
-    public function getRate(){
+    public function getRate()
+    {
         return $this->rate;
     }
 
     /**
-     * Set isMain
-     * @param boolean $isMain
+     * Set isMain.
+     *
+     * @param bool $isMain
+     *
      * @return Currency
      */
-    public function setIsMain($isMain){
+    public function setIsMain($isMain)
+    {
         $this->isMain = $isMain;
+
         return $this;
     }
 
     /**
-     * Get isMain
+     * Get isMain.
+     *
      * @return bool
      */
-    public function getIsMain(){
+    public function getIsMain()
+    {
         return $this->isMain;
     }
 
     /**
-     * Set isActive
-     * @param boolean $isActive
+     * Set isActive.
+     *
+     * @param bool $isActive
+     *
      * @return Currency
      */
-    public function setIsActive($isActive){
+    public function setIsActive($isActive)
+    {
         $this->isActive = $isActive;
+
         return $this;
     }
 
     /**
-     * Get isActive
+     * Get isActive.
+     *
      * @return bool
      */
-    public function getIsActive(){
+    public function getIsActive()
+    {
         return $this->isActive;
     }
 }
-
