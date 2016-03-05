@@ -34,7 +34,7 @@ class DiscountProfile
      * @param float  $rate
      * @param int    $displayOrder
      */
-    public function __construct($name, $rate, $displayOrder)
+    public function __construct($name, $rate, $displayOrder = 0)
     {
         $this->name = $name;
         $this->rate = $rate;

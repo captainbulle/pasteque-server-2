@@ -20,7 +20,7 @@ class SharedTicketLine
     /**
      * @var int
      */
-    private $displayOrder;
+    private $line;
 
     /**
      * @var string
@@ -56,7 +56,7 @@ class SharedTicketLine
      * SharedTicketLine constructor.
      *
      * @param string $sharedTicketId
-     * @param int    $displayOrder
+     * @param int    $line
      * @param string $productId
      * @param string $taxId
      * @param float  $quantity
@@ -64,11 +64,12 @@ class SharedTicketLine
      * @param float  $discountRate
      * @param string $attributes
      */
-    public function __construct($sharedTicketId, $displayOrder, $productId, $taxId, $quantity, $price, $discountRate = 0.0, $attributes = null)
+    public function __construct($sharedTicketId, $line, $productId, $taxId, $quantity, $price, 
+                                $discountRate = 0.0, $attributes = null)
     {
         $this->id = com_create_guid();
         $this->sharedTicketId = $sharedTicketId;
-        $this->displayOrder = $displayOrder;
+        $this->line = $line;
         $this->productId = $productId;
         $this->taxId = $taxId;
         $this->quantity = $quantity;
@@ -112,27 +113,27 @@ class SharedTicketLine
     }
 
     /**
-     * Set displayOrder.
+     * Set line.
      *
-     * @param int $displayOrder
+     * @param int $line
      *
      * @return SharedTicketLine
      */
-    public function setDisplayOrder($displayOrder)
+    public function setLine($line)
     {
-        $this->displayOrder = $displayOrder;
+        $this->line = $line;
 
         return $this;
     }
 
     /**
-     * Get displayOrder.
+     * Get line.
      *
      * @return int
      */
-    public function getDisplayOrder()
+    public function getLine()
     {
-        return $this->displayOrder;
+        return $this->line;
     }
 
     /**

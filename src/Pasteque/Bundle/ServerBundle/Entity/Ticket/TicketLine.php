@@ -23,7 +23,7 @@ class TicketLine
     /**
      * @var int
      */
-    private $displayOrder;
+    private $line;
 
     /**
      * @var string
@@ -74,7 +74,7 @@ class TicketLine
      * Constructor must take full product and tax objects to build xml attributes. Only the id is then kept.
      *
      * @param string  $ticketId
-     * @param int     $displayOrder
+     * @param int     $line
      * @param Product $product
      * @param string  $attributeSetInstanceId
      * @param float   $quantity
@@ -83,10 +83,10 @@ class TicketLine
      * @param float   $discountRate
      * @param string  $productLabel
      */
-    public function __construct($ticketId, $displayOrder, $product, $attributeSetInstanceId, $quantity, $price, $tax, $discountRate = 0.0, $productLabel = null)
+    public function __construct($ticketId, $line, $product, $attributeSetInstanceId, $quantity, $price, $tax, $discountRate = 0.0, $productLabel = null)
     {
         $this->ticketId = $ticketId;
-        $this->displayOrder = $displayOrder;
+        $this->line = $line;
         if ($product !== null) {
             $this->productId = $product->getId();
             $this->createAttributes($product, $tax);
@@ -204,27 +204,27 @@ class TicketLine
     }
 
     /**
-     * Set displayOrder.
+     * Set line.
      *
-     * @param int $displayOrder
+     * @param int $line
      *
      * @return TicketLine
      */
-    public function setDisplayOrder($displayOrder)
+    public function setLine($line)
     {
-        $this->displayOrder = $displayOrder;
+        $this->line = $line;
 
         return $this;
     }
 
     /**
-     * Get displayOrder.
+     * Get line.
      *
      * @return int
      */
-    public function getDisplayOrder()
+    public function getLine()
     {
-        return $this->displayOrder;
+        return $this->line;
     }
 
     /**

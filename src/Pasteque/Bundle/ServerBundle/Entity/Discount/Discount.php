@@ -58,7 +58,7 @@ class Discount
      * @param int       $barcodeType
      * @param int       $displayOrder
      */
-    public function __construct($name, \DateTime $startDate, \DateTime $endDate, $rate, $barcode, $barcodeType, $displayOrder)
+    public function __construct($name, \DateTime $startDate, \DateTime $endDate, $rate, $barcode, $barcodeType, $displayOrder = 0)
     {
         $this->name = $name;
         $this->startDate = $startDate;

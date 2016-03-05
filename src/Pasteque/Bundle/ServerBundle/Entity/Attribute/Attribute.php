@@ -59,10 +59,10 @@ class Attribute
      * Attribute constructor.
      *
      * @param string $name
-     * @param int    $displayOrder
      * @param User   $user
+     * @param int    $displayOrder
      */
-    private function __construct($name, $displayOrder, User $user)
+    private function __construct($name, User $user, $displayOrder = 0)
     {
         $this->id = com_create_guid();
         $this->name = $name;

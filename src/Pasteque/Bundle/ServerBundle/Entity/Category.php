@@ -46,7 +46,7 @@ class Category
      * @param string $image
      * @param int    $displayOrder
      */
-    public function __construct($name, $reference, $parentId, $image, $displayOrder = null)
+    public function __construct($name, $reference, $parentId, $image, $displayOrder = 0)
     {
         $this->id = com_create_guid();
         $this->name = $name;

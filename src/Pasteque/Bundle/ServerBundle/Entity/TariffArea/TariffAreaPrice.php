@@ -33,7 +33,6 @@ class TariffAreaPrice
         $this->priceSell = $priceSell;
     }
 
-
     /**
      * Get id
      *

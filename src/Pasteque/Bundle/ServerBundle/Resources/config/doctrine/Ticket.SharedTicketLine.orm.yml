@@ -10,7 +10,7 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\SharedTicketLine:
         sharedTicketId:
             type: string
             length: 255
-        displayOrder:
+        line:
             type: integer
         productId:
             type: string

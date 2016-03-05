@@ -122,7 +122,7 @@ class Provider
      * @param int    $displayOrder
      */
     public function __construct($name, $image, $address, $address2, $postal, $city, $region, $country, $firstname, $lastname,
-                                $email, $phone, $phone2, $website, $fax, $notes, $displayOrder = null)
+                                $email, $phone, $phone2, $website, $fax, $notes, $displayOrder = 0)
     {
         $this->id = com_create_guid();
         $this->name = $name;

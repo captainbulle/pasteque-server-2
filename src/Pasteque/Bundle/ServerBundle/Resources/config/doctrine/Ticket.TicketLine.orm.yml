@@ -12,7 +12,7 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\TicketLine:
         ticketId:
             type: string
             length: 255
-        displayOrder:
+        line:
             type: integer
         productId:
             type: string
