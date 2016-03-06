@@ -18,9 +18,14 @@ class StockMove
     const REASON_RESET = 0;
 
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var \DateTime
@@ -67,10 +72,12 @@ class StockMove
      * @param string    $attributeSetInstanceId
      * @param float     $quantity
      * @param float     $price
+     * @param string    $displayId
      */
-    public function __construct(\DateTime $date, $reason, $locationId, $productId, $attributeSetInstanceId, $quantity, $price)
+    public function __construct(\DateTime $date, $reason, $locationId, $productId, $attributeSetInstanceId,
+                                $quantity, $price, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->date = $date;
         $this->reason = $reason;
         $this->locationId = $locationId;
@@ -95,11 +102,35 @@ class StockMove
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return StockMove
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

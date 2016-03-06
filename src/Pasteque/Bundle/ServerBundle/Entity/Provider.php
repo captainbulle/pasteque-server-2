@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity;
 class Provider
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -120,11 +125,13 @@ class Provider
      * @param string $fax
      * @param string $notes
      * @param int    $displayOrder
+     * @param string $displayId
      */
-    public function __construct($name, $image, $address, $address2, $postal, $city, $region, $country, $firstname, $lastname,
-                                $email, $phone, $phone2, $website, $fax, $notes, $displayOrder = 0)
+    public function __construct($name, $image, $address, $address2, $postal, $city, $region, $country, $firstname,
+                                $lastname, $email, $phone, $phone2, $website, $fax, $notes,
+                                $displayOrder = 0, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->image = $image;
         $this->address = $address;
@@ -148,11 +155,35 @@ class Provider
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Provider
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

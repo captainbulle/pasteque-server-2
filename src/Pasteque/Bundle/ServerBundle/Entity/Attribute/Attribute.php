@@ -3,7 +3,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 
 use Symfony\Component\Validator\Constraints\DateTime;
-use Pasteque\Bundle\ServerBundle\Entity\User\User as User;
+use Pasteque\Bundle\ServerBundle\Entity\User as User;
 
 /**
  * Attribute.
@@ -11,9 +11,14 @@ use Pasteque\Bundle\ServerBundle\Entity\User\User as User;
 class Attribute
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -61,17 +66,18 @@ class Attribute
      * @param string $name
      * @param User   $user
      * @param int    $displayOrder
+     * @param string $displayId
      */
-    private function __construct($name, User $user, $displayOrder = 0)
+    private function __construct($name, User $user, $displayOrder = 0, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->displayOrder = $displayOrder;
         $this->active = 'A';
         $this->addedDate = new DateTime();
         $this->addedBy = $user->getUserName();
-        $this->updatedDate = new DateTime();
-        $this->updatedBy = $user->getUserName();
+        $this->updatedDate = null;
+        $this->updatedBy = null;
         $this->values = array();
     }
 
@@ -91,6 +97,30 @@ class Attribute
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Attribute
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

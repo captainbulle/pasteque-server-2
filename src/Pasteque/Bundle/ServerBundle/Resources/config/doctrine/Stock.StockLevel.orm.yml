@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Stock\StockLevel:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Stock\StockLevelRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         productId:
             type: string
             length: 255

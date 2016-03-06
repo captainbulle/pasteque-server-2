@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Ticket;
 class SharedTicket
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -56,10 +61,12 @@ class SharedTicket
      * @param int    $tariffAreaId
      * @param int    $discountProfileId
      * @param float  $discountRate
+     * @param string $displayId
      */
-    public function __construct($name, $customerId, $customerCount, $tariffAreaId, $discountProfileId, $discountRate = 0.0)
+    public function __construct($name, $customerId, $customerCount, $tariffAreaId, $discountProfileId,
+                                $discountRate = 0.0, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->customerId = $customerId;
         $this->customerCount = $customerCount;
@@ -80,11 +87,35 @@ class SharedTicket
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return SharedTicket
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

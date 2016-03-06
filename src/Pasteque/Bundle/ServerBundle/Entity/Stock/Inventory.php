@@ -31,6 +31,18 @@ class Inventory
     private $inventoryItems;
 
     /**
+     * Inventory constructor.
+     * @param \DateTime $date
+     * @param string $locationId
+     */
+    public function __construct(\DateTime $date, $locationId)
+    {
+        $this->date = $date;
+        $this->locationId = $locationId;
+        $this->inventoryItems = array();
+    }
+
+    /**
      * @param InventoryItem $inventoryItem
      */
     public function addInventoryItem($inventoryItem)

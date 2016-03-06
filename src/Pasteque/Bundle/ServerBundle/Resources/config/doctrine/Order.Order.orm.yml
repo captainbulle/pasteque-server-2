@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Order\Order:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Order\OrderRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         type:
             type: integer
         userId:

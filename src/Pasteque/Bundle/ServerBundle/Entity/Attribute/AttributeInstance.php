@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 class AttributeInstance
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -33,10 +38,11 @@ class AttributeInstance
      * @param string $attrSetInstId
      * @param string $attrId
      * @param string $value
+     * @param string $displayId
      */
-    public function __construct($attrSetInstId, $attrId, $value)
+    public function __construct($attrSetInstId, $attrId, $value, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->attrSetInstId = $attrSetInstId;
         $this->attrId = $attrId;
         $this->value = $value;
@@ -45,11 +51,35 @@ class AttributeInstance
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return AttributeInstance
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

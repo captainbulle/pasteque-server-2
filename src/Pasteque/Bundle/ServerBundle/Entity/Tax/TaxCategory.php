@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Tax;
 class TaxCategory
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -26,10 +31,11 @@ class TaxCategory
      * TaxCategory constructor.
      *
      * @param string $name
+     * @param string $displayId
      */
-    public function __construct($name)
+    public function __construct($name, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->taxes = array();
     }
@@ -68,11 +74,35 @@ class TaxCategory
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return TaxCategory
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

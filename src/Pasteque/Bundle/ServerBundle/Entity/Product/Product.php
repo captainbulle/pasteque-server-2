@@ -10,9 +10,14 @@ use Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCategory as TaxCategory;
 class Product
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -130,13 +135,14 @@ class Product
      * @param bool   $isScale
      * @param bool   $discountEnabled
      * @param float  $discountRate
+     * @param string $displayId
      */
     public function __construct($reference, $barcode, $barcodeType, $name, $priceBuy, $priceSell,
                                 $categoryId, $providerId, $taxCatId, $attributeSetId, $stockCost,
-                                $stockVolume, $image, $attributes, $isCom = false, $isScale = false, $discountEnabled = false,
-                                $discountRate = 0.0)
+                                $stockVolume, $image, $attributes, $isCom = false, $isScale = false,
+                                $discountEnabled = false, $discountRate = 0.0, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->reference = $reference;
         $this->barcode = $barcode;
         $this->barcodeType = $barcodeType;
@@ -191,11 +197,35 @@ class Product
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Product
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

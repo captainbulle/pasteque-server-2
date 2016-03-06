@@ -70,7 +70,8 @@ class InventoryItem
      * @param float  $missingQuantity
      * @param float  $unitValue
      */
-    public function __construct($inventoryId, $productId, $attributeSetInstanceId, $quantity, $lostQuantity, $defectQuantity, $missingQuantity, $unitValue)
+    public function __construct($inventoryId, $productId, $attributeSetInstanceId, $quantity, $lostQuantity,
+                                $defectQuantity, $missingQuantity, $unitValue)
     {
         $this->inventoryId = $inventoryId;
         $this->productId = $productId;

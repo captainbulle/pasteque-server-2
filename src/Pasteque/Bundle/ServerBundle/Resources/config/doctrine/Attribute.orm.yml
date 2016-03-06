@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\Attribute:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Attribute\AttributeRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         name:
             type: string
             length: 255
@@ -21,7 +26,9 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\Attribute:
             length: 255
         updatedDate:
             type: datetime
+            nullable: true
         updatedBy:
             type: string
             length: 255
+            nullable: true
     lifecycleCallbacks: {  }

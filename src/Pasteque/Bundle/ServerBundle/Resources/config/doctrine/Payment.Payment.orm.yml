@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Payment\Payment:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Payment\PaymentRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         type:
             type: string
             length: 255

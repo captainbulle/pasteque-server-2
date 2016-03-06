@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCustomerCategory:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Tax\TaxCustomerCategoryRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         name:
             type: string
             length: 255

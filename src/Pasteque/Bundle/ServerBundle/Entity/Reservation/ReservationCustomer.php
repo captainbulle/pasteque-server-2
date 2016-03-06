@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Reservation;
 class ReservationCustomer
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -20,21 +25,46 @@ class ReservationCustomer
     /**
      * ReservationCustomer constructor.
      * @param string $customerId
+     * @param string $displayId
      */
-    public function __construct($customerId)
+    public function __construct($customerId, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->customerId = $customerId;
     }
 
     /**
      * Get id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return ReservationCustomer
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

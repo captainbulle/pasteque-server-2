@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Customer:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\CustomerRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         displayName:
             type: string
             length: 255

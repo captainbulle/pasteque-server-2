@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Order;
 class Order
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var int
@@ -50,10 +55,11 @@ class Order
      * @param int $status
      * @param \DateTime $date
      * @param string $note
+     * @param string $displayId
      */
-    public function __construct($type, $userId, $customerId, $status, \DateTime $date, $note=null)
+    public function __construct($type, $userId, $customerId, $status, \DateTime $date, $note=null, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->type = $type;
         $this->userId = $userId;
         $this->customerId = $customerId;
@@ -65,11 +71,35 @@ class Order
     /**
      * Get id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Order
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

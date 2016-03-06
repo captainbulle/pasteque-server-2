@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Product\Product:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Product\ProductRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         reference:
             type: string
             length: 255

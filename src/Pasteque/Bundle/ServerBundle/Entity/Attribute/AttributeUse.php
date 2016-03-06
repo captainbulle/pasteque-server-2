@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Attribute;
 class AttributeUse
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -33,10 +38,11 @@ class AttributeUse
      * @param string $attrSetId
      * @param string $attrId
      * @param int    $lineNo
+     * @param string $displayId
      */
-    public function __construct($attrSetId, $attrId, $lineNo)
+    public function __construct($attrSetId, $attrId, $lineNo, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->attrSetId = $attrSetId;
         $this->attrId = $attrId;
         $this->lineNo = $lineNo;
@@ -50,6 +56,30 @@ class AttributeUse
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return AttributeUse
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

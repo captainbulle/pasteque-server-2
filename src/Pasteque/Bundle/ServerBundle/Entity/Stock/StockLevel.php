@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Stock;
 class StockLevel
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -53,9 +58,12 @@ class StockLevel
      * @param float  $security
      * @param float  $max
      * @param float  $quantity
+     * @param string $displayId
      */
-    public function __construct($productId, $locationId, $attributeSetInstanceId, $security, $max, $quantity = null)
+    public function __construct($productId, $locationId, $attributeSetInstanceId, $security, $max,
+                                $quantity = null, $displayId = null)
     {
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->productId = $productId;
         $this->locationId = $locationId;
         $this->attributeSetInstanceId = $attributeSetInstanceId;
@@ -67,11 +75,35 @@ class StockLevel
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return StockLevel
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

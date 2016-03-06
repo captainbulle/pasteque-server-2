@@ -13,9 +13,14 @@ class Customer
     const CARD_PREFIX = 'c';
 
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -169,12 +174,14 @@ class Customer
      * @param string    $country
      * @param \DateTime $expireDate
      * @param string    $note
+     * @param string    $displayId
      */
     public function __construct($displayName, $searchKey, $number, $customerTaxCategoryId, $discountProfileId,
                                 $tariffAreaId, $card, $maxDebt, $prepaid, $currentDebt, \DateTime $debtDate,
                                 $firstname, $lastname, $email, $phone, $phone2, $fax, $address, $address2, $postal,
-                                $region, $country, \DateTime $expireDate, $note = null)
+                                $region, $country, \DateTime $expireDate, $note = null, $displayId = null)
     {
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->displayName = $displayName;
         $this->searchKey = $searchKey;
         $this->number = $number;
@@ -205,11 +212,35 @@ class Customer
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Customer
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

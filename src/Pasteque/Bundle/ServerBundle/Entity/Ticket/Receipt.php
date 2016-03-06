@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Ticket;
 class Receipt
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var int
@@ -33,10 +38,11 @@ class Receipt
      * @param int       $cashId
      * @param \DateTime $date
      * @param string    $attributes
+     * @param string    $displayId
      */
-    public function __construct($cashId, \DateTime $date, $attributes = null)
+    public function __construct($cashId, \DateTime $date, $attributes = null, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->cashId = $cashId;
         $this->date = $date;
         $this->attributes = $attributes;
@@ -45,11 +51,35 @@ class Receipt
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Receipt
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

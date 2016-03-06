@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Reservation;
 class Reservation
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var \DateTime
@@ -48,10 +53,11 @@ class Reservation
      * @param int $chairs
      * @param bool $isDone
      * @param string $description
+     * @param string $displayId
      */
-    public function __construct($name, $chairs, $isDone, $description=null)
+    public function __construct($name, $chairs, $isDone, $description = null, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->chairs = $chairs;
         $this->isDone = $isDone;
@@ -60,15 +66,38 @@ class Reservation
         $this->updatedDate = null;
     }
 
-
     /**
      * Get id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Reservation
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

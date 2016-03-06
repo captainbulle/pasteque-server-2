@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity\Payment;
 class Payment
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -69,10 +74,12 @@ class Payment
      * @param string $note
      * @param string $backType
      * @param float  $backAmount
+     * @param string $displayId
      */
-    public function __construct($type, $amount, $currencyId, $currencyAmount, $returnMessage, $pairedWith, $note, $backType = null, $backAmount = null)
+    public function __construct($type, $amount, $currencyId, $currencyAmount, $returnMessage, $pairedWith, $note,
+                                $backType = null, $backAmount = null, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->type = $type;
         $this->amount = $amount;
         $this->currencyId = $currencyId;
@@ -87,11 +94,35 @@ class Payment
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Payment
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

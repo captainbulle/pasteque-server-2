@@ -1,6 +1,6 @@
 <?php
 
-namespace Pasteque\Bundle\ServerBundle\Repository\User;
+namespace Pasteque\Bundle\ServerBundle\Repository;
 
 /**
  * UserRepository.

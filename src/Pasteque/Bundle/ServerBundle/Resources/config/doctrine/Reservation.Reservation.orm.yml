@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Reservation\Reservation:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Reservation\ReservationRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         addedDate:
             type: datetime
         updatedDate:

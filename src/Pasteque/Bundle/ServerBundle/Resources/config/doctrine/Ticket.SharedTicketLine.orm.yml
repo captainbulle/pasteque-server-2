@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\SharedTicketLine:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Ticket\SharedTicketLineRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         sharedTicketId:
             type: string
             length: 255

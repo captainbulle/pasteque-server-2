@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity;
 class ThirdParty
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -45,7 +50,7 @@ class ThirdParty
     /**
      * @var string
      */
-    private $faxNumber;
+    private $email;
 
     /**
      * @var string
@@ -60,7 +65,7 @@ class ThirdParty
     /**
      * @var string
      */
-    private $email;
+    private $faxNumber;
 
     /**
      * @var string
@@ -80,27 +85,29 @@ class ThirdParty
      * @param string $contactComm
      * @param string $contactFact
      * @param string $payRule
-     * @param string $faxNumber
+     * @param string $email
      * @param string $phoneNumber
      * @param string $mobileNumber
-     * @param string $email
+     * @param string $faxNumber
      * @param string $webPage
      * @param string $note
+     * @param string $displayId
      */
-    public function __construct($cif, $name, $address, $contactComm, $contactFact, $payRule, $faxNumber, $phoneNumber,
-                                $mobileNumber, $email, $webPage, $note)
+    public function __construct($cif, $name, $address, $contactComm, $contactFact, $payRule, $email = null,
+                                $phoneNumber = null, $mobileNumber = null, $faxNumber = null, $webPage = null,
+                                $note = null, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->cif = $cif;
         $this->name = $name;
         $this->address = $address;
         $this->contactComm = $contactComm;
         $this->contactFact = $contactFact;
         $this->payRule = $payRule;
-        $this->faxNumber = $faxNumber;
+        $this->email = $email;
         $this->phoneNumber = $phoneNumber;
         $this->mobileNumber = $mobileNumber;
-        $this->email = $email;
+        $this->faxNumber = $faxNumber;
         $this->webPage = $webPage;
         $this->note = $note;
     }
@@ -108,11 +115,35 @@ class ThirdParty
     /**
      * Get id
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return ThirdParty
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

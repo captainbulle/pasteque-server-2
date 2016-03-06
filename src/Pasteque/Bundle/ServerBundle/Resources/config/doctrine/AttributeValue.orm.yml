@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeValue:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Attribute\AttributeValueRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         value:
             type: string
             length: 255

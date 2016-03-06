@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity;
 class Place
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -39,10 +44,11 @@ class Place
      * @param int    $x
      * @param int    $y
      * @param string $floorId
+     * @param string $displayId
      */
-    public function __construct($name, $x, $y, $floorId)
+    public function __construct($name, $x, $y, $floorId, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->x = $x;
         $this->y = $y;
@@ -52,11 +58,35 @@ class Place
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Place
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\Stock\StockMove:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Stock\StockMoveRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         date:
             type: datetime
         reason:

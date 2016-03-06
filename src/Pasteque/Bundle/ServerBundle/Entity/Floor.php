@@ -8,9 +8,14 @@ namespace Pasteque\Bundle\ServerBundle\Entity;
 class Floor
 {
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -30,10 +35,11 @@ class Floor
     /**
      * @param string $name
      * @param string $image
+     * @param string $displayId
      */
-    public function __construct($name, $image = null)
+    public function __construct($name, $image = null, $displayId = null)
     {
-        $this->id = com_create_guid();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->image = $image;
         $this->places = array();
@@ -50,11 +56,35 @@ class Floor
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Floor
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

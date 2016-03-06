@@ -1,6 +1,6 @@
 <?php
 
-namespace Pasteque\Bundle\ServerBundle\Entity\User;
+namespace Pasteque\Bundle\ServerBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 
@@ -13,6 +13,11 @@ class User extends BaseUser
      * @var int
      */
     protected $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -63,10 +68,12 @@ class User extends BaseUser
      * @param string $image
      * @param string $roleId
      * @param User   $user
+     * @param string $displayId
      */
-    public function __construct($username, $password, $card, $image, $roleId, User $user)
+    public function __construct($username, $password, $card, $image, $roleId, User $user, $displayId = null)
     {
         parent::__construct();
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->username = $username;
         $this->password = $password;
         $this->card = $card;
@@ -87,6 +94,30 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return User
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

@@ -12,9 +12,14 @@ class Resource
     const TYPE_BIN = 2;
 
     /**
-     * @var string
+     * @var int
      */
     private $id;
+
+    /**
+     * @var string
+     */
+    private $displayId;
 
     /**
      * @var string
@@ -37,9 +42,11 @@ class Resource
      * @param string $name
      * @param int    $type
      * @param string $content
+     * @param string $displayId
      */
-    public function __construct($name, $type, $content)
+    public function __construct($name, $type, $content, $displayId = null)
     {
+        $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->type = $type;
         $this->content = $content;
@@ -48,11 +55,35 @@ class Resource
     /**
      * Get id.
      *
-     * @return string
+     * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set displayId.
+     *
+     * @param string $displayId
+     *
+     * @return Resource
+     */
+    public function setDisplayId($displayId)
+    {
+        $this->displayId = $displayId;
+
+        return $this;
+    }
+
+    /**
+     * Get displayId.
+     *
+     * @return string
+     */
+    public function getDisplayId()
+    {
+        return $this->displayId;
     }
 
     /**

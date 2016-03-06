@@ -4,9 +4,14 @@ Pasteque\Bundle\ServerBundle\Entity\ThirdParty:
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\ThirdPartyRepository
     id:
         id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        displayId:
             type: string
             length: 255
-    fields:
         cif:
             type: string
             length: 255
@@ -31,7 +36,7 @@ Pasteque\Bundle\ServerBundle\Entity\ThirdParty:
             type: string
             length: 255
             nullable: true
-        faxNumber:
+        email:
             type: string
             length: 255
             nullable: true
@@ -43,7 +48,7 @@ Pasteque\Bundle\ServerBundle\Entity\ThirdParty:
             type: string
             length: 255
             nullable: true
-        email:
+        faxNumber:
             type: string
             length: 255
             nullable: true
