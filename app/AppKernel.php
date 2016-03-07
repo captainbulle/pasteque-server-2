@@ -18,7 +18,7 @@ class AppKernel extends Kernel
 
             // Pasteque bundles
             new Pasteque\Bundle\ServerBundle\PastequeServerBundle(),
-            //new Pasteque\Bundle\APIBundle\PastequeAPIBundle(),
+            new Pasteque\Bundle\APIBundle\PastequeAPIBundle(),
 
             // vendor bundles
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),

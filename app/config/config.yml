@@ -75,4 +75,4 @@ nelmio_api_doc: ~
 fos_user:
     db_driver:     orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class:    Pasteque\Bundle\ServerBundle\Entity\User\User
+    user_class:    Pasteque\Bundle\ServerBundle\Entity\User

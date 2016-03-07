@@ -1,5 +1,5 @@
-# Routing qui permet de repondre aux requetes. routes ecrites sous la forme "nom_api_methode:" 
-# URL sous forme "path:/api/methode/{argument}
+# Routes template : "name_api_methode:"
+# URL template "path:/api/methode/{argument}
 attribute_api_get:
     path: /attribute/get/{id}
     defaults: { _controller: PastequeServerBundle:Attribute:get }
@@ -8,242 +8,234 @@ attribute_api_getAll:
     path: /attribute/getAll
     defaults: { _controller: PastequeServerBundle:Attribute:getAll }
 
-cashes_api_get:
-    path: /cashes/get/{type}/{id}
-    defaults: { _controller: PastequeServerBundle:Cashes:get }
+cash_api_get:
+    path: /cash/get/{type}/{id}
+    defaults: { _controller: PastequeServerBundle:Cash:get }
     requirements:
       type:  cash|cashRegister
 
-cashes_api_update:
-    path: /cashes/update/{id}
-    defaults: { _controller: PastequeServerBundle:Cashes:update }
+cash_api_update:
+    path: /cash/update/{id}
+    defaults: { _controller: PastequeServerBundle:Cash:update }
 
-cashes_api_search:
-    path: /cashes/search/{cashRegisterId}/{dateStart}/{dateStop}
-    defaults: { _controller: PastequeServerBundle:Cashes:search, cashRegisterId: -1, dateStart: -1, dateStop: -1 }
+cash_api_search:
+    path: /cash/search/{cashRegisterId}/{dateStart}/{dateStop}
+    defaults: { _controller: PastequeServerBundle:Cash:search, cashRegisterId: -1, dateStart: -1, dateStop: -1 }
 
-cashes_api_zticket:
-    path: /cashes/zticket/{id}
-    defaults: { _controller: PastequeServerBundle:Cashes:zticket }
+cash_api_zticket:
+    path: /cash/zticket/{id}
+    defaults: { _controller: PastequeServerBundle:Cash:zticket }
 
-cashMvts_api_move:
-    path: /cashMvts/move/{id}/{date}/{payment}/{note}
+cashMovement_api_move:
+    path: /cashMovement/move/{id}/{date}/{payment}/{note}
     defaults: { _controller: PastequeServerBundle:cashMovement:get }
 
-cashesRegisters_api_get:
-    path: /cashesRegisters/get/{type}/{id}
-    defaults: { _controller: PastequeServerBundle:cashesRegisters }
+cashRegisters_api_get:
+    path: /cashRegister/get/{type}/{id}
+    defaults: { _controller: PastequeServerBundle:cashRegisters }
     requirements:
       type:  type|id
 
-cashesRegisters_api_getAll:
-    path: /cashesRegisters/getAll/
-    defaults: { _controller: PastequeServerBundle:cashesRegisters:getAll }
+cashRegister_api_getAll:
+    path: /cashRegister/getAll/
+    defaults: { _controller: PastequeServerBundle:cashRegister:getAll }
 
-categories_api_get:
-    path: /categories/get/{id}
-    defaults: { _controller: PastequeServerBundle:categories:get }
+category_api_get:
+    path: /category/get/{id}
+    defaults: { _controller: PastequeServerBundle:category:get }
 
-categories_api_getChildren:
-    path: /categories/getChildren/{parentId}
-    defaults: { _controller: PastequeServerBundle:categories:getChildren }
+category_api_getChildren:
+    path: /category/getChildren/{parentId}
+    defaults: { _controller: PastequeServerBundle:category:getChildren }
 
-categories_api_getAll:
-    path: /categories/getAll/
-    defaults: { _controller: PastequeServerBundle:categories:getAll }
+category_api_getAll:
+    path: /category/getAll/
+    defaults: { _controller: PastequeServerBundle:category:getAll }
 
-composition_api_getAll:
-    path: /composition/getAll/
-    defaults: { _controller: PastequeServerBundle:composition:getAll }
+group_api_getAll:
+    path: /group/getAll/
+    defaults: { _controller: PastequeServerBundle:group:getAll }
 
-currencies_api_get:
-    path: /currencies/get/{id}
-    defaults: { _controller: PastequeServerBundle:currencies:get }
+currency_api_get:
+    path: /currency/get/{id}
+    defaults: { _controller: PastequeServerBundle:currency:get }
 
-currencies_api_getMain:
-    path: /currencies/getMain/
-    defaults: { _controller: PastequeServerBundle:currencies:getMain }
+currency_api_getMain:
+    path: /currency/getMain/
+    defaults: { _controller: PastequeServerBundle:currency:getMain }
 
-currencies_api_getAll:
+currency_api_getAll:
     path: /currencies/getAll/
-    defaults: { _controller: PastequeServerBundle:currencies:getAll }
+    defaults: { _controller: PastequeServerBundle:currency:getAll }
 
-customers_api_get:
-    path: /customers/get/{id}
-    defaults: { customers: PastequeServerBundle:customers:get }
+customer_api_get:
+    path: /customer/get/{id}
+    defaults: { _controller: PastequeServerBundle:customer:get }
 
-customers_api_getAll:
+customer_api_getAll:
     path: /customers/getAll/
-    defaults: { customers: PastequeServerBundle:customers:getAll }
+    defaults: { _controller: PastequeServerBundle:customer:getAll }
 
-customers_api_getTop:
+customer_api_getTop:
     path: /customers/getTop/{limit}
-    defaults: { customers: PastequeServerBundle:customers:getTop, limit: 10 }
+    defaults: { _controller: PastequeServerBundle:customer:getTop, limit: 10 }
 
-customers_api_addPrepaid:
-    path: /customers/addPrepaid/{id}/{amount}
-    defaults: { customers: PastequeServerBundle:customers:addPrepaid }
-#
-#
+customer_api_addPrepaid:
+    path: /customer/addPrepaid/{id}/{amount}
+    defaults: { _controller: PastequeServerBundle:customer:addPrepaid }
+
+# TODO a voir dans l'api de base
 #customers_api_save:
 #    path: /customers/save/{}
-#a voir dans l'api de base 
 
-discounts_api_get:
-    path: /discounts/get/{id}
-    defaults: { discounts: PastequeServerBundle:discounts:get }
+discount_api_get:
+    path: /discount/get/{id}
+    defaults: { _controller: PastequeServerBundle:discount:get }
 
-discounts_api_getAll:
-    path: /discounts/getAll/
-    defaults: { discounts: PastequeServerBundle:discounts:getAll }
+discount_api_getAll:
+    path: /discount/getAll/
+    defaults: { _controller: PastequeServerBundle:discount:getAll }
 
-discountProfiles_api_getAll:
-    path: /discountProfiles/getAll/
-    defaults: { discountProfiles: PastequeServerBundle:discountProfiles:getAll }
+discountProfile_api_getAll:
+    path: /discountProfile/getAll/
+    defaults: { _controller: PastequeServerBundle:discountProfile:getAll }
 
-images_api_getPrd:
-    path: /images/getPrd/{id}
-    defaults: { images: PastequeServerBundle:images:getPrd }
+image_api_getPrd:
+    path: /image/getPrd/{id}
+    defaults: { _controller: PastequeServerBundle:image:getPrd }
 
-images_api_getCat:
-    path: /images/getCat/{id}
-    defaults: { images: PastequeServerBundle:images:getCat }
+image_api_getCat:
+    path: /image/getCat/{id}
+    defaults: { _controller: PastequeServerBundle:image:getCat }
 
-images_api_getPm:
-    path: /images/getPm/{id}
-    defaults: { images: PastequeServerBundle:images:getPm }
+image_api_getPm:
+    path: /image/getPm/{id}
+    defaults: { _controller: PastequeServerBundle:image:getPm }
 
-images_api_getRes:
-    path: /images/getRes/{label}
-    defaults: { images: PastequeServerBundle:images:getRes }
+image_api_getRes:
+    path: /image/getRes/{label}
+    defaults: { _controller: PastequeServerBundle:image:getRes }
 
-locations_api_get:
-    path: /locations/get/{id}
-    defaults: { locations: PastequeServerBundle:locations:get }
+location_api_get:
+    path: /location/get/{id}
+    defaults: { _controller: PastequeServerBundle:location:get }
 
-locations_api_getAll:
-    path: /locations/getAll/
-    defaults: { locations: PastequeServerBundle:locations:getAll }
+location_api_getAll:
+    path: /location/getAll/
+    defaults: { _controller: PastequeServerBundle:location:getAll }
 
-paymentModes_api_getAll:
-    path: /paymentModes/getAll/
-    defaults: { paymentModes: PastequeServerBundle:paymentModes:getAll }
+paymentMode_api_getAll:
+    path: /paymentMode/getAll/
+    defaults: { _controller: PastequeServerBundle:paymentMode:getAll }
 
 places_api_get:
     path: /places/get/{id}
     defaults: { places: PastequeServerBundle:places:get }
 
-places_api_getAll:
-    path: /places/getAll/
-    defaults: { places: PastequeServerBundle:places:getAll }
+place_api_getAll:
+    path: /place/getAll/
+    defaults: { places: PastequeServerBundle:place:getAll }
 
-products_api_get:
-    path: /products/get/{type}/{id}
-    defaults: { products: PastequeServerBundle:products:get }
+product_api_get:
+    path: /product/get/{type}/{id}
+    defaults: { _controller: PastequeServerBundle:product:get }
     requirements:
       type:  product|ref|code
 
 provider_api_get:
-    path: /ressources/get/{id}
-    defaults: { ressources: PastequeServerBundle:provider:get }
+    path: /provider/get/{id}
+    defaults: { _controller: PastequeServerBundle:provider:get }
 
-provider_api_get:
-    path: /ressources/getAll
-    defaults: { ressources: PastequeServerBundle:provider:getAll }
+provider_api_getAll:
+    path: /provider/getAll
+    defaults: { _controller: PastequeServerBundle:provider:getAll }
 
-products_api_getAll:
-    path: /products/getAll/{all}
-    defaults: { products: PastequeServerBundle:products:getAll }
+product_api_getAll:
+    path: /product/getAll/{all}
+    defaults: { _controller: PastequeServerBundle:product:getAll }
 
-products_api_getCategory:
-    path: /products/getCategory/{categoryId}
-    defaults: { products: PastequeServerBundle:products:getCategory }
+product_api_getCategory:
+    path: /product/getCategory/{categoryId}
+    defaults: { _controller: PastequeServerBundle:product:getCategory }
 
-ressources_api_get:
-    path: /ressources/get/{label}
-    defaults: { ressources: PastequeServerBundle:ressources:get }
+ressource_api_get:
+    path: /ressource/get/{label}
+    defaults: { _controller: PastequeServerBundle:ressource:get }
 
-roles_api_get:
-    path: /roles/get/{id}
-    defaults: { roles: PastequeServerBundle:roles:get }
+role_api_get:
+    path: /role/get/{id}
+    defaults: { _controller: PastequeServerBundle:role:get }
 
-roles_api_getAll:
-    path: /roles/getAll/
-    defaults: { roles: PastequeServerBundle:roles:getAll }
+role_api_getAll:
+    path: /role/getAll/
+    defaults: { _controller: PastequeServerBundle:role:getAll }
 
-stocks_api_getAll:
-    path: /stocks/getAll/{locationId}
-    defaults: { stocks: PastequeServerBundle:stocks:getAll }
+stock_api_getAll:
+    path: /stock/getAll/{locationId}
+    defaults: { _controller: PastequeServerBundle:stock:getAll }
 
-tariffAreas_api_getAll:
-    path: /tariffAreas/getAll/
-    defaults: { tariffAreas: PastequeServerBundle:tariffAreas:getAll }
+tariffArea_api_getAll:
+    path: /tariffArea/getAll/
+    defaults: { _controller: PastequeServerBundle:tariffArea:getAll }
 
-taxes_api_get:
-    path: /taxes/get/{id}
-    defaults: { taxes: PastequeServerBundle:taxes:get }
+tax_api_get:
+    path: /tax/get/{id}
+    defaults: { _controller: PastequeServerBundle:tax:get }
 
-taxes_api_getAll:
-    path: /taxes/getAll/
-    defaults: { taxes: PastequeServerBundle:taxes:getAll }
+tax_api_getAll:
+    path: /tax/getAll/
+    defaults: { _controller: PastequeServerBundle:tax:getAll }
 
-tickets_api_getShared:
-    path: /tickets/getShared/{id}
-    defaults: { tickets: PastequeServerBundle:tickets:getShared }
+ticket_api_getShared:
+    path: /ticket/getShared/{id}
+    defaults: { _controller: PastequeServerBundle:ticket:getShared }
 
-tickets_api_getAllShared:
-    path: /tickets/getAllShared/
-    defaults: { tickets: PastequeServerBundle:tickets:getAllShared }
+ticket_api_getAllShared:
+    path: /ticket/getAllShared/
+    defaults: { _controller: PastequeServerBundle:ticket:getAllShared }
 
-tickets_api_delShared:
+ticket_api_delShared:
     path: /tickets/delShared/{id}
-    defaults: { tickets: PastequeServerBundle:tickets:delShared }
+    defaults: { _controller: PastequeServerBundle:ticket:delShared }
 
-tickets_api_share:
-    path: /tickets/share/{ticket}
-    defaults: { tickets: PastequeServerBundle:tickets:share }
+ticket_api_share:
+    path: /ticket/share/{ticket}
+    defaults: { _controller: PastequeServerBundle:ticket:share }
 
-# Methode save à verifier car les arguments sont des objets defins eux meme par des arguments
-#
-#
-#
-#
-tickets_api_save:
-    path: /tickets/save/{cashId}/{ticket}/{tickets}
-    defaults: { tickets: PastequeServerBundle:tickets:save }
+# TODO Methode save à verifier car les arguments sont des objets defins eux meme par des arguments
+ticket_api_save:
+    path: /ticket/save/{cashId}/{ticket}/{tickets}
+    defaults: { _controller: PastequeServerBundle:ticket:save }
 
-tickets_api_getAll:
-    path: /tickets/getAll/
-    defaults: { tickets: PastequeServerBundle:tickets:getAll }
+ticket_api_getAll:
+    path: /ticket/getAll/
+    defaults: { _controller: PastequeServerBundle:ticket:getAll }
 
 tickets_api_get:
     path: /tickets/get/{id}
-    defaults: { tickets: PastequeServerBundle:tickets:get }
+    defaults: { _controller: PastequeServerBundle:ticket:get }
 
-tickets_api_getOpen:
-    path: /tickets/getOpen/
-    defaults: { tickets: PastequeServerBundle:tickets:getOpen }
+ticket_api_getOpen:
+    path: /ticket/getOpen/
+    defaults: { _controller: PastequeServerBundle:ticket:getOpen }
 
-tickets_api_search:
-    path: /tickets/search/{ticketId}/{ticketType}/{cashId}/{dateStart}/{dateStop}/{customerId}/{userId}/{limit}
-    defaults: { tickets: PastequeServerBundle:tickets:search, ticketId: -1, ticketType: -1, cashId: -1, dateStart: -1, dateStop: -1, customerId: -1, userId: -1, limit: -1 }
+ticket_api_search:
+    path: /ticket/search/{ticketId}/{ticketType}/{cashId}/{dateStart}/{dateStop}/{customerId}/{userId}/{limit}
+    defaults: { _controller: PastequeServerBundle:ticket:search, ticketId: -1, ticketType: -1, cashId: -1, dateStart: -1, dateStop: -1, customerId: -1, userId: -1, limit: -1 }
 
-users_api_get:
-    path: /users/get/{id}
-    defaults: { users: PastequeServerBundle:users:get }
+user_api_get:
+    path: /user/get/{id}
+    defaults: { _controller: PastequeServerBundle:user:get }
 
-users_api_getAll:
-    path: /users/getAll/
-    defaults: { users: PastequeServerBundle:users:getAll }
+user_api_getAll:
+    path: /user/getAll/
+    defaults: { _controller: PastequeServerBundle:user:getAll }
 
-users_api_updPwd:
-    path: /users/updPwd/{id}/{oldPwd}/{newPwd}
-    defaults: { users: PastequeServerBundle:users:updPwd }
+user_api_updPwd:
+    path: /user/updPwd/{id}/{oldPwd}/{newPwd}
+    defaults: { _controller: PastequeServerBundle:user:updPwd }
 
-# api version à verifier
-#
-#
-#
+# TODO api version à verifier
 version_api_anyAction:
     path: /version/anyAction/
-    defaults: { version: PastequeServerBundle:version:anyAction }
+    defaults: { _controller: PastequeServerBundle:version:anyAction }
