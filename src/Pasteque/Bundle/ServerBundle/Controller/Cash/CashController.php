@@ -35,6 +35,8 @@ cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
 use Pasteque\Bundle\ServerBundle\Controller\AbstractController;
+use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Response;
 use Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository;
 
@@ -57,67 +59,73 @@ class CashController extends AbstractController
         return $response;
     }
 
+  public function createAction(Request $request)
+  {
+    $form = $this->createFormBuilder()
+      // ...
+      ->getForm();
+
+    $form->handleRequest($request);
+
+    if ($form->isValid()) {
+      // persist entity
+      $cash = $form->getData();
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($cash);
+      $em->flush();
+
+      return $this->redirectToRoute('task_success');
+    }
+
+    return $this->render('AppBundle:Default:new.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
+
+  public function deleteAction($id)
+  {
+    $em = $this->getDoctrine()->getManager();
+    $cash = $em->getRepository('PastequeServerBundle:Cash')->find($id);
+
+    if (!$cash) {
+      throw $this->createNotFoundException(
+        'No product found for id '.$id
+      );
+    }
+
+    $em->remove($cash);
+    $em->flush();
+
+    return $this->redirectToRoute('homepage');
+  }
+
     public function updateAction($id)
     {
-        /*
-    $json = json_decode($this->params['cash']);
-    $open = null;
-    $id = null;
-    if (property_exists($json, 'id')) {
-      $id = $json->id;
-    }
-    if (property_exists($json, 'openDate')) {
-      $open = $json->openDate;
-    }
-    $close = null;
-    if (property_exists($json, 'closeDate')) {
-      $close = $json->closeDate;
-    }
-    $openCash = null;
-    if (property_exists($json, 'openCash')) {
-      $openCash = $json->openCash;
-    }
-    $closeCash = null;
-    if (property_exists($json, 'closeCash')) {
-      $closeCash = $json->closeCash;
-    }
-    $expectedCash = null;
-    if (property_exists($json, 'expectedCash')) {
-      $expectedCash = $json->expectedCash;
-    }
-    $cashRegisterId = $json->cashRegisterId;
-    $sequence = null;
-    if (property_exists($json, 'sequence')) {
-      $sequence = $json->sequence;
-    }
-    if ($id !== null) {
-      // Update an existing cash
-      $cash = Cash::__build($id, $cashRegisterId, $sequence, $open,
-        $close, $openCash, $closeCash, $expectedCash);
-      if ($srv->update($cash)) {
-        $this->succeed($cash);
-      } else {
-        $this->fail(APIError::$ERR_GENERIC);
+      $request = $this->get('request');
+
+      if (is_null($id)) {
+        $postData = $request->get('cash');
+        $id = $postData['id'];
       }
-    } else {
-      // Create a cash and update with given data
-      if ($srv->add($cashRegisterId)) {
-        $cash = $srv->getCashRegister($cashRegisterId);
-        $cash->openDate = $open;
-        $cash->closeDate = $close;
-        $cash->openCash = $openCash;
-        $cash->closeCash = $closeCash;
-        $cash->expectedCash = $expectedCash;
-        if ($srv->update($cash)) {
-          $this->succeed($cash);
-        } else {
-          $this->fail(APIError::$ERR_GENERIC);
+
+      $em = $this->getDoctrine()->getManager();
+      $entity = $em->getRepository('PastequeServerBundle:Cash')->find($id);
+      $form = $this->createForm(new FormType(), $entity);
+
+      if ($request->getMethod() == 'POST') {
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+          // perform some action, such as save the object to the database
+          $em->flush();
+
+          return $this->redirect($this->generateUrl(''));
         }
-      } else {
-        $this->fail(APIError::$ERR_GENERIC);
       }
-    }
-     **/
+
+      return $this->render('MyBundle:Testimonial:update.html.twig', array(
+        'form' => $form->createView()
+      ));
     }
 
     public function searchAction($cashRegisterId, $dateStart, $dateStop)
