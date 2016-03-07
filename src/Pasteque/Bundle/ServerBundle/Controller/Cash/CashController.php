@@ -35,8 +35,8 @@ cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
 use Pasteque\Bundle\ServerBundle\Controller\AbstractController;
-use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository;
 
@@ -109,8 +109,8 @@ class CashController extends AbstractController
       }
 
       $em = $this->getDoctrine()->getManager();
-      $entity = $em->getRepository('PastequeServerBundle:Cash')->find($id);
-      $form = $this->createForm(new FormType(), $entity);
+      $cash = $em->getRepository('PastequeServerBundle:Cash')->find($id);
+      $form = $this->createForm(new FormType(), $cash);
 
       if ($request->getMethod() == 'POST') {
         $form->handleRequest($request);
