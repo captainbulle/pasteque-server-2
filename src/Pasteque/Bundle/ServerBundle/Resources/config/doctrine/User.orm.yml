@@ -1,5 +1,12 @@
 Pasteque\Bundle\ServerBundle\Entity\User:
     type: entity
+    manyToOne:
+        roleId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Role
+            inversedBy: users
+            joinColumn:
+                name: role_id
+                referencedColumnName: id
     table: fos_user
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\UserRepository
     id:
