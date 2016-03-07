@@ -20,10 +20,81 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class CurrencyController extends AbstractController
 {
+  public function createAction(Request $request)
+  {
+    $form = $this->createFormBuilder()
+      // ...
+      ->getForm();
+
+    $form->handleRequest($request);
+
+    if ($form->isValid()) {
+      // persist entity
+      $currency = $form->getData();
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($currency);
+      $em->flush();
+
+      return $this->redirectToRoute('task_success');
+    }
+
+    return $this->render('AppBundle:Default:new.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
+
+  public function deleteAction($id)
+  {
+    $em = $this->getDoctrine()->getManager();
+    $currency = $em->getRepository('PastequeServerBundle:Currency')->find($id);
+
+    if (!$currency) {
+      throw $this->createNotFoundException(
+        'No product found for id '.$id
+      );
+    }
+
+    $em->remove($currency);
+    $em->flush();
+
+    return $this->redirectToRoute('homepage');
+  }
+
+  public function updateAction($id)
+  {
+    $request = $this->get('request');
+
+    if (is_null($id)) {
+      $postData = $request->get('cash');
+      $id = $postData['id'];
+    }
+
+    $em = $this->getDoctrine()->getManager();
+    $currency = $em->getRepository('PastequeServerBundle:Currency')->find($id);
+    $form = $this->createForm(new FormType(), $currency);
+
+    if ($request->getMethod() == 'POST') {
+      $form->handleRequest($request);
+
+      if ($form->isValid()) {
+        // perform some action, such as save the object to the database
+        $em->flush();
+
+        return $this->redirect($this->generateUrl(''));
+      }
+    }
+
+    return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView()
+    ));
+  }
+
     public function getAction($id)
     {
         $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Currency');
