@@ -35,89 +35,85 @@ cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
 use Pasteque\Bundle\ServerBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository;
 
 class CashMovementController extends AbstractController
 {
+
+  public function createAction(Request $request)
+  {
+    $form = $this->createFormBuilder()
+      // ...
+      ->getForm();
+
+    $form->handleRequest($request);
+
+    if ($form->isValid()) {
+      // persist entity
+      $cashMovement = $form->getData();
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($cashMovement);
+      $em->flush();
+
+      return $this->redirectToRoute('task_success');
+    }
+
+    return $this->render('AppBundle:Default:new.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
+
+  public function deleteAction($id)
+  {
+    $em = $this->getDoctrine()->getManager();
+    $cashMovement = $em->getRepository('PastequeServerBundle:CashMovement')->find($id);
+
+    if (!$cashMovement) {
+      throw $this->createNotFoundException(
+        'No product found for id '.$id
+      );
+    }
+
+    $em->remove($cashMovement);
+    $em->flush();
+
+    return $this->redirectToRoute('homepage');
+  }
+
+  public function updateAction($id)
+  {
+    $request = $this->get('request');
+
+    if (is_null($id)) {
+      $postData = $request->get('cash');
+      $id = $postData['id'];
+    }
+
+    $em = $this->getDoctrine()->getManager();
+    $cashMovement = $em->getRepository('PastequeServerBundle:CashMovement')->find($id);
+    $form = $this->createForm(new FormType(), $cashMovement);
+
+    if ($request->getMethod() == 'POST') {
+      $form->handleRequest($request);
+
+      if ($form->isValid()) {
+        // perform some action, such as save the object to the database
+        $em->flush();
+
+        return $this->redirect($this->generateUrl(''));
+      }
+    }
+
+    return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView()
+    ));
+  }
+
     public function moveAction($id, $date, $payment, $note)
     {
-        $cashes = null;
-        if ($type == 'cash') {
-            $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
-            $cashes = $repo->find($id);
-        } elseif ($type == 'cashRegister') {
-            $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');
-            $cashes = $repo->findBy('cashRegisterId', $id);
-        }
-
-        $response = new Response(json_encode($cashes));
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
-    }
-
-    public function updateAction($id)
-    {
-        /*
-    $json = json_decode($this->params['cash']);
-    $open = null;
-    $id = null;
-    if (property_exists($json, 'id')) {
-      $id = $json->id;
-    }
-    if (property_exists($json, 'openDate')) {
-      $open = $json->openDate;
-    }
-    $close = null;
-    if (property_exists($json, 'closeDate')) {
-      $close = $json->closeDate;
-    }
-    $openCash = null;
-    if (property_exists($json, 'openCash')) {
-      $openCash = $json->openCash;
-    }
-    $closeCash = null;
-    if (property_exists($json, 'closeCash')) {
-      $closeCash = $json->closeCash;
-    }
-    $expectedCash = null;
-    if (property_exists($json, 'expectedCash')) {
-      $expectedCash = $json->expectedCash;
-    }
-    $cashRegisterId = $json->cashRegisterId;
-    $sequence = null;
-    if (property_exists($json, 'sequence')) {
-      $sequence = $json->sequence;
-    }
-    if ($id !== null) {
-      // Update an existing cash
-      $cash = Cash::__build($id, $cashRegisterId, $sequence, $open,
-        $close, $openCash, $closeCash, $expectedCash);
-      if ($srv->update($cash)) {
-        $this->succeed($cash);
-      } else {
-        $this->fail(APIError::$ERR_GENERIC);
-      }
-    } else {
-      // Create a cash and update with given data
-      if ($srv->add($cashRegisterId)) {
-        $cash = $srv->getCashRegister($cashRegisterId);
-        $cash->openDate = $open;
-        $cash->closeDate = $close;
-        $cash->openCash = $openCash;
-        $cash->closeCash = $closeCash;
-        $cash->expectedCash = $expectedCash;
-        if ($srv->update($cash)) {
-          $this->succeed($cash);
-        } else {
-          $this->fail(APIError::$ERR_GENERIC);
-        }
-      } else {
-        $this->fail(APIError::$ERR_GENERIC);
-      }
-    }
-     **/
+        // replaced by create
     }
 
     public function searchAction($cashRegisterId, $dateStart, $dateStop)
@@ -146,13 +142,5 @@ class CashMovementController extends AbstractController
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
-    }
-
-    public function zticketAction($id)
-    {
-        /*
-    $ret = $srv->getZTicket($this->params['id']);
-    $this->succeed($ret);
-     **/
     }
 }
