@@ -24,7 +24,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class TicketController extends AbstractController
+class StockController extends AbstractController
 {
   public function createAction(Request $request)
   {
@@ -94,65 +94,4 @@ class TicketController extends AbstractController
       'form' => $form->createView(),
     ));
   }
-  public function getSharedAction($id)
-  {
-      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:SharedTicket');
-      $tickets = $repo->find($id);
-
-      $response = new Response(json_encode($tickets));
-      $response->headers->set('Content-Type', 'application/json');
-
-      return $response;
-  }
-
-    public function getAllSharedAction()
-    {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:SharedTicket');
-        $tickets = $repo->findAll();
-
-        $response = new Response(json_encode($tickets));
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
-    }
-
-    public function delSharedAction($id)
-    {
-        $em = $this->getDoctrine()->getManager();
-        $sharedTicket = $em->getRepository('PastequeServerBundle:SharedTicket')->find($id);
-
-        if (!$sharedTicket) {
-            throw $this->createNotFoundException(
-        'No product found for id '.$id
-      );
-        }
-
-        $em->remove($sharedTicket);
-        $em->flush();
-
-        return $this->redirectToRoute('homepage');
-    }
-
-    public function shareAction(Request $request)
-    {
-        $form = $this->createFormBuilder()
-      // ...
-      ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            // persist entity
-      $sharedTicket = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($sharedTicket);
-            $em->flush();
-
-            return $this->redirectToRoute('task_success');
-        }
-
-        return $this->render('AppBundle:Default:new.html.twig', array(
-      'form' => $form->createView(),
-    ));
-    }
 }
