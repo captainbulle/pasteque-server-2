@@ -3,7 +3,6 @@ Pasteque\Bundle\ServerBundle\Entity\User:
     manyToOne:
         roleId:
             targetEntity: Pasteque\Bundle\ServerBundle\Entity\Role
-            inversedBy: users
             joinColumn:
                 name: role_id
                 referencedColumnName: id
@@ -17,9 +16,6 @@ Pasteque\Bundle\ServerBundle\Entity\User:
                 strategy: AUTO
     fields:
         displayId:
-            type: string
-            length: 255
-        roleId:
             type: string
             length: 255
         card:
