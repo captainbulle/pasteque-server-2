@@ -19,7 +19,6 @@
 //    along with POS-Tech.  If not, see <http://www.gnu.org/licenses/>.
 
 namespace Pasteque\Bundle\ServerBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Role.
@@ -47,11 +46,6 @@ class Role
     private $permissions;
 
     /**
-     * @var ArrayCollection
-     */
-    private $users;
-
-    /**
      * @param string $name
      * @param string $permissions
      * @param string $displayId
@@ -61,7 +55,6 @@ class Role
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->permissions = $permissions;
-        $this->users = new ArrayCollection();
     }
 
     /**

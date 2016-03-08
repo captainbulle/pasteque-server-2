@@ -1,9 +1,5 @@
 Pasteque\Bundle\ServerBundle\Entity\Role:
     type: entity
-    oneToMany:
-        users:
-            targetEntity: Pasteque\Bundle\ServerBundle\Entity\User
-            mappedBy: roleId
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\RoleRepository
     id:
