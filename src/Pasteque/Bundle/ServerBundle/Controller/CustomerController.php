@@ -27,75 +27,74 @@ use Pasteque\Bundle\ServerBundle\Entity\Customer;
 
 class CustomerController extends AbstractController
 {
-
-  public function createAction(Request $request)
-  {
-    $form = $this->createFormBuilder()
+    public function createAction(Request $request)
+    {
+        $form = $this->createFormBuilder()
       // ...
       ->getForm();
 
-    $form->handleRequest($request);
+        $form->handleRequest($request);
 
-    if ($form->isValid()) {
-      // persist entity
+        if ($form->isValid()) {
+            // persist entity
       $customer = $form->getData();
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($customer);
-      $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($customer);
+            $em->flush();
 
-      return $this->redirectToRoute('task_success');
-    }
+            return $this->redirectToRoute('task_success');
+        }
 
-    return $this->render('AppBundle:Default:new.html.twig', array(
+        return $this->render('AppBundle:Default:new.html.twig', array(
       'form' => $form->createView(),
     ));
-  }
+    }
 
-  public function deleteAction($id)
-  {
-    $em = $this->getDoctrine()->getManager();
-    $customer = $em->getRepository('PastequeServerBundle:Customer')->find($id);
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $customer = $em->getRepository('PastequeServerBundle:Customer')->find($id);
 
-    if (!$customer) {
-      throw $this->createNotFoundException(
+        if (!$customer) {
+            throw $this->createNotFoundException(
         'No product found for id '.$id
       );
-    }
+        }
 
-    $em->remove($customer);
-    $em->flush();
-
-    return $this->redirectToRoute('homepage');
-  }
-
-  public function updateAction($id)
-  {
-    $request = $this->get('request');
-
-    if (is_null($id)) {
-      $postData = $request->get('cash');
-      $id = $postData['id'];
-    }
-
-    $em = $this->getDoctrine()->getManager();
-    $currency = $em->getRepository('PastequeServerBundle:Customer')->find($id);
-    $form = $this->createForm(new FormType(), $currency);
-
-    if ($request->getMethod() == 'POST') {
-      $form->handleRequest($request);
-
-      if ($form->isValid()) {
-        // perform some action, such as save the object to the database
+        $em->remove($customer);
         $em->flush();
 
-        return $this->redirect($this->generateUrl(''));
-      }
+        return $this->redirectToRoute('homepage');
     }
 
-    return $this->render('MyBundle:Testimonial:update.html.twig', array(
-      'form' => $form->createView()
+    public function updateAction($id)
+    {
+        $request = $this->get('request');
+
+        if (is_null($id)) {
+            $postData = $request->get('customer');
+            $id = $postData['id'];
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $customer = $em->getRepository('PastequeServerBundle:Customer')->find($id);
+        $form = $this->createForm(new FormType(), $customer);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                // perform some action, such as save the object to the database
+        $em->flush();
+
+                return $this->redirect($this->generateUrl(''));
+            }
+        }
+
+        return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView(),
     ));
-  }
+    }
 
     public function getAction($id)
     {
@@ -125,7 +124,7 @@ class CustomerController extends AbstractController
         $repo = $em->getDoctrine()->getRepository('PastequeServerBundle:Customer');
 
     /**
-     * @var Customer $customer
+     * @var Customer
      */
     $customer = $repo->find($id);
         $prepaid = $customer->getPrepaid();

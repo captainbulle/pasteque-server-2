@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity;
 
 /**
- * ThirdParty
+ * ThirdParty.
  */
 class ThirdParty
 {
@@ -97,6 +97,7 @@ class ThirdParty
 
     /**
      * ThirdParty constructor.
+     *
      * @param string $cif
      * @param string $name
      * @param string $address
@@ -131,7 +132,7 @@ class ThirdParty
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -165,7 +166,7 @@ class ThirdParty
     }
 
     /**
-     * Set cif
+     * Set cif.
      *
      * @param string $cif
      *
@@ -179,7 +180,7 @@ class ThirdParty
     }
 
     /**
-     * Get cif
+     * Get cif.
      *
      * @return string
      */
@@ -189,7 +190,7 @@ class ThirdParty
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -203,7 +204,7 @@ class ThirdParty
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -213,7 +214,7 @@ class ThirdParty
     }
 
     /**
-     * Set address
+     * Set address.
      *
      * @param string $address
      *
@@ -227,7 +228,7 @@ class ThirdParty
     }
 
     /**
-     * Get address
+     * Get address.
      *
      * @return string
      */
@@ -237,7 +238,7 @@ class ThirdParty
     }
 
     /**
-     * Set contactComm
+     * Set contactComm.
      *
      * @param string $contactComm
      *
@@ -251,7 +252,7 @@ class ThirdParty
     }
 
     /**
-     * Get contactComm
+     * Get contactComm.
      *
      * @return string
      */
@@ -261,7 +262,7 @@ class ThirdParty
     }
 
     /**
-     * Set contactFact
+     * Set contactFact.
      *
      * @param string $contactFact
      *
@@ -275,7 +276,7 @@ class ThirdParty
     }
 
     /**
-     * Get contactFact
+     * Get contactFact.
      *
      * @return string
      */
@@ -285,7 +286,7 @@ class ThirdParty
     }
 
     /**
-     * Set payRule
+     * Set payRule.
      *
      * @param string $payRule
      *
@@ -299,7 +300,7 @@ class ThirdParty
     }
 
     /**
-     * Get payRule
+     * Get payRule.
      *
      * @return string
      */
@@ -309,7 +310,7 @@ class ThirdParty
     }
 
     /**
-     * Set faxNumber
+     * Set faxNumber.
      *
      * @param string $faxNumber
      *
@@ -323,7 +324,7 @@ class ThirdParty
     }
 
     /**
-     * Get faxNumber
+     * Get faxNumber.
      *
      * @return string
      */
@@ -333,7 +334,7 @@ class ThirdParty
     }
 
     /**
-     * Set phoneNumber
+     * Set phoneNumber.
      *
      * @param string $phoneNumber
      *
@@ -347,7 +348,7 @@ class ThirdParty
     }
 
     /**
-     * Get phoneNumber
+     * Get phoneNumber.
      *
      * @return string
      */
@@ -357,7 +358,7 @@ class ThirdParty
     }
 
     /**
-     * Set mobileNumber
+     * Set mobileNumber.
      *
      * @param string $mobileNumber
      *
@@ -371,7 +372,7 @@ class ThirdParty
     }
 
     /**
-     * Get mobileNumber
+     * Get mobileNumber.
      *
      * @return string
      */
@@ -381,7 +382,7 @@ class ThirdParty
     }
 
     /**
-     * Set email
+     * Set email.
      *
      * @param string $email
      *
@@ -395,7 +396,7 @@ class ThirdParty
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
@@ -405,7 +406,7 @@ class ThirdParty
     }
 
     /**
-     * Set webPage
+     * Set webPage.
      *
      * @param string $webPage
      *
@@ -419,7 +420,7 @@ class ThirdParty
     }
 
     /**
-     * Get webPage
+     * Get webPage.
      *
      * @return string
      */
@@ -429,7 +430,7 @@ class ThirdParty
     }
 
     /**
-     * Set note
+     * Set note.
      *
      * @param string $note
      *
@@ -443,7 +444,7 @@ class ThirdParty
     }
 
     /**
-     * Get note
+     * Get note.
      *
      * @return string
      */
@@ -452,4 +453,3 @@ class ThirdParty
         return $this->note;
     }
 }
-

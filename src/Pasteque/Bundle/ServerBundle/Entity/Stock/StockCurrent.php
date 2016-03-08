@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Stock;
 
 /**
- * StockCurrent
+ * StockCurrent.
  */
 class StockCurrent
 {
@@ -66,7 +66,7 @@ class StockCurrent
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -76,7 +76,7 @@ class StockCurrent
     }
 
     /**
-     * Set locationId
+     * Set locationId.
      *
      * @param int $locationId
      *
@@ -90,7 +90,7 @@ class StockCurrent
     }
 
     /**
-     * Get locationId
+     * Get locationId.
      *
      * @return int
      */
@@ -100,7 +100,7 @@ class StockCurrent
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param int $productId
      *
@@ -114,7 +114,7 @@ class StockCurrent
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return int
      */
@@ -124,7 +124,7 @@ class StockCurrent
     }
 
     /**
-     * Set attributeSetInstanceId
+     * Set attributeSetInstanceId.
      *
      * @param int $attributeSetInstanceId
      *
@@ -138,7 +138,7 @@ class StockCurrent
     }
 
     /**
-     * Get attributeSetInstanceId
+     * Get attributeSetInstanceId.
      *
      * @return int
      */
@@ -148,7 +148,7 @@ class StockCurrent
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -162,7 +162,7 @@ class StockCurrent
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -171,4 +171,3 @@ class StockCurrent
         return $this->quantity;
     }
 }
-

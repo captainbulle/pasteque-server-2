@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Reservation;
 
 /**
- * ReservationCustomer
+ * ReservationCustomer.
  */
 class ReservationCustomer
 {
@@ -52,7 +52,7 @@ class ReservationCustomer
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -86,7 +86,7 @@ class ReservationCustomer
     }
 
     /**
-     * Set customerId
+     * Set customerId.
      *
      * @param int $customerId
      *
@@ -100,7 +100,7 @@ class ReservationCustomer
     }
 
     /**
-     * Get customerId
+     * Get customerId.
      *
      * @return int
      */
@@ -109,4 +109,3 @@ class ReservationCustomer
         return $this->customerId;
     }
 }
-

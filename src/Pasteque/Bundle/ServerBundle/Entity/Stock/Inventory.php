@@ -50,6 +50,7 @@ class Inventory
 
     /**
      * Inventory constructor.
+     *
      * @param \DateTime $date
      * @param int $locationId
      */

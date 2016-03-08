@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Order;
 
 /**
- * OrderLine
+ * OrderLine.
  */
 class OrderLine
 {
@@ -67,9 +67,8 @@ class OrderLine
      * @param int $productId
      * @param int $attributeInstanceId
      * @param float $quantity
-     * @param string $attributes
      */
-    public function __construct($orderId, $line, $productId, $attributeInstanceId, $quantity, $attributes=null)
+    public function __construct($orderId, $line, $productId, $attributeInstanceId, $quantity, $attributes = null)
     {
         $this->orderId = $orderId;
         $this->line = $line;
@@ -80,7 +79,7 @@ class OrderLine
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -90,7 +89,7 @@ class OrderLine
     }
 
     /**
-     * Set orderId
+     * Set orderId.
      *
      * @param int $orderId
      *
@@ -104,7 +103,7 @@ class OrderLine
     }
 
     /**
-     * Get orderId
+     * Get orderId.
      *
      * @return int
      */
@@ -114,9 +113,9 @@ class OrderLine
     }
 
     /**
-     * Set line
+     * Set line.
      *
-     * @param integer $line
+     * @param int $line
      *
      * @return OrderLine
      */
@@ -128,7 +127,7 @@ class OrderLine
     }
 
     /**
-     * Get line
+     * Get line.
      *
      * @return int
      */
@@ -138,7 +137,7 @@ class OrderLine
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param int $productId
      *
@@ -152,7 +151,7 @@ class OrderLine
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return int
      */
@@ -162,7 +161,7 @@ class OrderLine
     }
 
     /**
-     * Set attributeInstanceId
+     * Set attributeInstanceId.
      *
      * @param int $attributeInstanceId
      *
@@ -176,7 +175,7 @@ class OrderLine
     }
 
     /**
-     * Get attributeInstanceId
+     * Get attributeInstanceId.
      *
      * @return int
      */
@@ -186,7 +185,7 @@ class OrderLine
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -200,7 +199,7 @@ class OrderLine
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -210,7 +209,7 @@ class OrderLine
     }
 
     /**
-     * Set attributes
+     * Set attributes.
      *
      * @param string $attributes
      *
@@ -224,7 +223,7 @@ class OrderLine
     }
 
     /**
-     * Get attributes
+     * Get attributes.
      *
      * @return string
      */
@@ -233,4 +232,3 @@ class OrderLine
         return $this->attributes;
     }
 }
-

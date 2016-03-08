@@ -20,25 +20,11 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
-/* Cash API specification
-
-GET(cashRegisterId)
-When client request a new cash, the server check for an active cash for
-requested cash register. If found return it. Otherwise return NULL.
-
-GET(id)
-Get cash by id, no matter it's state.
-
-UPDATE(cash)
-When client sends a cash, it may have an id or not. If the id is present the
-cash is updated. If not a new cash is created. In all cases return the cash.
-
-*/
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class DiscountController extends AbstractController
+class PaymentModeController extends AbstractController
 {
     public function createAction(Request $request)
     {
@@ -50,9 +36,9 @@ class DiscountController extends AbstractController
 
         if ($form->isValid()) {
             // persist entity
-      $discount = $form->getData();
+      $paymentMode = $form->getData();
             $em = $this->getDoctrine()->getManager();
-            $em->persist($discount);
+            $em->persist($paymentMode);
             $em->flush();
 
             return $this->redirectToRoute('task_success');
@@ -66,15 +52,15 @@ class DiscountController extends AbstractController
     public function deleteAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $discount = $em->getRepository('PastequeServerBundle:Discount')->find($id);
+        $paymentMode = $em->getRepository('PastequeServerBundle:PaymentMode')->find($id);
 
-        if (!$discount) {
+        if (!$paymentMode) {
             throw $this->createNotFoundException(
         'No product found for id '.$id
       );
         }
 
-        $em->remove($discount);
+        $em->remove($paymentMode);
         $em->flush();
 
         return $this->redirectToRoute('homepage');
@@ -85,13 +71,13 @@ class DiscountController extends AbstractController
         $request = $this->get('request');
 
         if (is_null($id)) {
-            $postData = $request->get('discount');
+            $postData = $request->get('paymentMode');
             $id = $postData['id'];
         }
 
         $em = $this->getDoctrine()->getManager();
-        $discount = $em->getRepository('PastequeServerBundle:Discount')->find($id);
-        $form = $this->createForm(new FormType(), $discount);
+        $paymentMode = $em->getRepository('PastequeServerBundle:PaymentMode')->find($id);
+        $form = $this->createForm(new FormType(), $paymentMode);
 
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
@@ -109,23 +95,12 @@ class DiscountController extends AbstractController
     ));
     }
 
-    public function getAction($id)
-    {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Discount');
-        $discount = $repo->find($id);
-
-        $response = new Response(json_encode($discount));
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
-    }
-
     public function getAllAction()
     {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Discount');
-        $discount = $repo->findAll();
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:PaymentMode');
+        $paymentModes = $repo->findAll();
 
-        $response = new Response(json_encode($discount));
+        $response = new Response(json_encode($paymentModes));
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;

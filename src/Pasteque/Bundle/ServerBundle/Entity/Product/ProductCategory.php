@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Product;
 
 /**
- * ProductCategory
+ * ProductCategory.
  */
 class ProductCategory
 {
@@ -52,7 +52,7 @@ class ProductCategory
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -62,7 +62,7 @@ class ProductCategory
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param int $productId
      *
@@ -76,7 +76,7 @@ class ProductCategory
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return int
      */
@@ -86,9 +86,9 @@ class ProductCategory
     }
 
     /**
-     * Set categoryOrder
+     * Set categoryOrder.
      *
-     * @param integer $categoryOrder
+     * @param int $categoryOrder
      *
      * @return ProductCategory
      */
@@ -100,7 +100,7 @@ class ProductCategory
     }
 
     /**
-     * Get categoryOrder
+     * Get categoryOrder.
      *
      * @return int
      */
@@ -109,4 +109,3 @@ class ProductCategory
         return $this->categoryOrder;
     }
 }
-
