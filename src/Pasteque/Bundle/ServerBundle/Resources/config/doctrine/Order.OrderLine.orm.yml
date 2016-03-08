@@ -9,19 +9,8 @@ Pasteque\Bundle\ServerBundle\Entity\Order\OrderLine:
             generator:
                 strategy: AUTO
     fields:
-        orderId:
-            type: string
-            length: 255
         line:
             type: integer
-            nullable: true
-        productId:
-            type: string
-            length: 255
-            nullable: true
-        attributeInstanceId:
-            type: string
-            length: 255
             nullable: true
         quantity:
             type: float

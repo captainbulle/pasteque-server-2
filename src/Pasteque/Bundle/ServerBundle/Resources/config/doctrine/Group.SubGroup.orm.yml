@@ -16,8 +16,6 @@ Pasteque\Bundle\ServerBundle\Entity\Group\SubGroup:
             generator:
                 strategy: AUTO
     fields:
-        compositionId:
-            type: integer
         name:
             type: string
             length: 255

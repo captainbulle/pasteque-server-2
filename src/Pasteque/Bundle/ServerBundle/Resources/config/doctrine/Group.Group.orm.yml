@@ -17,16 +17,6 @@ Pasteque\Bundle\ServerBundle\Entity\Group\Group:
             length: 255
         priceSell:
             type: float
-        categoryId:
-            type: string
-            length: 255
-        providerId:
-            type: string
-            length: 255
-        taxCategoryId:
-            type: string
-            length: 255
-            nullable: true
         displayOrder:
             type: integer
             nullable: true
@@ -36,10 +26,6 @@ Pasteque\Bundle\ServerBundle\Entity\Group\Group:
             type: boolean
         priceBuy:
             type: float
-            nullable: true
-        attributeSetId:
-            type: string
-            length: 255
             nullable: true
         barcode:
             type: string

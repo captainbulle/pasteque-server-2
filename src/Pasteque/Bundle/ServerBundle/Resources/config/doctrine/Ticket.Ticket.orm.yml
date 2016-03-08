@@ -40,18 +40,6 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\Ticket:
         date:
             type: datetime
             nullable: true
-        receiptId:
-            type: string
-            length: 255
-        userId:
-            type: integer
-        customerId:
-            type: string
-            length: 255
-            nullable: true
-        tariffAreaId:
-            type: integer
-            nullable: true
         status:
             type: integer
         customerCount:

@@ -18,9 +18,4 @@ Pasteque\Bundle\ServerBundle\Entity\Cash\CashRegister:
         name:
             type: string
             length: 255
-        locationId:
-            type: string
-            length: 255
-        nextTicketId:
-            type: integer
     lifecycleCallbacks: {  }

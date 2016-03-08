@@ -36,12 +36,12 @@ class TaxLine
     private $displayId;
 
     /**
-     * @var string
+     * @var int
      */
     private $receiptId;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxId;
 
@@ -58,8 +58,8 @@ class TaxLine
     /**
      * TaxLine constructor.
      *
-     * @param string $receiptId
-     * @param string $taxId
+     * @param int $receiptId
+     * @param int $taxId
      * @param float  $base
      * @param string $displayId
      */
@@ -109,7 +109,7 @@ class TaxLine
     /**
      * Set receiptId.
      *
-     * @param string $receiptId
+     * @param int $receiptId
      *
      * @return TaxLine
      */
@@ -123,7 +123,7 @@ class TaxLine
     /**
      * Get receiptId.
      *
-     * @return string
+     * @return int
      */
     public function getReceiptId()
     {
@@ -133,7 +133,7 @@ class TaxLine
     /**
      * Set taxId.
      *
-     * @param string $taxId
+     * @param int $taxId
      *
      * @return TaxLine
      */
@@ -147,7 +147,7 @@ class TaxLine
     /**
      * Get taxId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxId()
     {

@@ -20,11 +20,6 @@ Pasteque\Bundle\ServerBundle\Entity\Payment\PaymentModeReturn:
             generator:
                 strategy: AUTO
     fields:
-        paymentModeId:
-            type: integer
-        returnModeId:
-            type: integer
-            nullable: true
         min:
             type: float
     lifecycleCallbacks: {  }

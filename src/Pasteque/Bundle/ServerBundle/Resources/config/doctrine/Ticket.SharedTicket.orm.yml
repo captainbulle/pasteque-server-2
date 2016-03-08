@@ -31,17 +31,7 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\SharedTicket:
         name:
             type: string
             length: 255
-        customerId:
-            type: string
-            length: 255
-            nullable: true
         customerCount:
-            type: integer
-            nullable: true
-        tariffAreaId:
-            type: integer
-            nullable: true
-        discountProfileId:
             type: integer
             nullable: true
         discountRate:

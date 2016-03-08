@@ -25,15 +25,6 @@ Pasteque\Bundle\ServerBundle\Entity\Stock\InventoryItem:
             generator:
                 strategy: AUTO
     fields:
-        inventoryId:
-            type: integer
-        productId:
-            type: string
-            length: 255
-        attributeSetInstanceId:
-            type: string
-            length: 255
-            nullable: true
         quantity:
             type: float
         lostQuantity:

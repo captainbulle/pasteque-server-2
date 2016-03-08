@@ -11,7 +11,4 @@ Pasteque\Bundle\ServerBundle\Entity\Stock\Inventory:
     fields:
         date:
             type: datetime
-        locationId:
-            type: string
-            length: 255
     lifecycleCallbacks: {  }

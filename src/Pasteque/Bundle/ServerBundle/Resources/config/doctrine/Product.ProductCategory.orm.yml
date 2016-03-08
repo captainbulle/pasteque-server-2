@@ -15,9 +15,6 @@ Pasteque\Bundle\ServerBundle\Entity\Product\ProductCategory:
             generator:
                 strategy: AUTO
     fields:
-        productId:
-            type: string
-            length: 255
         categoryOrder:
             type: integer
             nullable: true

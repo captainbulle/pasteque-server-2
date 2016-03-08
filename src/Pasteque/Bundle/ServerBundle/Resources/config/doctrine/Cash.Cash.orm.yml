@@ -18,9 +18,6 @@ Pasteque\Bundle\ServerBundle\Entity\Cash\Cash:
         money:
             type: string
             length: 255
-        cashRegisterId:
-            type: string
-            length: 255
         hostSequence:
             type: integer
         openDate:

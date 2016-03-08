@@ -85,7 +85,7 @@ class Resource
      *
      * @param string $displayId
      *
-     * @return Resource
+     * @return resource
      */
     public function setDisplayId($displayId)
     {

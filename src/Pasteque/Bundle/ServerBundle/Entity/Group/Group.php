@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Group;
 
 /**
- * Group
+ * Group.
  */
 class Group
 {
@@ -46,17 +46,17 @@ class Group
     private $priceSell;
 
     /**
-     * @var string
+     * @var int
      */
     private $categoryId;
 
     /**
-     * @var string
+     * @var int
      */
     private $providerId;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxCategoryId;
 
@@ -81,7 +81,7 @@ class Group
     private $priceBuy;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetId;
 
@@ -112,24 +112,25 @@ class Group
 
     /**
      * Group constructor.
+     *
      * @param string $reference
      * @param string $name
      * @param float $priceSell
-     * @param string $categoryId
-     * @param string $providerId
-     * @param string $taxCategoryId
+     * @param int $categoryId
+     * @param int $providerId
+     * @param int $taxCategoryId
      * @param int $displayOrder
      * @param bool $isScale
      * @param float $priceBuy
-     * @param string $attributeSetId
+     * @param int $attributeSetId
      * @param string $barcode
      * @param string $image
-     * @param bool $discountEnabled
-     * @param float $discountRate
+     * @param bool   $discountEnabled
+     * @param float  $discountRate
      */
     public function __construct($reference, $name, $priceSell, $categoryId, $providerId, $taxCategoryId, $displayOrder,
-                                $isScale, $priceBuy=null, $attributeSetId=null, $barcode=null, $image=null,
-                                $discountEnabled=false, $discountRate=0.0)
+                                $isScale, $priceBuy = null, $attributeSetId = null, $barcode = null, $image = null,
+                                $discountEnabled = false, $discountRate = 0.0)
     {
         $this->reference = $reference;
         $this->name = $name;
@@ -152,12 +153,13 @@ class Group
     /**
      * @param SubGroup $subGroup
      */
-    public function addSubGroup($subGroup) {
+    public function addSubGroup($subGroup)
+    {
         array_push($this->subGroups, $subGroup);
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -167,7 +169,7 @@ class Group
     }
 
     /**
-     * Set reference
+     * Set reference.
      *
      * @param string $reference
      *
@@ -181,7 +183,7 @@ class Group
     }
 
     /**
-     * Get reference
+     * Get reference.
      *
      * @return string
      */
@@ -191,7 +193,7 @@ class Group
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -205,7 +207,7 @@ class Group
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -215,7 +217,7 @@ class Group
     }
 
     /**
-     * Set priceSell
+     * Set priceSell.
      *
      * @param float $priceSell
      *
@@ -229,7 +231,7 @@ class Group
     }
 
     /**
-     * Get priceSell
+     * Get priceSell.
      *
      * @return float
      */
@@ -239,9 +241,9 @@ class Group
     }
 
     /**
-     * Set categoryId
+     * Set categoryId.
      *
-     * @param string $categoryId
+     * @param int $categoryId
      *
      * @return Group
      */
@@ -253,9 +255,9 @@ class Group
     }
 
     /**
-     * Get categoryId
+     * Get categoryId.
      *
-     * @return string
+     * @return int
      */
     public function getCategoryId()
     {
@@ -263,9 +265,9 @@ class Group
     }
 
     /**
-     * Set providerId
+     * Set providerId.
      *
-     * @param string $providerId
+     * @param int $providerId
      *
      * @return Group
      */
@@ -277,9 +279,9 @@ class Group
     }
 
     /**
-     * Get providerId
+     * Get providerId.
      *
-     * @return string
+     * @return int
      */
     public function getProviderId()
     {
@@ -287,9 +289,9 @@ class Group
     }
 
     /**
-     * Set taxCategoryId
+     * Set taxCategoryId.
      *
-     * @param string $taxCategoryId
+     * @param int $taxCategoryId
      *
      * @return Group
      */
@@ -301,9 +303,9 @@ class Group
     }
 
     /**
-     * Get taxCategoryId
+     * Get taxCategoryId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxCategoryId()
     {
@@ -311,9 +313,9 @@ class Group
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return Group
      */
@@ -325,7 +327,7 @@ class Group
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -335,9 +337,9 @@ class Group
     }
 
     /**
-     * Set visible
+     * Set visible.
      *
-     * @param boolean $visible
+     * @param bool $visible
      *
      * @return Group
      */
@@ -349,7 +351,7 @@ class Group
     }
 
     /**
-     * Get visible
+     * Get visible.
      *
      * @return bool
      */
@@ -359,9 +361,9 @@ class Group
     }
 
     /**
-     * Set isScale
+     * Set isScale.
      *
-     * @param boolean $isScale
+     * @param bool $isScale
      *
      * @return Group
      */
@@ -373,7 +375,7 @@ class Group
     }
 
     /**
-     * Get isScale
+     * Get isScale.
      *
      * @return bool
      */
@@ -383,7 +385,7 @@ class Group
     }
 
     /**
-     * Set priceBuy
+     * Set priceBuy.
      *
      * @param float $priceBuy
      *
@@ -397,7 +399,7 @@ class Group
     }
 
     /**
-     * Get priceBuy
+     * Get priceBuy.
      *
      * @return float
      */
@@ -407,9 +409,9 @@ class Group
     }
 
     /**
-     * Set attributeSetId
+     * Set attributeSetId.
      *
-     * @param string $attributeSetId
+     * @param int $attributeSetId
      *
      * @return Group
      */
@@ -421,9 +423,9 @@ class Group
     }
 
     /**
-     * Get attributeSetId
+     * Get attributeSetId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetId()
     {
@@ -431,7 +433,7 @@ class Group
     }
 
     /**
-     * Set barcode
+     * Set barcode.
      *
      * @param string $barcode
      *
@@ -445,7 +447,7 @@ class Group
     }
 
     /**
-     * Get barcode
+     * Get barcode.
      *
      * @return string
      */
@@ -455,7 +457,7 @@ class Group
     }
 
     /**
-     * Set image
+     * Set image.
      *
      * @param string $image
      *
@@ -469,7 +471,7 @@ class Group
     }
 
     /**
-     * Get image
+     * Get image.
      *
      * @return string
      */
@@ -479,9 +481,9 @@ class Group
     }
 
     /**
-     * Set discountEnabled
+     * Set discountEnabled.
      *
-     * @param boolean $discountEnabled
+     * @param bool $discountEnabled
      *
      * @return Group
      */
@@ -493,7 +495,7 @@ class Group
     }
 
     /**
-     * Get discountEnabled
+     * Get discountEnabled.
      *
      * @return bool
      */
@@ -503,7 +505,7 @@ class Group
     }
 
     /**
-     * Set discountRate
+     * Set discountRate.
      *
      * @param float $discountRate
      *
@@ -517,7 +519,7 @@ class Group
     }
 
     /**
-     * Get discountRate
+     * Get discountRate.
      *
      * @return float
      */
@@ -526,4 +528,3 @@ class Group
         return $this->discountRate;
     }
 }
-

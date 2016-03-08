@@ -23,15 +23,6 @@ Pasteque\Bundle\ServerBundle\Entity\Stock\StockLevel:
         displayId:
             type: string
             length: 255
-        productId:
-            type: string
-            length: 255
-        locationId:
-            type: string
-            length: 255
-        attributeSetInstanceId:
-            type: string
-            length: 255
         security:
             type: float
             nullable: true

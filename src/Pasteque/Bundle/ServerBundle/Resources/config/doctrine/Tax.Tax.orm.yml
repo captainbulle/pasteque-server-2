@@ -35,13 +35,6 @@ Pasteque\Bundle\ServerBundle\Entity\Tax\Tax:
             unique: true
         startDate:
             type: datetime
-        taxCategoryId:
-            type: string
-            length: 255
-        taxCustomerCategoryId:
-            type: string
-            length: 255
-            nullable: true
         parentId:
             type: integer
             nullable: true

@@ -1,0 +1,3 @@
+ressource_api_get:
+    path: /ressource/get/{label}
+    defaults: { _controller: PastequeServerBundle:Resource:get }

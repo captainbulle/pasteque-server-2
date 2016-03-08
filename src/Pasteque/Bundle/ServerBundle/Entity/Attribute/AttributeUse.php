@@ -36,12 +36,12 @@ class AttributeUse
     private $displayId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeId;
 
@@ -53,8 +53,8 @@ class AttributeUse
     /**
      * AttributeUse constructor.
      *
-     * @param string $attributeSetId
-     * @param string $attributeId
+     * @param int $attributeSetId
+     * @param int $attributeId
      * @param int    $lineNo
      * @param string $displayId
      */
@@ -103,7 +103,7 @@ class AttributeUse
     /**
      * Set attributeSetId.
      *
-     * @param string $attributeSetId
+     * @param int $attributeSetId
      *
      * @return AttributeUse
      */
@@ -117,7 +117,7 @@ class AttributeUse
     /**
      * Get attributeSetId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetId()
     {
@@ -127,7 +127,7 @@ class AttributeUse
     /**
      * Set attributeId.
      *
-     * @param string $attributeId
+     * @param int $attributeId
      *
      * @return AttributeUse
      */
@@ -141,7 +141,7 @@ class AttributeUse
     /**
      * Get attributeId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeId()
     {

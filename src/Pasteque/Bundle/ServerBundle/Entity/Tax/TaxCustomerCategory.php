@@ -41,7 +41,7 @@ class TaxCustomerCategory
     private $name;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxCategoryId;
 
@@ -54,7 +54,7 @@ class TaxCustomerCategory
      * TaxCustomerCategory constructor.
      *
      * @param string $name
-     * @param string $taxCategoryId
+     * @param int $taxCategoryId
      * @param string $displayId
      */
     public function __construct($name, $taxCategoryId = null, $displayId = null)
@@ -134,7 +134,7 @@ class TaxCustomerCategory
     /**
      * Set taxCategoryId.
      *
-     * @param string $taxCategoryId
+     * @param int $taxCategoryId
      *
      * @return TaxCustomerCategory
      */
@@ -148,7 +148,7 @@ class TaxCustomerCategory
     /**
      * Get taxCategoryId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxCategoryId()
     {

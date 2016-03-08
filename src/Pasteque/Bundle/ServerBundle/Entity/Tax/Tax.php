@@ -46,12 +46,12 @@ class Tax
     private $startDate;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxCategoryId;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxCustomerCategoryId;
 
@@ -80,8 +80,8 @@ class Tax
      *
      * @param string    $name
      * @param \DateTime $startDate
-     * @param string    $taxCategoryId
-     * @param string    $taxCustomerCategoryId
+     * @param int    $taxCategoryId
+     * @param int    $taxCustomerCategoryId
      * @param string    $parentId
      * @param float     $rate
      * @param int       $rateOrder
@@ -199,7 +199,7 @@ class Tax
     /**
      * Set taxCategoryId.
      *
-     * @param string $taxCategoryId
+     * @param int $taxCategoryId
      *
      * @return Tax
      */
@@ -213,7 +213,7 @@ class Tax
     /**
      * Get taxCategoryId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxCategoryId()
     {
@@ -223,7 +223,7 @@ class Tax
     /**
      * Set taxCustomerCategoryId.
      *
-     * @param string $taxCustomerCategoryId
+     * @param int $taxCustomerCategoryId
      *
      * @return Tax
      */
@@ -237,7 +237,7 @@ class Tax
     /**
      * Get taxCustomerCategoryId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxCustomerCategoryId()
     {

@@ -73,7 +73,7 @@ class TaxCategory
      */
     public function getCurrentTax($timestamp = null)
     {
-        /**
+        /*
          * @var Tax
          */
         $current = null;

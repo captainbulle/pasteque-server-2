@@ -30,19 +30,8 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\TicketLine:
             generator:
                 strategy: AUTO
     fields:
-        ticketId:
-            type: string
-            length: 255
         line:
             type: integer
-        productId:
-            type: string
-            length: 255
-            nullable: true
-        attributeSetInstanceId:
-            type: string
-            length: 255
-            nullable: true
         quantity:
             type: float
         price:

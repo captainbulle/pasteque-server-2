@@ -24,12 +24,6 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeInstance:
         displayId:
             type: string
             length: 255
-        attrSetInstId:
-            type: string
-            length: 255
-        attrId:
-            type: string
-            length: 255
         value:
             type: string
             length: 255

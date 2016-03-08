@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Group;
 
 /**
- * SubGroup
+ * SubGroup.
  */
 class SubGroup
 {
@@ -64,11 +64,11 @@ class SubGroup
      * SubGroup constructor.
      * @param int $groupId
      * @param string $name
-     * @param bool $required
+     * @param bool   $required
      * @param string $image
-     * @param int $displayOrder
+     * @param int    $displayOrder
      */
-    public function __construct($groupId, $name, $required=true, $image=null, $displayOrder=0)
+    public function __construct($groupId, $name, $required = true, $image = null, $displayOrder = 0)
     {
         $this->groupId = $groupId;
         $this->name = $name;
@@ -78,16 +78,16 @@ class SubGroup
         $this->subGroupProducts = array();
     }
 
-
     /**
      * @param SubGroupProduct $subGroupProduct
      */
-    public function addSubGroupProduct($subGroupProduct) {
+    public function addSubGroupProduct($subGroupProduct)
+    {
         array_push($this->subGroupProducts, $subGroupProduct);
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -97,9 +97,9 @@ class SubGroup
     }
 
     /**
-     * Set groupId
+     * Set groupId.
      *
-     * @param integer $groupId
+     * @param int $groupId
      *
      * @return SubGroup
      */
@@ -111,7 +111,7 @@ class SubGroup
     }
 
     /**
-     * Get groupId
+     * Get groupId.
      *
      * @return int
      */
@@ -121,7 +121,7 @@ class SubGroup
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -135,7 +135,7 @@ class SubGroup
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -145,9 +145,9 @@ class SubGroup
     }
 
     /**
-     * Set required
+     * Set required.
      *
-     * @param boolean $required
+     * @param bool $required
      *
      * @return SubGroup
      */
@@ -159,7 +159,7 @@ class SubGroup
     }
 
     /**
-     * Get required
+     * Get required.
      *
      * @return bool
      */
@@ -169,7 +169,7 @@ class SubGroup
     }
 
     /**
-     * Set image
+     * Set image.
      *
      * @param string $image
      *
@@ -183,7 +183,7 @@ class SubGroup
     }
 
     /**
-     * Get image
+     * Get image.
      *
      * @return string
      */
@@ -193,9 +193,9 @@ class SubGroup
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return SubGroup
      */
@@ -207,7 +207,7 @@ class SubGroup
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -216,4 +216,3 @@ class SubGroup
         return $this->displayOrder;
     }
 }
-

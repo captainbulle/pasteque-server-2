@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\TariffArea;
 
 /**
- * TariffAreaPrice
+ * TariffAreaPrice.
  */
 class TariffAreaPrice
 {
@@ -36,7 +36,7 @@ class TariffAreaPrice
     private $tariffAreaId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
@@ -48,7 +48,7 @@ class TariffAreaPrice
     /**
      * TariffAreaPrice constructor.
      * @param int $tariffAreaId
-     * @param string $productId
+     * @param int   $productId
      * @param float $priceSell
      */
     public function __construct($tariffAreaId, $productId, $priceSell)
@@ -59,7 +59,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -72,7 +72,6 @@ class TariffAreaPrice
      * Set tariffAreaId
      *
      * @param int $tariffAreaId
-     *
      * @return TariffAreaPrice
      */
     public function setTariffAreaId($tariffAreaId)
@@ -93,9 +92,9 @@ class TariffAreaPrice
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return TariffAreaPrice
      */
@@ -107,9 +106,9 @@ class TariffAreaPrice
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -117,7 +116,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Set priceSell
+     * Set priceSell.
      *
      * @param float $priceSell
      *
@@ -131,7 +130,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Get priceSell
+     * Get priceSell.
      *
      * @return float
      */
@@ -140,4 +139,3 @@ class TariffAreaPrice
         return $this->priceSell;
     }
 }
-

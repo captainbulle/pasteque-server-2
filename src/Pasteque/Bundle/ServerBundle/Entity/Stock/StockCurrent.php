@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Stock;
 
 /**
- * StockCurrent
+ * StockCurrent.
  */
 class StockCurrent
 {
@@ -31,17 +31,17 @@ class StockCurrent
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $locationId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetInstanceId;
 
@@ -52,9 +52,9 @@ class StockCurrent
 
     /**
      * StockCurrent constructor.
-     * @param string $locationId
-     * @param string $productId
-     * @param string $attributeSetInstanceId
+     * @param int $locationId
+     * @param int $productId
+     * @param int $attributeSetInstanceId
      * @param float $quantity
      */
     public function __construct($locationId, $productId, $attributeSetInstanceId, $quantity)
@@ -66,7 +66,7 @@ class StockCurrent
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -76,9 +76,9 @@ class StockCurrent
     }
 
     /**
-     * Set locationId
+     * Set locationId.
      *
-     * @param string $locationId
+     * @param int $locationId
      *
      * @return StockCurrent
      */
@@ -90,9 +90,9 @@ class StockCurrent
     }
 
     /**
-     * Get locationId
+     * Get locationId.
      *
-     * @return string
+     * @return int
      */
     public function getLocationId()
     {
@@ -100,9 +100,9 @@ class StockCurrent
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return StockCurrent
      */
@@ -114,9 +114,9 @@ class StockCurrent
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -124,9 +124,9 @@ class StockCurrent
     }
 
     /**
-     * Set attributeSetInstanceId
+     * Set attributeSetInstanceId.
      *
-     * @param string $attributeSetInstanceId
+     * @param int $attributeSetInstanceId
      *
      * @return StockCurrent
      */
@@ -138,9 +138,9 @@ class StockCurrent
     }
 
     /**
-     * Get attributeSetInstanceId
+     * Get attributeSetInstanceId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetInstanceId()
     {
@@ -148,7 +148,7 @@ class StockCurrent
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -162,7 +162,7 @@ class StockCurrent
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -171,4 +171,3 @@ class StockCurrent
         return $this->quantity;
     }
 }
-

@@ -36,12 +36,12 @@ class InventoryItem
     private $inventoryId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetInstanceId;
 
@@ -80,8 +80,8 @@ class InventoryItem
      * InventoryItem constructor.
      *
      * @param int    $inventoryId
-     * @param string $productId
-     * @param string $attributeSetInstanceId
+     * @param int $productId
+     * @param int $attributeSetInstanceId
      * @param float  $quantity
      * @param float  $lostQuantity
      * @param float  $defectQuantity
@@ -146,7 +146,7 @@ class InventoryItem
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return InventoryItem
      */
@@ -160,7 +160,7 @@ class InventoryItem
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -170,7 +170,7 @@ class InventoryItem
     /**
      * Set attributeSetInstanceId.
      *
-     * @param string $attributeSetInstanceId
+     * @param int $attributeSetInstanceId
      *
      * @return InventoryItem
      */
@@ -184,7 +184,7 @@ class InventoryItem
     /**
      * Get attributeSetInstanceId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetInstanceId()
     {

@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Reservation;
 
 /**
- * Reservation
+ * Reservation.
  */
 class Reservation
 {
@@ -67,9 +67,10 @@ class Reservation
 
     /**
      * Reservation constructor.
+     *
      * @param string $name
-     * @param int $chairs
-     * @param bool $isDone
+     * @param int    $chairs
+     * @param bool   $isDone
      * @param string $description
      * @param string $displayId
      */
@@ -85,7 +86,7 @@ class Reservation
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -119,7 +120,7 @@ class Reservation
     }
 
     /**
-     * Set addedDate
+     * Set addedDate.
      *
      * @param \DateTime $addedDate
      *
@@ -133,7 +134,7 @@ class Reservation
     }
 
     /**
-     * Get addedDate
+     * Get addedDate.
      *
      * @return \DateTime
      */
@@ -143,7 +144,7 @@ class Reservation
     }
 
     /**
-     * Set updatedDate
+     * Set updatedDate.
      *
      * @param \DateTime $updatedDate
      *
@@ -157,7 +158,7 @@ class Reservation
     }
 
     /**
-     * Get updatedDate
+     * Get updatedDate.
      *
      * @return \DateTime
      */
@@ -167,7 +168,7 @@ class Reservation
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -181,7 +182,7 @@ class Reservation
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -191,9 +192,9 @@ class Reservation
     }
 
     /**
-     * Set chairs
+     * Set chairs.
      *
-     * @param integer $chairs
+     * @param int $chairs
      *
      * @return Reservation
      */
@@ -205,7 +206,7 @@ class Reservation
     }
 
     /**
-     * Get chairs
+     * Get chairs.
      *
      * @return int
      */
@@ -215,9 +216,9 @@ class Reservation
     }
 
     /**
-     * Set isDone
+     * Set isDone.
      *
-     * @param boolean $isDone
+     * @param bool $isDone
      *
      * @return Reservation
      */
@@ -229,7 +230,7 @@ class Reservation
     }
 
     /**
-     * Get isDone
+     * Get isDone.
      *
      * @return bool
      */
@@ -239,7 +240,7 @@ class Reservation
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -253,7 +254,7 @@ class Reservation
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -262,4 +263,3 @@ class Reservation
         return $this->description;
     }
 }
-

@@ -22,11 +22,6 @@ Pasteque\Bundle\ServerBundle\Entity\Group\SubGroupProduct:
             generator:
                 strategy: AUTO
     fields:
-        subGroupId:
-            type: integer
-        productId:
-            type: string
-            length: 255
         displayOrder:
             type: integer
             nullable: true

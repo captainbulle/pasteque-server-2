@@ -23,7 +23,4 @@ Pasteque\Bundle\ServerBundle\Entity\Reservation\ReservationCustomer:
         displayId:
             type: string
             length: 255
-        customerId:
-            type: string
-            length: 255
     lifecycleCallbacks: {  }

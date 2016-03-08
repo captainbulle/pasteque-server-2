@@ -31,7 +31,7 @@ class Payment
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $displayId;
 
@@ -104,7 +104,7 @@ class Payment
      * @param string $note
      * @param string $backType
      * @param float  $backAmount
-     * @param string $displayId
+     * @param int $displayId
      */
     public function __construct($pairedPaymentId, $receiptId, $type, $amount, $currencyId, $currencyAmount,
                                 $returnMessage, $pairedWith, $note, $backType = null, $backAmount = null,
@@ -137,7 +137,7 @@ class Payment
     /**
      * Set displayId.
      *
-     * @param string $displayId
+     * @param int $displayId
      *
      * @return Payment
      */
@@ -151,7 +151,7 @@ class Payment
     /**
      * Get displayId.
      *
-     * @return string
+     * @return int
      */
     public function getDisplayId()
     {

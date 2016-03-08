@@ -20,10 +20,80 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends AbstractController
 {
+    public function createAction(Request $request)
+    {
+        $form = $this->createFormBuilder()
+      // ...
+      ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            // persist entity
+      $product = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($product);
+            $em->flush();
+
+            return $this->redirectToRoute('task_success');
+        }
+
+        return $this->render('AppBundle:Default:new.html.twig', array(
+      'form' => $form->createView(),
+    ));
+    }
+
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('PastequeServerBundle:Product')->find($id);
+
+        if (!$product) {
+            throw $this->createNotFoundException(
+        'No product found for id '.$id
+      );
+        }
+
+        $em->remove($product);
+        $em->flush();
+
+        return $this->redirectToRoute('homepage');
+    }
+
+    public function updateAction($id)
+    {
+        $request = $this->get('request');
+
+        if (is_null($id)) {
+            $postData = $request->get('product');
+            $id = $postData['id'];
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('PastequeServerBundle:Product')->find($id);
+        $form = $this->createForm(new FormType(), $product);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                // perform some action, such as save the object to the database
+        $em->flush();
+
+                return $this->redirect($this->generateUrl(''));
+            }
+        }
+
+        return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView(),
+    ));
+    }
     public function getAction($id, $type)
     {
         $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Product');

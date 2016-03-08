@@ -50,7 +50,7 @@ class Ticket
     private $date;
 
     /**
-     * @var string
+     * @var int
      */
     private $receiptId;
 
@@ -60,7 +60,7 @@ class Ticket
     private $userId;
 
     /**
-     * @var string
+     * @var int
      */
     private $customerId;
 
@@ -100,9 +100,9 @@ class Ticket
      * @param int       $type
      * @param \DateTime $date
      * @param int       $status
-     * @param string    $receiptId
+     * @param int    $receiptId
      * @param int       $userId
-     * @param string    $customerId
+     * @param int    $customerId
      * @param int       $tariffAreaId
      * @param int       $customerCount
      * @param float     $discountRate
@@ -208,7 +208,7 @@ class Ticket
     /**
      * Set receiptId.
      *
-     * @param string $receiptId
+     * @param int $receiptId
      *
      * @return Ticket
      */
@@ -222,7 +222,7 @@ class Ticket
     /**
      * Get receiptId.
      *
-     * @return string
+     * @return int
      */
     public function getReceiptId()
     {
@@ -256,7 +256,7 @@ class Ticket
     /**
      * Set customerId.
      *
-     * @param string $customerId
+     * @param int $customerId
      *
      * @return Ticket
      */
@@ -270,7 +270,7 @@ class Ticket
     /**
      * Get customerId.
      *
-     * @return string
+     * @return int
      */
     public function getCustomerId()
     {

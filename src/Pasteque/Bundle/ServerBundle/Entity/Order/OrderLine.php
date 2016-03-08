@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Order;
 
 /**
- * OrderLine
+ * OrderLine.
  */
 class OrderLine
 {
@@ -31,7 +31,7 @@ class OrderLine
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $orderId;
 
@@ -41,12 +41,12 @@ class OrderLine
     private $line;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeInstanceId;
 
@@ -62,14 +62,13 @@ class OrderLine
 
     /**
      * OrderLine constructor.
-     * @param string $orderId
+     * @param int $orderId
      * @param int $line
-     * @param string $productId
-     * @param string $attributeInstanceId
+     * @param int $productId
+     * @param int $attributeInstanceId
      * @param float $quantity
-     * @param string $attributes
      */
-    public function __construct($orderId, $line, $productId, $attributeInstanceId, $quantity, $attributes=null)
+    public function __construct($orderId, $line, $productId, $attributeInstanceId, $quantity, $attributes = null)
     {
         $this->orderId = $orderId;
         $this->line = $line;
@@ -80,7 +79,7 @@ class OrderLine
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -90,9 +89,9 @@ class OrderLine
     }
 
     /**
-     * Set orderId
+     * Set orderId.
      *
-     * @param string $orderId
+     * @param int $orderId
      *
      * @return OrderLine
      */
@@ -104,9 +103,9 @@ class OrderLine
     }
 
     /**
-     * Get orderId
+     * Get orderId.
      *
-     * @return string
+     * @return int
      */
     public function getOrderId()
     {
@@ -114,9 +113,9 @@ class OrderLine
     }
 
     /**
-     * Set line
+     * Set line.
      *
-     * @param integer $line
+     * @param int $line
      *
      * @return OrderLine
      */
@@ -128,7 +127,7 @@ class OrderLine
     }
 
     /**
-     * Get line
+     * Get line.
      *
      * @return int
      */
@@ -138,9 +137,9 @@ class OrderLine
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return OrderLine
      */
@@ -152,9 +151,9 @@ class OrderLine
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -162,9 +161,9 @@ class OrderLine
     }
 
     /**
-     * Set attributeInstanceId
+     * Set attributeInstanceId.
      *
-     * @param string $attributeInstanceId
+     * @param int $attributeInstanceId
      *
      * @return OrderLine
      */
@@ -176,9 +175,9 @@ class OrderLine
     }
 
     /**
-     * Get attributeInstanceId
+     * Get attributeInstanceId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeInstanceId()
     {
@@ -186,7 +185,7 @@ class OrderLine
     }
 
     /**
-     * Set quantity
+     * Set quantity.
      *
      * @param float $quantity
      *
@@ -200,7 +199,7 @@ class OrderLine
     }
 
     /**
-     * Get quantity
+     * Get quantity.
      *
      * @return float
      */
@@ -210,7 +209,7 @@ class OrderLine
     }
 
     /**
-     * Set attributes
+     * Set attributes.
      *
      * @param string $attributes
      *
@@ -224,7 +223,7 @@ class OrderLine
     }
 
     /**
-     * Get attributes
+     * Get attributes.
      *
      * @return string
      */
@@ -233,4 +232,3 @@ class OrderLine
         return $this->attributes;
     }
 }
-

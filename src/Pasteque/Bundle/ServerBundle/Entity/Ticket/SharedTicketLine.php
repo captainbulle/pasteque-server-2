@@ -36,7 +36,7 @@ class SharedTicketLine
     private $displayId;
 
     /**
-     * @var string
+     * @var int
      */
     private $sharedTicketId;
 
@@ -46,12 +46,12 @@ class SharedTicketLine
     private $line;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxId;
 
@@ -78,17 +78,17 @@ class SharedTicketLine
     /**
      * SharedTicketLine constructor.
      *
-     * @param string $sharedTicketId
+     * @param int $sharedTicketId
      * @param int    $line
-     * @param string $productId
-     * @param string $taxId
+     * @param int $productId
+     * @param int $taxId
      * @param float  $quantity
      * @param float  $price
      * @param float  $discountRate
      * @param string $attributes
      * @param string $displayId
      */
-    public function __construct($sharedTicketId, $line, $productId, $taxId, $quantity, $price, 
+    public function __construct($sharedTicketId, $line, $productId, $taxId, $quantity, $price,
                                 $discountRate = 0.0, $attributes = null, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
@@ -139,7 +139,7 @@ class SharedTicketLine
     /**
      * Set sharedTicketId.
      *
-     * @param string $sharedTicketId
+     * @param int $sharedTicketId
      *
      * @return SharedTicketLine
      */
@@ -153,7 +153,7 @@ class SharedTicketLine
     /**
      * Get sharedTicketId.
      *
-     * @return string
+     * @return int
      */
     public function getSharedTicketId()
     {
@@ -187,7 +187,7 @@ class SharedTicketLine
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return SharedTicketLine
      */
@@ -201,7 +201,7 @@ class SharedTicketLine
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -211,7 +211,7 @@ class SharedTicketLine
     /**
      * Set taxId.
      *
-     * @param string $taxId
+     * @param int $taxId
      *
      * @return SharedTicketLine
      */
@@ -225,7 +225,7 @@ class SharedTicketLine
     /**
      * Get taxId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxId()
     {

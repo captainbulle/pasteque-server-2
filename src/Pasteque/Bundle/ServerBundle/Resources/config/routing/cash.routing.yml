@@ -1,0 +1,31 @@
+cash_api_get:
+    path: /cash/get/{type}/{id}
+    defaults: { _controller: PastequeServerBundle:Cash/Cash:get }
+    requirements:
+      type:  cash|cashRegister
+
+cash_api_update:
+    path: /cash/update/{id}
+    defaults: { _controller: PastequeServerBundle:Cash/Cash:update }
+
+cash_api_search:
+    path: /cash/search/{cashRegisterId}/{dateStart}/{dateStop}
+    defaults: { _controller: PastequeServerBundle:Cash/Cash:search, cashRegisterId: -1, dateStart: -1, dateStop: -1 }
+
+cash_api_zticket:
+    path: /cash/zticket/{id}
+    defaults: { _controller: PastequeServerBundle:Cash/Cash:zticket }
+
+cashMovement_api_move:
+    path: /cashMovement/move/{id}/{date}/{payment}/{note}
+    defaults: { _controller: PastequeServerBundle:Cash/CashMovement:move }
+
+cashRegister_api_get:
+    path: /cashRegister/get/{type}/{id}
+    defaults: { _controller: PastequeServerBundle:Cash/CashRegister:get }
+    requirements:
+      type:  type|id
+
+cashRegister_api_getAll:
+    path: /cashRegister/getAll/
+    defaults: { _controller: PastequeServerBundle:Cash/CashRegister:getAll }

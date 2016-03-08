@@ -1,0 +1,8 @@
+
+provider_api_get:
+    path: /provider/get/{id}
+    defaults: { _controller: PastequeServerBundle:Provider:get }
+
+provider_api_getAll:
+    path: /provider/getAll
+    defaults: { _controller: PastequeServerBundle:Provider:getAll }

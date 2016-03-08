@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Group;
 
 /**
- * SubGroupProduct
+ * SubGroupProduct.
  */
 class SubGroupProduct
 {
@@ -36,7 +36,7 @@ class SubGroupProduct
     private $subGroupId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
@@ -48,19 +48,18 @@ class SubGroupProduct
     /**
      * SubGroupProduct constructor.
      * @param int $subGroupId
-     * @param string $productId
+     * @param int $productId
      * @param int $displayOrder
      */
-    public function __construct($subGroupId, $productId, $displayOrder=null)
+    public function __construct($subGroupId, $productId, $displayOrder = null)
     {
         $this->subGroupId = $subGroupId;
         $this->productId = $productId;
         $this->displayOrder = $displayOrder;
     }
 
-
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -70,9 +69,9 @@ class SubGroupProduct
     }
 
     /**
-     * Set subGroupId
+     * Set subGroupId.
      *
-     * @param integer $subGroupId
+     * @param int $subGroupId
      *
      * @return SubGroupProduct
      */
@@ -84,7 +83,7 @@ class SubGroupProduct
     }
 
     /**
-     * Get subGroupId
+     * Get subGroupId.
      *
      * @return int
      */
@@ -94,9 +93,9 @@ class SubGroupProduct
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return SubGroupProduct
      */
@@ -108,9 +107,9 @@ class SubGroupProduct
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -118,9 +117,9 @@ class SubGroupProduct
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return SubGroupProduct
      */
@@ -132,7 +131,7 @@ class SubGroupProduct
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -141,4 +140,3 @@ class SubGroupProduct
         return $this->displayOrder;
     }
 }
-

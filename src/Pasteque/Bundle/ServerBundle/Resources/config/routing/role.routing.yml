@@ -1,0 +1,7 @@
+role_api_get:
+    path: /role/get/{id}
+    defaults: { _controller: PastequeServerBundle:Role:get }
+
+role_api_getAll:
+    path: /role/getAll/
+    defaults: { _controller: PastequeServerBundle:Role:getAll }

@@ -32,16 +32,6 @@ Pasteque\Bundle\ServerBundle\Entity\Stock\StockMove:
             type: datetime
         reason:
             type: integer
-        locationId:
-            type: string
-            length: 255
-        productId:
-            type: string
-            length: 255
-        attributeSetInstanceId:
-            type: string
-            length: 255
-            nullable: true
         quantity:
             type: float
         price:
