@@ -1,5 +1,22 @@
 Pasteque\Bundle\ServerBundle\Entity\Tax\Tax:
     type: entity
+    oneToOne:
+        parentId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Tax\Tax
+            joinColumn:
+                name: parent_id
+                referencedColumnName: id
+    manyToOne:
+        taxCategoryId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCategory
+            joinColumn:
+                name: taxcategory_id
+                referencedColumnName: id
+        taxCustomerCategoryId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCustomerCategory
+            joinColumn:
+                name: taxcustomercategory_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Tax\TaxRepository
     id:
@@ -26,8 +43,7 @@ Pasteque\Bundle\ServerBundle\Entity\Tax\Tax:
             length: 255
             nullable: true
         parentId:
-            type: string
-            length: 255
+            type: integer
             nullable: true
         rate:
             type: float

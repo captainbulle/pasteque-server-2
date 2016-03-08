@@ -38,7 +38,7 @@ class ProductCom
     /**
      * @var string
      */
-    private $productId;
+    private $productId1;
 
     /**
      * @var string
@@ -47,14 +47,14 @@ class ProductCom
 
     /**
      * ProductCom constructor.
-     * @param string $productId
+     * @param string $productId1
      * @param string $productId2
      * @param string $displayId
      */
-    public function __construct($productId, $productId2, $displayId = null)
+    public function __construct($productId1, $productId2, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
-        $this->productId = $productId;
+        $this->productId1 = $productId1;
         $this->productId2 = $productId2;
     }
 
@@ -93,27 +93,27 @@ class ProductCom
     }
 
     /**
-     * Set productId
+     * Set productId1
      *
-     * @param string $productId
+     * @param string $productId1
      *
      * @return ProductCom
      */
-    public function setProductId($productId)
+    public function setProductId($productId1)
     {
-        $this->productId = $productId;
+        $this->productId1 = $productId1;
 
         return $this;
     }
 
     /**
-     * Get productId
+     * Get productId1
      *
      * @return string
      */
-    public function getProductId()
+    public function getProductId1()
     {
-        return $this->productId;
+        return $this->productId1;
     }
 
     /**

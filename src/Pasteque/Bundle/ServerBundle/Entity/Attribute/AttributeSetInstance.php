@@ -38,7 +38,7 @@ class AttributeSetInstance
     /**
      * @var string
      */
-    private $attrSetId;
+    private $attributeSetId;
 
     /**
      * @var string
@@ -48,31 +48,31 @@ class AttributeSetInstance
     /**
      * @var AttributeInstance[]
      */
-    private $attrInsts;
+    private $attributeInstances;
 
     /**
      * AttributeSetInstance constructor.
      *
-     * @param string $attrSetId
+     * @param string $attributeSetId
      * @param string $description
      * @param string $displayId
      */
-    public function __construct($attrSetId, $description= null, $displayId = null)
+    public function __construct($attributeSetId, $description= null, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
-        $this->attrSetId = $attrSetId;
+        $this->attributeSetId = $attributeSetId;
         $this->description = $description;
-        $this->attrInsts = array();
+        $this->attributeInstances = array();
     }
 
     /**
-     * Add an instance of attribute in the array attrInsts.
+     * Add an instance of attribute in the array attributeInstances.
      *
-     * @param $attrInst
+     * @param AttributeInstance $attributeInstance
      */
-    public function addAttrInst($attrInst)
+    public function addAttributeInstance($attributeInstance)
     {
-        array_push($this->attrInsts, $attrInst);
+        array_push($this->attributeInstances, $attributeInstance);
     }
 
     /**
@@ -110,27 +110,27 @@ class AttributeSetInstance
     }
 
     /**
-     * Set attrSetId.
+     * Set attributeSetId.
      *
-     * @param string $attrSetId
+     * @param string $attributeSetId
      *
      * @return AttributeSetInstance
      */
-    public function setAttrSetId($attrSetId)
+    public function setAttributeSetId($attributeSetId)
     {
-        $this->attrSetId = $attrSetId;
+        $this->attributeSetId = $attributeSetId;
 
         return $this;
     }
 
     /**
-     * Get attrSetId.
+     * Get attributeSetId.
      *
      * @return string
      */
-    public function getAttrSetId()
+    public function getAttributeSetId()
     {
-        return $this->attrSetId;
+        return $this->attributeSetId;
     }
 
     /**
@@ -158,12 +158,12 @@ class AttributeSetInstance
     }
 
     /**
-     * Get attrInsts.
+     * Get attributeInstances.
      *
      * @return array
      */
-    public function getAttrInsts()
+    public function getAttributeInstances()
     {
-        return $this->attrInsts;
+        return $this->attributeInstances;
     }
 }

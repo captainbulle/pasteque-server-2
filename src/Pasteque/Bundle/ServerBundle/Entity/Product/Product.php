@@ -80,7 +80,7 @@ class Product
     /**
      * @var string
      */
-    private $taxCatId;
+    private $taxCategoryId;
 
     /**
      * @var string
@@ -143,7 +143,7 @@ class Product
      * @param float  $priceSell
      * @param string $categoryId
      * @param string $providerId
-     * @param string $taxCatId
+     * @param string $taxCategoryId
      * @param string $attributeSetId
      * @param float  $stockCost
      * @param float  $stockVolume
@@ -156,7 +156,7 @@ class Product
      * @param string $displayId
      */
     public function __construct($reference, $barcode, $barcodeType, $name, $priceBuy, $priceSell,
-                                $categoryId, $providerId, $taxCatId, $attributeSetId, $stockCost,
+                                $categoryId, $providerId, $taxCategoryId, $attributeSetId, $stockCost,
                                 $stockVolume, $image, $attributes, $isCom = false, $isScale = false,
                                 $discountEnabled = false, $discountRate = 0.0, $displayId = null)
     {
@@ -169,7 +169,7 @@ class Product
         $this->priceSell = $priceSell;
         $this->categoryId = $categoryId;
         $this->providerId = $providerId;
-        $this->taxCatId = $taxCatId;
+        $this->taxCategoryId = $taxCategoryId;
         $this->attributeSetId = $attributeSetId;
         $this->stockVolume = $stockVolume;
         $this->image = $image;
@@ -439,27 +439,27 @@ class Product
     }
 
     /**
-     * Set taxCatId.
+     * Set taxCategoryId.
      *
-     * @param string $taxCatId
+     * @param string $taxCategoryId
      *
      * @return Product
      */
-    public function setTaxCatId($taxCatId)
+    public function setTaxCategoryId($taxCategoryId)
     {
-        $this->taxCatId = $taxCatId;
+        $this->taxCategoryId = $taxCategoryId;
 
         return $this;
     }
 
     /**
-     * Get taxCatId.
+     * Get taxCategoryId.
      *
      * @return string
      */
-    public function getTaxCatId()
+    public function getTaxCategoryId()
     {
-        return $this->taxCatId;
+        return $this->taxCategoryId;
     }
 
     /**

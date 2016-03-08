@@ -1,5 +1,12 @@
 Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeValue:
     type: entity
+    manyToOne:
+        attributeId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeValue
+            orphanRemoval: true
+            joinColumn:
+                name: attribute_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Attribute\AttributeValueRepository
     id:

@@ -38,12 +38,12 @@ class AttributeUse
     /**
      * @var string
      */
-    private $attrSetId;
+    private $attributeSetId;
 
     /**
      * @var string
      */
-    private $attrId;
+    private $attributeId;
 
     /**
      * @var int
@@ -53,16 +53,16 @@ class AttributeUse
     /**
      * AttributeUse constructor.
      *
-     * @param string $attrSetId
-     * @param string $attrId
+     * @param string $attributeSetId
+     * @param string $attributeId
      * @param int    $lineNo
      * @param string $displayId
      */
-    public function __construct($attrSetId, $attrId, $lineNo, $displayId = null)
+    public function __construct($attributeSetId, $attributeId, $lineNo, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
-        $this->attrSetId = $attrSetId;
-        $this->attrId = $attrId;
+        $this->attributeSetId = $attributeSetId;
+        $this->attributeId = $attributeId;
         $this->lineNo = $lineNo;
     }
 
@@ -101,51 +101,51 @@ class AttributeUse
     }
 
     /**
-     * Set attrSetId.
+     * Set attributeSetId.
      *
-     * @param string $attrSetId
+     * @param string $attributeSetId
      *
      * @return AttributeUse
      */
-    public function setAttrSetId($attrSetId)
+    public function setAttributeSetId($attributeSetId)
     {
-        $this->attrSetId = $attrSetId;
+        $this->attributeSetId = $attributeSetId;
 
         return $this;
     }
 
     /**
-     * Get attrSetId.
+     * Get attributeSetId.
      *
      * @return string
      */
-    public function getAttrSetId()
+    public function getAttributeSetId()
     {
-        return $this->attrSetId;
+        return $this->attributeSetId;
     }
 
     /**
-     * Set attrId.
+     * Set attributeId.
      *
-     * @param string $attrId
+     * @param string $attributeId
      *
      * @return AttributeUse
      */
-    public function setAttrId($attrId)
+    public function setAttributeId($attributeId)
     {
-        $this->attrId = $attrId;
+        $this->attributeId = $attributeId;
 
         return $this;
     }
 
     /**
-     * Get attrId.
+     * Get attributeId.
      *
      * @return string
      */
-    public function getAttrId()
+    public function getAttributeId()
     {
-        return $this->attrId;
+        return $this->attributeId;
     }
 
     /**

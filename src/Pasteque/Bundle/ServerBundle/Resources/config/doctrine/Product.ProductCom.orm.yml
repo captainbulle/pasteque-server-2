@@ -1,5 +1,16 @@
 Pasteque\Bundle\ServerBundle\Entity\Product\ProductCom:
     type: entity
+    manyToOne:
+        productId1:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Product\Product
+            joinColumn:
+                name: product_1_id
+                referencedColumnName: id
+        productId2:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Product\Product
+            joinColumn:
+                name: product_2_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Product\ProductComRepository
     id:

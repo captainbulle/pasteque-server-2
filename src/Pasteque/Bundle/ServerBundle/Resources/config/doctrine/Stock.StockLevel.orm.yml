@@ -1,5 +1,16 @@
 Pasteque\Bundle\ServerBundle\Entity\Stock\StockLevel:
     type: entity
+    manyToOne:
+        productId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Product\Product
+            joinColumn:
+                name: product_id
+                referencedColumnName: id
+        locationId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Location
+            joinColumn:
+                name: location_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Stock\StockLevelRepository
     id:
