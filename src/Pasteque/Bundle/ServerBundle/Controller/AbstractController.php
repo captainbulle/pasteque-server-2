@@ -27,18 +27,20 @@ abstract class AbstractController extends Controller
 {
     /**
      * Insert a new model in database.
+     *
      * @param Request $request
      */
-    abstract function createAction(Request $request);
+    abstract public function createAction(Request $request);
 
     /**
-    * Update a model. Returns true if success, false otherwise.
-    * @param int $id
-    */
-    abstract function updateAction($id);
-
-    /**
+     * Update a model. Returns true if success, false otherwise.
+     *
      * @param int $id
      */
-  abstract function deleteAction($id);
+    abstract public function updateAction($id);
+
+  /**
+   * @param int $id
+   */
+  abstract public function deleteAction($id);
 }

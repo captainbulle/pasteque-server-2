@@ -26,74 +26,74 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RoleController extends AbstractController
 {
-  public function createAction(Request $request)
-  {
-    $form = $this->createFormBuilder()
+    public function createAction(Request $request)
+    {
+        $form = $this->createFormBuilder()
       // ...
       ->getForm();
 
-    $form->handleRequest($request);
+        $form->handleRequest($request);
 
-    if ($form->isValid()) {
-      // persist entity
+        if ($form->isValid()) {
+            // persist entity
       $role = $form->getData();
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($role);
-      $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($role);
+            $em->flush();
 
-      return $this->redirectToRoute('task_success');
-    }
+            return $this->redirectToRoute('task_success');
+        }
 
-    return $this->render('AppBundle:Default:new.html.twig', array(
+        return $this->render('AppBundle:Default:new.html.twig', array(
       'form' => $form->createView(),
     ));
-  }
+    }
 
-  public function deleteAction($id)
-  {
-    $em = $this->getDoctrine()->getManager();
-    $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
 
-    if (!$role) {
-      throw $this->createNotFoundException(
+        if (!$role) {
+            throw $this->createNotFoundException(
         'No product found for id '.$id
       );
-    }
+        }
 
-    $em->remove($role);
-    $em->flush();
-
-    return $this->redirectToRoute('homepage');
-  }
-
-  public function updateAction($id)
-  {
-    $request = $this->get('request');
-
-    if (is_null($id)) {
-      $postData = $request->get('role');
-      $id = $postData['id'];
-    }
-
-    $em = $this->getDoctrine()->getManager();
-    $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
-    $form = $this->createForm(new FormType(), $role);
-
-    if ($request->getMethod() == 'POST') {
-      $form->handleRequest($request);
-
-      if ($form->isValid()) {
-        // perform some action, such as save the object to the database
+        $em->remove($role);
         $em->flush();
 
-        return $this->redirect($this->generateUrl(''));
-      }
+        return $this->redirectToRoute('homepage');
     }
 
-    return $this->render('MyBundle:Testimonial:update.html.twig', array(
-      'form' => $form->createView()
+    public function updateAction($id)
+    {
+        $request = $this->get('request');
+
+        if (is_null($id)) {
+            $postData = $request->get('role');
+            $id = $postData['id'];
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
+        $form = $this->createForm(new FormType(), $role);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                // perform some action, such as save the object to the database
+        $em->flush();
+
+                return $this->redirect($this->generateUrl(''));
+            }
+        }
+
+        return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView(),
     ));
-  }
+    }
 
     public function getAction($id)
     {

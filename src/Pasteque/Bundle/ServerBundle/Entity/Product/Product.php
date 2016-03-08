@@ -208,7 +208,7 @@ class Product
         if ($this->priceBuy !== null) {
             return $this->priceSell / $this->priceBuy;
         } else {
-            return null;
+            return;
         }
     }
 

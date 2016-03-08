@@ -50,8 +50,9 @@ class Inventory
 
     /**
      * Inventory constructor.
+     *
      * @param \DateTime $date
-     * @param string $locationId
+     * @param string    $locationId
      */
     public function __construct(\DateTime $date, $locationId)
     {

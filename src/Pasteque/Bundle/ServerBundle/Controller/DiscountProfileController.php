@@ -26,85 +26,85 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DiscountProfileController extends AbstractController
 {
-  public function createAction(Request $request)
-  {
-    $form = $this->createFormBuilder()
+    public function createAction(Request $request)
+    {
+        $form = $this->createFormBuilder()
       // ...
       ->getForm();
 
-    $form->handleRequest($request);
+        $form->handleRequest($request);
 
-    if ($form->isValid()) {
-      // persist entity
+        if ($form->isValid()) {
+            // persist entity
       $discountProfile = $form->getData();
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($discountProfile);
-      $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($discountProfile);
+            $em->flush();
 
-      return $this->redirectToRoute('task_success');
-    }
+            return $this->redirectToRoute('task_success');
+        }
 
-    return $this->render('AppBundle:Default:new.html.twig', array(
+        return $this->render('AppBundle:Default:new.html.twig', array(
       'form' => $form->createView(),
     ));
-  }
+    }
 
-  public function deleteAction($id)
-  {
-    $em = $this->getDoctrine()->getManager();
-    $discountProfile = $em->getRepository('PastequeServerBundle:Discount')->find($id);
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $discountProfile = $em->getRepository('PastequeServerBundle:Discount')->find($id);
 
-    if (!$discountProfile) {
-      throw $this->createNotFoundException(
+        if (!$discountProfile) {
+            throw $this->createNotFoundException(
         'No product found for id '.$id
       );
-    }
+        }
 
-    $em->remove($discountProfile);
-    $em->flush();
-
-    return $this->redirectToRoute('homepage');
-  }
-
-  public function updateAction($id)
-  {
-    $request = $this->get('request');
-
-    if (is_null($id)) {
-      $postData = $request->get('discountProfile');
-      $id = $postData['id'];
-    }
-
-    $em = $this->getDoctrine()->getManager();
-    $discountProfile = $em->getRepository('PastequeServerBundle:DiscountProfile')->find($id);
-    $form = $this->createForm(new FormType(), $discountProfile);
-
-    if ($request->getMethod() == 'POST') {
-      $form->handleRequest($request);
-
-      if ($form->isValid()) {
-        // perform some action, such as save the object to the database
+        $em->remove($discountProfile);
         $em->flush();
 
-        return $this->redirect($this->generateUrl(''));
-      }
+        return $this->redirectToRoute('homepage');
     }
 
-    return $this->render('MyBundle:Testimonial:update.html.twig', array(
-      'form' => $form->createView()
+    public function updateAction($id)
+    {
+        $request = $this->get('request');
+
+        if (is_null($id)) {
+            $postData = $request->get('discountProfile');
+            $id = $postData['id'];
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $discountProfile = $em->getRepository('PastequeServerBundle:DiscountProfile')->find($id);
+        $form = $this->createForm(new FormType(), $discountProfile);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                // perform some action, such as save the object to the database
+        $em->flush();
+
+                return $this->redirect($this->generateUrl(''));
+            }
+        }
+
+        return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView(),
     ));
-  }
+    }
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
-    $discountProfile = $repo->find($id);
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:DiscountProfile');
+        $discountProfile = $repo->find($id);
 
-    $response = new Response(json_encode($discountProfile));
-    $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($discountProfile));
+        $response->headers->set('Content-Type', 'application/json');
 
-    return $response;
-  }
+        return $response;
+    }
 
     public function getAllAction()
     {

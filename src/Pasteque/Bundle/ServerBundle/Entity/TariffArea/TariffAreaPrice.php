@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\TariffArea;
 
 /**
- * TariffAreaPrice
+ * TariffAreaPrice.
  */
 class TariffAreaPrice
 {
@@ -42,8 +42,9 @@ class TariffAreaPrice
 
     /**
      * TariffAreaPrice constructor.
+     *
      * @param string $productId
-     * @param float $priceSell
+     * @param float  $priceSell
      */
     public function __construct($productId, $priceSell)
     {
@@ -52,7 +53,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -62,7 +63,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param string $productId
      *
@@ -76,7 +77,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return string
      */
@@ -86,7 +87,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Set priceSell
+     * Set priceSell.
      *
      * @param float $priceSell
      *
@@ -100,7 +101,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Get priceSell
+     * Get priceSell.
      *
      * @return float
      */
@@ -109,4 +110,3 @@ class TariffAreaPrice
         return $this->priceSell;
     }
 }
-

@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Order;
 
 /**
- * Order
+ * Order.
  */
 class Order
 {
@@ -67,15 +67,16 @@ class Order
 
     /**
      * Order constructor.
-     * @param int $type
-     * @param int $userId
-     * @param string $customerId
-     * @param int $status
+     *
+     * @param int       $type
+     * @param int       $userId
+     * @param string    $customerId
+     * @param int       $status
      * @param \DateTime $date
-     * @param string $note
-     * @param string $displayId
+     * @param string    $note
+     * @param string    $displayId
      */
-    public function __construct($type, $userId, $customerId, $status, \DateTime $date, $note=null, $displayId = null)
+    public function __construct($type, $userId, $customerId, $status, \DateTime $date, $note = null, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->type = $type;
@@ -87,7 +88,7 @@ class Order
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -121,9 +122,9 @@ class Order
     }
 
     /**
-     * Set type
+     * Set type.
      *
-     * @param integer $type
+     * @param int $type
      *
      * @return Order
      */
@@ -135,7 +136,7 @@ class Order
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return int
      */
@@ -145,9 +146,9 @@ class Order
     }
 
     /**
-     * Set userId
+     * Set userId.
      *
-     * @param integer $userId
+     * @param int $userId
      *
      * @return Order
      */
@@ -159,7 +160,7 @@ class Order
     }
 
     /**
-     * Get userId
+     * Get userId.
      *
      * @return int
      */
@@ -169,7 +170,7 @@ class Order
     }
 
     /**
-     * Set customerId
+     * Set customerId.
      *
      * @param string $customerId
      *
@@ -183,7 +184,7 @@ class Order
     }
 
     /**
-     * Get customerId
+     * Get customerId.
      *
      * @return string
      */
@@ -193,9 +194,9 @@ class Order
     }
 
     /**
-     * Set status
+     * Set status.
      *
-     * @param integer $status
+     * @param int $status
      *
      * @return Order
      */
@@ -207,7 +208,7 @@ class Order
     }
 
     /**
-     * Get status
+     * Get status.
      *
      * @return int
      */
@@ -217,7 +218,7 @@ class Order
     }
 
     /**
-     * Set note
+     * Set note.
      *
      * @param string $note
      *
@@ -231,7 +232,7 @@ class Order
     }
 
     /**
-     * Get note
+     * Get note.
      *
      * @return string
      */
@@ -241,7 +242,7 @@ class Order
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -255,7 +256,7 @@ class Order
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -264,4 +265,3 @@ class Order
         return $this->date;
     }
 }
-

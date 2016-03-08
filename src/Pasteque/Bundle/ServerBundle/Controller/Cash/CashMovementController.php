@@ -41,75 +41,74 @@ use Pasteque\Bundle\ServerBundle\Repository\Cash\CashRepository;
 
 class CashMovementController extends AbstractController
 {
-
-  public function createAction(Request $request)
-  {
-    $form = $this->createFormBuilder()
+    public function createAction(Request $request)
+    {
+        $form = $this->createFormBuilder()
       // ...
       ->getForm();
 
-    $form->handleRequest($request);
+        $form->handleRequest($request);
 
-    if ($form->isValid()) {
-      // persist entity
+        if ($form->isValid()) {
+            // persist entity
       $cashMovement = $form->getData();
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($cashMovement);
-      $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($cashMovement);
+            $em->flush();
 
-      return $this->redirectToRoute('task_success');
-    }
+            return $this->redirectToRoute('task_success');
+        }
 
-    return $this->render('AppBundle:Default:new.html.twig', array(
+        return $this->render('AppBundle:Default:new.html.twig', array(
       'form' => $form->createView(),
     ));
-  }
+    }
 
-  public function deleteAction($id)
-  {
-    $em = $this->getDoctrine()->getManager();
-    $cashMovement = $em->getRepository('PastequeServerBundle:CashMovement')->find($id);
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $cashMovement = $em->getRepository('PastequeServerBundle:CashMovement')->find($id);
 
-    if (!$cashMovement) {
-      throw $this->createNotFoundException(
+        if (!$cashMovement) {
+            throw $this->createNotFoundException(
         'No product found for id '.$id
       );
-    }
+        }
 
-    $em->remove($cashMovement);
-    $em->flush();
-
-    return $this->redirectToRoute('homepage');
-  }
-
-  public function updateAction($id)
-  {
-    $request = $this->get('request');
-
-    if (is_null($id)) {
-      $postData = $request->get('cashMovement');
-      $id = $postData['id'];
-    }
-
-    $em = $this->getDoctrine()->getManager();
-    $cashMovement = $em->getRepository('PastequeServerBundle:CashMovement')->find($id);
-    $form = $this->createForm(new FormType(), $cashMovement);
-
-    if ($request->getMethod() == 'POST') {
-      $form->handleRequest($request);
-
-      if ($form->isValid()) {
-        // perform some action, such as save the object to the database
+        $em->remove($cashMovement);
         $em->flush();
 
-        return $this->redirect($this->generateUrl(''));
-      }
+        return $this->redirectToRoute('homepage');
     }
 
-    return $this->render('MyBundle:Testimonial:update.html.twig', array(
-      'form' => $form->createView()
+    public function updateAction($id)
+    {
+        $request = $this->get('request');
+
+        if (is_null($id)) {
+            $postData = $request->get('cashMovement');
+            $id = $postData['id'];
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $cashMovement = $em->getRepository('PastequeServerBundle:CashMovement')->find($id);
+        $form = $this->createForm(new FormType(), $cashMovement);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                // perform some action, such as save the object to the database
+        $em->flush();
+
+                return $this->redirect($this->generateUrl(''));
+            }
+        }
+
+        return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView(),
     ));
-  }
+    }
 
     public function moveAction($id, $date, $payment, $note)
     {
@@ -118,7 +117,7 @@ class CashMovementController extends AbstractController
 
     public function searchAction($cashRegisterId, $dateStart, $dateStop)
     {
-        /**
+        /*
      * @var CashRepository
      */
     $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Cash');

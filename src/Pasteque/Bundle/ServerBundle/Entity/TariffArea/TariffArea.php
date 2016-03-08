@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\TariffArea;
 
 /**
- * TariffArea
+ * TariffArea.
  */
 class TariffArea
 {
@@ -52,11 +52,12 @@ class TariffArea
 
     /**
      * TariffArea constructor.
+     *
      * @param string $name
-     * @param int $displayOrder
+     * @param int    $displayOrder
      * @param string $note
      */
-    public function __construct($name, $displayOrder=0, $note=null)
+    public function __construct($name, $displayOrder = 0, $note = null)
     {
         $this->name = $name;
         $this->displayOrder = $displayOrder;
@@ -66,34 +67,39 @@ class TariffArea
 
     /**
      * @param string $productId
-     * @param float $price
+     * @param float  $price
      */
-    function addTariffAreaPrice($productId, $price) {
+    public function addTariffAreaPrice($productId, $price)
+    {
         array_push($this->tariffAreaPrices, new TariffAreaPrice($productId, $price));
     }
 
     /**
      * @param string $productId
+     *
      * @return float|null
      */
-    function getPrice($productId) {
+    public function getPrice($productId)
+    {
         foreach ($this->tariffAreaPrices as $price) {
             if ($price->getProductId() == $productId) {
                 return $price->getPrice();
             }
         }
-        return null;
+
+        return;
     }
 
     /**
      * @return TariffAreaPrice[]
      */
-    function getPrices() {
+    public function getPrices()
+    {
         return $this->tariffAreaPrices;
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -103,7 +109,7 @@ class TariffArea
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -117,7 +123,7 @@ class TariffArea
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -127,9 +133,9 @@ class TariffArea
     }
 
     /**
-     * Set displayOrder
+     * Set displayOrder.
      *
-     * @param integer $displayOrder
+     * @param int $displayOrder
      *
      * @return TariffArea
      */
@@ -141,7 +147,7 @@ class TariffArea
     }
 
     /**
-     * Get displayOrder
+     * Get displayOrder.
      *
      * @return int
      */
@@ -151,7 +157,7 @@ class TariffArea
     }
 
     /**
-     * Set note
+     * Set note.
      *
      * @param string $note
      *
@@ -165,7 +171,7 @@ class TariffArea
     }
 
     /**
-     * Get note
+     * Get note.
      *
      * @return string
      */
@@ -174,4 +180,3 @@ class TariffArea
         return $this->note;
     }
 }
-

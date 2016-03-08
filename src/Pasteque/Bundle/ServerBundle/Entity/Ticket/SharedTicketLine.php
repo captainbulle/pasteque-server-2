@@ -88,7 +88,7 @@ class SharedTicketLine
      * @param string $attributes
      * @param string $displayId
      */
-    public function __construct($sharedTicketId, $line, $productId, $taxId, $quantity, $price, 
+    public function __construct($sharedTicketId, $line, $productId, $taxId, $quantity, $price,
                                 $discountRate = 0.0, $attributes = null, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);

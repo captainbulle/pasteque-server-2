@@ -21,7 +21,7 @@
 namespace Pasteque\Bundle\ServerBundle\Entity\Product;
 
 /**
- * ProductCom
+ * ProductCom.
  */
 class ProductCom
 {
@@ -47,6 +47,7 @@ class ProductCom
 
     /**
      * ProductCom constructor.
+     *
      * @param string $productId
      * @param string $productId2
      * @param string $displayId
@@ -59,7 +60,7 @@ class ProductCom
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -93,7 +94,7 @@ class ProductCom
     }
 
     /**
-     * Set productId
+     * Set productId.
      *
      * @param string $productId
      *
@@ -107,7 +108,7 @@ class ProductCom
     }
 
     /**
-     * Get productId
+     * Get productId.
      *
      * @return string
      */
@@ -117,7 +118,7 @@ class ProductCom
     }
 
     /**
-     * Set productId2
+     * Set productId2.
      *
      * @param string $productId2
      *
@@ -131,7 +132,7 @@ class ProductCom
     }
 
     /**
-     * Get productId2
+     * Get productId2.
      *
      * @return string
      */
@@ -140,4 +141,3 @@ class ProductCom
         return $this->productId2;
     }
 }
-
