@@ -56,17 +56,17 @@ class StockMove
     private $reason;
 
     /**
-     * @var string
+     * @var int
      */
     private $locationId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetInstanceId;
 
@@ -85,9 +85,9 @@ class StockMove
      *
      * @param \DateTime $date
      * @param int       $reason
-     * @param string    $locationId
-     * @param string    $productId
-     * @param string    $attributeSetInstanceId
+     * @param int    $locationId
+     * @param int    $productId
+     * @param int    $attributeSetInstanceId
      * @param float     $quantity
      * @param float     $price
      * @param string    $displayId
@@ -202,7 +202,7 @@ class StockMove
     /**
      * Set locationId.
      *
-     * @param string $locationId
+     * @param int $locationId
      *
      * @return StockMove
      */
@@ -216,7 +216,7 @@ class StockMove
     /**
      * Get locationId.
      *
-     * @return string
+     * @return int
      */
     public function getLocationId()
     {
@@ -226,7 +226,7 @@ class StockMove
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return StockMove
      */
@@ -240,7 +240,7 @@ class StockMove
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -250,7 +250,7 @@ class StockMove
     /**
      * Set attributeSetInstanceId.
      *
-     * @param string $attributeSetInstanceId
+     * @param int $attributeSetInstanceId
      *
      * @return StockMove
      */
@@ -264,7 +264,7 @@ class StockMove
     /**
      * Get attributeSetInstanceId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetInstanceId()
     {

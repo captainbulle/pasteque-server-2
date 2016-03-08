@@ -31,7 +31,7 @@ class TariffAreaPrice
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
@@ -42,7 +42,7 @@ class TariffAreaPrice
 
     /**
      * TariffAreaPrice constructor.
-     * @param string $productId
+     * @param int $productId
      * @param float $priceSell
      */
     public function __construct($productId, $priceSell)
@@ -64,7 +64,7 @@ class TariffAreaPrice
     /**
      * Set productId
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return TariffAreaPrice
      */
@@ -78,7 +78,7 @@ class TariffAreaPrice
     /**
      * Get productId
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {

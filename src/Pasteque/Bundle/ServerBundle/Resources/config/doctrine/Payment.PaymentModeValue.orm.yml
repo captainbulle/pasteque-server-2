@@ -9,8 +9,6 @@ Pasteque\Bundle\ServerBundle\Entity\Payment\PaymentModeValue:
             generator:
                 strategy: AUTO
     fields:
-        paymentModeId:
-            type: integer
         value:
             type: float
         resource:

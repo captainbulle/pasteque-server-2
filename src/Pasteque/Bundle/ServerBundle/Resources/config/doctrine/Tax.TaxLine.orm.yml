@@ -12,12 +12,6 @@ Pasteque\Bundle\ServerBundle\Entity\Tax\TaxLine:
         displayId:
             type: string
             length: 255
-        receiptId:
-            type: string
-            length: 255
-        taxId:
-            type: string
-            length: 255
         base:
             type: float
         amount:

@@ -12,8 +12,6 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\Receipt:
         displayId:
             type: string
             length: 255
-        cashId:
-            type: integer
         date:
             type: datetime
         attributes:

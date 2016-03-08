@@ -9,16 +9,6 @@ Pasteque\Bundle\ServerBundle\Entity\Stock\StockCurrent:
             generator:
                 strategy: AUTO
     fields:
-        locationId:
-            type: string
-            length: 255
-        productId:
-            type: string
-            length: 255
-        attributeSetInstanceId:
-            type: string
-            length: 255
-            nullable: true
         quantity:
             type: float
     lifecycleCallbacks: {  }

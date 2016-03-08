@@ -34,7 +34,7 @@ class TicketLine
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $ticketId;
 
@@ -44,12 +44,12 @@ class TicketLine
     private $line;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetInstanceId;
 
@@ -66,7 +66,7 @@ class TicketLine
     private $price;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxId;
 
@@ -91,10 +91,10 @@ class TicketLine
      * TicketLine constructor.
      * Constructor must take full product and tax objects to build xml attributes. Only the id is then kept.
      *
-     * @param string  $ticketId
+     * @param int  $ticketId
      * @param int     $line
      * @param Product $product
-     * @param string  $attributeSetInstanceId
+     * @param int  $attributeSetInstanceId
      * @param float   $quantity
      * @param float   $price
      * @param Tax     $tax
@@ -200,7 +200,7 @@ class TicketLine
     /**
      * Set ticketId.
      *
-     * @param string $ticketId
+     * @param int $ticketId
      *
      * @return TicketLine
      */
@@ -214,7 +214,7 @@ class TicketLine
     /**
      * Get ticketId.
      *
-     * @return string
+     * @return int
      */
     public function getTicketId()
     {
@@ -248,7 +248,7 @@ class TicketLine
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return TicketLine
      */
@@ -262,7 +262,7 @@ class TicketLine
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -272,7 +272,7 @@ class TicketLine
     /**
      * Set attributeSetInstanceId.
      *
-     * @param string $attributeSetInstanceId
+     * @param int $attributeSetInstanceId
      *
      * @return TicketLine
      */
@@ -286,7 +286,7 @@ class TicketLine
     /**
      * Get attributeSetInstanceId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetInstanceId()
     {
@@ -344,7 +344,7 @@ class TicketLine
     /**
      * Set taxId.
      *
-     * @param string $taxId
+     * @param int $taxId
      *
      * @return TicketLine
      */
@@ -358,7 +358,7 @@ class TicketLine
     /**
      * Get taxId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxId()
     {

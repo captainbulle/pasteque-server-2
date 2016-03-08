@@ -32,19 +32,6 @@ Pasteque\Bundle\ServerBundle\Entity\Product\Product:
             nullable: true
         priceSell:
             type: float
-        categoryId:
-            type: string
-            length: 255
-        providerId:
-            type: string
-            length: 255
-            nullable: true
-        taxCatId:
-            type: string
-            length: 255
-        attributeSetId:
-            type: string
-            length: 255
         stockCost:
             type: float
             nullable: true

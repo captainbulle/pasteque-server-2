@@ -12,12 +12,6 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeUse:
         displayId:
             type: string
             length: 255
-        attrSetId:
-            type: string
-            length: 255
-        attrId:
-            type: string
-            length: 255
         lineNo:
             type: integer
             nullable: true

@@ -99,7 +99,7 @@ class SubGroup
     /**
      * Set compositionId
      *
-     * @param integer $compositionId
+     * @param int $compositionId
      *
      * @return SubGroup
      */

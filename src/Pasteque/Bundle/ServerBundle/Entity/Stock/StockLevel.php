@@ -36,17 +36,17 @@ class StockLevel
     private $displayId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $locationId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetInstanceId;
 
@@ -70,9 +70,9 @@ class StockLevel
      * As quantities are set through stock moves leave $quantity to null to create security and max levels.
      * In that case also set $attributeSetInstanceId to null as it is ignored.
      *
-     * @param string $productId
-     * @param string $locationId
-     * @param string $attributeSetInstanceId
+     * @param int $productId
+     * @param int $locationId
+     * @param int $attributeSetInstanceId
      * @param float  $security
      * @param float  $max
      * @param float  $quantity
@@ -127,7 +127,7 @@ class StockLevel
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return StockLevel
      */
@@ -141,7 +141,7 @@ class StockLevel
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -151,7 +151,7 @@ class StockLevel
     /**
      * Set locationId.
      *
-     * @param string $locationId
+     * @param int $locationId
      *
      * @return StockLevel
      */
@@ -165,7 +165,7 @@ class StockLevel
     /**
      * Get locationId.
      *
-     * @return string
+     * @return int
      */
     public function getLocationId()
     {
@@ -175,7 +175,7 @@ class StockLevel
     /**
      * Set attributeSetInstanceId.
      *
-     * @param string $attributeSetInstanceId
+     * @param int $attributeSetInstanceId
      *
      * @return StockLevel
      */
@@ -189,7 +189,7 @@ class StockLevel
     /**
      * Get attributeSetInstanceId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetInstanceId()
     {

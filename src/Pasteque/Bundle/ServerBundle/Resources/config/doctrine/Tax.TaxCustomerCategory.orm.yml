@@ -16,8 +16,4 @@ Pasteque\Bundle\ServerBundle\Entity\Tax\TaxCustomerCategory:
             type: string
             length: 255
             unique: true
-        taxCategoryId:
-            type: string
-            length: 255
-            nullable: true
     lifecycleCallbacks: {  }

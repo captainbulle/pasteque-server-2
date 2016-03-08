@@ -20,7 +20,4 @@ Pasteque\Bundle\ServerBundle\Entity\Place:
             type: integer
         'y':
             type: integer
-        floorId:
-            type: string
-            length: 255
     lifecycleCallbacks: {  }

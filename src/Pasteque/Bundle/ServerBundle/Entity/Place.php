@@ -51,7 +51,7 @@ class Place
     private $y;
 
     /**
-     * @var string
+     * @var int
      */
     private $floorId;
 
@@ -61,7 +61,7 @@ class Place
      * @param string $name
      * @param int    $x
      * @param int    $y
-     * @param string $floorId
+     * @param int $floorId
      * @param string $displayId
      */
     public function __construct($name, $x, $y, $floorId, $displayId = null)
@@ -182,7 +182,7 @@ class Place
     /**
      * Set floorId.
      *
-     * @param string $floorId
+     * @param int $floorId
      *
      * @return Place
      */
@@ -196,7 +196,7 @@ class Place
     /**
      * Get floorId.
      *
-     * @return string
+     * @return int
      */
     public function getFloorId()
     {

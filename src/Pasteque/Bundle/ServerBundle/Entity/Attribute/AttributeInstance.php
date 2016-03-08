@@ -36,12 +36,12 @@ class AttributeInstance
     private $displayId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attrSetInstId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attrId;
 
@@ -53,8 +53,8 @@ class AttributeInstance
     /**
      * AttributeInstance constructor.
      *
-     * @param string $attrSetInstId
-     * @param string $attrId
+     * @param int $attrSetInstId
+     * @param int $attrId
      * @param string $value
      * @param string $displayId
      */
@@ -103,7 +103,7 @@ class AttributeInstance
     /**
      * Set attrSetInstId.
      *
-     * @param string $attrSetInstId
+     * @param int $attrSetInstId
      *
      * @return AttributeInstance
      */
@@ -117,7 +117,7 @@ class AttributeInstance
     /**
      * Get attrSetInstId.
      *
-     * @return string
+     * @return int
      */
     public function getAttrSetInstId()
     {
@@ -127,7 +127,7 @@ class AttributeInstance
     /**
      * Set attrId.
      *
-     * @param string $attrId
+     * @param int $attrId
      *
      * @return AttributeInstance
      */
@@ -141,7 +141,7 @@ class AttributeInstance
     /**
      * Get attrId.
      *
-     * @return string
+     * @return int
      */
     public function getAttrId()
     {

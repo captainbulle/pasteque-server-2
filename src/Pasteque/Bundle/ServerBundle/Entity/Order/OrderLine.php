@@ -31,7 +31,7 @@ class OrderLine
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $orderId;
 
@@ -41,12 +41,12 @@ class OrderLine
     private $line;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeInstanceId;
 
@@ -62,10 +62,10 @@ class OrderLine
 
     /**
      * OrderLine constructor.
-     * @param string $orderId
+     * @param int $orderId
      * @param int $line
-     * @param string $productId
-     * @param string $attributeInstanceId
+     * @param int $productId
+     * @param int $attributeInstanceId
      * @param float $quantity
      * @param string $attributes
      */
@@ -92,7 +92,7 @@ class OrderLine
     /**
      * Set orderId
      *
-     * @param string $orderId
+     * @param int $orderId
      *
      * @return OrderLine
      */
@@ -106,7 +106,7 @@ class OrderLine
     /**
      * Get orderId
      *
-     * @return string
+     * @return int
      */
     public function getOrderId()
     {
@@ -140,7 +140,7 @@ class OrderLine
     /**
      * Set productId
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return OrderLine
      */
@@ -154,7 +154,7 @@ class OrderLine
     /**
      * Get productId
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -164,7 +164,7 @@ class OrderLine
     /**
      * Set attributeInstanceId
      *
-     * @param string $attributeInstanceId
+     * @param int $attributeInstanceId
      *
      * @return OrderLine
      */
@@ -178,7 +178,7 @@ class OrderLine
     /**
      * Get attributeInstanceId
      *
-     * @return string
+     * @return int
      */
     public function getAttributeInstanceId()
     {

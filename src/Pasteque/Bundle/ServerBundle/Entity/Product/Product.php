@@ -68,22 +68,22 @@ class Product
     private $priceSell;
 
     /**
-     * @var string
+     * @var int
      */
     private $categoryId;
 
     /**
-     * @var string
+     * @var int
      */
     private $providerId;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxCatId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetId;
 
@@ -141,10 +141,10 @@ class Product
      * @param string $name
      * @param float  $priceBuy
      * @param float  $priceSell
-     * @param string $categoryId
-     * @param string $providerId
-     * @param string $taxCatId
-     * @param string $attributeSetId
+     * @param int $categoryId
+     * @param int $providerId
+     * @param int $taxCatId
+     * @param int $attributeSetId
      * @param float  $stockCost
      * @param float  $stockVolume
      * @param string $image
@@ -393,7 +393,7 @@ class Product
     /**
      * Set categoryId.
      *
-     * @param string $categoryId
+     * @param int $categoryId
      *
      * @return Product
      */
@@ -407,7 +407,7 @@ class Product
     /**
      * Get categoryId.
      *
-     * @return string
+     * @return int
      */
     public function getCategoryId()
     {
@@ -417,7 +417,7 @@ class Product
     /**
      * Set providerId.
      *
-     * @param string $providerId
+     * @param int $providerId
      *
      * @return Product
      */
@@ -431,7 +431,7 @@ class Product
     /**
      * Get providerId.
      *
-     * @return string
+     * @return int
      */
     public function getProviderId()
     {
@@ -441,7 +441,7 @@ class Product
     /**
      * Set taxCatId.
      *
-     * @param string $taxCatId
+     * @param int $taxCatId
      *
      * @return Product
      */
@@ -455,7 +455,7 @@ class Product
     /**
      * Get taxCatId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxCatId()
     {
@@ -465,7 +465,7 @@ class Product
     /**
      * Set attributeSetId.
      *
-     * @param string $attributeSetId
+     * @param int $attributeSetId
      *
      * @return Product
      */
@@ -479,7 +479,7 @@ class Product
     /**
      * Get attributeSetId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetId()
     {

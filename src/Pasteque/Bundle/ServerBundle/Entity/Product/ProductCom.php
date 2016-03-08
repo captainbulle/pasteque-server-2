@@ -36,19 +36,19 @@ class ProductCom
     private $displayId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId2;
 
     /**
      * ProductCom constructor.
-     * @param string $productId
-     * @param string $productId2
+     * @param int $productId
+     * @param int $productId2
      * @param string $displayId
      */
     public function __construct($productId, $productId2, $displayId = null)
@@ -95,7 +95,7 @@ class ProductCom
     /**
      * Set productId
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return ProductCom
      */
@@ -109,7 +109,7 @@ class ProductCom
     /**
      * Get productId
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -119,7 +119,7 @@ class ProductCom
     /**
      * Set productId2
      *
-     * @param string $productId2
+     * @param int $productId2
      *
      * @return ProductCom
      */
@@ -133,7 +133,7 @@ class ProductCom
     /**
      * Get productId2
      *
-     * @return string
+     * @return int
      */
     public function getProductId2()
     {

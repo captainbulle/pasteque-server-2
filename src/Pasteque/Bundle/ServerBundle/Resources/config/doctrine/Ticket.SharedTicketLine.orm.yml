@@ -12,18 +12,8 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\SharedTicketLine:
         displayId:
             type: string
             length: 255
-        sharedTicketId:
-            type: string
-            length: 255
         line:
             type: integer
-        productId:
-            type: string
-            length: 255
-            nullable: true
-        taxId:
-            type: string
-            length: 255
         quantity:
             type: float
         discountRate:

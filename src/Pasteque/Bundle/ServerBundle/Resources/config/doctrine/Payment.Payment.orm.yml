@@ -17,8 +17,6 @@ Pasteque\Bundle\ServerBundle\Entity\Payment\Payment:
             length: 255
         amount:
             type: float
-        currencyId:
-            type: integer
         currencyAmount:
             type: float
         backType:
