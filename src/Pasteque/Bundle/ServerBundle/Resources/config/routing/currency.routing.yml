@@ -1,0 +1,12 @@
+
+currency_api_get:
+    path: /currency/get/{id}
+    defaults: { _controller: PastequeServerBundle:Currency:get }
+
+currency_api_getMain:
+    path: /currency/getMain/
+    defaults: { _controller: PastequeServerBundle:Currency:getMain }
+
+currency_api_getAll:
+    path: /currencies/getAll/
+    defaults: { _controller: PastequeServerBundle:Currency:getAll }

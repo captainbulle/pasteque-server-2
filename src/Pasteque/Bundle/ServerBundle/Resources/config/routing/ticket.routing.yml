@@ -1,0 +1,36 @@
+ticket_api_getShared:
+    path: /ticket/getShared/{id}
+    defaults: { _controller: PastequeServerBundle:Ticket:getShared }
+
+ticket_api_getAllShared:
+    path: /ticket/getAllShared/
+    defaults: { _controller: PastequeServerBundle:Ticket:getAllShared }
+
+ticket_api_delShared:
+    path: /tickets/delShared/{id}
+    defaults: { _controller: PastequeServerBundle:Ticket:delShared }
+
+ticket_api_share:
+    path: /ticket/share/{ticket}
+    defaults: { _controller: PastequeServerBundle:Ticket:share }
+
+# TODO Methode save à verifier car les arguments sont des objets defins eux meme par des arguments
+ticket_api_save:
+    path: /ticket/save/{cashId}/{ticket}/{tickets}
+    defaults: { _controller: PastequeServerBundle:Ticket:save }
+
+ticket_api_getAll:
+    path: /ticket/getAll/
+    defaults: { _controller: PastequeServerBundle:Ticket:getAll }
+
+tickets_api_get:
+    path: /tickets/get/{id}
+    defaults: { _controller: PastequeServerBundle:Ticket:get }
+
+ticket_api_getOpen:
+    path: /ticket/getOpen/
+    defaults: { _controller: PastequeServerBundle:Ticket:getOpen }
+
+ticket_api_search:
+    path: /ticket/search/{ticketId}/{ticketType}/{cashId}/{dateStart}/{dateStop}/{customerId}/{userId}/{limit}
+    defaults: { _controller: PastequeServerBundle:Ticket:search, ticketId: -1, ticketType: -1, cashId: -1, dateStart: -1, dateStop: -1, customerId: -1, userId: -1, limit: -1 }

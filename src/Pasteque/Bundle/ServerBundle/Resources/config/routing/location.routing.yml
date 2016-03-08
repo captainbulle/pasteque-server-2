@@ -1,0 +1,8 @@
+
+location_api_get:
+    path: /location/get/{id}
+    defaults: { _controller: PastequeServerBundle:Location:get }
+
+location_api_getAll:
+    path: /location/getAll/
+    defaults: { _controller: PastequeServerBundle:Location:getAll }

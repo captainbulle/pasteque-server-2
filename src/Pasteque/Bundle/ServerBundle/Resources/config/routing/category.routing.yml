@@ -1,0 +1,11 @@
+category_api_get:
+    path: /category/get/{id}
+    defaults: { _controller: PastequeServerBundle:Category:get }
+
+category_api_getChildren:
+    path: /category/getChildren/{parentId}
+    defaults: { _controller: PastequeServerBundle:Category:getChildren }
+
+category_api_getAll:
+    path: /category/getAll/
+    defaults: { _controller: PastequeServerBundle:Category:getAll }
