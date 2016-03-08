@@ -71,7 +71,7 @@ class CurrencyController extends AbstractController
     $request = $this->get('request');
 
     if (is_null($id)) {
-      $postData = $request->get('cash');
+      $postData = $request->get('currency');
       $id = $postData['id'];
     }
 

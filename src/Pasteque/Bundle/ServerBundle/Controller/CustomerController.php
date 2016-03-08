@@ -73,13 +73,13 @@ class CustomerController extends AbstractController
     $request = $this->get('request');
 
     if (is_null($id)) {
-      $postData = $request->get('cash');
+      $postData = $request->get('customer');
       $id = $postData['id'];
     }
 
     $em = $this->getDoctrine()->getManager();
-    $currency = $em->getRepository('PastequeServerBundle:Customer')->find($id);
-    $form = $this->createForm(new FormType(), $currency);
+    $customer = $em->getRepository('PastequeServerBundle:Customer')->find($id);
+    $form = $this->createForm(new FormType(), $customer);
 
     if ($request->getMethod() == 'POST') {
       $form->handleRequest($request);

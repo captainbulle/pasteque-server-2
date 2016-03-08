@@ -20,10 +20,81 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ResourceController extends AbstractController
 {
+  public function createAction(Request $request)
+  {
+    $form = $this->createFormBuilder()
+      // ...
+      ->getForm();
+
+    $form->handleRequest($request);
+
+    if ($form->isValid()) {
+      // persist entity
+      $resource = $form->getData();
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($resource);
+      $em->flush();
+
+      return $this->redirectToRoute('task_success');
+    }
+
+    return $this->render('AppBundle:Default:new.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
+
+  public function deleteAction($id)
+  {
+    $em = $this->getDoctrine()->getManager();
+    $resource = $em->getRepository('PastequeServerBundle:Resource')->find($id);
+
+    if (!$resource) {
+      throw $this->createNotFoundException(
+        'No product found for id '.$id
+      );
+    }
+
+    $em->remove($resource);
+    $em->flush();
+
+    return $this->redirectToRoute('homepage');
+  }
+
+  public function updateAction($id)
+  {
+    $request = $this->get('request');
+
+    if (is_null($id)) {
+      $postData = $request->get('resource');
+      $id = $postData['id'];
+    }
+
+    $em = $this->getDoctrine()->getManager();
+    $resource = $em->getRepository('PastequeServerBundle:Resource')->find($id);
+    $form = $this->createForm(new FormType(), $resource);
+
+    if ($request->getMethod() == 'POST') {
+      $form->handleRequest($request);
+
+      if ($form->isValid()) {
+        // perform some action, such as save the object to the database
+        $em->flush();
+
+        return $this->redirect($this->generateUrl(''));
+      }
+    }
+
+    return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView()
+    ));
+  }
+
     public function getAction($label)
     {
         $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Resource');

@@ -72,7 +72,7 @@ class CategoryController extends AbstractController
     $request = $this->get('request');
 
     if (is_null($id)) {
-      $postData = $request->get('cash');
+      $postData = $request->get('category');
       $id = $postData['id'];
     }
 

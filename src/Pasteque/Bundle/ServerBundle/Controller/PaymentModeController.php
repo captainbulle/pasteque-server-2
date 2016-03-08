@@ -24,7 +24,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class RoleController extends AbstractController
+class PaymentModeController extends AbstractController
 {
   public function createAction(Request $request)
   {
@@ -36,9 +36,9 @@ class RoleController extends AbstractController
 
     if ($form->isValid()) {
       // persist entity
-      $role = $form->getData();
+      $paymentMode = $form->getData();
       $em = $this->getDoctrine()->getManager();
-      $em->persist($role);
+      $em->persist($paymentMode);
       $em->flush();
 
       return $this->redirectToRoute('task_success');
@@ -52,15 +52,15 @@ class RoleController extends AbstractController
   public function deleteAction($id)
   {
     $em = $this->getDoctrine()->getManager();
-    $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
+    $paymentMode = $em->getRepository('PastequeServerBundle:PaymentMode')->find($id);
 
-    if (!$role) {
+    if (!$paymentMode) {
       throw $this->createNotFoundException(
         'No product found for id '.$id
       );
     }
 
-    $em->remove($role);
+    $em->remove($paymentMode);
     $em->flush();
 
     return $this->redirectToRoute('homepage');
@@ -71,13 +71,13 @@ class RoleController extends AbstractController
     $request = $this->get('request');
 
     if (is_null($id)) {
-      $postData = $request->get('role');
+      $postData = $request->get('paymentMode');
       $id = $postData['id'];
     }
 
     $em = $this->getDoctrine()->getManager();
-    $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
-    $form = $this->createForm(new FormType(), $role);
+    $paymentMode = $em->getRepository('PastequeServerBundle:PaymentMode')->find($id);
+    $form = $this->createForm(new FormType(), $paymentMode);
 
     if ($request->getMethod() == 'POST') {
       $form->handleRequest($request);
@@ -95,23 +95,12 @@ class RoleController extends AbstractController
     ));
   }
 
-    public function getAction($id)
-    {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
-        $role = $repo->find($id);
-
-        $response = new Response(json_encode($role));
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
-    }
-
     public function getAllAction()
     {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
-        $roles = $repo->findAll();
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:PaymentMode');
+        $paymentModes = $repo->findAll();
 
-        $response = new Response(json_encode($roles));
+        $response = new Response(json_encode($paymentModes));
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;

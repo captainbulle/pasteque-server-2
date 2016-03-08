@@ -24,7 +24,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class RoleController extends AbstractController
+class FloorController extends AbstractController
 {
   public function createAction(Request $request)
   {
@@ -36,9 +36,9 @@ class RoleController extends AbstractController
 
     if ($form->isValid()) {
       // persist entity
-      $role = $form->getData();
+      $floor = $form->getData();
       $em = $this->getDoctrine()->getManager();
-      $em->persist($role);
+      $em->persist($floor);
       $em->flush();
 
       return $this->redirectToRoute('task_success');
@@ -52,15 +52,15 @@ class RoleController extends AbstractController
   public function deleteAction($id)
   {
     $em = $this->getDoctrine()->getManager();
-    $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
+    $floor = $em->getRepository('PastequeServerBundle:Floor')->find($id);
 
-    if (!$role) {
+    if (!$floor) {
       throw $this->createNotFoundException(
         'No product found for id '.$id
       );
     }
 
-    $em->remove($role);
+    $em->remove($floor);
     $em->flush();
 
     return $this->redirectToRoute('homepage');
@@ -71,13 +71,13 @@ class RoleController extends AbstractController
     $request = $this->get('request');
 
     if (is_null($id)) {
-      $postData = $request->get('role');
+      $postData = $request->get('floor');
       $id = $postData['id'];
     }
 
     $em = $this->getDoctrine()->getManager();
-    $role = $em->getRepository('PastequeServerBundle:Role')->find($id);
-    $form = $this->createForm(new FormType(), $role);
+    $floor = $em->getRepository('PastequeServerBundle:Floor')->find($id);
+    $form = $this->createForm(new FormType(), $floor);
 
     if ($request->getMethod() == 'POST') {
       $form->handleRequest($request);
@@ -95,12 +95,12 @@ class RoleController extends AbstractController
     ));
   }
 
-    public function getAction($id)
+  public function getAction($id)
     {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
-        $role = $repo->find($id);
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Floor');
+        $floor = $repo->find($id);
 
-        $response = new Response(json_encode($role));
+        $response = new Response(json_encode($floor));
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;
@@ -108,10 +108,10 @@ class RoleController extends AbstractController
 
     public function getAllAction()
     {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Role');
-        $roles = $repo->findAll();
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Floor');
+        $floors = $repo->findAll();
 
-        $response = new Response(json_encode($roles));
+        $response = new Response(json_encode($floors));
         $response->headers->set('Content-Type', 'application/json');
 
         return $response;

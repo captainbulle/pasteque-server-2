@@ -34,10 +34,81 @@ When client sends a cash, it may have an id or not. If the id is present the
 cash is updated. If not a new cash is created. In all cases return the cash.
 
 */
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class DiscountController extends AbstractController
 {
+  public function createAction(Request $request)
+  {
+    $form = $this->createFormBuilder()
+      // ...
+      ->getForm();
+
+    $form->handleRequest($request);
+
+    if ($form->isValid()) {
+      // persist entity
+      $discount = $form->getData();
+      $em = $this->getDoctrine()->getManager();
+      $em->persist($discount);
+      $em->flush();
+
+      return $this->redirectToRoute('task_success');
+    }
+
+    return $this->render('AppBundle:Default:new.html.twig', array(
+      'form' => $form->createView(),
+    ));
+  }
+
+  public function deleteAction($id)
+  {
+    $em = $this->getDoctrine()->getManager();
+    $discount = $em->getRepository('PastequeServerBundle:Discount')->find($id);
+
+    if (!$discount) {
+      throw $this->createNotFoundException(
+        'No product found for id '.$id
+      );
+    }
+
+    $em->remove($discount);
+    $em->flush();
+
+    return $this->redirectToRoute('homepage');
+  }
+
+  public function updateAction($id)
+  {
+    $request = $this->get('request');
+
+    if (is_null($id)) {
+      $postData = $request->get('discount');
+      $id = $postData['id'];
+    }
+
+    $em = $this->getDoctrine()->getManager();
+    $discount = $em->getRepository('PastequeServerBundle:Discount')->find($id);
+    $form = $this->createForm(new FormType(), $discount);
+
+    if ($request->getMethod() == 'POST') {
+      $form->handleRequest($request);
+
+      if ($form->isValid()) {
+        // perform some action, such as save the object to the database
+        $em->flush();
+
+        return $this->redirect($this->generateUrl(''));
+      }
+    }
+
+    return $this->render('MyBundle:Testimonial:update.html.twig', array(
+      'form' => $form->createView()
+    ));
+  }
+
     public function getAction($id)
     {
         $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Discount');
