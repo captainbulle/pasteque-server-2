@@ -44,7 +44,7 @@ class Attribute
     private $name;
 
     /**
-     * @var string
+     * @var bool
      */
     private $active;
 
@@ -91,7 +91,7 @@ class Attribute
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->name = $name;
         $this->displayOrder = $displayOrder;
-        $this->active = 'A';
+        $this->active = true;
         $this->addedDate = new DateTime();
         $this->addedBy = $user->getUserName();
         $this->updatedDate = null;
@@ -202,7 +202,7 @@ class Attribute
     /**
      * Set active.
      *
-     * @param string $active
+     * @param bool $active
      *
      * @return Attribute
      */
@@ -216,7 +216,7 @@ class Attribute
     /**
      * Get active.
      *
-     * @return string
+     * @return bool
      */
     public function getActive()
     {

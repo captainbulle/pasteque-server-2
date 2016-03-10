@@ -13,7 +13,7 @@ Pasteque\Bundle\ServerBundle\Entity\Payment\Payment:
             joinColumn:
                 name: receipt_id
                 referencedColumnName: id
-       currencyId:
+        currencyId:
             targetEntity: Pasteque\Bundle\ServerBundle\Entity\Currency
             joinColumn:
                 name: currency_id
@@ -30,8 +30,6 @@ Pasteque\Bundle\ServerBundle\Entity\Payment\Payment:
         displayId:
             type: string
             length: 255
-        pairedPaymentId:
-            type: integer
         type:
             type: string
             length: 255

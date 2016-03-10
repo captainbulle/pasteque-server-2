@@ -47,7 +47,4 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\Ticket:
             nullable: true
         discountRate:
             type: float
-        discountProfileId:
-            type: integer
-            nullable: true
     lifecycleCallbacks: {  }
