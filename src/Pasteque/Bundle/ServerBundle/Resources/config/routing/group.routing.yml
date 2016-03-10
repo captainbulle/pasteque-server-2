@@ -1,0 +1,4 @@
+
+group_api_getAll:
+    path: /group/getAll/
+    defaults: { _controller: PastequeServerBundle:Group:getAll }

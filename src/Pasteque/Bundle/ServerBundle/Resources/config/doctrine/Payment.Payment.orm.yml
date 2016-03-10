@@ -1,5 +1,23 @@
 Pasteque\Bundle\ServerBundle\Entity\Payment\Payment:
     type: entity
+    oneToOne:
+        pairedPaymentId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Payment\Payment
+            orphanRemoval: true
+            joinColumn:
+                name: pairedPayment_id
+                referencedColumnName: id
+    manyToOne:
+        receiptId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Ticket\Receipt
+            joinColumn:
+                name: receipt_id
+                referencedColumnName: id
+       currencyId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Currency
+            joinColumn:
+                name: currency_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Payment\PaymentRepository
     id:
@@ -12,13 +30,13 @@ Pasteque\Bundle\ServerBundle\Entity\Payment\Payment:
         displayId:
             type: string
             length: 255
+        pairedPaymentId:
+            type: integer
         type:
             type: string
             length: 255
         amount:
             type: float
-        currencyId:
-            type: integer
         currencyAmount:
             type: float
         backType:

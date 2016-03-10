@@ -1,0 +1,7 @@
+tax_api_get:
+    path: /tax/get/{id}
+    defaults: { _controller: PastequeServerBundle:Tax:get }
+
+tax_api_getAll:
+    path: /tax/getAll/
+    defaults: { _controller: PastequeServerBundle:Tax:getAll }

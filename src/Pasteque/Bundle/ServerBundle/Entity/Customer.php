@@ -56,7 +56,7 @@ class Customer
     private $number;
 
     /**
-     * @var string
+     * @var int
      */
     private $customerTaxCategoryId;
 
@@ -171,7 +171,7 @@ class Customer
      * @param string    $displayName
      * @param string    $searchKey
      * @param int       $number
-     * @param string    $customerTaxCategoryId
+     * @param int    $customerTaxCategoryId
      * @param int       $discountProfileId
      * @param int       $tariffAreaId
      * @param string    $card
@@ -336,7 +336,7 @@ class Customer
     /**
      * Set customerTaxCategoryId.
      *
-     * @param string $customerTaxCategoryId
+     * @param int $customerTaxCategoryId
      *
      * @return Customer
      */
@@ -350,7 +350,7 @@ class Customer
     /**
      * Get customerTaxCategoryId.
      *
-     * @return string
+     * @return int
      */
     public function getCustomerTaxCategoryId()
     {

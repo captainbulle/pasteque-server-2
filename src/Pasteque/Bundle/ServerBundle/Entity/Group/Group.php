@@ -46,17 +46,17 @@ class Group
     private $priceSell;
 
     /**
-     * @var string
+     * @var int
      */
     private $categoryId;
 
     /**
-     * @var string
+     * @var int
      */
     private $providerId;
 
     /**
-     * @var string
+     * @var int
      */
     private $taxCategoryId;
 
@@ -81,7 +81,7 @@ class Group
     private $priceBuy;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetId;
 
@@ -115,14 +115,14 @@ class Group
      *
      * @param string $reference
      * @param string $name
-     * @param float  $priceSell
-     * @param string $categoryId
-     * @param string $providerId
-     * @param string $taxCategoryId
-     * @param int    $displayOrder
-     * @param bool   $isScale
-     * @param float  $priceBuy
-     * @param string $attributeSetId
+     * @param float $priceSell
+     * @param int $categoryId
+     * @param int $providerId
+     * @param int $taxCategoryId
+     * @param int $displayOrder
+     * @param bool $isScale
+     * @param float $priceBuy
+     * @param int $attributeSetId
      * @param string $barcode
      * @param string $image
      * @param bool   $discountEnabled
@@ -243,7 +243,7 @@ class Group
     /**
      * Set categoryId.
      *
-     * @param string $categoryId
+     * @param int $categoryId
      *
      * @return Group
      */
@@ -257,7 +257,7 @@ class Group
     /**
      * Get categoryId.
      *
-     * @return string
+     * @return int
      */
     public function getCategoryId()
     {
@@ -267,7 +267,7 @@ class Group
     /**
      * Set providerId.
      *
-     * @param string $providerId
+     * @param int $providerId
      *
      * @return Group
      */
@@ -281,7 +281,7 @@ class Group
     /**
      * Get providerId.
      *
-     * @return string
+     * @return int
      */
     public function getProviderId()
     {
@@ -291,7 +291,7 @@ class Group
     /**
      * Set taxCategoryId.
      *
-     * @param string $taxCategoryId
+     * @param int $taxCategoryId
      *
      * @return Group
      */
@@ -305,7 +305,7 @@ class Group
     /**
      * Get taxCategoryId.
      *
-     * @return string
+     * @return int
      */
     public function getTaxCategoryId()
     {
@@ -411,7 +411,7 @@ class Group
     /**
      * Set attributeSetId.
      *
-     * @param string $attributeSetId
+     * @param int $attributeSetId
      *
      * @return Group
      */
@@ -425,7 +425,7 @@ class Group
     /**
      * Get attributeSetId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetId()
     {

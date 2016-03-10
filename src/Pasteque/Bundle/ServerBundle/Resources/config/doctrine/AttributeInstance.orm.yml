@@ -1,5 +1,17 @@
 Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeInstance:
     type: entity
+    manyToOne:
+        attributeSetInstanceId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeSetInstance
+            orphanRemoval: true
+            joinColumn:
+                name: attributesetinstance_id
+                referencedColumnName: id
+        attributeId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Attribute\Attribute
+            joinColumn:
+                name: attribute_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Attribute\AttributeInstanceRepository
     id:
@@ -10,12 +22,6 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\AttributeInstance:
                 strategy: AUTO
     fields:
         displayId:
-            type: string
-            length: 255
-        attrSetInstId:
-            type: string
-            length: 255
-        attrId:
             type: string
             length: 255
         value:

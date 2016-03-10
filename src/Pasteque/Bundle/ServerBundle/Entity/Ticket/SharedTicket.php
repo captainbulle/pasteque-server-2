@@ -41,7 +41,7 @@ class SharedTicket
     private $name;
 
     /**
-     * @var string
+     * @var int
      */
     private $customerId;
 
@@ -74,7 +74,7 @@ class SharedTicket
      * SharedTicket constructor.
      *
      * @param string $name
-     * @param string $customerId
+     * @param int $customerId
      * @param int    $customerCount
      * @param int    $tariffAreaId
      * @param int    $discountProfileId
@@ -163,7 +163,7 @@ class SharedTicket
     /**
      * Set customerId.
      *
-     * @param string $customerId
+     * @param int $customerId
      *
      * @return SharedTicket
      */
@@ -177,7 +177,7 @@ class SharedTicket
     /**
      * Get customerId.
      *
-     * @return string
+     * @return int
      */
     public function getCustomerId()
     {

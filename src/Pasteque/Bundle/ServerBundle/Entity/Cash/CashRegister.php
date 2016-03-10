@@ -36,7 +36,7 @@ class CashRegister
     private $name;
 
     /**
-     * @var string
+     * @var int
      */
     private $locationId;
 
@@ -49,7 +49,7 @@ class CashRegister
      * CashRegister constructor.
      *
      * @param string $name
-     * @param string $locationId
+     * @param int $locationId
      * @param int    $nextTicketId
      */
     public function __construct($name, $locationId, $nextTicketId = 1)
@@ -96,7 +96,7 @@ class CashRegister
     /**
      * Set locationId.
      *
-     * @param string $locationId
+     * @param int $locationId
      *
      * @return CashRegister
      */
@@ -110,7 +110,7 @@ class CashRegister
     /**
      * Get locationId.
      *
-     * @return string
+     * @return int
      */
     public function getLocationId()
     {

@@ -1,0 +1,11 @@
+user_api_get:
+    path: /user/get/{id}
+    defaults: { _controller: PastequeServerBundle:User:get }
+
+user_api_getAll:
+    path: /user/getAll/
+    defaults: { _controller: PastequeServerBundle:User:getAll }
+
+user_api_updPwd:
+    path: /user/updPwd/{id}/{oldPwd}/{newPwd}
+    defaults: { _controller: PastequeServerBundle:User:updPwd }

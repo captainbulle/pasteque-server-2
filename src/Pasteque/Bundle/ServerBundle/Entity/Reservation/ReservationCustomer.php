@@ -36,19 +36,25 @@ class ReservationCustomer
     private $displayId;
 
     /**
-     * @var string
+     * @var int
+     */
+    private $reservationId;
+
+    /**
+     * @var int
      */
     private $customerId;
 
     /**
      * ReservationCustomer constructor.
-     *
-     * @param string $customerId
+     * @param int    $reservationId
+     * @param int $customerId
      * @param string $displayId
      */
-    public function __construct($customerId, $displayId = null)
+    public function __construct($reservationId, $customerId, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
+        $this->reservationId = $reservationId;
         $this->customerId = $customerId;
     }
 
@@ -87,9 +93,33 @@ class ReservationCustomer
     }
 
     /**
+     * Set reservationId
+     *
+     * @param int $reservationId
+     *
+     * @return ReservationCustomer
+     */
+    public function setReservationId($reservationId)
+    {
+        $this->reservationId = $reservationId;
+
+        return $this;
+    }
+
+    /**
+     * Get reservationId
+     *
+     * @return int
+     */
+    public function getReservationId()
+    {
+        return $this->reservationId;
+    }
+
+    /**
      * Set customerId.
      *
-     * @param string $customerId
+     * @param int $customerId
      *
      * @return ReservationCustomer
      */
@@ -103,7 +133,7 @@ class ReservationCustomer
     /**
      * Get customerId.
      *
-     * @return string
+     * @return int
      */
     public function getCustomerId()
     {

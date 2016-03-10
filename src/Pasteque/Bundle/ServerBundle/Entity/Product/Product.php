@@ -68,22 +68,22 @@ class Product
     private $priceSell;
 
     /**
-     * @var string
+     * @var int
      */
     private $categoryId;
 
     /**
-     * @var string
+     * @var int
      */
     private $providerId;
 
     /**
-     * @var string
+     * @var int
      */
-    private $taxCatId;
+    private $taxCategoryId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetId;
 
@@ -141,10 +141,10 @@ class Product
      * @param string $name
      * @param float  $priceBuy
      * @param float  $priceSell
-     * @param string $categoryId
-     * @param string $providerId
-     * @param string $taxCatId
-     * @param string $attributeSetId
+     * @param int $categoryId
+     * @param int $providerId
+     * @param int $taxCategoryId
+     * @param int $attributeSetId
      * @param float  $stockCost
      * @param float  $stockVolume
      * @param string $image
@@ -156,7 +156,7 @@ class Product
      * @param string $displayId
      */
     public function __construct($reference, $barcode, $barcodeType, $name, $priceBuy, $priceSell,
-                                $categoryId, $providerId, $taxCatId, $attributeSetId, $stockCost,
+                                $categoryId, $providerId, $taxCategoryId, $attributeSetId, $stockCost,
                                 $stockVolume, $image, $attributes, $isCom = false, $isScale = false,
                                 $discountEnabled = false, $discountRate = 0.0, $displayId = null)
     {
@@ -169,7 +169,7 @@ class Product
         $this->priceSell = $priceSell;
         $this->categoryId = $categoryId;
         $this->providerId = $providerId;
-        $this->taxCatId = $taxCatId;
+        $this->taxCategoryId = $taxCategoryId;
         $this->attributeSetId = $attributeSetId;
         $this->stockVolume = $stockVolume;
         $this->image = $image;
@@ -208,7 +208,7 @@ class Product
         if ($this->priceBuy !== null) {
             return $this->priceSell / $this->priceBuy;
         } else {
-            return;
+            return null;
         }
     }
 
@@ -393,7 +393,7 @@ class Product
     /**
      * Set categoryId.
      *
-     * @param string $categoryId
+     * @param int $categoryId
      *
      * @return Product
      */
@@ -407,7 +407,7 @@ class Product
     /**
      * Get categoryId.
      *
-     * @return string
+     * @return int
      */
     public function getCategoryId()
     {
@@ -417,7 +417,7 @@ class Product
     /**
      * Set providerId.
      *
-     * @param string $providerId
+     * @param int $providerId
      *
      * @return Product
      */
@@ -431,7 +431,7 @@ class Product
     /**
      * Get providerId.
      *
-     * @return string
+     * @return int
      */
     public function getProviderId()
     {
@@ -439,33 +439,33 @@ class Product
     }
 
     /**
-     * Set taxCatId.
+     * Set taxCategoryId.
      *
-     * @param string $taxCatId
+     * @param int $taxCategoryId
      *
      * @return Product
      */
-    public function setTaxCatId($taxCatId)
+    public function setTaxCategoryId($taxCategoryId)
     {
-        $this->taxCatId = $taxCatId;
+        $this->taxCategoryId = $taxCategoryId;
 
         return $this;
     }
 
     /**
-     * Get taxCatId.
+     * Get taxCategoryId.
      *
-     * @return string
+     * @return int
      */
-    public function getTaxCatId()
+    public function getTaxCategoryId()
     {
-        return $this->taxCatId;
+        return $this->taxCategoryId;
     }
 
     /**
      * Set attributeSetId.
      *
-     * @param string $attributeSetId
+     * @param int $attributeSetId
      *
      * @return Product
      */
@@ -479,7 +479,7 @@ class Product
     /**
      * Get attributeSetId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetId()
     {

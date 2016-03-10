@@ -36,7 +36,7 @@ class SubGroupProduct
     private $subGroupId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
@@ -47,10 +47,9 @@ class SubGroupProduct
 
     /**
      * SubGroupProduct constructor.
-     *
-     * @param int    $subGroupId
-     * @param string $productId
-     * @param int    $displayOrder
+     * @param int $subGroupId
+     * @param int $productId
+     * @param int $displayOrder
      */
     public function __construct($subGroupId, $productId, $displayOrder = null)
     {
@@ -96,7 +95,7 @@ class SubGroupProduct
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return SubGroupProduct
      */
@@ -110,7 +109,7 @@ class SubGroupProduct
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {

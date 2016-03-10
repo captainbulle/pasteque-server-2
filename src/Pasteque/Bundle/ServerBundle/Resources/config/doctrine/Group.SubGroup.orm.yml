@@ -1,5 +1,12 @@
 Pasteque\Bundle\ServerBundle\Entity\Group\SubGroup:
     type: entity
+    manyToOne:
+        groupId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Group\Group
+            orphanRemoval: true
+            joinColumn:
+                name: group_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Group\SubGroupRepository
     id:
@@ -9,8 +16,6 @@ Pasteque\Bundle\ServerBundle\Entity\Group\SubGroup:
             generator:
                 strategy: AUTO
     fields:
-        compositionId:
-            type: integer
         name:
             type: string
             length: 255

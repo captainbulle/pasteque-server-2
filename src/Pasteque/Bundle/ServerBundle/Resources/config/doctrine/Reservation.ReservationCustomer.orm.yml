@@ -1,5 +1,16 @@
 Pasteque\Bundle\ServerBundle\Entity\Reservation\ReservationCustomer:
     type: entity
+    manyToOne:
+        reservationId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Reservation\Reservation
+            joinColumn:
+                name: reservation_id
+                referencedColumnName: id
+        customerId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Customer
+            joinColumn:
+                name: customer_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Reservation\ReservationCustomerRepository
     id:
@@ -10,9 +21,6 @@ Pasteque\Bundle\ServerBundle\Entity\Reservation\ReservationCustomer:
                 strategy: AUTO
     fields:
         displayId:
-            type: string
-            length: 255
-        customerId:
             type: string
             length: 255
     lifecycleCallbacks: {  }

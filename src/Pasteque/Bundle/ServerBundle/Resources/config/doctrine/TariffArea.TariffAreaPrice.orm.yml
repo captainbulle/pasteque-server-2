@@ -1,5 +1,18 @@
 Pasteque\Bundle\ServerBundle\Entity\TariffArea\TariffAreaPrice:
     type: entity
+    manyToOne:
+        tariffAreaId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\TariffArea\TariffArea
+            orphanRemoval: true
+            joinColumn:
+                name: tariffarea_id
+                referencedColumnName: id
+        productId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Product\Product
+            orphanRemoval: true
+            joinColumn:
+                name: product_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\TariffArea\TariffAreaPriceRepository
     id:
@@ -9,9 +22,6 @@ Pasteque\Bundle\ServerBundle\Entity\TariffArea\TariffAreaPrice:
             generator:
                 strategy: AUTO
     fields:
-        productId:
-            type: string
-            length: 255
         priceSell:
             type: float
     lifecycleCallbacks: {  }

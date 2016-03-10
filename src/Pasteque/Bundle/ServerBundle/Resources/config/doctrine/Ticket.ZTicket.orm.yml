@@ -9,8 +9,6 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\ZTicket:
             generator:
                 strategy: AUTO
     fields:
-        cashId:
-            type: integer
         openCash:
             type: float
             nullable: true

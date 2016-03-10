@@ -43,7 +43,7 @@ class PaymentModeReturn
     /**
      * @var int
      */
-    private $returnModeId;
+    private $paymentReturnModeId;
 
     /**
      * @var float
@@ -55,13 +55,13 @@ class PaymentModeReturn
      *
      * @param int   $paymentModeId
      * @param float $min
-     * @param int   $returnModeId
+     * @param int   $paymentReturnModeId
      */
-    public function __construct($paymentModeId, $min, $returnModeId = null)
+    public function __construct($paymentModeId, $min, $paymentReturnModeId = null)
     {
         $this->paymentModeId = $paymentModeId;
         $this->min = $min;
-        $this->returnModeId = $returnModeId;
+        $this->paymentReturnModeId = $paymentReturnModeId;
     }
 
     /**
@@ -99,27 +99,27 @@ class PaymentModeReturn
     }
 
     /**
-     * Set returnModeId.
+     * Set paymentReturnModeId.
      *
-     * @param int $returnModeId
+     * @param int $paymentReturnModeId
      *
      * @return PaymentModeReturn
      */
-    public function setReturnModeId($returnModeId)
+    public function setPaymentReturnModeId($paymentReturnModeId)
     {
-        $this->returnModeId = $returnModeId;
+        $this->paymentReturnModeId = $paymentReturnModeId;
 
         return $this;
     }
 
     /**
-     * Get returnModeId.
+     * Get paymentReturnModeId.
      *
      * @return int
      */
-    public function getReturnModeId()
+    public function getPaymentReturnModeId()
     {
-        return $this->returnModeId;
+        return $this->paymentReturnModeId;
     }
 
     /**

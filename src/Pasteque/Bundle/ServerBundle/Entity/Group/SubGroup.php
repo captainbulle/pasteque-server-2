@@ -33,7 +33,7 @@ class SubGroup
     /**
      * @var int
      */
-    private $compositionId;
+    private $groupId;
 
     /**
      * @var string
@@ -62,16 +62,15 @@ class SubGroup
 
     /**
      * SubGroup constructor.
-     *
-     * @param int    $compositionId
+     * @param int $groupId
      * @param string $name
      * @param bool   $required
      * @param string $image
      * @param int    $displayOrder
      */
-    public function __construct($compositionId, $name, $required = true, $image = null, $displayOrder = 0)
+    public function __construct($groupId, $name, $required = true, $image = null, $displayOrder = 0)
     {
-        $this->compositionId = $compositionId;
+        $this->groupId = $groupId;
         $this->name = $name;
         $this->required = $required;
         $this->image = $image;
@@ -98,27 +97,27 @@ class SubGroup
     }
 
     /**
-     * Set compositionId.
+     * Set groupId.
      *
-     * @param int $compositionId
+     * @param int $groupId
      *
      * @return SubGroup
      */
-    public function setCompositionId($compositionId)
+    public function setGroupId($groupId)
     {
-        $this->compositionId = $compositionId;
+        $this->groupId = $groupId;
 
         return $this;
     }
 
     /**
-     * Get compositionId.
+     * Get groupId.
      *
      * @return int
      */
-    public function getCompositionId()
+    public function getGroupId()
     {
-        return $this->compositionId;
+        return $this->groupId;
     }
 
     /**

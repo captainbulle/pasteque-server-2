@@ -1,5 +1,11 @@
 Pasteque\Bundle\ServerBundle\Entity\Cash\CashRegister:
     type: entity
+    manyToOne:
+        locationId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Location
+            joinColumn:
+                name: location_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Cash\CashRegisterRepository
     id:
@@ -12,9 +18,4 @@ Pasteque\Bundle\ServerBundle\Entity\Cash\CashRegister:
         name:
             type: string
             length: 255
-        locationId:
-            type: string
-            length: 255
-        nextTicketId:
-            type: integer
     lifecycleCallbacks: {  }

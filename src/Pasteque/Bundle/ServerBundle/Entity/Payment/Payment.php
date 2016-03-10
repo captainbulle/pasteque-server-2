@@ -31,9 +31,19 @@ class Payment
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $displayId;
+
+    /**
+     * @var int
+     */
+    private $pairedPaymentId;
+
+    /**
+     * @var int
+     */
+    private $receiptId;
 
     /**
      * @var string
@@ -83,6 +93,8 @@ class Payment
     /**
      * Payment constructor.
      *
+     * @param int    $pairedPaymentId
+     * @param int    $receiptId
      * @param string $type
      * @param float  $amount
      * @param int    $currencyId
@@ -92,12 +104,15 @@ class Payment
      * @param string $note
      * @param string $backType
      * @param float  $backAmount
-     * @param string $displayId
+     * @param int $displayId
      */
-    public function __construct($type, $amount, $currencyId, $currencyAmount, $returnMessage, $pairedWith, $note,
-                                $backType = null, $backAmount = null, $displayId = null)
+    public function __construct($pairedPaymentId, $receiptId, $type, $amount, $currencyId, $currencyAmount,
+                                $returnMessage, $pairedWith, $note, $backType = null, $backAmount = null,
+                                $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
+        $this->pairedPaymentId = $pairedPaymentId;
+        $this->receiptId = $receiptId;
         $this->type = $type;
         $this->amount = $amount;
         $this->currencyId = $currencyId;
@@ -122,7 +137,7 @@ class Payment
     /**
      * Set displayId.
      *
-     * @param string $displayId
+     * @param int $displayId
      *
      * @return Payment
      */
@@ -136,11 +151,59 @@ class Payment
     /**
      * Get displayId.
      *
-     * @return string
+     * @return int
      */
     public function getDisplayId()
     {
         return $this->displayId;
+    }
+
+    /**
+     * Set pairedPaymentId.
+     *
+     * @param int $pairedPaymentId
+     *
+     * @return Payment
+     */
+    public function setPairedPaymentId($pairedPaymentId)
+    {
+        $this->pairedPaymentId = $pairedPaymentId;
+
+        return $this;
+    }
+
+    /**
+     * Get pairedPaymentId.
+     *
+     * @return int
+     */
+    public function getPairedPaymentId()
+    {
+        return $this->pairedPaymentId;
+    }
+
+    /**
+     * Set receiptId.
+     *
+     * @param int $receiptId
+     *
+     * @return Payment
+     */
+    public function setReceiptId($receiptId)
+    {
+        $this->receiptId = $receiptId;
+
+        return $this;
+    }
+
+    /**
+     * Get receiptId.
+     *
+     * @return int
+     */
+    public function getReceiptId()
+    {
+        return $this->receiptId;
     }
 
     /**

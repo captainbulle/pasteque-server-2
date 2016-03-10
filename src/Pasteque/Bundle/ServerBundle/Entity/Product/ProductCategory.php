@@ -31,7 +31,7 @@ class ProductCategory
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
@@ -42,9 +42,8 @@ class ProductCategory
 
     /**
      * ProductCategory constructor.
-     *
-     * @param string $productId
-     * @param int    $categoryOrder
+     * @param int $productId
+     * @param int $categoryOrder
      */
     public function __construct($productId, $categoryOrder)
     {
@@ -65,7 +64,7 @@ class ProductCategory
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return ProductCategory
      */
@@ -79,7 +78,7 @@ class ProductCategory
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {

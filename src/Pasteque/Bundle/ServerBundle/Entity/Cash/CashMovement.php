@@ -59,7 +59,7 @@ class CashMovement
     private $cashId;
 
     /**
-     * @var string
+     * @var int
      */
     private $receiptId;
 
@@ -81,7 +81,7 @@ class CashMovement
      * @param int       $currencyId
      * @param float     $currencyAmount
      * @param int       $cashId
-     * @param string    $receiptId
+     * @param int    $receiptId
      * @param \DateTime $date
      * @param string    $note
      */
@@ -230,7 +230,7 @@ class CashMovement
     /**
      * Set receiptId.
      *
-     * @param string $receiptId
+     * @param int $receiptId
      *
      * @return CashMovement
      */
@@ -244,7 +244,7 @@ class CashMovement
     /**
      * Get receiptId.
      *
-     * @return string
+     * @return int
      */
     public function getReceiptId()
     {

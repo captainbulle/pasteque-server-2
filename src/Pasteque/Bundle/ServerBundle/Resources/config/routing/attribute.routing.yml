@@ -1,0 +1,7 @@
+attribute_api_get:
+    path: /attribute/get/{id}
+    defaults: { _controller: PastequeServerBundle:Attribute:get }
+
+attribute_api_getAll:
+    path: /attribute/getAll
+    defaults: { _controller: PastequeServerBundle:Attribute:getAll }

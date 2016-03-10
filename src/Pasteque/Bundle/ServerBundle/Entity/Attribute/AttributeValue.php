@@ -36,6 +36,11 @@ class AttributeValue
     private $displayId;
 
     /**
+     * @var int
+     */
+    private $attributeId;
+
+    /**
      * @var string
      */
     private $value;
@@ -44,11 +49,13 @@ class AttributeValue
      * AttributeValue constructor.
      *
      * @param string $value
+     * @param int $attributeId
      * @param string $displayId
      */
-    public function __construct($value, $displayId = null)
+    public function __construct($value, $attributeId, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
+        $this->attributeId = $attributeId;
         $this->value = $value;
     }
 
@@ -84,6 +91,30 @@ class AttributeValue
     public function getDisplayId()
     {
         return $this->displayId;
+    }
+
+    /**
+     * Set attributeId.
+     *
+     * @param string $attributeId
+     *
+     * @return AttributeValue
+     */
+    public function setAttributeId($attributeId)
+    {
+        $this->attributeId = $attributeId;
+
+        return $this;
+    }
+
+    /**
+     * Get attributeId.
+     *
+     * @return string
+     */
+    public function getAttributeId()
+    {
+        return $this->attributeId;
     }
 
     /**

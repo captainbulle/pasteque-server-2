@@ -31,17 +31,17 @@ class StockCurrent
     private $id;
 
     /**
-     * @var string
+     * @var int
      */
     private $locationId;
 
     /**
-     * @var string
+     * @var int
      */
     private $productId;
 
     /**
-     * @var string
+     * @var int
      */
     private $attributeSetInstanceId;
 
@@ -52,11 +52,10 @@ class StockCurrent
 
     /**
      * StockCurrent constructor.
-     *
-     * @param string $locationId
-     * @param string $productId
-     * @param string $attributeSetInstanceId
-     * @param float  $quantity
+     * @param int $locationId
+     * @param int $productId
+     * @param int $attributeSetInstanceId
+     * @param float $quantity
      */
     public function __construct($locationId, $productId, $attributeSetInstanceId, $quantity)
     {
@@ -79,7 +78,7 @@ class StockCurrent
     /**
      * Set locationId.
      *
-     * @param string $locationId
+     * @param int $locationId
      *
      * @return StockCurrent
      */
@@ -93,7 +92,7 @@ class StockCurrent
     /**
      * Get locationId.
      *
-     * @return string
+     * @return int
      */
     public function getLocationId()
     {
@@ -103,7 +102,7 @@ class StockCurrent
     /**
      * Set productId.
      *
-     * @param string $productId
+     * @param int $productId
      *
      * @return StockCurrent
      */
@@ -117,7 +116,7 @@ class StockCurrent
     /**
      * Get productId.
      *
-     * @return string
+     * @return int
      */
     public function getProductId()
     {
@@ -127,7 +126,7 @@ class StockCurrent
     /**
      * Set attributeSetInstanceId.
      *
-     * @param string $attributeSetInstanceId
+     * @param int $attributeSetInstanceId
      *
      * @return StockCurrent
      */
@@ -141,7 +140,7 @@ class StockCurrent
     /**
      * Get attributeSetInstanceId.
      *
-     * @return string
+     * @return int
      */
     public function getAttributeSetInstanceId()
     {

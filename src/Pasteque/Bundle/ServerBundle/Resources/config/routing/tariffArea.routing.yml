@@ -1,0 +1,3 @@
+tariffArea_api_getAll:
+    path: /tariffArea/getAll/
+    defaults: { _controller: PastequeServerBundle:TariffArea:getAll }

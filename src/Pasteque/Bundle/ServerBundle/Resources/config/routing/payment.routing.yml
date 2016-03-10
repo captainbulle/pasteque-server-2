@@ -1,0 +1,4 @@
+
+paymentMode_api_getAll:
+    path: /paymentMode/getAll/
+    defaults: { _controller: PastequeServerBundle:PaymentMode:getAll }

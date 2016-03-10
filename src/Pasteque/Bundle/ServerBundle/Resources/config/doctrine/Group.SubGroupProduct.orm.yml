@@ -1,5 +1,18 @@
 Pasteque\Bundle\ServerBundle\Entity\Group\SubGroupProduct:
     type: entity
+    manyToOne:
+        subGroupId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Group\SubGroup
+            orphanRemoval: true
+            joinColumn:
+                name: subgroup_id
+                referencedColumnName: id
+        productId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Product\Product
+            orphanRemoval: true
+            joinColumn:
+                name: product_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Group\SubGroupProductRepository
     id:
@@ -9,11 +22,6 @@ Pasteque\Bundle\ServerBundle\Entity\Group\SubGroupProduct:
             generator:
                 strategy: AUTO
     fields:
-        subGroupId:
-            type: integer
-        productId:
-            type: string
-            length: 255
         displayOrder:
             type: integer
             nullable: true

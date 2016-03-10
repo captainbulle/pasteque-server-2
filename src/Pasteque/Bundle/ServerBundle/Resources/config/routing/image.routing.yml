@@ -1,0 +1,16 @@
+
+image_api_getProduct:
+    path: /image/getProduct/{id}
+    defaults: { _controller: PastequeServerBundle:Image:getProduct }
+
+image_api_getCategory:
+    path: /image/getCategory/{id}
+    defaults: { _controller: PastequeServerBundle:Image:getCategory }
+
+image_api_getPaymentMode:
+    path: /image/getPaymentMode/{id}
+    defaults: { _controller: PastequeServerBundle:Image:getPaymentMode }
+
+image_api_getResource:
+    path: /image/getResource/{label}
+    defaults: { _controller: PastequeServerBundle:Image:getResource }

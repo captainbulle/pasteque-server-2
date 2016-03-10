@@ -1,5 +1,11 @@
 Pasteque\Bundle\ServerBundle\Entity\Ticket\Receipt:
     type: entity
+    manyToOne:
+        cashId:
+            targetEntity: Pasteque\Bundle\ServerBundle\Entity\Cash\Cash
+            joinColumn:
+                name: cash_id
+                referencedColumnName: id
     table: null
     repositoryClass: Pasteque\Bundle\ServerBundle\Repository\Ticket\ReceiptRepository
     id:
@@ -12,8 +18,6 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\Receipt:
         displayId:
             type: string
             length: 255
-        cashId:
-            type: integer
         date:
             type: datetime
         attributes:

@@ -1,0 +1,19 @@
+customer_api_get:
+    path: /customer/get/{id}
+    defaults: { _controller: PastequeServerBundle:Customer:get }
+
+customer_api_getAll:
+    path: /customers/getAll/
+    defaults: { _controller: PastequeServerBundle:Customer:getAll }
+
+customer_api_getTop:
+    path: /customers/getTop/{limit}
+    defaults: { _controller: PastequeServerBundle:Customer:getTop, limit: 10 }
+
+customer_api_addPrepaid:
+    path: /customer/addPrepaid/{id}/{amount}
+    defaults: { _controller: PastequeServerBundle:Customer:addPrepaid }
+
+# TODO a voir dans l'api de base
+#customers_api_save:
+#    path: /customers/save/{}

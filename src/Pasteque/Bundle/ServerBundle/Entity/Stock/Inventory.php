@@ -39,7 +39,7 @@ class Inventory
     private $date;
 
     /**
-     * @var string
+     * @var int
      */
     private $locationId;
 
@@ -52,7 +52,7 @@ class Inventory
      * Inventory constructor.
      *
      * @param \DateTime $date
-     * @param string    $locationId
+     * @param int $locationId
      */
     public function __construct(\DateTime $date, $locationId)
     {
@@ -127,7 +127,7 @@ class Inventory
     /**
      * Set locationId.
      *
-     * @param string $locationId
+     * @param int $locationId
      *
      * @return Inventory
      */
@@ -141,7 +141,7 @@ class Inventory
     /**
      * Get locationId.
      *
-     * @return string
+     * @return int
      */
     public function getLocationId()
     {

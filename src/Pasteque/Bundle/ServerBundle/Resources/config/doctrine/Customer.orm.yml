@@ -38,16 +38,6 @@ Pasteque\Bundle\ServerBundle\Entity\Customer:
         number:
             type: integer
             nullable: true
-        customerTaxCategoryId:
-            type: string
-            length: 255
-            nullable: true
-        discountProfileId:
-            type: integer
-            nullable: true
-        tariffAreaId:
-            type: integer
-            nullable: true
         card:
             type: string
             length: 255

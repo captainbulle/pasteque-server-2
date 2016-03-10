@@ -46,7 +46,7 @@ class Order
     private $userId;
 
     /**
-     * @var string
+     * @var int
      */
     private $customerId;
 
@@ -67,11 +67,10 @@ class Order
 
     /**
      * Order constructor.
-     *
-     * @param int       $type
-     * @param int       $userId
-     * @param string    $customerId
-     * @param int       $status
+     * @param int $type
+     * @param int $userId
+     * @param int $customerId
+     * @param int $status
      * @param \DateTime $date
      * @param string    $note
      * @param string    $displayId
@@ -100,7 +99,7 @@ class Order
     /**
      * Set displayId.
      *
-     * @param string $displayId
+     * @param int $displayId
      *
      * @return Order
      */
@@ -114,7 +113,7 @@ class Order
     /**
      * Get displayId.
      *
-     * @return string
+     * @return int
      */
     public function getDisplayId()
     {
@@ -172,7 +171,7 @@ class Order
     /**
      * Set customerId.
      *
-     * @param string $customerId
+     * @param int $customerId
      *
      * @return Order
      */
@@ -186,7 +185,7 @@ class Order
     /**
      * Get customerId.
      *
-     * @return string
+     * @return int
      */
     public function getCustomerId()
     {
