@@ -7,7 +7,7 @@ stock_api_create:
     defaults: { _controller: PastequeServerBundle:stock:create }
 
 stock_api_update:
-    path: /stock/update
+    path: /stock/update/{id}
     defaults: { _controller: PastequeServerBundle:stock:update }
 
 stock_api_delete:

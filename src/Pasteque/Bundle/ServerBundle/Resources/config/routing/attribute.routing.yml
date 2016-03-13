@@ -11,7 +11,7 @@ attribute_api_create:
     defaults: { _controller: PastequeServerBundle:Attribute:create }
 
 attribute_api_update:
-    path: /attribute/update
+    path: /attribute/update/{id}
     defaults: { _controller: PastequeServerBundle:Attribute:update }
 
 attribute_api_delete:

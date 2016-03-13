@@ -11,7 +11,7 @@ floor_api_create:
     defaults: { _controller: PastequeServerBundle:floor:create }
 
 floor_api_update:
-    path: /floor/update
+    path: /floor/update/{id}
     defaults: { _controller: PastequeServerBundle:floor:update }
 
 floor_api_delete:

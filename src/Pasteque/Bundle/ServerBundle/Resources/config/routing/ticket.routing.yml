@@ -40,7 +40,7 @@ ticket_api_create:
     defaults: { _controller: PastequeServerBundle:ticket:create }
 
 ticket_api_update:
-    path: /ticket/update
+    path: /ticket/update/{id}
     defaults: { _controller: PastequeServerBundle:ticket:update }
 
 ticket_api_delete:

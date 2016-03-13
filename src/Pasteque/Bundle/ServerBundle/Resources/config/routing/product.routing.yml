@@ -18,7 +18,7 @@ product_api_create:
     defaults: { _controller: PastequeServerBundle:product:create }
 
 product_api_update:
-    path: /product/update
+    path: /product/update/{id}
     defaults: { _controller: PastequeServerBundle:product:update }
 
 product_api_delete:

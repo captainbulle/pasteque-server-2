@@ -7,7 +7,7 @@ resource_api_create:
     defaults: { _controller: PastequeServerBundle:resource:create }
 
 resource_api_update:
-    path: /resource/update
+    path: /resource/update/{id}
     defaults: { _controller: PastequeServerBundle:resource:update }
 
 resource_api_delete:

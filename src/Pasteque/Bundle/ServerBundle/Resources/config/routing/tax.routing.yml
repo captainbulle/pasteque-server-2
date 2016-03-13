@@ -11,7 +11,7 @@ tax_api_create:
     defaults: { _controller: PastequeServerBundle:tax:create }
 
 tax_api_update:
-    path: /tax/update
+    path: /tax/update/{id}
     defaults: { _controller: PastequeServerBundle:tax:update }
 
 tax_api_delete:

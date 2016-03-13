@@ -15,7 +15,7 @@ discount_api_create:
     defaults: { _controller: PastequeServerBundle:discount:create }
 
 discount_api_update:
-    path: /discount/update
+    path: /discount/update/{id}
     defaults: { _controller: PastequeServerBundle:discount:update }
 
 discount_api_delete:

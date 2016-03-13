@@ -11,7 +11,7 @@ location_api_create:
     defaults: { _controller: PastequeServerBundle:location:create }
 
 location_api_update:
-    path: /location/update
+    path: /location/update/{id}
     defaults: { _controller: PastequeServerBundle:location:update }
 
 location_api_delete:

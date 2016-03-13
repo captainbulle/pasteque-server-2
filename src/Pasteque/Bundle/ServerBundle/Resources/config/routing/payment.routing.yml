@@ -8,7 +8,7 @@ paymentMode_api_create:
     defaults: { _controller: PastequeServerBundle:paymentMode:create }
 
 paymentMode_api_update:
-    path: /paymentMode/update
+    path: /paymentMode/update/{id}
     defaults: { _controller: PastequeServerBundle:paymentMode:update }
 
 paymentMode_api_delete:

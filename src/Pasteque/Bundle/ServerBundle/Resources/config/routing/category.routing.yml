@@ -15,7 +15,7 @@ category_api_create:
     defaults: { _controller: PastequeServerBundle:category:create }
 
 category_api_update:
-    path: /category/update
+    path: /category/update/{id}
     defaults: { _controller: PastequeServerBundle:category:update }
 
 category_api_delete:

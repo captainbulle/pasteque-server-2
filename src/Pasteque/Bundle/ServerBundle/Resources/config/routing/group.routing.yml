@@ -7,7 +7,7 @@ group_api_create:
     defaults: { _controller: PastequeServerBundle:group:create }
 
 group_api_update:
-    path: /group/update
+    path: /group/update/{id}
     defaults: { _controller: PastequeServerBundle:group:update }
 
 group_api_delete:

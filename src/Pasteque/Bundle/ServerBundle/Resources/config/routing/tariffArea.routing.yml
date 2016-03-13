@@ -7,7 +7,7 @@ tariffArea_api_create:
     defaults: { _controller: PastequeServerBundle:tariffArea:create }
 
 tariffArea_api_update:
-    path: /tariffArea/update
+    path: /tariffArea/update/{id}
     defaults: { _controller: PastequeServerBundle:tariffArea:update }
 
 tariffArea_api_delete:

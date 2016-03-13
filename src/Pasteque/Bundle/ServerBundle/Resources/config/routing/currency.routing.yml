@@ -16,7 +16,7 @@ currency_api_create:
     defaults: { _controller: PastequeServerBundle:currency:create }
 
 currency_api_update:
-    path: /currency/update
+    path: /currency/update/{id}
     defaults: { _controller: PastequeServerBundle:currency:update }
 
 currency_api_delete:

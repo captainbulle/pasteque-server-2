@@ -19,7 +19,7 @@ image_api_create:
     defaults: { _controller: PastequeServerBundle:image:create }
 
 image_api_update:
-    path: /image/update
+    path: /image/update/{id}
     defaults: { _controller: PastequeServerBundle:image:update }
 
 image_api_delete:

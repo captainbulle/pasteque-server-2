@@ -19,7 +19,7 @@ customer_api_create:
     defaults: { _controller: PastequeServerBundle:customer:create }
 
 customer_api_update:
-    path: /customer/update
+    path: /customer/update/{id}
     defaults: { _controller: PastequeServerBundle:customer:update }
 
 customer_api_delete:

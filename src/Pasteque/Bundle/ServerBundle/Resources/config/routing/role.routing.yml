@@ -11,7 +11,7 @@ role_api_create:
     defaults: { _controller: PastequeServerBundle:role:create }
 
 role_api_update:
-    path: /role/update
+    path: /role/update/{id}
     defaults: { _controller: PastequeServerBundle:role:update }
 
 role_api_delete:
