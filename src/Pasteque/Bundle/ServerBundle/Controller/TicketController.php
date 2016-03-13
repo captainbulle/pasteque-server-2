@@ -155,4 +155,26 @@ class TicketController extends AbstractController
       'form' => $form->createView(),
     ));
     }
+
+  public function getOpenAction()
+  {
+    $roles = $this->getDoctrine()->getManager()
+      ->createQuery(
+          'SELECT T.ID, T.TICKETID, T.TICKETTYPE, T.PERSON, T.CUSTOMER,
+           T.STATUS, T.CUSTCOUNT, T.TARIFFAREA, T.DISCOUNTRATE,
+           T.DISCOUNTPROFILE_ID, RECEIPTS.DATENEW,
+           CLOSEDCASH.MONEY
+           FROM TICKETS AS T, RECEIPTS, CLOSEDCASH
+           WHERE CLOSEDCASH.DATEEND IS NULL
+           AND CLOSEDCASH.MONEY = RECEIPTS.MONEY
+           AND RECEIPTS.ID = T.ID
+           ORDER BY T.TICKETID DESC'
+      )
+      ->getResult();
+
+    $response = new Response(json_encode($roles));
+    $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
+  }
 }

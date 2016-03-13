@@ -139,13 +139,23 @@ class CustomerController extends AbstractController
 
     public function getTopAction($limit)
     {
-        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Customer');
-        $customers = $repo->findAll();
+      $customers = $this->getDoctrine()->getManager()
+        ->createQuery(
+          'SELECT C.ID, COUNT(TICKETS.CUSTOMER) AS Top10
+           FROM CUSTOMERS AS C
+           LEFT JOIN TICKETS ON TICKETS.CUSTOMER = C.ID
+           WHERE C.VISIBLE = TRUE
+           AND (EXPIREDATE IS NULL OR EXPIREDATE > NOW())
+           GROUP BY C.ID
+           ORDER BY Top10 DESC, C.NAME ASC
+           LIMIT '+ $limit
+        )
+        ->getResult();
 
-        $response = new Response(json_encode($customers));
-        $response->headers->set('Content-Type', 'application/json');
+      $response = new Response(json_encode($customers));
+      $response->headers->set('Content-Type', 'application/json');
 
-        return $response;
+      return $response;
     }
 
     public function saveAction($id)

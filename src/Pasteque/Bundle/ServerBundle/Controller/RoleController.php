@@ -20,23 +20,24 @@
 
 namespace Pasteque\Bundle\ServerBundle\Controller;
 
+use Pasteque\Bundle\ServerBundle\Entity\Role;
 use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Pasteque\Bundle\ServerBundle\Form\RoleType;
 
 class RoleController extends AbstractController
 {
     public function createAction(Request $request)
     {
-        $form = $this->createFormBuilder()
-      // ...
-      ->getForm();
+      $post = new Role('', '');
+      $form = $this->createForm(RoleType::class, $post);
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             // persist entity
-      $role = $form->getData();
+            $role = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($role);
             $em->flush();

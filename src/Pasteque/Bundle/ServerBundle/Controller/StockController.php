@@ -94,4 +94,21 @@ class StockController extends AbstractController
       'form' => $form->createView(),
     ));
   }
+
+  public function getAllAction($locationId)
+  {
+    $stocks = $this->getDoctrine()->getManager()
+      ->createQuery(
+        'SELECT STOCKLEVEL.ID, productId, security, maximum
+         FROM LOCATION
+         LEFT JOIN STOCKLEVEL ON STOCKLEVEL.LOCATION = LOCATIONS.ID
+         WHERE LOCATIONS.ID = '+$locationId + ' ;'
+      )
+      ->getResult();
+
+    $response = new Response(json_encode($stocks));
+    $response->headers->set('Content-Type', 'application/json');
+
+    return $response;
+  }
 }
