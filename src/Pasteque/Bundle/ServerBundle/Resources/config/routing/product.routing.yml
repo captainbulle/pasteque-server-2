@@ -5,7 +5,6 @@ product_api_get:
     requirements:
       type:  product|ref|code
 
-      
 product_api_getAll:
     path: /product/getAll/{all}
     defaults: { _controller: PastequeServerBundle:Product:getAll }
@@ -14,3 +13,14 @@ product_api_getCategory:
     path: /product/getCategory/{categoryId}
     defaults: { _controller: PastequeServerBundle:Product:getCategory }
 
+product_api_create:
+    path: /product/create
+    defaults: { _controller: PastequeServerBundle:product:create }
+
+product_api_update:
+    path: /product/update/{id}
+    defaults: { _controller: PastequeServerBundle:product:update }
+
+product_api_delete:
+    path: /product/delete/{id}
+    defaults: { _controller: PastequeServerBundle:product:delete }

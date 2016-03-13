@@ -10,3 +10,15 @@ currency_api_getMain:
 currency_api_getAll:
     path: /currencies/getAll/
     defaults: { _controller: PastequeServerBundle:Currency:getAll }
+
+currency_api_create:
+    path: /currency/create
+    defaults: { _controller: PastequeServerBundle:currency:create }
+
+currency_api_update:
+    path: /currency/update/{id}
+    defaults: { _controller: PastequeServerBundle:currency:update }
+
+currency_api_delete:
+    path: /currency/delete/{id}
+    defaults: { _controller: PastequeServerBundle:currency:delete }

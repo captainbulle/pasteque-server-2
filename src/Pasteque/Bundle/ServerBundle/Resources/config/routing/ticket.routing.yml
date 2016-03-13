@@ -26,3 +26,15 @@ ticket_api_getOpen:
 ticket_api_search:
     path: /ticket/search/{ticketId}/{ticketType}/{cashId}/{dateStart}/{dateStop}/{customerId}/{userId}/{limit}
     defaults: { _controller: PastequeServerBundle:Ticket:search, ticketId: -1, ticketType: -1, cashId: -1, dateStart: -1, dateStop: -1, customerId: -1, userId: -1, limit: -1 }
+
+ticket_api_create:
+    path: /ticket/create
+    defaults: { _controller: PastequeServerBundle:ticket:create }
+
+ticket_api_update:
+    path: /ticket/update/{id}
+    defaults: { _controller: PastequeServerBundle:ticket:update }
+
+ticket_api_delete:
+    path: /ticket/delete/{id}
+    defaults: { _controller: PastequeServerBundle:ticket:delete }

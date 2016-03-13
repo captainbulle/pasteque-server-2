@@ -29,3 +29,15 @@ cashRegister_api_get:
 cashRegister_api_getAll:
     path: /cashRegister/getAll/
     defaults: { _controller: PastequeServerBundle:Cash/CashRegister:getAll }
+
+cash_api_create:
+    path: /cash/create
+    defaults: { _controller: PastequeServerBundle:cash:create }
+
+cash_api_update:
+    path: /cash/update/{id}
+    defaults: { _controller: PastequeServerBundle:cash:update }
+
+cash_api_delete:
+    path: /cash/delete/{id}
+    defaults: { _controller: PastequeServerBundle:cash:delete }

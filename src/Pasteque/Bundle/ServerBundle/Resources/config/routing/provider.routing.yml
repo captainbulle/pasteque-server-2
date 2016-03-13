@@ -6,3 +6,15 @@ provider_api_get:
 provider_api_getAll:
     path: /provider/getAll
     defaults: { _controller: PastequeServerBundle:Provider:getAll }
+
+provider_api_create:
+    path: /provider/create
+    defaults: { _controller: PastequeServerBundle:provider:create }
+
+provider_api_update:
+    path: /provider/update/{id}
+    defaults: { _controller: PastequeServerBundle:provider:update }
+
+provider_api_delete:
+    path: /provider/delete/{id}
+    defaults: { _controller: PastequeServerBundle:provider:delete }

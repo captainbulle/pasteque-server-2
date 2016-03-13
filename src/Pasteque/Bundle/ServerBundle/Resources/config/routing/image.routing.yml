@@ -13,3 +13,15 @@ image_api_getPaymentMode:
 image_api_getResource:
     path: /image/getResource/{label}
     defaults: { _controller: PastequeServerBundle:Image:getResource }
+
+image_api_create:
+    path: /image/create
+    defaults: { _controller: PastequeServerBundle:image:create }
+
+image_api_update:
+    path: /image/update/{id}
+    defaults: { _controller: PastequeServerBundle:image:update }
+
+image_api_delete:
+    path: /image/delete/{id}
+    defaults: { _controller: PastequeServerBundle:image:delete }

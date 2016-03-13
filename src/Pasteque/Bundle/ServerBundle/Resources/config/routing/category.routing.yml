@@ -9,3 +9,15 @@ category_api_getChildren:
 category_api_getAll:
     path: /category/getAll/
     defaults: { _controller: PastequeServerBundle:Category:getAll }
+
+category_api_create:
+    path: /category/create
+    defaults: { _controller: PastequeServerBundle:category:create }
+
+category_api_update:
+    path: /category/update/{id}
+    defaults: { _controller: PastequeServerBundle:category:update }
+
+category_api_delete:
+    path: /category/delete/{id}
+    defaults: { _controller: PastequeServerBundle:category:delete }

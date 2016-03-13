@@ -1,4 +1,3 @@
-
 discount_api_get:
     path: /discount/get/{id}
     defaults: { _controller: PastequeServerBundle:Discount:get }
@@ -10,3 +9,15 @@ discount_api_getAll:
 discountProfile_api_getAll:
     path: /discountProfile/getAll/
     defaults: { _controller: PastequeServerBundle:DiscountProfile:getAll }
+
+discount_api_create:
+    path: /discount/create
+    defaults: { _controller: PastequeServerBundle:discount:create }
+
+discount_api_update:
+    path: /discount/update/{id}
+    defaults: { _controller: PastequeServerBundle:discount:update }
+
+discount_api_delete:
+    path: /discount/delete/{id}
+    defaults: { _controller: PastequeServerBundle:discount:delete }
