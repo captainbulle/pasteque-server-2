@@ -35,9 +35,6 @@ Pasteque\Bundle\ServerBundle\Entity\Tax\Tax:
             unique: true
         startDate:
             type: datetime
-        parentId:
-            type: integer
-            nullable: true
         rate:
             type: float
         rateCascade:

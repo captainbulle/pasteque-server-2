@@ -18,7 +18,7 @@ Pasteque\Bundle\ServerBundle\Entity\Attribute\Attribute:
         displayOrder:
             type: integer
         active:
-            type: tinyint
+            type: boolean
         addedDate:
             type: datetime
         addedBy:

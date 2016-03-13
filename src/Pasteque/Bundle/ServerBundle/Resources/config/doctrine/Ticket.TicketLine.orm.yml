@@ -36,9 +36,6 @@ Pasteque\Bundle\ServerBundle\Entity\Ticket\TicketLine:
             type: float
         price:
             type: float
-        taxId:
-            type: string
-            length: 255
         discountRate:
             type: float
         attributes:

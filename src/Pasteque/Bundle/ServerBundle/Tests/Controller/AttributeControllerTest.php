@@ -4,7 +4,7 @@ namespace Pasteque\Bundle\ServerBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DefaultControllerTest extends WebTestCase
+class AttributeControllerTest extends WebTestCase
 {
     public function testIndex()
     {

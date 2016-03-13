@@ -26,9 +26,6 @@ Pasteque\Bundle\ServerBundle\Entity\Category:
             type: string
             length: 255
             nullable: true
-        parentId:
-            type: integer
-            nullable: true
         image:
             type: blob
             nullable: true
