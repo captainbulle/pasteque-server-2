@@ -28,7 +28,8 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "nelmio/api-doc-bundle": "^2.11",
-        "guzzlehttp/guzzle": "~6.0",
+        "guzzlehttp/guzzle": "4.2.*@dev",
+        "guzzlehttp/guzzle-services": "0.3.*@dev",
         "friendsofsymfony/user-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "^2.3"
     },
