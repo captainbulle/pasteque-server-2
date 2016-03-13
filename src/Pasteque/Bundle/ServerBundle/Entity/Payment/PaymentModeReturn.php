@@ -48,19 +48,19 @@ class PaymentModeReturn
     /**
      * @var float
      */
-    private $min;
+    private $minimum;
 
     /**
      * PaymentModeReturn constructor.
      *
      * @param int   $paymentModeId
-     * @param float $min
+     * @param float $minimum
      * @param int   $paymentReturnModeId
      */
-    public function __construct($paymentModeId, $min, $paymentReturnModeId = null)
+    public function __construct($paymentModeId, $minimum, $paymentReturnModeId = null)
     {
         $this->paymentModeId = $paymentModeId;
-        $this->min = $min;
+        $this->minimum = $minimum;
         $this->paymentReturnModeId = $paymentReturnModeId;
     }
 
@@ -123,26 +123,26 @@ class PaymentModeReturn
     }
 
     /**
-     * Set min.
+     * Set minimum.
      *
-     * @param float $min
+     * @param float $minimum
      *
      * @return PaymentModeReturn
      */
-    public function setMin($min)
+    public function setMinimum($minimum)
     {
-        $this->min = $min;
+        $this->minimum = $minimum;
 
         return $this;
     }
 
     /**
-     * Get min.
+     * Get minimum.
      *
      * @return float
      */
-    public function getMin()
+    public function getMinimum()
     {
-        return $this->min;
+        return $this->minimum;
     }
 }

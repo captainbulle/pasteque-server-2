@@ -1,5 +1,7 @@
 # Routes template : "name_api_methode:"
+
 # URL template "path:/api/methode/{argument}
+
 attribute_api_get:
     path: /attribute/get/{id}
     defaults: { _controller: PastequeServerBundle:Attribute:get }
