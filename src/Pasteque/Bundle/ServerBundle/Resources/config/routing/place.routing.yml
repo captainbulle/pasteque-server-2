@@ -1,8 +1,0 @@
-
-place_api_get:
-    path: /place/get/{id}
-    defaults: { _controller: PastequeServerBundle:Place:get }
-
-place_api_getAll:
-    path: /place/getAll/
-    defaults: { _controller: PastequeServerBundle:Place:getAll }

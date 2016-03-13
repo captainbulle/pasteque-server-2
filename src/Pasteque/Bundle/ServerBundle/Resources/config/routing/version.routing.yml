@@ -1,4 +1,3 @@
-
 # TODO api version à verifier
 version_api_anyAction:
     path: /version/anyAction/

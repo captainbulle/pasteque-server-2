@@ -29,7 +29,7 @@ class AttributeController extends AbstractController
     public function createAction(Request $request)
     {
         $form = $this->createFormBuilder()
-      // ...
+      // TODO have to be defined with a form class
       ->getForm();
 
         $form->handleRequest($request);

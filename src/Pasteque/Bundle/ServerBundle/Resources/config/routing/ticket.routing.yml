@@ -17,15 +17,15 @@ ticket_api_share:
 # TODO Methode save à verifier car les arguments sont des objets defins eux meme par des arguments
 ticket_api_save:
     path: /ticket/save/{cashId}/{ticket}/{tickets}
-    defaults: { _controller: PastequeServerBundle:Ticket:save }
+    defaults: { _controller: PastequeServerBundle:Ticket:create }
 
 ticket_api_getAll:
     path: /ticket/getAll/
-    defaults: { _controller: PastequeServerBundle:Ticket:getAll }
+    defaults: { _controller: PastequeServerBundle:Ticket:getAllShared }
 
 tickets_api_get:
     path: /tickets/get/{id}
-    defaults: { _controller: PastequeServerBundle:Ticket:get }
+    defaults: { _controller: PastequeServerBundle:Ticket:getShared }
 
 ticket_api_getOpen:
     path: /ticket/getOpen/

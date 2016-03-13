@@ -10,7 +10,7 @@ class AttributeControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/api/attribute/getAll');
 
         $this->assertContains('Hello World', $client->getResponse()->getContent());
     }

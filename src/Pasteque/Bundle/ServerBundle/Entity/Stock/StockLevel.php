@@ -58,7 +58,7 @@ class StockLevel
     /**
      * @var float
      */
-    private $max;
+    private $maximum;
 
     /**
      * @var float
@@ -74,11 +74,11 @@ class StockLevel
      * @param int $locationId
      * @param int $attributeSetInstanceId
      * @param float  $security
-     * @param float  $max
+     * @param float  $maximum
      * @param float  $quantity
      * @param string $displayId
      */
-    public function __construct($productId, $locationId, $attributeSetInstanceId, $security, $max,
+    public function __construct($productId, $locationId, $attributeSetInstanceId, $security, $maximum,
                                 $quantity = null, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
@@ -86,7 +86,7 @@ class StockLevel
         $this->locationId = $locationId;
         $this->attributeSetInstanceId = $attributeSetInstanceId;
         $this->security = $security;
-        $this->max = $max;
+        $this->maximum = $maximum;
         $this->quantity = $quantity;
     }
 
@@ -221,27 +221,27 @@ class StockLevel
     }
 
     /**
-     * Set max.
+     * Set maximum.
      *
-     * @param float $max
+     * @param float $maximum
      *
      * @return StockLevel
      */
-    public function setMax($max)
+    public function setMaximum($maximum)
     {
-        $this->max = $max;
+        $this->maximum = $maximum;
 
         return $this;
     }
 
     /**
-     * Get max.
+     * Get maximum.
      *
      * @return float
      */
-    public function getMax()
+    public function getMaximum()
     {
-        return $this->max;
+        return $this->maximum;
     }
 
     /**
