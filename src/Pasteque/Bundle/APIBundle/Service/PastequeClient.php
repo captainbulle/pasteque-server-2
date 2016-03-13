@@ -11,9 +11,6 @@ class PastequeClient extends GuzzleClient
 {
   public function __construct($baseUrl)
   {
-    $resolver = new OptionsResolver();
-    $this->configureOptionResolver($resolver);
-
     // initialisation du client standard Guzzle
     $client = new Client([
       "defaults" => [
@@ -88,9 +85,237 @@ class PastequeClient extends GuzzleClient
             ]
           ],
           "additionalParameters" => [
-            "location" => "json"
+            "location" => "json",
           ]
-        ]
+        ],
+
+          // #############
+          //     ROLE
+          // #############
+
+          "getRole" => [
+              "httpMethod" => "GET",
+              "uri" => "role/get/{id}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "id" => [
+                      "required" => true,
+                      "location" => "uri"
+                  ]
+              ]
+          ],
+
+          "getAllRole" => [
+              "httpMethod" => "GET",
+              "uri" => "role/getAll.json",
+              "responseModel" => "jsonResponse"
+          ],
+
+          // ##############
+          //     STOCK
+          // ##############
+
+          "getAllStock" => [
+              "httpMethod" => "GET",
+              "uri" => "stock/getAll/{locationId}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "locationId" => [
+                      "required" => true,
+                      "location" => "uri"
+                  ]
+              ]
+          ],
+
+          // #################
+          //     TARIFFAREA
+          // #################
+
+          "getTariffArea" => [
+              "httpMethod" => "GET",
+              "uri" => "tariffArea/get/{id}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "id" => [
+                      "required" => true,
+                      "location" => "uri"
+                  ]
+              ]
+          ],
+
+          "getAllTariffArea" => [
+              "httpMethod" => "GET",
+              "uri" => "tariffArea/getAll.json",
+              "responseModel" => "jsonResponse"
+          ],
+
+          // #############
+          //     TAX
+          // #############
+
+          "getTax" => [
+              "httpMethod" => "GET",
+              "uri" => "tax/get/{id}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "id" => [
+                      "required" => true,
+                      "location" => "uri"
+                  ]
+              ]
+          ],
+
+          "getAllTax" => [
+              "httpMethod" => "GET",
+              "uri" => "tax/getAll.json",
+              "responseModel" => "jsonResponse"
+          ],
+
+          // #############
+          //     TICKET
+          // #############
+
+          "getSharedTicket" => [
+              "httpMethod" => "GET",
+              "uri" => "ticket/getShared/{id}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "id" => [
+                      "required" => true,
+                      "location" => "uri"
+                  ]
+              ]
+          ],
+
+          "getAllSharedTicket" => [
+              "httpMethod" => "GET",
+              "uri" => "ticket/getAllShared.json",
+              "responseModel" => "jsonResponse"
+          ],
+
+          "delSharedTicket" => [
+              "httpMethod" => "DELETE",
+              "uri" => "ticket/delShared/{id}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "id" => [
+                      "required" => true,
+                      "location" => "uri"
+                  ]
+              ]
+          ],
+
+          "shareTicket" => [
+              "httpMethod" => "POST",
+              "uri" => "ticket/share/{ticket}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "ticket" => [
+                      "required" => true
+                  ]
+              ]
+          ],
+
+          "saveTicket" => [
+              "httpMethod" => "POST",
+              "uri" => "ticket/save/{cashId}/{ticket}/{tickets}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "cashId" => [
+                      "required" => true
+                  ],
+                  "ticket" => [
+                      "required" => true
+                  ],
+                  "tickets" => [
+                      "required" => true
+                  ]
+              ]
+          ],
+
+          "getOpenTicket" => [
+              "httpMethod" => "GET",
+              "uri" => "ticket/getOpen.json",
+              "responseModel" => "jsonResponse",
+              "additionalParameters" => [
+                  "location" => "query"
+              ]
+          ],
+
+          "searchTicket" => [
+              "httpMethod" => "GET",
+              "uri" => "ticket/search/{ticketId}/{ticketType}/{cashId}/{dateStart}/{dateStop}/{customerId}/{userId}/{limit}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "ticketId" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ],
+                  "ticketType" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ],
+                  "cashId" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ],
+                  "dateStart" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ],
+                  "dateStop" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ],
+                  "customerId" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ],
+                  "userId" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ],
+                  "limit" => [
+                      "required" => false,
+                      "location" => "uri"
+                  ]
+              ]
+          ],
+
+          // #############
+          //     USER
+          // #############
+
+          "getUser" => [
+              "httpMethod" => "GET",
+              "uri" => "user/get/{id}.json",
+              "responseModel" => "jsonResponse",
+              "parameters" => [
+                  "id" => [
+                      "required" => true,
+                      "location" => "uri",
+                  ]
+              ]
+          ],
+
+          "getAllUser" => [
+              "httpMethod" => "GET",
+              "uri" => "user/getAll.json",
+              "responseModel" => "jsonResponse"
+          ],
+
+          // #############
+          //    VERSION
+          // #############
+
+          "anyActionVersion" => [
+              "httpMethod" => "GET",
+              "uri" => "version/anyAction.json",
+              "responseModel" => "jsonResponse",
+              "additionalParameters" => [
+                  "location" => "query"
+              ]
+          ]
       ],
       // les models permettent de définir le traitement appliqué aux réponses de l'API
       // on spécifie ici que l'on veut un objet php à partir du json contenu dans la réponse
@@ -104,22 +329,6 @@ class PastequeClient extends GuzzleClient
       ]
     ]);
 
-    parent::__construct($client, $description, $config);
-  }
-
-  protected function configureOptionResolver(OptionsResolverInterface $resolver)
-  {
-    $resolver
-      ->setDefaults([
-        'base_url' => 'https://www.facturation.pro/firms/{firm_id}/',
-      ])
-      ->setRequired([
-        'api_login',
-        'api_password',
-        'account',
-        'firm_id',
-        'app_name',
-      ])
-    ;
+    parent::__construct($client, $description);
   }
 }

@@ -122,9 +122,7 @@ class TicketController extends AbstractController
         $sharedTicket = $em->getRepository('PastequeServerBundle:SharedTicket')->find($id);
 
         if (!$sharedTicket) {
-            throw $this->createNotFoundException(
-        'No product found for id '.$id
-      );
+            throw $this->createNotFoundException('No product found for id '.$id);
         }
 
         $em->remove($sharedTicket);
@@ -143,7 +141,7 @@ class TicketController extends AbstractController
 
         if ($form->isValid()) {
             // persist entity
-      $sharedTicket = $form->getData();
+            $sharedTicket = $form->getData();
             $em = $this->getDoctrine()->getManager();
             $em->persist($sharedTicket);
             $em->flush();
@@ -152,8 +150,8 @@ class TicketController extends AbstractController
         }
 
         return $this->render('AppBundle:Default:new.html.twig', array(
-      'form' => $form->createView(),
-    ));
+          'form' => $form->createView(),
+        ));
     }
 
   public function getOpenAction()
