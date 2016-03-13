@@ -1,62 +1,62 @@
 attribute:
-    resource: '@PastequeServerBundle/Resources/config/attribute.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/attribute.routing.yml'
 
 cash:
-    resource: '@PastequeServerBundle/Resources/config/casg.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/casg.routing.yml'
 
 category:
-    resource: '@PastequeServerBundle/Resources/config/category.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/category.routing.yml'
 
 currency:
-    resource: '@PastequeServerBundle/Resources/config/currency.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/currency.routing.yml'
 
 customer:
-    resource: '@PastequeServerBundle/Resources/config/customer.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/customer.routing.yml'
 
 discount:
-    resource: '@PastequeServerBundle/Resources/config/discount.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/discount.routing.yml'
 
 group:
-    resource: '@PastequeServerBundle/Resources/config/group.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/group.routing.yml'
 
 image:
-    resource: '@PastequeServerBundle/Resources/config/image.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/image.routing.yml'
 
 location:
-    resource: '@PastequeServerBundle/Resources/config/location.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/location.routing.yml'
 
 payment:
-    resource: '@PastequeServerBundle/Resources/config/payment.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/payment.routing.yml'
 
 place:
-    resource: '@PastequeServerBundle/Resources/config/place.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/place.routing.yml'
 
 product:
-    resource: '@PastequeServerBundle/Resources/config/product.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/product.routing.yml'
 
 provider:
-    resource: '@PastequeServerBundle/Resources/config/provider.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/provider.routing.yml'
 
 resource:
-    resource: '@PastequeServerBundle/Resources/config/resource.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/resource.routing.yml'
 
 role:
-    resource: '@PastequeServerBundle/Resources/config/role.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/role.routing.yml'
 
 stock:
-    resource: '@PastequeServerBundle/Resources/config/stock.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/stock.routing.yml'
 
 tariffArea:
-    resource: '@PastequeServerBundle/Resources/config/tariffArea.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/tariffArea.routing.yml'
 
 tax:
-    resource: '@PastequeServerBundle/Resources/config/tax.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/tax.routing.yml'
 
 ticket:
-    resource: '@PastequeServerBundle/Resources/config/ticket.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/ticket.routing.yml'
 
 user:
-    resource: '@PastequeServerBundle/Resources/config/user.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/user.routing.yml'
 
 version:
-    resource: '@PastequeServerBundle/Resources/config/version.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/version.routing.yml'
