@@ -2,7 +2,13 @@ attribute:
     resource: '@PastequeServerBundle/Resources/config/routing/attribute.routing.yml'
 
 cash:
-    resource: '@PastequeServerBundle/Resources/config/routing/casg.routing.yml'
+    resource: '@PastequeServerBundle/Resources/config/routing/cash/cash.routing.yml'
+
+cashRegister:
+    resource: '@PastequeServerBundle/Resources/config/routing/cash/cashRegister.routing.yml'
+
+cashMovement:
+    resource: '@PastequeServerBundle/Resources/config/routing/cash/cashMovement.routing.yml'
 
 category:
     resource: '@PastequeServerBundle/Resources/config/routing/category.routing.yml'

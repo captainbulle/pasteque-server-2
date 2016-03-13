@@ -16,28 +16,14 @@ cash_api_zticket:
     path: /cash/zticket/{id}
     defaults: { _controller: PastequeServerBundle:Cash/Cash:zticket }
 
-cashMovement_api_move:
-    path: /cashMovement/move/{id}/{date}/{payment}/{note}
-    defaults: { _controller: PastequeServerBundle:Cash/CashMovement:move }
-
-cashRegister_api_get:
-    path: /cashRegister/get/{type}/{id}
-    defaults: { _controller: PastequeServerBundle:Cash/CashRegister:get }
-    requirements:
-      type:  type|id
-
-cashRegister_api_getAll:
-    path: /cashRegister/getAll/
-    defaults: { _controller: PastequeServerBundle:Cash/CashRegister:getAll }
-
 cash_api_create:
     path: /cash/create
-    defaults: { _controller: PastequeServerBundle:cash:create }
+    defaults: { _controller: PastequeServerBundle:Cash/Cash:create }
 
 cash_api_update:
     path: /cash/update/{id}
-    defaults: { _controller: PastequeServerBundle:cash:update }
+    defaults: { _controller: PastequeServerBundle:Cash/Cash:update }
 
 cash_api_delete:
     path: /cash/delete/{id}
-    defaults: { _controller: PastequeServerBundle:cash:delete }
+    defaults: { _controller: PastequeServerBundle:Cash/Cash:delete }

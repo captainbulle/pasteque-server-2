@@ -1,0 +1,15 @@
+cashMovement_api_move:
+    path: /cashMovement/move/{id}/{date}/{payment}/{note}
+    defaults: { _controller: PastequeServerBundle:Cash/CashMovement:move }
+
+cash_api_create:
+    path: /cash/create
+    defaults: { _controller: PastequeServerBundle:Cash/CashMovement:create }
+
+cash_api_update:
+    path: /cash/update/{id}
+    defaults: { _controller: PastequeServerBundle:Cash/CashMovement:update }
+
+cash_api_delete:
+    path: /cash/delete/{id}
+    defaults: { _controller: PastequeServerBundle:Cash/CashMovement:delete }
