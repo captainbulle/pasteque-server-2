@@ -1,3 +1,15 @@
 stock_api_getAll:
     path: /stock/getAll/{locationId}
     defaults: { _controller: PastequeServerBundle:Stock:getAll }
+
+stock_api_create:
+    path: /stock/create
+    defaults: { _controller: PastequeServerBundle:stock:create }
+
+stock_api_update:
+    path: /stock/update
+    defaults: { _controller: PastequeServerBundle:stock:update }
+
+stock_api_delete:
+    path: /stock/delete/{id}
+    defaults: { _controller: PastequeServerBundle:stock:delete }

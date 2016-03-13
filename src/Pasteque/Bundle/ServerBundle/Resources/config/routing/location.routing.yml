@@ -1,4 +1,3 @@
-
 location_api_get:
     path: /location/get/{id}
     defaults: { _controller: PastequeServerBundle:Location:get }
@@ -6,3 +5,15 @@ location_api_get:
 location_api_getAll:
     path: /location/getAll/
     defaults: { _controller: PastequeServerBundle:Location:getAll }
+
+location_api_create:
+    path: /location/create
+    defaults: { _controller: PastequeServerBundle:location:create }
+
+location_api_update:
+    path: /location/update
+    defaults: { _controller: PastequeServerBundle:location:update }
+
+location_api_delete:
+    path: /location/delete/{id}
+    defaults: { _controller: PastequeServerBundle:location:delete }

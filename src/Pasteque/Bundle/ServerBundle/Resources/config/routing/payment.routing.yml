@@ -2,3 +2,15 @@
 paymentMode_api_getAll:
     path: /paymentMode/getAll/
     defaults: { _controller: PastequeServerBundle:PaymentMode:getAll }
+
+paymentMode_api_create:
+    path: /paymentMode/create
+    defaults: { _controller: PastequeServerBundle:paymentMode:create }
+
+paymentMode_api_update:
+    path: /paymentMode/update
+    defaults: { _controller: PastequeServerBundle:paymentMode:update }
+
+paymentMode_api_delete:
+    path: /paymentMode/delete/{id}
+    defaults: { _controller: PastequeServerBundle:paymentMode:delete }

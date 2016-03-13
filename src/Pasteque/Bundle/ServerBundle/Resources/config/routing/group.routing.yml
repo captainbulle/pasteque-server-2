@@ -1,3 +1,15 @@
 group_api_getAll:
     path: /group/getAll/
     defaults: { _controller: PastequeServerBundle:Group:getAll }
+
+group_api_create:
+    path: /group/create
+    defaults: { _controller: PastequeServerBundle:group:create }
+
+group_api_update:
+    path: /group/update
+    defaults: { _controller: PastequeServerBundle:group:update }
+
+group_api_delete:
+    path: /group/delete/{id}
+    defaults: { _controller: PastequeServerBundle:group:delete }

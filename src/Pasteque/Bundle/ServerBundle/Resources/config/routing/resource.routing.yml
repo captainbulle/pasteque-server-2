@@ -1,3 +1,15 @@
 resource_api_get:
     path: /resource/get/{label}
     defaults: { _controller: PastequeServerBundle:Resource:get }
+
+resource_api_create:
+    path: /resource/create
+    defaults: { _controller: PastequeServerBundle:resource:create }
+
+resource_api_update:
+    path: /resource/update
+    defaults: { _controller: PastequeServerBundle:resource:update }
+
+resource_api_delete:
+    path: /resource/delete/{id}
+    defaults: { _controller: PastequeServerBundle:resource:delete }

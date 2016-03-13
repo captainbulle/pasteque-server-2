@@ -5,3 +5,15 @@ role_api_get:
 role_api_getAll:
     path: /role/getAll/
     defaults: { _controller: PastequeServerBundle:Role:getAll }
+
+role_api_create:
+    path: /role/create
+    defaults: { _controller: PastequeServerBundle:role:create }
+
+role_api_update:
+    path: /role/update
+    defaults: { _controller: PastequeServerBundle:role:update }
+
+role_api_delete:
+    path: /role/delete/{id}
+    defaults: { _controller: PastequeServerBundle:role:delete }

@@ -5,3 +5,15 @@ tax_api_get:
 tax_api_getAll:
     path: /tax/getAll/
     defaults: { _controller: PastequeServerBundle:Tax:getAll }
+
+tax_api_create:
+    path: /tax/create
+    defaults: { _controller: PastequeServerBundle:tax:create }
+
+tax_api_update:
+    path: /tax/update
+    defaults: { _controller: PastequeServerBundle:tax:update }
+
+tax_api_delete:
+    path: /tax/delete/{id}
+    defaults: { _controller: PastequeServerBundle:tax:delete }

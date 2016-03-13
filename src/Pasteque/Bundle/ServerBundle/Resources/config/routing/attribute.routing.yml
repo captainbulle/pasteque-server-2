@@ -5,3 +5,15 @@ attribute_api_get:
 attribute_api_getAll:
     path: /attribute/getAll
     defaults: { _controller: PastequeServerBundle:Attribute:getAll }
+
+attribute_api_create:
+    path: /attribute/create
+    defaults: { _controller: PastequeServerBundle:Attribute:create }
+
+attribute_api_update:
+    path: /attribute/update
+    defaults: { _controller: PastequeServerBundle:Attribute:update }
+
+attribute_api_delete:
+    path: /attribute/delete/{id}
+    defaults: { _controller: PastequeServerBundle:Attribute:delete }

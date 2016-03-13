@@ -1,3 +1,15 @@
 tariffArea_api_getAll:
     path: /tariffArea/getAll/
     defaults: { _controller: PastequeServerBundle:TariffArea:getAll }
+
+tariffArea_api_create:
+    path: /tariffArea/create
+    defaults: { _controller: PastequeServerBundle:tariffArea:create }
+
+tariffArea_api_update:
+    path: /tariffArea/update
+    defaults: { _controller: PastequeServerBundle:tariffArea:update }
+
+tariffArea_api_delete:
+    path: /tariffArea/delete/{id}
+    defaults: { _controller: PastequeServerBundle:tariffArea:delete }

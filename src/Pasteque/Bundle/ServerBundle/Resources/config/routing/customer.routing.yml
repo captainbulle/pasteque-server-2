@@ -14,6 +14,18 @@ customer_api_addPrepaid:
     path: /customer/addPrepaid/{id}/{amount}
     defaults: { _controller: PastequeServerBundle:Customer:addPrepaid }
 
+customer_api_create:
+    path: /customer/create
+    defaults: { _controller: PastequeServerBundle:customer:create }
+
+customer_api_update:
+    path: /customer/update
+    defaults: { _controller: PastequeServerBundle:customer:update }
+
+customer_api_delete:
+    path: /customer/delete/{id}
+    defaults: { _controller: PastequeServerBundle:customer:delete }
+
 # TODO a voir dans l'api de base
 #customers_api_save:
 #    path: /customers/save/{}
