@@ -53,8 +53,8 @@ class AttributeInstance
     /**
      * AttributeInstance constructor.
      *
-     * @param int $attributeSetInstanceId
-     * @param int $attributeId
+     * @param int    $attributeSetInstanceId
+     * @param int    $attributeId
      * @param string $value
      * @param string $displayId
      */

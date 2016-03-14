@@ -58,8 +58,8 @@ class TaxLine
     /**
      * TaxLine constructor.
      *
-     * @param int $receiptId
-     * @param int $taxId
+     * @param int    $receiptId
+     * @param int    $taxId
      * @param float  $base
      * @param string $displayId
      */

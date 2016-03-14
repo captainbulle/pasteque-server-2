@@ -85,9 +85,9 @@ class StockMove
      *
      * @param \DateTime $date
      * @param int       $reason
-     * @param int    $locationId
-     * @param int    $productId
-     * @param int    $attributeSetInstanceId
+     * @param int       $locationId
+     * @param int       $productId
+     * @param int       $attributeSetInstanceId
      * @param float     $quantity
      * @param float     $price
      * @param string    $displayId

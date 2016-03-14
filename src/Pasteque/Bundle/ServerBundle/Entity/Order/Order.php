@@ -67,10 +67,11 @@ class Order
 
     /**
      * Order constructor.
-     * @param int $type
-     * @param int $userId
-     * @param int $customerId
-     * @param int $status
+     *
+     * @param int       $type
+     * @param int       $userId
+     * @param int       $customerId
+     * @param int       $status
      * @param \DateTime $date
      * @param string    $note
      * @param string    $displayId

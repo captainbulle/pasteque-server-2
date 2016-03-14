@@ -141,10 +141,10 @@ class Product
      * @param string $name
      * @param float  $priceBuy
      * @param float  $priceSell
-     * @param int $categoryId
-     * @param int $providerId
-     * @param int $taxCategoryId
-     * @param int $attributeSetId
+     * @param int    $categoryId
+     * @param int    $providerId
+     * @param int    $taxCategoryId
+     * @param int    $attributeSetId
      * @param float  $stockCost
      * @param float  $stockVolume
      * @param string $image
@@ -208,7 +208,7 @@ class Product
         if ($this->priceBuy !== null) {
             return $this->priceSell / $this->priceBuy;
         } else {
-            return null;
+            return;
         }
     }
 

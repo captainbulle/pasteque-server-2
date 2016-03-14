@@ -80,8 +80,8 @@ class Tax
      *
      * @param string    $name
      * @param \DateTime $startDate
-     * @param int    $taxCategoryId
-     * @param int    $taxCustomerCategoryId
+     * @param int       $taxCategoryId
+     * @param int       $taxCustomerCategoryId
      * @param string    $parentId
      * @param float     $rate
      * @param int       $rateOrder

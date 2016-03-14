@@ -53,11 +53,11 @@ class AttributeSetInstance
     /**
      * AttributeSetInstance constructor.
      *
-     * @param int $attributeSetId
+     * @param int    $attributeSetId
      * @param string $description
      * @param string $displayId
      */
-    public function __construct($attributeSetId, $description= null, $displayId = null)
+    public function __construct($attributeSetId, $description = null, $displayId = null)
     {
         $this->displayId = ($displayId === null ? com_create_guid() : $displayId);
         $this->attributeSetId = $attributeSetId;

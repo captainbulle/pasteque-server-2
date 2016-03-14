@@ -81,7 +81,7 @@ class CashMovement
      * @param int       $currencyId
      * @param float     $currencyAmount
      * @param int       $cashId
-     * @param int    $receiptId
+     * @param int       $receiptId
      * @param \DateTime $date
      * @param string    $note
      */

@@ -104,7 +104,7 @@ class Payment
      * @param string $note
      * @param string $backType
      * @param float  $backAmount
-     * @param int $displayId
+     * @param int    $displayId
      */
     public function __construct($pairedPaymentId, $receiptId, $type, $amount, $currencyId, $currencyAmount,
                                 $returnMessage, $pairedWith, $note, $backType = null, $backAmount = null,

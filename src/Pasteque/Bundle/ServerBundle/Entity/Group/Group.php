@@ -115,14 +115,14 @@ class Group
      *
      * @param string $reference
      * @param string $name
-     * @param float $priceSell
-     * @param int $categoryId
-     * @param int $providerId
-     * @param int $taxCategoryId
-     * @param int $displayOrder
-     * @param bool $isScale
-     * @param float $priceBuy
-     * @param int $attributeSetId
+     * @param float  $priceSell
+     * @param int    $categoryId
+     * @param int    $providerId
+     * @param int    $taxCategoryId
+     * @param int    $displayOrder
+     * @param bool   $isScale
+     * @param float  $priceBuy
+     * @param int    $attributeSetId
      * @param string $barcode
      * @param string $image
      * @param bool   $discountEnabled

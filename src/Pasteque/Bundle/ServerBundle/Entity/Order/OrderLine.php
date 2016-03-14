@@ -62,10 +62,11 @@ class OrderLine
 
     /**
      * OrderLine constructor.
-     * @param int $orderId
-     * @param int $line
-     * @param int $productId
-     * @param int $attributeInstanceId
+     *
+     * @param int   $orderId
+     * @param int   $line
+     * @param int   $productId
+     * @param int   $attributeInstanceId
      * @param float $quantity
      */
     public function __construct($orderId, $line, $productId, $attributeInstanceId, $quantity, $attributes = null)

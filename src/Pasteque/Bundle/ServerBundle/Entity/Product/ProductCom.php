@@ -47,8 +47,9 @@ class ProductCom
 
     /**
      * ProductCom constructor.
-     * @param int $productId1
-     * @param int $productId2
+     *
+     * @param int    $productId1
+     * @param int    $productId2
      * @param string $displayId
      */
     public function __construct($productId1, $productId2, $displayId = null)

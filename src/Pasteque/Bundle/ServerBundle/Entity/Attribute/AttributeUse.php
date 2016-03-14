@@ -53,8 +53,8 @@ class AttributeUse
     /**
      * AttributeUse constructor.
      *
-     * @param int $attributeSetId
-     * @param int $attributeId
+     * @param int    $attributeSetId
+     * @param int    $attributeId
      * @param int    $lineNo
      * @param string $displayId
      */

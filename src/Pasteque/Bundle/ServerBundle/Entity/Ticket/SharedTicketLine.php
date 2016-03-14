@@ -78,10 +78,10 @@ class SharedTicketLine
     /**
      * SharedTicketLine constructor.
      *
-     * @param int $sharedTicketId
+     * @param int    $sharedTicketId
      * @param int    $line
-     * @param int $productId
-     * @param int $taxId
+     * @param int    $productId
+     * @param int    $taxId
      * @param float  $quantity
      * @param float  $price
      * @param float  $discountRate

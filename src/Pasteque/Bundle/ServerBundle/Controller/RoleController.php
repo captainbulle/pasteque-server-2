@@ -30,8 +30,8 @@ class RoleController extends AbstractController
 {
     public function createAction(Request $request)
     {
-      $post = new Role('', '');
-      $form = $this->createForm(RoleType::class, $post);
+        $post = new Role('', '');
+        $form = $this->createForm(RoleType::class, $post);
 
         $form->handleRequest($request);
 

@@ -100,9 +100,9 @@ class Ticket
      * @param int       $type
      * @param \DateTime $date
      * @param int       $status
-     * @param int    $receiptId
+     * @param int       $receiptId
      * @param int       $userId
-     * @param int    $customerId
+     * @param int       $customerId
      * @param int       $tariffAreaId
      * @param int       $customerCount
      * @param float     $discountRate

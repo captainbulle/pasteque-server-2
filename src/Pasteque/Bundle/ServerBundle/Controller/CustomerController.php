@@ -123,7 +123,7 @@ class CustomerController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $repo = $em->getDoctrine()->getRepository('PastequeServerBundle:Customer');
 
-    /**
+    /*
      * @var Customer
      */
     $customer = $repo->find($id);
@@ -139,7 +139,7 @@ class CustomerController extends AbstractController
 
     public function getTopAction($limit)
     {
-      $customers = $this->getDoctrine()->getManager()
+        $customers = $this->getDoctrine()->getManager()
         ->createQuery(
           'SELECT C.ID, COUNT(TICKETS.CUSTOMER) AS Top10
            FROM CUSTOMERS AS C
@@ -148,14 +148,14 @@ class CustomerController extends AbstractController
            AND (EXPIREDATE IS NULL OR EXPIREDATE > NOW())
            GROUP BY C.ID
            ORDER BY Top10 DESC, C.NAME ASC
-           LIMIT '+ $limit
+           LIMIT ' + $limit
         )
         ->getResult();
 
-      $response = new Response(json_encode($customers));
-      $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($customers));
+        $response->headers->set('Content-Type', 'application/json');
 
-      return $response;
+        return $response;
     }
 
     public function saveAction($id)

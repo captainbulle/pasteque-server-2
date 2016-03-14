@@ -95,25 +95,25 @@ class GroupController extends AbstractController
     ));
     }
 
-  public function getAction($id)
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Group');
-    $location = $repo->find($id);
+    public function getAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Group');
+        $location = $repo->find($id);
 
-    $response = new Response(json_encode($location));
-    $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($location));
+        $response->headers->set('Content-Type', 'application/json');
 
-    return $response;
-  }
+        return $response;
+    }
 
-  public function getAllAction()
-  {
-    $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Group');
-    $locations = $repo->findAll();
+    public function getAllAction()
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:Group');
+        $locations = $repo->findAll();
 
-    $response = new Response(json_encode($locations));
-    $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($locations));
+        $response->headers->set('Content-Type', 'application/json');
 
-    return $response;
-  }
+        return $response;
+    }
 }

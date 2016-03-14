@@ -42,6 +42,7 @@ class ProductCategory
 
     /**
      * ProductCategory constructor.
+     *
      * @param int $productId
      * @param int $categoryOrder
      */

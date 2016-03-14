@@ -49,7 +49,7 @@ class AttributeValue
      * AttributeValue constructor.
      *
      * @param string $value
-     * @param int $attributeId
+     * @param int    $attributeId
      * @param string $displayId
      */
     public function __construct($value, $attributeId, $displayId = null)

@@ -171,7 +171,7 @@ class Customer
      * @param string    $displayName
      * @param string    $searchKey
      * @param int       $number
-     * @param int    $customerTaxCategoryId
+     * @param int       $customerTaxCategoryId
      * @param int       $discountProfileId
      * @param int       $tariffAreaId
      * @param string    $card

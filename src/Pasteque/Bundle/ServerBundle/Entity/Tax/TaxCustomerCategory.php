@@ -54,7 +54,7 @@ class TaxCustomerCategory
      * TaxCustomerCategory constructor.
      *
      * @param string $name
-     * @param int $taxCategoryId
+     * @param int    $taxCategoryId
      * @param string $displayId
      */
     public function __construct($name, $taxCategoryId = null, $displayId = null)

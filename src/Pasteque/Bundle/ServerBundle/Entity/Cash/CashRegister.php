@@ -49,7 +49,7 @@ class CashRegister
      * CashRegister constructor.
      *
      * @param string $name
-     * @param int $locationId
+     * @param int    $locationId
      * @param int    $nextTicketId
      */
     public function __construct($name, $locationId, $nextTicketId = 1)

@@ -62,7 +62,8 @@ class SubGroup
 
     /**
      * SubGroup constructor.
-     * @param int $groupId
+     *
+     * @param int    $groupId
      * @param string $name
      * @param bool   $required
      * @param string $image

@@ -74,7 +74,7 @@ class SharedTicket
      * SharedTicket constructor.
      *
      * @param string $name
-     * @param int $customerId
+     * @param int    $customerId
      * @param int    $customerCount
      * @param int    $tariffAreaId
      * @param int    $discountProfileId

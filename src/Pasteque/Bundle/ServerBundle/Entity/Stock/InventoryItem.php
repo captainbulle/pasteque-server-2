@@ -79,14 +79,14 @@ class InventoryItem
     /**
      * InventoryItem constructor.
      *
-     * @param int    $inventoryId
-     * @param int $productId
-     * @param int $attributeSetInstanceId
-     * @param float  $quantity
-     * @param float  $lostQuantity
-     * @param float  $defectQuantity
-     * @param float  $missingQuantity
-     * @param float  $unitValue
+     * @param int   $inventoryId
+     * @param int   $productId
+     * @param int   $attributeSetInstanceId
+     * @param float $quantity
+     * @param float $lostQuantity
+     * @param float $defectQuantity
+     * @param float $missingQuantity
+     * @param float $unitValue
      */
     public function __construct($inventoryId, $productId, $attributeSetInstanceId, $quantity, $lostQuantity,
                                 $defectQuantity, $missingQuantity, $unitValue)

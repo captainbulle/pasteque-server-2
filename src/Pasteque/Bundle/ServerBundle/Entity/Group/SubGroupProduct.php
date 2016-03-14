@@ -47,6 +47,7 @@ class SubGroupProduct
 
     /**
      * SubGroupProduct constructor.
+     *
      * @param int $subGroupId
      * @param int $productId
      * @param int $displayOrder

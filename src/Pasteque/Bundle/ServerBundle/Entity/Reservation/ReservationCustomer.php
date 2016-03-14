@@ -47,8 +47,9 @@ class ReservationCustomer
 
     /**
      * ReservationCustomer constructor.
+     *
      * @param int    $reservationId
-     * @param int $customerId
+     * @param int    $customerId
      * @param string $displayId
      */
     public function __construct($reservationId, $customerId, $displayId = null)
@@ -93,7 +94,7 @@ class ReservationCustomer
     }
 
     /**
-     * Set reservationId
+     * Set reservationId.
      *
      * @param int $reservationId
      *
@@ -107,7 +108,7 @@ class ReservationCustomer
     }
 
     /**
-     * Get reservationId
+     * Get reservationId.
      *
      * @return int
      */

@@ -52,9 +52,10 @@ class StockCurrent
 
     /**
      * StockCurrent constructor.
-     * @param int $locationId
-     * @param int $productId
-     * @param int $attributeSetInstanceId
+     *
+     * @param int   $locationId
+     * @param int   $productId
+     * @param int   $attributeSetInstanceId
      * @param float $quantity
      */
     public function __construct($locationId, $productId, $attributeSetInstanceId, $quantity)

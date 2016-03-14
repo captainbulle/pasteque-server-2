@@ -61,7 +61,7 @@ class Place
      * @param string $name
      * @param int    $x
      * @param int    $y
-     * @param int $floorId
+     * @param int    $floorId
      * @param string $displayId
      */
     public function __construct($name, $x, $y, $floorId, $displayId = null)

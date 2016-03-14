@@ -70,9 +70,9 @@ class StockLevel
      * As quantities are set through stock moves leave $quantity to null to create security and max levels.
      * In that case also set $attributeSetInstanceId to null as it is ignored.
      *
-     * @param int $productId
-     * @param int $locationId
-     * @param int $attributeSetInstanceId
+     * @param int    $productId
+     * @param int    $locationId
+     * @param int    $attributeSetInstanceId
      * @param float  $security
      * @param float  $maximum
      * @param float  $quantity

@@ -26,84 +26,84 @@ use Symfony\Component\HttpFoundation\Response;
 
 class TicketController extends AbstractController
 {
-  public function createAction(Request $request)
-  {
-    $form = $this->createFormBuilder()
+    public function createAction(Request $request)
+    {
+        $form = $this->createFormBuilder()
       // ...
       ->getForm();
 
-    $form->handleRequest($request);
+        $form->handleRequest($request);
 
-    if ($form->isValid()) {
-      // persist entity
+        if ($form->isValid()) {
+            // persist entity
       $ticket = $form->getData();
-      $em = $this->getDoctrine()->getManager();
-      $em->persist($ticket);
-      $em->flush();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($ticket);
+            $em->flush();
 
-      return $this->redirectToRoute('task_success');
-    }
+            return $this->redirectToRoute('task_success');
+        }
 
-    return $this->render('AppBundle:Default:new.html.twig', array(
+        return $this->render('AppBundle:Default:new.html.twig', array(
       'form' => $form->createView(),
     ));
-  }
+    }
 
-  public function deleteAction($id)
-  {
-    $em = $this->getDoctrine()->getManager();
-    $ticket = $em->getRepository('PastequeServerBundle:Group')->find($id);
+    public function deleteAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $ticket = $em->getRepository('PastequeServerBundle:Group')->find($id);
 
-    if (!$ticket) {
-      throw $this->createNotFoundException(
+        if (!$ticket) {
+            throw $this->createNotFoundException(
         'No product found for id '.$id
       );
-    }
+        }
 
-    $em->remove($ticket);
-    $em->flush();
-
-    return $this->redirectToRoute('homepage');
-  }
-
-  public function updateAction($id)
-  {
-    $request = $this->get('request');
-
-    if (is_null($id)) {
-      $postData = $request->get('ticket');
-      $id = $postData['id'];
-    }
-
-    $em = $this->getDoctrine()->getManager();
-    $ticket = $em->getRepository('PastequeServerBundle:Group')->find($id);
-    $form = $this->createForm(new FormType(), $ticket);
-
-    if ($request->getMethod() == 'POST') {
-      $form->handleRequest($request);
-
-      if ($form->isValid()) {
-        // perform some action, such as save the object to the database
+        $em->remove($ticket);
         $em->flush();
 
-        return $this->redirect($this->generateUrl(''));
-      }
+        return $this->redirectToRoute('homepage');
     }
 
-    return $this->render('MyBundle:Testimonial:update.html.twig', array(
+    public function updateAction($id)
+    {
+        $request = $this->get('request');
+
+        if (is_null($id)) {
+            $postData = $request->get('ticket');
+            $id = $postData['id'];
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $ticket = $em->getRepository('PastequeServerBundle:Group')->find($id);
+        $form = $this->createForm(new FormType(), $ticket);
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+                // perform some action, such as save the object to the database
+        $em->flush();
+
+                return $this->redirect($this->generateUrl(''));
+            }
+        }
+
+        return $this->render('MyBundle:Testimonial:update.html.twig', array(
       'form' => $form->createView(),
     ));
-  }
-  public function getSharedAction($id)
-  {
-      $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:SharedTicket');
-      $tickets = $repo->find($id);
+    }
+    public function getSharedAction($id)
+    {
+        $repo = $this->getDoctrine()->getRepository('PastequeServerBundle:SharedTicket');
+        $tickets = $repo->find($id);
 
-      $response = new Response(json_encode($tickets));
-      $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($tickets));
+        $response->headers->set('Content-Type', 'application/json');
 
-      return $response;
-  }
+        return $response;
+    }
 
     public function getAllSharedAction()
     {
@@ -154,9 +154,9 @@ class TicketController extends AbstractController
         ));
     }
 
-  public function getOpenAction()
-  {
-    $roles = $this->getDoctrine()->getManager()
+    public function getOpenAction()
+    {
+        $roles = $this->getDoctrine()->getManager()
       ->createQuery(
           'SELECT T.ID, T.TICKETID, T.TICKETTYPE, T.PERSON, T.CUSTOMER,
            T.STATUS, T.CUSTCOUNT, T.TARIFFAREA, T.DISCOUNTRATE,
@@ -170,9 +170,9 @@ class TicketController extends AbstractController
       )
       ->getResult();
 
-    $response = new Response(json_encode($roles));
-    $response->headers->set('Content-Type', 'application/json');
+        $response = new Response(json_encode($roles));
+        $response->headers->set('Content-Type', 'application/json');
 
-    return $response;
-  }
+        return $response;
+    }
 }

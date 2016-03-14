@@ -47,7 +47,8 @@ class TariffAreaPrice
 
     /**
      * TariffAreaPrice constructor.
-     * @param int $tariffAreaId
+     *
+     * @param int   $tariffAreaId
      * @param int   $productId
      * @param float $priceSell
      */
@@ -69,9 +70,10 @@ class TariffAreaPrice
     }
 
     /**
-     * Set tariffAreaId
+     * Set tariffAreaId.
      *
      * @param int $tariffAreaId
+     *
      * @return TariffAreaPrice
      */
     public function setTariffAreaId($tariffAreaId)
@@ -82,7 +84,7 @@ class TariffAreaPrice
     }
 
     /**
-     * Get tariffAreaId
+     * Get tariffAreaId.
      *
      * @return int
      */

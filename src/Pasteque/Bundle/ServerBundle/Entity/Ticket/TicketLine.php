@@ -91,10 +91,10 @@ class TicketLine
      * TicketLine constructor.
      * Constructor must take full product and tax objects to build xml attributes. Only the id is then kept.
      *
-     * @param int  $ticketId
+     * @param int     $ticketId
      * @param int     $line
      * @param Product $product
-     * @param int  $attributeSetInstanceId
+     * @param int     $attributeSetInstanceId
      * @param float   $quantity
      * @param float   $price
      * @param Tax     $tax
