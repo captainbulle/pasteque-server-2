@@ -1,5 +1,6 @@
 imports:
-    - { resource: '%kernel.root_dir%/src/Pasteque/Bundle/APIBundle/Resources/config/services.yml' }
+#    - { resource: "@PastequeServerBundle/Resources/config/services.yml" }
+    - { resource: "@PastequeAPIBundle/Resources/config/services.yml" }
 
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html

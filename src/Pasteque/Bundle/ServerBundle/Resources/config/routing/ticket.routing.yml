@@ -19,14 +19,6 @@ ticket_api_save:
     path: /ticket/save/{cashId}/{ticket}/{tickets}
     defaults: { _controller: PastequeServerBundle:Ticket:create }
 
-ticket_api_getAll:
-    path: /ticket/getAll/
-    defaults: { _controller: PastequeServerBundle:Ticket:getAllShared }
-
-tickets_api_get:
-    path: /tickets/get/{id}
-    defaults: { _controller: PastequeServerBundle:Ticket:getShared }
-
 ticket_api_getOpen:
     path: /ticket/getOpen/
     defaults: { _controller: PastequeServerBundle:Ticket:getOpen }

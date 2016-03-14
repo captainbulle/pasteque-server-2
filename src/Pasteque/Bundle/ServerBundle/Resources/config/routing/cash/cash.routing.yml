@@ -20,10 +20,6 @@ cash_api_create:
     path: /cash/create
     defaults: { _controller: PastequeServerBundle:Cash/Cash:create }
 
-cash_api_update:
-    path: /cash/update/{id}
-    defaults: { _controller: PastequeServerBundle:Cash/Cash:update }
-
 cash_api_delete:
     path: /cash/delete/{id}
     defaults: { _controller: PastequeServerBundle:Cash/Cash:delete }
