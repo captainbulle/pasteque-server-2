@@ -60,9 +60,3 @@ tax:
 
 ticket:
     resource: '@PastequeServerBundle/Resources/config/routing/ticket.routing.yml'
-
-user:
-    resource: '@PastequeServerBundle/Resources/config/routing/user.routing.yml'
-
-version:
-    resource: '@PastequeServerBundle/Resources/config/routing/version.routing.yml'
