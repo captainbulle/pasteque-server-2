@@ -3,11 +3,11 @@ customer_api_get:
     defaults: { _controller: PastequeServerBundle:Customer:get }
 
 customer_api_getAll:
-    path: /customers/getAll/
+    path: /customer/getAll/
     defaults: { _controller: PastequeServerBundle:Customer:getAll }
 
 customer_api_getTop:
-    path: /customers/getTop/{limit}
+    path: /customer/getTop/{limit}
     defaults: { _controller: PastequeServerBundle:Customer:getTop, limit: 10 }
 
 customer_api_addPrepaid:
