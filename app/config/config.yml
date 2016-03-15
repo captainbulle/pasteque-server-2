@@ -41,7 +41,7 @@ twig:
 # Doctrine Configuration
 doctrine:
     dbal:
-        driver:   "%database_driver%"
+        driver:   "%database_driver%" # use pdo_mysql for MySQL or pdo_pgsql for PostGreSQL
         host:     "%database_host%"
         port:     "%database_port%"
         dbname:   "%database_name%"

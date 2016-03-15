@@ -34,8 +34,8 @@ location:
 payment:
     resource: '@PastequeServerBundle/Resources/config/routing/payment.routing.yml'
 
-place:
-    resource: '@PastequeServerBundle/Resources/config/routing/place.routing.yml'
+floor:
+    resource: '@PastequeServerBundle/Resources/config/routing/floor.routing.yml'
 
 product:
     resource: '@PastequeServerBundle/Resources/config/routing/product.routing.yml'
